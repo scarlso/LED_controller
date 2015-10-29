@@ -1,0 +1,1416 @@
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"VDAC8_1.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	VDAC8_1_initVar
+  19              		.bss
+  20              		.type	VDAC8_1_initVar, %object
+  21              		.size	VDAC8_1_initVar, 1
+  22              	VDAC8_1_initVar:
+  23 0000 00       		.space	1
+  24              		.section	.text.VDAC8_1_Init,"ax",%progbits
+  25              		.align	2
+  26              		.global	VDAC8_1_Init
+  27              		.thumb
+  28              		.thumb_func
+  29              		.type	VDAC8_1_Init, %function
+  30              	VDAC8_1_Init:
+  31              	.LFB0:
+  32              		.file 1 ".\\Generated_Source\\PSoC5\\VDAC8_1.c"
+   1:.\Generated_Source\PSoC5/VDAC8_1.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/VDAC8_1.c **** * File Name: VDAC8_1.c  
+   3:.\Generated_Source\PSoC5/VDAC8_1.c **** * Version 1.90
+   4:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+   5:.\Generated_Source\PSoC5/VDAC8_1.c **** * Description:
+   6:.\Generated_Source\PSoC5/VDAC8_1.c **** *  This file provides the source code to the API for the 8-bit Voltage DAC 
+   7:.\Generated_Source\PSoC5/VDAC8_1.c **** *  (VDAC8) User Module.
+   8:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+   9:.\Generated_Source\PSoC5/VDAC8_1.c **** * Note:
+  10:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Any unusual or non-standard behavior should be noted here. Other-
+  11:.\Generated_Source\PSoC5/VDAC8_1.c **** *  wise, this section should remain blank.
+  12:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+  13:.\Generated_Source\PSoC5/VDAC8_1.c **** ********************************************************************************
+  14:.\Generated_Source\PSoC5/VDAC8_1.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  15:.\Generated_Source\PSoC5/VDAC8_1.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  16:.\Generated_Source\PSoC5/VDAC8_1.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  17:.\Generated_Source\PSoC5/VDAC8_1.c **** * the software package with which this file was provided.
+  18:.\Generated_Source\PSoC5/VDAC8_1.c **** *******************************************************************************/
+  19:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  20:.\Generated_Source\PSoC5/VDAC8_1.c **** #include "cytypes.h"
+  21:.\Generated_Source\PSoC5/VDAC8_1.c **** #include "VDAC8_1.h"
+  22:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  23:.\Generated_Source\PSoC5/VDAC8_1.c **** #if (CY_PSOC5A)
+  24:.\Generated_Source\PSoC5/VDAC8_1.c **** #include <CyLib.h>
+  25:.\Generated_Source\PSoC5/VDAC8_1.c **** #endif /* CY_PSOC5A */
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 2
+
+
+  26:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  27:.\Generated_Source\PSoC5/VDAC8_1.c **** uint8 VDAC8_1_initVar = 0u;
+  28:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  29:.\Generated_Source\PSoC5/VDAC8_1.c **** #if (CY_PSOC5A)
+  30:.\Generated_Source\PSoC5/VDAC8_1.c ****     static uint8 VDAC8_1_restoreVal = 0u;
+  31:.\Generated_Source\PSoC5/VDAC8_1.c **** #endif /* CY_PSOC5A */
+  32:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  33:.\Generated_Source\PSoC5/VDAC8_1.c **** #if (CY_PSOC5A)
+  34:.\Generated_Source\PSoC5/VDAC8_1.c ****     static VDAC8_1_backupStruct VDAC8_1_backup;
+  35:.\Generated_Source\PSoC5/VDAC8_1.c **** #endif /* CY_PSOC5A */
+  36:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  37:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  38:.\Generated_Source\PSoC5/VDAC8_1.c **** /*******************************************************************************
+  39:.\Generated_Source\PSoC5/VDAC8_1.c **** * Function Name: VDAC8_1_Init
+  40:.\Generated_Source\PSoC5/VDAC8_1.c **** ********************************************************************************
+  41:.\Generated_Source\PSoC5/VDAC8_1.c **** * Summary:
+  42:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Initialize to the schematic state.
+  43:.\Generated_Source\PSoC5/VDAC8_1.c **** * 
+  44:.\Generated_Source\PSoC5/VDAC8_1.c **** * Parameters:
+  45:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void:
+  46:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+  47:.\Generated_Source\PSoC5/VDAC8_1.c **** * Return:
+  48:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void
+  49:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+  50:.\Generated_Source\PSoC5/VDAC8_1.c **** * Theory:
+  51:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+  52:.\Generated_Source\PSoC5/VDAC8_1.c **** * Side Effects:
+  53:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+  54:.\Generated_Source\PSoC5/VDAC8_1.c **** *******************************************************************************/
+  55:.\Generated_Source\PSoC5/VDAC8_1.c **** void VDAC8_1_Init(void) 
+  56:.\Generated_Source\PSoC5/VDAC8_1.c **** {
+  33              		.loc 1 56 0
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 1, uses_anonymous_args = 0
+  37 0000 80B5     		push	{r7, lr}
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 7, -8
+  40              		.cfi_offset 14, -4
+  41 0002 00AF     		add	r7, sp, #0
+  42              		.cfi_def_cfa_register 7
+  57:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_CR0 = (VDAC8_1_MODE_V );
+  43              		.loc 1 57 0
+  44 0004 064B     		ldr	r3, .L2
+  45 0006 0022     		movs	r2, #0
+  46 0008 1A70     		strb	r2, [r3]
+  58:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  59:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Set default data source */
+  60:.\Generated_Source\PSoC5/VDAC8_1.c ****     #if(VDAC8_1_DEFAULT_DATA_SRC != 0 )
+  61:.\Generated_Source\PSoC5/VDAC8_1.c ****         VDAC8_1_CR1 = (VDAC8_1_DEFAULT_CNTL | VDAC8_1_DACBUS_ENABLE) ;
+  62:.\Generated_Source\PSoC5/VDAC8_1.c ****     #else
+  63:.\Generated_Source\PSoC5/VDAC8_1.c ****         VDAC8_1_CR1 = (VDAC8_1_DEFAULT_CNTL | VDAC8_1_DACBUS_DISABLE) ;
+  47              		.loc 1 63 0
+  48 000a 064B     		ldr	r3, .L2+4
+  49 000c 0022     		movs	r2, #0
+  50 000e 1A70     		strb	r2, [r3]
+  64:.\Generated_Source\PSoC5/VDAC8_1.c ****     #endif /* (VDAC8_1_DEFAULT_DATA_SRC != 0 ) */
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 3
+
+
+  65:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  66:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Set default strobe mode */
+  67:.\Generated_Source\PSoC5/VDAC8_1.c ****     #if(VDAC8_1_DEFAULT_STRB != 0)
+  68:.\Generated_Source\PSoC5/VDAC8_1.c ****         VDAC8_1_Strobe |= VDAC8_1_STRB_EN ;
+  69:.\Generated_Source\PSoC5/VDAC8_1.c ****     #endif/* (VDAC8_1_DEFAULT_STRB != 0) */
+  70:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  71:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Set default range */
+  72:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_SetRange(VDAC8_1_DEFAULT_RANGE); 
+  51              		.loc 1 72 0
+  52 0010 0020     		movs	r0, #0
+  53 0012 FFF7FEFF 		bl	VDAC8_1_SetRange
+  73:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  74:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Set default speed */
+  75:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_SetSpeed(VDAC8_1_DEFAULT_SPEED);
+  54              		.loc 1 75 0
+  55 0016 0220     		movs	r0, #2
+  56 0018 FFF7FEFF 		bl	VDAC8_1_SetSpeed
+  76:.\Generated_Source\PSoC5/VDAC8_1.c **** }
+  57              		.loc 1 76 0
+  58 001c 80BD     		pop	{r7, pc}
+  59              	.L3:
+  60 001e 00BF     		.align	2
+  61              	.L2:
+  62 0020 28580040 		.word	1073764392
+  63 0024 29580040 		.word	1073764393
+  64              		.cfi_endproc
+  65              	.LFE0:
+  66              		.size	VDAC8_1_Init, .-VDAC8_1_Init
+  67              		.section	.text.VDAC8_1_Enable,"ax",%progbits
+  68              		.align	2
+  69              		.global	VDAC8_1_Enable
+  70              		.thumb
+  71              		.thumb_func
+  72              		.type	VDAC8_1_Enable, %function
+  73              	VDAC8_1_Enable:
+  74              	.LFB1:
+  77:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  78:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+  79:.\Generated_Source\PSoC5/VDAC8_1.c **** /*******************************************************************************
+  80:.\Generated_Source\PSoC5/VDAC8_1.c **** * Function Name: VDAC8_1_Enable
+  81:.\Generated_Source\PSoC5/VDAC8_1.c **** ********************************************************************************
+  82:.\Generated_Source\PSoC5/VDAC8_1.c **** * Summary:
+  83:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Enable the VDAC8
+  84:.\Generated_Source\PSoC5/VDAC8_1.c **** * 
+  85:.\Generated_Source\PSoC5/VDAC8_1.c **** * Parameters:
+  86:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void
+  87:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+  88:.\Generated_Source\PSoC5/VDAC8_1.c **** * Return:
+  89:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void
+  90:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+  91:.\Generated_Source\PSoC5/VDAC8_1.c **** * Theory:
+  92:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+  93:.\Generated_Source\PSoC5/VDAC8_1.c **** * Side Effects:
+  94:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+  95:.\Generated_Source\PSoC5/VDAC8_1.c **** *******************************************************************************/
+  96:.\Generated_Source\PSoC5/VDAC8_1.c **** void VDAC8_1_Enable(void) 
+  97:.\Generated_Source\PSoC5/VDAC8_1.c **** {
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 4
+
+
+  75              		.loc 1 97 0
+  76              		.cfi_startproc
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 1, uses_anonymous_args = 0
+  79              		@ link register save eliminated.
+  80 0000 80B4     		push	{r7}
+  81              		.cfi_def_cfa_offset 4
+  82              		.cfi_offset 7, -4
+  83 0002 00AF     		add	r7, sp, #0
+  84              		.cfi_def_cfa_register 7
+  98:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_PWRMGR |= VDAC8_1_ACT_PWR_EN;
+  85              		.loc 1 98 0
+  86 0004 094B     		ldr	r3, .L5
+  87 0006 094A     		ldr	r2, .L5
+  88 0008 1278     		ldrb	r2, [r2]
+  89 000a D2B2     		uxtb	r2, r2
+  90 000c 42F00402 		orr	r2, r2, #4
+  91 0010 D2B2     		uxtb	r2, r2
+  92 0012 1A70     		strb	r2, [r3]
+  99:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_STBY_PWRMGR |= VDAC8_1_STBY_PWR_EN;
+  93              		.loc 1 99 0
+  94 0014 064B     		ldr	r3, .L5+4
+  95 0016 064A     		ldr	r2, .L5+4
+  96 0018 1278     		ldrb	r2, [r2]
+  97 001a D2B2     		uxtb	r2, r2
+  98 001c 42F00402 		orr	r2, r2, #4
+  99 0020 D2B2     		uxtb	r2, r2
+ 100 0022 1A70     		strb	r2, [r3]
+ 100:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 101:.\Generated_Source\PSoC5/VDAC8_1.c ****     /*This is to restore the value of register CR0 ,
+ 102:.\Generated_Source\PSoC5/VDAC8_1.c ****     which is modified  in Stop API , this prevents misbehaviour of VDAC */
+ 103:.\Generated_Source\PSoC5/VDAC8_1.c ****     #if (CY_PSOC5A)
+ 104:.\Generated_Source\PSoC5/VDAC8_1.c ****         if(VDAC8_1_restoreVal == 1u) 
+ 105:.\Generated_Source\PSoC5/VDAC8_1.c ****         {
+ 106:.\Generated_Source\PSoC5/VDAC8_1.c ****              VDAC8_1_CR0 = VDAC8_1_backup.data_value;
+ 107:.\Generated_Source\PSoC5/VDAC8_1.c ****              VDAC8_1_restoreVal = 0u;
+ 108:.\Generated_Source\PSoC5/VDAC8_1.c ****         }
+ 109:.\Generated_Source\PSoC5/VDAC8_1.c ****     #endif /* CY_PSOC5A */
+ 110:.\Generated_Source\PSoC5/VDAC8_1.c **** }
+ 101              		.loc 1 110 0
+ 102 0024 BD46     		mov	sp, r7
+ 103              		@ sp needed
+ 104 0026 5DF8047B 		ldr	r7, [sp], #4
+ 105 002a 7047     		bx	lr
+ 106              	.L6:
+ 107              		.align	2
+ 108              	.L5:
+ 109 002c A8430040 		.word	1073759144
+ 110 0030 B8430040 		.word	1073759160
+ 111              		.cfi_endproc
+ 112              	.LFE1:
+ 113              		.size	VDAC8_1_Enable, .-VDAC8_1_Enable
+ 114              		.section	.text.VDAC8_1_Start,"ax",%progbits
+ 115              		.align	2
+ 116              		.global	VDAC8_1_Start
+ 117              		.thumb
+ 118              		.thumb_func
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 5
+
+
+ 119              		.type	VDAC8_1_Start, %function
+ 120              	VDAC8_1_Start:
+ 121              	.LFB2:
+ 111:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 112:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 113:.\Generated_Source\PSoC5/VDAC8_1.c **** /*******************************************************************************
+ 114:.\Generated_Source\PSoC5/VDAC8_1.c **** * Function Name: VDAC8_1_Start
+ 115:.\Generated_Source\PSoC5/VDAC8_1.c **** ********************************************************************************
+ 116:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 117:.\Generated_Source\PSoC5/VDAC8_1.c **** * Summary:
+ 118:.\Generated_Source\PSoC5/VDAC8_1.c **** *  The start function initializes the voltage DAC with the default values, 
+ 119:.\Generated_Source\PSoC5/VDAC8_1.c **** *  and sets the power to the given level.  A power level of 0, is the same as
+ 120:.\Generated_Source\PSoC5/VDAC8_1.c **** *  executing the stop function.
+ 121:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 122:.\Generated_Source\PSoC5/VDAC8_1.c **** * Parameters:
+ 123:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Power: Sets power level between off (0) and (3) high power
+ 124:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 125:.\Generated_Source\PSoC5/VDAC8_1.c **** * Return:
+ 126:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void 
+ 127:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 128:.\Generated_Source\PSoC5/VDAC8_1.c **** * Global variables:
+ 129:.\Generated_Source\PSoC5/VDAC8_1.c **** *  VDAC8_1_initVar: Is modified when this function is called for the 
+ 130:.\Generated_Source\PSoC5/VDAC8_1.c **** *  first time. Is used to ensure that initialization happens only once.
+ 131:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 132:.\Generated_Source\PSoC5/VDAC8_1.c **** *******************************************************************************/
+ 133:.\Generated_Source\PSoC5/VDAC8_1.c **** void VDAC8_1_Start(void)  
+ 134:.\Generated_Source\PSoC5/VDAC8_1.c **** {
+ 122              		.loc 1 134 0
+ 123              		.cfi_startproc
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 1, uses_anonymous_args = 0
+ 126 0000 80B5     		push	{r7, lr}
+ 127              		.cfi_def_cfa_offset 8
+ 128              		.cfi_offset 7, -8
+ 129              		.cfi_offset 14, -4
+ 130 0002 00AF     		add	r7, sp, #0
+ 131              		.cfi_def_cfa_register 7
+ 135:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Hardware initiazation only needs to occure the first time */
+ 136:.\Generated_Source\PSoC5/VDAC8_1.c ****     if(VDAC8_1_initVar == 0u)
+ 132              		.loc 1 136 0
+ 133 0004 074B     		ldr	r3, .L9
+ 134 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 135 0008 002B     		cmp	r3, #0
+ 136 000a 04D1     		bne	.L8
+ 137:.\Generated_Source\PSoC5/VDAC8_1.c ****     { 
+ 138:.\Generated_Source\PSoC5/VDAC8_1.c ****         VDAC8_1_Init();
+ 137              		.loc 1 138 0
+ 138 000c FFF7FEFF 		bl	VDAC8_1_Init
+ 139:.\Generated_Source\PSoC5/VDAC8_1.c ****         VDAC8_1_initVar = 1u;
+ 139              		.loc 1 139 0
+ 140 0010 044B     		ldr	r3, .L9
+ 141 0012 0122     		movs	r2, #1
+ 142 0014 1A70     		strb	r2, [r3]
+ 143              	.L8:
+ 140:.\Generated_Source\PSoC5/VDAC8_1.c ****     }
+ 141:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 142:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Enable power to DAC */
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 6
+
+
+ 143:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_Enable();
+ 144              		.loc 1 143 0
+ 145 0016 FFF7FEFF 		bl	VDAC8_1_Enable
+ 144:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 145:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Set default value */
+ 146:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_SetValue(VDAC8_1_DEFAULT_DATA); 
+ 146              		.loc 1 146 0
+ 147 001a 6420     		movs	r0, #100
+ 148 001c FFF7FEFF 		bl	VDAC8_1_SetValue
+ 147:.\Generated_Source\PSoC5/VDAC8_1.c **** }
+ 149              		.loc 1 147 0
+ 150 0020 80BD     		pop	{r7, pc}
+ 151              	.L10:
+ 152 0022 00BF     		.align	2
+ 153              	.L9:
+ 154 0024 00000000 		.word	VDAC8_1_initVar
+ 155              		.cfi_endproc
+ 156              	.LFE2:
+ 157              		.size	VDAC8_1_Start, .-VDAC8_1_Start
+ 158              		.section	.text.VDAC8_1_Stop,"ax",%progbits
+ 159              		.align	2
+ 160              		.global	VDAC8_1_Stop
+ 161              		.thumb
+ 162              		.thumb_func
+ 163              		.type	VDAC8_1_Stop, %function
+ 164              	VDAC8_1_Stop:
+ 165              	.LFB3:
+ 148:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 149:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 150:.\Generated_Source\PSoC5/VDAC8_1.c **** /*******************************************************************************
+ 151:.\Generated_Source\PSoC5/VDAC8_1.c **** * Function Name: VDAC8_1_Stop
+ 152:.\Generated_Source\PSoC5/VDAC8_1.c **** ********************************************************************************
+ 153:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 154:.\Generated_Source\PSoC5/VDAC8_1.c **** * Summary:
+ 155:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Powers down DAC to lowest power state.
+ 156:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 157:.\Generated_Source\PSoC5/VDAC8_1.c **** * Parameters:
+ 158:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void
+ 159:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 160:.\Generated_Source\PSoC5/VDAC8_1.c **** * Return:
+ 161:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void
+ 162:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 163:.\Generated_Source\PSoC5/VDAC8_1.c **** * Theory:
+ 164:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 165:.\Generated_Source\PSoC5/VDAC8_1.c **** * Side Effects:
+ 166:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 167:.\Generated_Source\PSoC5/VDAC8_1.c **** *******************************************************************************/
+ 168:.\Generated_Source\PSoC5/VDAC8_1.c **** void VDAC8_1_Stop(void) 
+ 169:.\Generated_Source\PSoC5/VDAC8_1.c **** {
+ 166              		.loc 1 169 0
+ 167              		.cfi_startproc
+ 168              		@ args = 0, pretend = 0, frame = 0
+ 169              		@ frame_needed = 1, uses_anonymous_args = 0
+ 170              		@ link register save eliminated.
+ 171 0000 80B4     		push	{r7}
+ 172              		.cfi_def_cfa_offset 4
+ 173              		.cfi_offset 7, -4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 7
+
+
+ 174 0002 00AF     		add	r7, sp, #0
+ 175              		.cfi_def_cfa_register 7
+ 170:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Disble power to DAC */
+ 171:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_PWRMGR &= (uint8)(~VDAC8_1_ACT_PWR_EN);
+ 176              		.loc 1 171 0
+ 177 0004 094B     		ldr	r3, .L12
+ 178 0006 094A     		ldr	r2, .L12
+ 179 0008 1278     		ldrb	r2, [r2]
+ 180 000a D2B2     		uxtb	r2, r2
+ 181 000c 22F00402 		bic	r2, r2, #4
+ 182 0010 D2B2     		uxtb	r2, r2
+ 183 0012 1A70     		strb	r2, [r3]
+ 172:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_STBY_PWRMGR &= (uint8)(~VDAC8_1_STBY_PWR_EN);
+ 184              		.loc 1 172 0
+ 185 0014 064B     		ldr	r3, .L12+4
+ 186 0016 064A     		ldr	r2, .L12+4
+ 187 0018 1278     		ldrb	r2, [r2]
+ 188 001a D2B2     		uxtb	r2, r2
+ 189 001c 22F00402 		bic	r2, r2, #4
+ 190 0020 D2B2     		uxtb	r2, r2
+ 191 0022 1A70     		strb	r2, [r3]
+ 173:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 174:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* This is a work around for PSoC5A  ,
+ 175:.\Generated_Source\PSoC5/VDAC8_1.c ****     this sets VDAC to current mode with output off */
+ 176:.\Generated_Source\PSoC5/VDAC8_1.c ****     #if (CY_PSOC5A)
+ 177:.\Generated_Source\PSoC5/VDAC8_1.c ****         VDAC8_1_backup.data_value = VDAC8_1_CR0;
+ 178:.\Generated_Source\PSoC5/VDAC8_1.c ****         VDAC8_1_CR0 = VDAC8_1_CUR_MODE_OUT_OFF;
+ 179:.\Generated_Source\PSoC5/VDAC8_1.c ****         VDAC8_1_restoreVal = 1u;
+ 180:.\Generated_Source\PSoC5/VDAC8_1.c ****     #endif /* CY_PSOC5A */
+ 181:.\Generated_Source\PSoC5/VDAC8_1.c **** }
+ 192              		.loc 1 181 0
+ 193 0024 BD46     		mov	sp, r7
+ 194              		@ sp needed
+ 195 0026 5DF8047B 		ldr	r7, [sp], #4
+ 196 002a 7047     		bx	lr
+ 197              	.L13:
+ 198              		.align	2
+ 199              	.L12:
+ 200 002c A8430040 		.word	1073759144
+ 201 0030 B8430040 		.word	1073759160
+ 202              		.cfi_endproc
+ 203              	.LFE3:
+ 204              		.size	VDAC8_1_Stop, .-VDAC8_1_Stop
+ 205              		.section	.text.VDAC8_1_SetSpeed,"ax",%progbits
+ 206              		.align	2
+ 207              		.global	VDAC8_1_SetSpeed
+ 208              		.thumb
+ 209              		.thumb_func
+ 210              		.type	VDAC8_1_SetSpeed, %function
+ 211              	VDAC8_1_SetSpeed:
+ 212              	.LFB4:
+ 182:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 183:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 184:.\Generated_Source\PSoC5/VDAC8_1.c **** /*******************************************************************************
+ 185:.\Generated_Source\PSoC5/VDAC8_1.c **** * Function Name: VDAC8_1_SetSpeed
+ 186:.\Generated_Source\PSoC5/VDAC8_1.c **** ********************************************************************************
+ 187:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 8
+
+
+ 188:.\Generated_Source\PSoC5/VDAC8_1.c **** * Summary:
+ 189:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Set DAC speed
+ 190:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 191:.\Generated_Source\PSoC5/VDAC8_1.c **** * Parameters:
+ 192:.\Generated_Source\PSoC5/VDAC8_1.c **** *  power: Sets speed value
+ 193:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 194:.\Generated_Source\PSoC5/VDAC8_1.c **** * Return:
+ 195:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void
+ 196:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 197:.\Generated_Source\PSoC5/VDAC8_1.c **** * Theory:
+ 198:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 199:.\Generated_Source\PSoC5/VDAC8_1.c **** * Side Effects:
+ 200:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 201:.\Generated_Source\PSoC5/VDAC8_1.c **** *******************************************************************************/
+ 202:.\Generated_Source\PSoC5/VDAC8_1.c **** void VDAC8_1_SetSpeed(uint8 speed) 
+ 203:.\Generated_Source\PSoC5/VDAC8_1.c **** {
+ 213              		.loc 1 203 0
+ 214              		.cfi_startproc
+ 215              		@ args = 0, pretend = 0, frame = 8
+ 216              		@ frame_needed = 1, uses_anonymous_args = 0
+ 217              		@ link register save eliminated.
+ 218 0000 80B4     		push	{r7}
+ 219              		.cfi_def_cfa_offset 4
+ 220              		.cfi_offset 7, -4
+ 221 0002 83B0     		sub	sp, sp, #12
+ 222              		.cfi_def_cfa_offset 16
+ 223 0004 00AF     		add	r7, sp, #0
+ 224              		.cfi_def_cfa_register 7
+ 225 0006 0346     		mov	r3, r0
+ 226 0008 FB71     		strb	r3, [r7, #7]
+ 204:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Clear power mask then write in new value */
+ 205:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_CR0 &= (uint8)(~VDAC8_1_HS_MASK);
+ 227              		.loc 1 205 0
+ 228 000a 0C4B     		ldr	r3, .L15
+ 229 000c 0B4A     		ldr	r2, .L15
+ 230 000e 1278     		ldrb	r2, [r2]
+ 231 0010 D2B2     		uxtb	r2, r2
+ 232 0012 22F00202 		bic	r2, r2, #2
+ 233 0016 D2B2     		uxtb	r2, r2
+ 234 0018 1A70     		strb	r2, [r3]
+ 206:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_CR0 |=  (speed & VDAC8_1_HS_MASK);
+ 235              		.loc 1 206 0
+ 236 001a 084B     		ldr	r3, .L15
+ 237 001c 074A     		ldr	r2, .L15
+ 238 001e 1278     		ldrb	r2, [r2]
+ 239 0020 D1B2     		uxtb	r1, r2
+ 240 0022 FA79     		ldrb	r2, [r7, #7]
+ 241 0024 02F00202 		and	r2, r2, #2
+ 242 0028 D2B2     		uxtb	r2, r2
+ 243 002a 0A43     		orrs	r2, r2, r1
+ 244 002c D2B2     		uxtb	r2, r2
+ 245 002e 1A70     		strb	r2, [r3]
+ 207:.\Generated_Source\PSoC5/VDAC8_1.c **** }
+ 246              		.loc 1 207 0
+ 247 0030 0C37     		adds	r7, r7, #12
+ 248 0032 BD46     		mov	sp, r7
+ 249              		@ sp needed
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 9
+
+
+ 250 0034 5DF8047B 		ldr	r7, [sp], #4
+ 251 0038 7047     		bx	lr
+ 252              	.L16:
+ 253 003a 00BF     		.align	2
+ 254              	.L15:
+ 255 003c 28580040 		.word	1073764392
+ 256              		.cfi_endproc
+ 257              	.LFE4:
+ 258              		.size	VDAC8_1_SetSpeed, .-VDAC8_1_SetSpeed
+ 259              		.section	.text.VDAC8_1_SetRange,"ax",%progbits
+ 260              		.align	2
+ 261              		.global	VDAC8_1_SetRange
+ 262              		.thumb
+ 263              		.thumb_func
+ 264              		.type	VDAC8_1_SetRange, %function
+ 265              	VDAC8_1_SetRange:
+ 266              	.LFB5:
+ 208:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 209:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 210:.\Generated_Source\PSoC5/VDAC8_1.c **** /*******************************************************************************
+ 211:.\Generated_Source\PSoC5/VDAC8_1.c **** * Function Name: VDAC8_1_SetRange
+ 212:.\Generated_Source\PSoC5/VDAC8_1.c **** ********************************************************************************
+ 213:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 214:.\Generated_Source\PSoC5/VDAC8_1.c **** * Summary:
+ 215:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Set one of three current ranges.
+ 216:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 217:.\Generated_Source\PSoC5/VDAC8_1.c **** * Parameters:
+ 218:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Range: Sets one of Three valid ranges.
+ 219:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 220:.\Generated_Source\PSoC5/VDAC8_1.c **** * Return:
+ 221:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void 
+ 222:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 223:.\Generated_Source\PSoC5/VDAC8_1.c **** * Theory:
+ 224:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 225:.\Generated_Source\PSoC5/VDAC8_1.c **** * Side Effects:
+ 226:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 227:.\Generated_Source\PSoC5/VDAC8_1.c **** *******************************************************************************/
+ 228:.\Generated_Source\PSoC5/VDAC8_1.c **** void VDAC8_1_SetRange(uint8 range) 
+ 229:.\Generated_Source\PSoC5/VDAC8_1.c **** {
+ 267              		.loc 1 229 0
+ 268              		.cfi_startproc
+ 269              		@ args = 0, pretend = 0, frame = 8
+ 270              		@ frame_needed = 1, uses_anonymous_args = 0
+ 271 0000 80B5     		push	{r7, lr}
+ 272              		.cfi_def_cfa_offset 8
+ 273              		.cfi_offset 7, -8
+ 274              		.cfi_offset 14, -4
+ 275 0002 82B0     		sub	sp, sp, #8
+ 276              		.cfi_def_cfa_offset 16
+ 277 0004 00AF     		add	r7, sp, #0
+ 278              		.cfi_def_cfa_register 7
+ 279 0006 0346     		mov	r3, r0
+ 280 0008 FB71     		strb	r3, [r7, #7]
+ 230:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_CR0 &= (uint8)(~VDAC8_1_RANGE_MASK);      /* Clear existing mode */
+ 281              		.loc 1 230 0
+ 282 000a 0C4B     		ldr	r3, .L18
+ 283 000c 0B4A     		ldr	r2, .L18
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 10
+
+
+ 284 000e 1278     		ldrb	r2, [r2]
+ 285 0010 D2B2     		uxtb	r2, r2
+ 286 0012 22F00C02 		bic	r2, r2, #12
+ 287 0016 D2B2     		uxtb	r2, r2
+ 288 0018 1A70     		strb	r2, [r3]
+ 231:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_CR0 |= (range & VDAC8_1_RANGE_MASK);      /*  Set Range  */
+ 289              		.loc 1 231 0
+ 290 001a 084B     		ldr	r3, .L18
+ 291 001c 074A     		ldr	r2, .L18
+ 292 001e 1278     		ldrb	r2, [r2]
+ 293 0020 D1B2     		uxtb	r1, r2
+ 294 0022 FA79     		ldrb	r2, [r7, #7]
+ 295 0024 02F00C02 		and	r2, r2, #12
+ 296 0028 D2B2     		uxtb	r2, r2
+ 297 002a 0A43     		orrs	r2, r2, r1
+ 298 002c D2B2     		uxtb	r2, r2
+ 299 002e 1A70     		strb	r2, [r3]
+ 232:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_DacTrim();
+ 300              		.loc 1 232 0
+ 301 0030 FFF7FEFF 		bl	VDAC8_1_DacTrim
+ 233:.\Generated_Source\PSoC5/VDAC8_1.c **** }
+ 302              		.loc 1 233 0
+ 303 0034 0837     		adds	r7, r7, #8
+ 304 0036 BD46     		mov	sp, r7
+ 305              		@ sp needed
+ 306 0038 80BD     		pop	{r7, pc}
+ 307              	.L19:
+ 308 003a 00BF     		.align	2
+ 309              	.L18:
+ 310 003c 28580040 		.word	1073764392
+ 311              		.cfi_endproc
+ 312              	.LFE5:
+ 313              		.size	VDAC8_1_SetRange, .-VDAC8_1_SetRange
+ 314              		.section	.text.VDAC8_1_SetValue,"ax",%progbits
+ 315              		.align	2
+ 316              		.global	VDAC8_1_SetValue
+ 317              		.thumb
+ 318              		.thumb_func
+ 319              		.type	VDAC8_1_SetValue, %function
+ 320              	VDAC8_1_SetValue:
+ 321              	.LFB6:
+ 234:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 235:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 236:.\Generated_Source\PSoC5/VDAC8_1.c **** /*******************************************************************************
+ 237:.\Generated_Source\PSoC5/VDAC8_1.c **** * Function Name: VDAC8_1_SetValue
+ 238:.\Generated_Source\PSoC5/VDAC8_1.c **** ********************************************************************************
+ 239:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 240:.\Generated_Source\PSoC5/VDAC8_1.c **** * Summary:
+ 241:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Set 8-bit DAC value
+ 242:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 243:.\Generated_Source\PSoC5/VDAC8_1.c **** * Parameters:  
+ 244:.\Generated_Source\PSoC5/VDAC8_1.c **** *  value:  Sets DAC value between 0 and 255.
+ 245:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 246:.\Generated_Source\PSoC5/VDAC8_1.c **** * Return: 
+ 247:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void 
+ 248:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 249:.\Generated_Source\PSoC5/VDAC8_1.c **** * Theory: 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 11
+
+
+ 250:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 251:.\Generated_Source\PSoC5/VDAC8_1.c **** * Side Effects:
+ 252:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 253:.\Generated_Source\PSoC5/VDAC8_1.c **** *******************************************************************************/
+ 254:.\Generated_Source\PSoC5/VDAC8_1.c **** void VDAC8_1_SetValue(uint8 value) 
+ 255:.\Generated_Source\PSoC5/VDAC8_1.c **** {
+ 322              		.loc 1 255 0
+ 323              		.cfi_startproc
+ 324              		@ args = 0, pretend = 0, frame = 8
+ 325              		@ frame_needed = 1, uses_anonymous_args = 0
+ 326              		@ link register save eliminated.
+ 327 0000 80B4     		push	{r7}
+ 328              		.cfi_def_cfa_offset 4
+ 329              		.cfi_offset 7, -4
+ 330 0002 83B0     		sub	sp, sp, #12
+ 331              		.cfi_def_cfa_offset 16
+ 332 0004 00AF     		add	r7, sp, #0
+ 333              		.cfi_def_cfa_register 7
+ 334 0006 0346     		mov	r3, r0
+ 335 0008 FB71     		strb	r3, [r7, #7]
+ 256:.\Generated_Source\PSoC5/VDAC8_1.c ****     #if (CY_PSOC5A)
+ 257:.\Generated_Source\PSoC5/VDAC8_1.c ****         uint8 VDAC8_1_intrStatus = CyEnterCriticalSection();
+ 258:.\Generated_Source\PSoC5/VDAC8_1.c ****     #endif /* CY_PSOC5A */
+ 259:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 260:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_Data = value;                /*  Set Value  */
+ 336              		.loc 1 260 0
+ 337 000a 044B     		ldr	r3, .L21
+ 338 000c FA79     		ldrb	r2, [r7, #7]
+ 339 000e 1A70     		strb	r2, [r3]
+ 261:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 262:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* PSOC5A requires a double write */
+ 263:.\Generated_Source\PSoC5/VDAC8_1.c ****     /* Exit Critical Section */
+ 264:.\Generated_Source\PSoC5/VDAC8_1.c ****     #if (CY_PSOC5A)
+ 265:.\Generated_Source\PSoC5/VDAC8_1.c ****         VDAC8_1_Data = value;
+ 266:.\Generated_Source\PSoC5/VDAC8_1.c ****         CyExitCriticalSection(VDAC8_1_intrStatus);
+ 267:.\Generated_Source\PSoC5/VDAC8_1.c ****     #endif /* CY_PSOC5A */
+ 268:.\Generated_Source\PSoC5/VDAC8_1.c **** }
+ 340              		.loc 1 268 0
+ 341 0010 0C37     		adds	r7, r7, #12
+ 342 0012 BD46     		mov	sp, r7
+ 343              		@ sp needed
+ 344 0014 5DF8047B 		ldr	r7, [sp], #4
+ 345 0018 7047     		bx	lr
+ 346              	.L22:
+ 347 001a 00BF     		.align	2
+ 348              	.L21:
+ 349 001c 825B0040 		.word	1073765250
+ 350              		.cfi_endproc
+ 351              	.LFE6:
+ 352              		.size	VDAC8_1_SetValue, .-VDAC8_1_SetValue
+ 353              		.section	.text.VDAC8_1_DacTrim,"ax",%progbits
+ 354              		.align	2
+ 355              		.global	VDAC8_1_DacTrim
+ 356              		.thumb
+ 357              		.thumb_func
+ 358              		.type	VDAC8_1_DacTrim, %function
+ 359              	VDAC8_1_DacTrim:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 12
+
+
+ 360              	.LFB7:
+ 269:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 270:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 271:.\Generated_Source\PSoC5/VDAC8_1.c **** /*******************************************************************************
+ 272:.\Generated_Source\PSoC5/VDAC8_1.c **** * Function Name: VDAC8_1_DacTrim
+ 273:.\Generated_Source\PSoC5/VDAC8_1.c **** ********************************************************************************
+ 274:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 275:.\Generated_Source\PSoC5/VDAC8_1.c **** * Summary:
+ 276:.\Generated_Source\PSoC5/VDAC8_1.c **** *  Set the trim value for the given range.
+ 277:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 278:.\Generated_Source\PSoC5/VDAC8_1.c **** * Parameters:
+ 279:.\Generated_Source\PSoC5/VDAC8_1.c **** *  range:  1V or 4V range.  See constants.
+ 280:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 281:.\Generated_Source\PSoC5/VDAC8_1.c **** * Return:
+ 282:.\Generated_Source\PSoC5/VDAC8_1.c **** *  void
+ 283:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 284:.\Generated_Source\PSoC5/VDAC8_1.c **** * Theory: 
+ 285:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 286:.\Generated_Source\PSoC5/VDAC8_1.c **** * Side Effects:
+ 287:.\Generated_Source\PSoC5/VDAC8_1.c **** *
+ 288:.\Generated_Source\PSoC5/VDAC8_1.c **** *******************************************************************************/
+ 289:.\Generated_Source\PSoC5/VDAC8_1.c **** void VDAC8_1_DacTrim(void) 
+ 290:.\Generated_Source\PSoC5/VDAC8_1.c **** {
+ 361              		.loc 1 290 0
+ 362              		.cfi_startproc
+ 363              		@ args = 0, pretend = 0, frame = 8
+ 364              		@ frame_needed = 1, uses_anonymous_args = 0
+ 365              		@ link register save eliminated.
+ 366 0000 80B4     		push	{r7}
+ 367              		.cfi_def_cfa_offset 4
+ 368              		.cfi_offset 7, -4
+ 369 0002 83B0     		sub	sp, sp, #12
+ 370              		.cfi_def_cfa_offset 16
+ 371 0004 00AF     		add	r7, sp, #0
+ 372              		.cfi_def_cfa_register 7
+ 291:.\Generated_Source\PSoC5/VDAC8_1.c ****     uint8 mode;
+ 292:.\Generated_Source\PSoC5/VDAC8_1.c **** 
+ 293:.\Generated_Source\PSoC5/VDAC8_1.c ****     mode = (uint8)((VDAC8_1_CR0 & VDAC8_1_RANGE_MASK) >> 2) + VDAC8_1_TRIM_M7_1V_RNG_OFFSET;
+ 373              		.loc 1 293 0
+ 374 0006 0B4B     		ldr	r3, .L24
+ 375 0008 1B78     		ldrb	r3, [r3]
+ 376 000a DBB2     		uxtb	r3, r3
+ 377 000c 03F00C03 		and	r3, r3, #12
+ 378 0010 9B08     		lsrs	r3, r3, #2
+ 379 0012 DBB2     		uxtb	r3, r3
+ 380 0014 0633     		adds	r3, r3, #6
+ 381 0016 FB71     		strb	r3, [r7, #7]
+ 294:.\Generated_Source\PSoC5/VDAC8_1.c ****     VDAC8_1_TR = CY_GET_XTND_REG8((uint8 *)(VDAC8_1_DAC_TRIM_BASE + mode));
+ 382              		.loc 1 294 0
+ 383 0018 074A     		ldr	r2, .L24+4
+ 384 001a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 385 001c 03F19243 		add	r3, r3, #1224736768
+ 386 0020 03F59473 		add	r3, r3, #296
+ 387 0024 1B78     		ldrb	r3, [r3]
+ 388 0026 DBB2     		uxtb	r3, r3
+ 389 0028 1370     		strb	r3, [r2]
+ 295:.\Generated_Source\PSoC5/VDAC8_1.c **** }
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 13
+
+
+ 390              		.loc 1 295 0
+ 391 002a 0C37     		adds	r7, r7, #12
+ 392 002c BD46     		mov	sp, r7
+ 393              		@ sp needed
+ 394 002e 5DF8047B 		ldr	r7, [sp], #4
+ 395 0032 7047     		bx	lr
+ 396              	.L25:
+ 397              		.align	2
+ 398              	.L24:
+ 399 0034 28580040 		.word	1073764392
+ 400 0038 0A460040 		.word	1073759754
+ 401              		.cfi_endproc
+ 402              	.LFE7:
+ 403              		.size	VDAC8_1_DacTrim, .-VDAC8_1_DacTrim
+ 404              		.text
+ 405              	.Letext0:
+ 406              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 407              		.section	.debug_info,"",%progbits
+ 408              	.Ldebug_info0:
+ 409 0000 80010000 		.4byte	0x180
+ 410 0004 0400     		.2byte	0x4
+ 411 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 412 000a 04       		.byte	0x4
+ 413 000b 01       		.uleb128 0x1
+ 414 000c 3D010000 		.4byte	.LASF25
+ 415 0010 01       		.byte	0x1
+ 416 0011 A9000000 		.4byte	.LASF26
+ 417 0015 CC000000 		.4byte	.LASF27
+ 418 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 419 001d 00000000 		.4byte	0
+ 420 0021 00000000 		.4byte	.Ldebug_line0
+ 421 0025 02       		.uleb128 0x2
+ 422 0026 01       		.byte	0x1
+ 423 0027 06       		.byte	0x6
+ 424 0028 08020000 		.4byte	.LASF0
+ 425 002c 02       		.uleb128 0x2
+ 426 002d 01       		.byte	0x1
+ 427 002e 08       		.byte	0x8
+ 428 002f 47000000 		.4byte	.LASF1
+ 429 0033 02       		.uleb128 0x2
+ 430 0034 02       		.byte	0x2
+ 431 0035 05       		.byte	0x5
+ 432 0036 EF010000 		.4byte	.LASF2
+ 433 003a 02       		.uleb128 0x2
+ 434 003b 02       		.byte	0x2
+ 435 003c 07       		.byte	0x7
+ 436 003d 7B000000 		.4byte	.LASF3
+ 437 0041 02       		.uleb128 0x2
+ 438 0042 04       		.byte	0x4
+ 439 0043 05       		.byte	0x5
+ 440 0044 FF010000 		.4byte	.LASF4
+ 441 0048 02       		.uleb128 0x2
+ 442 0049 04       		.byte	0x4
+ 443 004a 07       		.byte	0x7
+ 444 004b 69000000 		.4byte	.LASF5
+ 445 004f 02       		.uleb128 0x2
+ 446 0050 08       		.byte	0x8
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 14
+
+
+ 447 0051 05       		.byte	0x5
+ 448 0052 BF010000 		.4byte	.LASF6
+ 449 0056 02       		.uleb128 0x2
+ 450 0057 08       		.byte	0x8
+ 451 0058 07       		.byte	0x7
+ 452 0059 10010000 		.4byte	.LASF7
+ 453 005d 03       		.uleb128 0x3
+ 454 005e 04       		.byte	0x4
+ 455 005f 05       		.byte	0x5
+ 456 0060 696E7400 		.ascii	"int\000"
+ 457 0064 02       		.uleb128 0x2
+ 458 0065 04       		.byte	0x4
+ 459 0066 07       		.byte	0x7
+ 460 0067 23000000 		.4byte	.LASF8
+ 461 006b 04       		.uleb128 0x4
+ 462 006c F9010000 		.4byte	.LASF12
+ 463 0070 02       		.byte	0x2
+ 464 0071 A1       		.byte	0xa1
+ 465 0072 2C000000 		.4byte	0x2c
+ 466 0076 02       		.uleb128 0x2
+ 467 0077 04       		.byte	0x4
+ 468 0078 04       		.byte	0x4
+ 469 0079 41000000 		.4byte	.LASF9
+ 470 007d 02       		.uleb128 0x2
+ 471 007e 08       		.byte	0x8
+ 472 007f 04       		.byte	0x4
+ 473 0080 A2000000 		.4byte	.LASF10
+ 474 0084 02       		.uleb128 0x2
+ 475 0085 01       		.byte	0x1
+ 476 0086 08       		.byte	0x8
+ 477 0087 DA010000 		.4byte	.LASF11
+ 478 008b 05       		.uleb128 0x5
+ 479 008c 55000000 		.4byte	.LASF13
+ 480 0090 02       		.byte	0x2
+ 481 0091 4B01     		.2byte	0x14b
+ 482 0093 97000000 		.4byte	0x97
+ 483 0097 06       		.uleb128 0x6
+ 484 0098 6B000000 		.4byte	0x6b
+ 485 009c 07       		.uleb128 0x7
+ 486 009d CD010000 		.4byte	.LASF14
+ 487 00a1 01       		.byte	0x1
+ 488 00a2 37       		.byte	0x37
+ 489 00a3 00000000 		.4byte	.LFB0
+ 490 00a7 28000000 		.4byte	.LFE0-.LFB0
+ 491 00ab 01       		.uleb128 0x1
+ 492 00ac 9C       		.byte	0x9c
+ 493 00ad 08       		.uleb128 0x8
+ 494 00ae 5A000000 		.4byte	.LASF15
+ 495 00b2 01       		.byte	0x1
+ 496 00b3 60       		.byte	0x60
+ 497 00b4 00000000 		.4byte	.LFB1
+ 498 00b8 34000000 		.4byte	.LFE1-.LFB1
+ 499 00bc 01       		.uleb128 0x1
+ 500 00bd 9C       		.byte	0x9c
+ 501 00be 07       		.uleb128 0x7
+ 502 00bf 94000000 		.4byte	.LASF16
+ 503 00c3 01       		.byte	0x1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 15
+
+
+ 504 00c4 85       		.byte	0x85
+ 505 00c5 00000000 		.4byte	.LFB2
+ 506 00c9 28000000 		.4byte	.LFE2-.LFB2
+ 507 00cd 01       		.uleb128 0x1
+ 508 00ce 9C       		.byte	0x9c
+ 509 00cf 08       		.uleb128 0x8
+ 510 00d0 10000000 		.4byte	.LASF17
+ 511 00d4 01       		.byte	0x1
+ 512 00d5 A8       		.byte	0xa8
+ 513 00d6 00000000 		.4byte	.LFB3
+ 514 00da 34000000 		.4byte	.LFE3-.LFB3
+ 515 00de 01       		.uleb128 0x1
+ 516 00df 9C       		.byte	0x9c
+ 517 00e0 09       		.uleb128 0x9
+ 518 00e1 30000000 		.4byte	.LASF18
+ 519 00e5 01       		.byte	0x1
+ 520 00e6 CA       		.byte	0xca
+ 521 00e7 00000000 		.4byte	.LFB4
+ 522 00eb 40000000 		.4byte	.LFE4-.LFB4
+ 523 00ef 01       		.uleb128 0x1
+ 524 00f0 9C       		.byte	0x9c
+ 525 00f1 04010000 		.4byte	0x104
+ 526 00f5 0A       		.uleb128 0xa
+ 527 00f6 B9010000 		.4byte	.LASF20
+ 528 00fa 01       		.byte	0x1
+ 529 00fb CA       		.byte	0xca
+ 530 00fc 6B000000 		.4byte	0x6b
+ 531 0100 02       		.uleb128 0x2
+ 532 0101 91       		.byte	0x91
+ 533 0102 77       		.sleb128 -9
+ 534 0103 00       		.byte	0
+ 535 0104 0B       		.uleb128 0xb
+ 536 0105 14020000 		.4byte	.LASF19
+ 537 0109 01       		.byte	0x1
+ 538 010a E4       		.byte	0xe4
+ 539 010b 00000000 		.4byte	.LFB5
+ 540 010f 40000000 		.4byte	.LFE5-.LFB5
+ 541 0113 01       		.uleb128 0x1
+ 542 0114 9C       		.byte	0x9c
+ 543 0115 28010000 		.4byte	0x128
+ 544 0119 0A       		.uleb128 0xa
+ 545 011a 8E000000 		.4byte	.LASF21
+ 546 011e 01       		.byte	0x1
+ 547 011f E4       		.byte	0xe4
+ 548 0120 6B000000 		.4byte	0x6b
+ 549 0124 02       		.uleb128 0x2
+ 550 0125 91       		.byte	0x91
+ 551 0126 77       		.sleb128 -9
+ 552 0127 00       		.byte	0
+ 553 0128 09       		.uleb128 0x9
+ 554 0129 27010000 		.4byte	.LASF22
+ 555 012d 01       		.byte	0x1
+ 556 012e FE       		.byte	0xfe
+ 557 012f 00000000 		.4byte	.LFB6
+ 558 0133 20000000 		.4byte	.LFE6-.LFB6
+ 559 0137 01       		.uleb128 0x1
+ 560 0138 9C       		.byte	0x9c
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 16
+
+
+ 561 0139 4C010000 		.4byte	0x14c
+ 562 013d 0A       		.uleb128 0xa
+ 563 013e 1D000000 		.4byte	.LASF23
+ 564 0142 01       		.byte	0x1
+ 565 0143 FE       		.byte	0xfe
+ 566 0144 6B000000 		.4byte	0x6b
+ 567 0148 02       		.uleb128 0x2
+ 568 0149 91       		.byte	0x91
+ 569 014a 77       		.sleb128 -9
+ 570 014b 00       		.byte	0
+ 571 014c 0C       		.uleb128 0xc
+ 572 014d 00000000 		.4byte	.LASF24
+ 573 0151 01       		.byte	0x1
+ 574 0152 2101     		.2byte	0x121
+ 575 0154 00000000 		.4byte	.LFB7
+ 576 0158 3C000000 		.4byte	.LFE7-.LFB7
+ 577 015c 01       		.uleb128 0x1
+ 578 015d 9C       		.byte	0x9c
+ 579 015e 72010000 		.4byte	0x172
+ 580 0162 0D       		.uleb128 0xd
+ 581 0163 38010000 		.4byte	.LASF28
+ 582 0167 01       		.byte	0x1
+ 583 0168 2301     		.2byte	0x123
+ 584 016a 6B000000 		.4byte	0x6b
+ 585 016e 02       		.uleb128 0x2
+ 586 016f 91       		.byte	0x91
+ 587 0170 77       		.sleb128 -9
+ 588 0171 00       		.byte	0
+ 589 0172 0E       		.uleb128 0xe
+ 590 0173 DF010000 		.4byte	.LASF29
+ 591 0177 01       		.byte	0x1
+ 592 0178 1B       		.byte	0x1b
+ 593 0179 6B000000 		.4byte	0x6b
+ 594 017d 05       		.uleb128 0x5
+ 595 017e 03       		.byte	0x3
+ 596 017f 00000000 		.4byte	VDAC8_1_initVar
+ 597 0183 00       		.byte	0
+ 598              		.section	.debug_abbrev,"",%progbits
+ 599              	.Ldebug_abbrev0:
+ 600 0000 01       		.uleb128 0x1
+ 601 0001 11       		.uleb128 0x11
+ 602 0002 01       		.byte	0x1
+ 603 0003 25       		.uleb128 0x25
+ 604 0004 0E       		.uleb128 0xe
+ 605 0005 13       		.uleb128 0x13
+ 606 0006 0B       		.uleb128 0xb
+ 607 0007 03       		.uleb128 0x3
+ 608 0008 0E       		.uleb128 0xe
+ 609 0009 1B       		.uleb128 0x1b
+ 610 000a 0E       		.uleb128 0xe
+ 611 000b 55       		.uleb128 0x55
+ 612 000c 17       		.uleb128 0x17
+ 613 000d 11       		.uleb128 0x11
+ 614 000e 01       		.uleb128 0x1
+ 615 000f 10       		.uleb128 0x10
+ 616 0010 17       		.uleb128 0x17
+ 617 0011 00       		.byte	0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 17
+
+
+ 618 0012 00       		.byte	0
+ 619 0013 02       		.uleb128 0x2
+ 620 0014 24       		.uleb128 0x24
+ 621 0015 00       		.byte	0
+ 622 0016 0B       		.uleb128 0xb
+ 623 0017 0B       		.uleb128 0xb
+ 624 0018 3E       		.uleb128 0x3e
+ 625 0019 0B       		.uleb128 0xb
+ 626 001a 03       		.uleb128 0x3
+ 627 001b 0E       		.uleb128 0xe
+ 628 001c 00       		.byte	0
+ 629 001d 00       		.byte	0
+ 630 001e 03       		.uleb128 0x3
+ 631 001f 24       		.uleb128 0x24
+ 632 0020 00       		.byte	0
+ 633 0021 0B       		.uleb128 0xb
+ 634 0022 0B       		.uleb128 0xb
+ 635 0023 3E       		.uleb128 0x3e
+ 636 0024 0B       		.uleb128 0xb
+ 637 0025 03       		.uleb128 0x3
+ 638 0026 08       		.uleb128 0x8
+ 639 0027 00       		.byte	0
+ 640 0028 00       		.byte	0
+ 641 0029 04       		.uleb128 0x4
+ 642 002a 16       		.uleb128 0x16
+ 643 002b 00       		.byte	0
+ 644 002c 03       		.uleb128 0x3
+ 645 002d 0E       		.uleb128 0xe
+ 646 002e 3A       		.uleb128 0x3a
+ 647 002f 0B       		.uleb128 0xb
+ 648 0030 3B       		.uleb128 0x3b
+ 649 0031 0B       		.uleb128 0xb
+ 650 0032 49       		.uleb128 0x49
+ 651 0033 13       		.uleb128 0x13
+ 652 0034 00       		.byte	0
+ 653 0035 00       		.byte	0
+ 654 0036 05       		.uleb128 0x5
+ 655 0037 16       		.uleb128 0x16
+ 656 0038 00       		.byte	0
+ 657 0039 03       		.uleb128 0x3
+ 658 003a 0E       		.uleb128 0xe
+ 659 003b 3A       		.uleb128 0x3a
+ 660 003c 0B       		.uleb128 0xb
+ 661 003d 3B       		.uleb128 0x3b
+ 662 003e 05       		.uleb128 0x5
+ 663 003f 49       		.uleb128 0x49
+ 664 0040 13       		.uleb128 0x13
+ 665 0041 00       		.byte	0
+ 666 0042 00       		.byte	0
+ 667 0043 06       		.uleb128 0x6
+ 668 0044 35       		.uleb128 0x35
+ 669 0045 00       		.byte	0
+ 670 0046 49       		.uleb128 0x49
+ 671 0047 13       		.uleb128 0x13
+ 672 0048 00       		.byte	0
+ 673 0049 00       		.byte	0
+ 674 004a 07       		.uleb128 0x7
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 18
+
+
+ 675 004b 2E       		.uleb128 0x2e
+ 676 004c 00       		.byte	0
+ 677 004d 3F       		.uleb128 0x3f
+ 678 004e 19       		.uleb128 0x19
+ 679 004f 03       		.uleb128 0x3
+ 680 0050 0E       		.uleb128 0xe
+ 681 0051 3A       		.uleb128 0x3a
+ 682 0052 0B       		.uleb128 0xb
+ 683 0053 3B       		.uleb128 0x3b
+ 684 0054 0B       		.uleb128 0xb
+ 685 0055 27       		.uleb128 0x27
+ 686 0056 19       		.uleb128 0x19
+ 687 0057 11       		.uleb128 0x11
+ 688 0058 01       		.uleb128 0x1
+ 689 0059 12       		.uleb128 0x12
+ 690 005a 06       		.uleb128 0x6
+ 691 005b 40       		.uleb128 0x40
+ 692 005c 18       		.uleb128 0x18
+ 693 005d 9642     		.uleb128 0x2116
+ 694 005f 19       		.uleb128 0x19
+ 695 0060 00       		.byte	0
+ 696 0061 00       		.byte	0
+ 697 0062 08       		.uleb128 0x8
+ 698 0063 2E       		.uleb128 0x2e
+ 699 0064 00       		.byte	0
+ 700 0065 3F       		.uleb128 0x3f
+ 701 0066 19       		.uleb128 0x19
+ 702 0067 03       		.uleb128 0x3
+ 703 0068 0E       		.uleb128 0xe
+ 704 0069 3A       		.uleb128 0x3a
+ 705 006a 0B       		.uleb128 0xb
+ 706 006b 3B       		.uleb128 0x3b
+ 707 006c 0B       		.uleb128 0xb
+ 708 006d 27       		.uleb128 0x27
+ 709 006e 19       		.uleb128 0x19
+ 710 006f 11       		.uleb128 0x11
+ 711 0070 01       		.uleb128 0x1
+ 712 0071 12       		.uleb128 0x12
+ 713 0072 06       		.uleb128 0x6
+ 714 0073 40       		.uleb128 0x40
+ 715 0074 18       		.uleb128 0x18
+ 716 0075 9742     		.uleb128 0x2117
+ 717 0077 19       		.uleb128 0x19
+ 718 0078 00       		.byte	0
+ 719 0079 00       		.byte	0
+ 720 007a 09       		.uleb128 0x9
+ 721 007b 2E       		.uleb128 0x2e
+ 722 007c 01       		.byte	0x1
+ 723 007d 3F       		.uleb128 0x3f
+ 724 007e 19       		.uleb128 0x19
+ 725 007f 03       		.uleb128 0x3
+ 726 0080 0E       		.uleb128 0xe
+ 727 0081 3A       		.uleb128 0x3a
+ 728 0082 0B       		.uleb128 0xb
+ 729 0083 3B       		.uleb128 0x3b
+ 730 0084 0B       		.uleb128 0xb
+ 731 0085 27       		.uleb128 0x27
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 19
+
+
+ 732 0086 19       		.uleb128 0x19
+ 733 0087 11       		.uleb128 0x11
+ 734 0088 01       		.uleb128 0x1
+ 735 0089 12       		.uleb128 0x12
+ 736 008a 06       		.uleb128 0x6
+ 737 008b 40       		.uleb128 0x40
+ 738 008c 18       		.uleb128 0x18
+ 739 008d 9742     		.uleb128 0x2117
+ 740 008f 19       		.uleb128 0x19
+ 741 0090 01       		.uleb128 0x1
+ 742 0091 13       		.uleb128 0x13
+ 743 0092 00       		.byte	0
+ 744 0093 00       		.byte	0
+ 745 0094 0A       		.uleb128 0xa
+ 746 0095 05       		.uleb128 0x5
+ 747 0096 00       		.byte	0
+ 748 0097 03       		.uleb128 0x3
+ 749 0098 0E       		.uleb128 0xe
+ 750 0099 3A       		.uleb128 0x3a
+ 751 009a 0B       		.uleb128 0xb
+ 752 009b 3B       		.uleb128 0x3b
+ 753 009c 0B       		.uleb128 0xb
+ 754 009d 49       		.uleb128 0x49
+ 755 009e 13       		.uleb128 0x13
+ 756 009f 02       		.uleb128 0x2
+ 757 00a0 18       		.uleb128 0x18
+ 758 00a1 00       		.byte	0
+ 759 00a2 00       		.byte	0
+ 760 00a3 0B       		.uleb128 0xb
+ 761 00a4 2E       		.uleb128 0x2e
+ 762 00a5 01       		.byte	0x1
+ 763 00a6 3F       		.uleb128 0x3f
+ 764 00a7 19       		.uleb128 0x19
+ 765 00a8 03       		.uleb128 0x3
+ 766 00a9 0E       		.uleb128 0xe
+ 767 00aa 3A       		.uleb128 0x3a
+ 768 00ab 0B       		.uleb128 0xb
+ 769 00ac 3B       		.uleb128 0x3b
+ 770 00ad 0B       		.uleb128 0xb
+ 771 00ae 27       		.uleb128 0x27
+ 772 00af 19       		.uleb128 0x19
+ 773 00b0 11       		.uleb128 0x11
+ 774 00b1 01       		.uleb128 0x1
+ 775 00b2 12       		.uleb128 0x12
+ 776 00b3 06       		.uleb128 0x6
+ 777 00b4 40       		.uleb128 0x40
+ 778 00b5 18       		.uleb128 0x18
+ 779 00b6 9642     		.uleb128 0x2116
+ 780 00b8 19       		.uleb128 0x19
+ 781 00b9 01       		.uleb128 0x1
+ 782 00ba 13       		.uleb128 0x13
+ 783 00bb 00       		.byte	0
+ 784 00bc 00       		.byte	0
+ 785 00bd 0C       		.uleb128 0xc
+ 786 00be 2E       		.uleb128 0x2e
+ 787 00bf 01       		.byte	0x1
+ 788 00c0 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 20
+
+
+ 789 00c1 19       		.uleb128 0x19
+ 790 00c2 03       		.uleb128 0x3
+ 791 00c3 0E       		.uleb128 0xe
+ 792 00c4 3A       		.uleb128 0x3a
+ 793 00c5 0B       		.uleb128 0xb
+ 794 00c6 3B       		.uleb128 0x3b
+ 795 00c7 05       		.uleb128 0x5
+ 796 00c8 27       		.uleb128 0x27
+ 797 00c9 19       		.uleb128 0x19
+ 798 00ca 11       		.uleb128 0x11
+ 799 00cb 01       		.uleb128 0x1
+ 800 00cc 12       		.uleb128 0x12
+ 801 00cd 06       		.uleb128 0x6
+ 802 00ce 40       		.uleb128 0x40
+ 803 00cf 18       		.uleb128 0x18
+ 804 00d0 9742     		.uleb128 0x2117
+ 805 00d2 19       		.uleb128 0x19
+ 806 00d3 01       		.uleb128 0x1
+ 807 00d4 13       		.uleb128 0x13
+ 808 00d5 00       		.byte	0
+ 809 00d6 00       		.byte	0
+ 810 00d7 0D       		.uleb128 0xd
+ 811 00d8 34       		.uleb128 0x34
+ 812 00d9 00       		.byte	0
+ 813 00da 03       		.uleb128 0x3
+ 814 00db 0E       		.uleb128 0xe
+ 815 00dc 3A       		.uleb128 0x3a
+ 816 00dd 0B       		.uleb128 0xb
+ 817 00de 3B       		.uleb128 0x3b
+ 818 00df 05       		.uleb128 0x5
+ 819 00e0 49       		.uleb128 0x49
+ 820 00e1 13       		.uleb128 0x13
+ 821 00e2 02       		.uleb128 0x2
+ 822 00e3 18       		.uleb128 0x18
+ 823 00e4 00       		.byte	0
+ 824 00e5 00       		.byte	0
+ 825 00e6 0E       		.uleb128 0xe
+ 826 00e7 34       		.uleb128 0x34
+ 827 00e8 00       		.byte	0
+ 828 00e9 03       		.uleb128 0x3
+ 829 00ea 0E       		.uleb128 0xe
+ 830 00eb 3A       		.uleb128 0x3a
+ 831 00ec 0B       		.uleb128 0xb
+ 832 00ed 3B       		.uleb128 0x3b
+ 833 00ee 0B       		.uleb128 0xb
+ 834 00ef 49       		.uleb128 0x49
+ 835 00f0 13       		.uleb128 0x13
+ 836 00f1 3F       		.uleb128 0x3f
+ 837 00f2 19       		.uleb128 0x19
+ 838 00f3 02       		.uleb128 0x2
+ 839 00f4 18       		.uleb128 0x18
+ 840 00f5 00       		.byte	0
+ 841 00f6 00       		.byte	0
+ 842 00f7 00       		.byte	0
+ 843              		.section	.debug_aranges,"",%progbits
+ 844 0000 54000000 		.4byte	0x54
+ 845 0004 0200     		.2byte	0x2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 21
+
+
+ 846 0006 00000000 		.4byte	.Ldebug_info0
+ 847 000a 04       		.byte	0x4
+ 848 000b 00       		.byte	0
+ 849 000c 0000     		.2byte	0
+ 850 000e 0000     		.2byte	0
+ 851 0010 00000000 		.4byte	.LFB0
+ 852 0014 28000000 		.4byte	.LFE0-.LFB0
+ 853 0018 00000000 		.4byte	.LFB1
+ 854 001c 34000000 		.4byte	.LFE1-.LFB1
+ 855 0020 00000000 		.4byte	.LFB2
+ 856 0024 28000000 		.4byte	.LFE2-.LFB2
+ 857 0028 00000000 		.4byte	.LFB3
+ 858 002c 34000000 		.4byte	.LFE3-.LFB3
+ 859 0030 00000000 		.4byte	.LFB4
+ 860 0034 40000000 		.4byte	.LFE4-.LFB4
+ 861 0038 00000000 		.4byte	.LFB5
+ 862 003c 40000000 		.4byte	.LFE5-.LFB5
+ 863 0040 00000000 		.4byte	.LFB6
+ 864 0044 20000000 		.4byte	.LFE6-.LFB6
+ 865 0048 00000000 		.4byte	.LFB7
+ 866 004c 3C000000 		.4byte	.LFE7-.LFB7
+ 867 0050 00000000 		.4byte	0
+ 868 0054 00000000 		.4byte	0
+ 869              		.section	.debug_ranges,"",%progbits
+ 870              	.Ldebug_ranges0:
+ 871 0000 00000000 		.4byte	.LFB0
+ 872 0004 28000000 		.4byte	.LFE0
+ 873 0008 00000000 		.4byte	.LFB1
+ 874 000c 34000000 		.4byte	.LFE1
+ 875 0010 00000000 		.4byte	.LFB2
+ 876 0014 28000000 		.4byte	.LFE2
+ 877 0018 00000000 		.4byte	.LFB3
+ 878 001c 34000000 		.4byte	.LFE3
+ 879 0020 00000000 		.4byte	.LFB4
+ 880 0024 40000000 		.4byte	.LFE4
+ 881 0028 00000000 		.4byte	.LFB5
+ 882 002c 40000000 		.4byte	.LFE5
+ 883 0030 00000000 		.4byte	.LFB6
+ 884 0034 20000000 		.4byte	.LFE6
+ 885 0038 00000000 		.4byte	.LFB7
+ 886 003c 3C000000 		.4byte	.LFE7
+ 887 0040 00000000 		.4byte	0
+ 888 0044 00000000 		.4byte	0
+ 889              		.section	.debug_line,"",%progbits
+ 890              	.Ldebug_line0:
+ 891 0000 EE000000 		.section	.debug_str,"MS",%progbits,1
+ 891      02004600 
+ 891      00000201 
+ 891      FB0E0D00 
+ 891      01010101 
+ 892              	.LASF24:
+ 893 0000 56444143 		.ascii	"VDAC8_1_DacTrim\000"
+ 893      385F315F 
+ 893      44616354 
+ 893      72696D00 
+ 894              	.LASF17:
+ 895 0010 56444143 		.ascii	"VDAC8_1_Stop\000"
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 22
+
+
+ 895      385F315F 
+ 895      53746F70 
+ 895      00
+ 896              	.LASF23:
+ 897 001d 76616C75 		.ascii	"value\000"
+ 897      6500
+ 898              	.LASF8:
+ 899 0023 756E7369 		.ascii	"unsigned int\000"
+ 899      676E6564 
+ 899      20696E74 
+ 899      00
+ 900              	.LASF18:
+ 901 0030 56444143 		.ascii	"VDAC8_1_SetSpeed\000"
+ 901      385F315F 
+ 901      53657453 
+ 901      70656564 
+ 901      00
+ 902              	.LASF9:
+ 903 0041 666C6F61 		.ascii	"float\000"
+ 903      7400
+ 904              	.LASF1:
+ 905 0047 756E7369 		.ascii	"unsigned char\000"
+ 905      676E6564 
+ 905      20636861 
+ 905      7200
+ 906              	.LASF13:
+ 907 0055 72656738 		.ascii	"reg8\000"
+ 907      00
+ 908              	.LASF15:
+ 909 005a 56444143 		.ascii	"VDAC8_1_Enable\000"
+ 909      385F315F 
+ 909      456E6162 
+ 909      6C6500
+ 910              	.LASF5:
+ 911 0069 6C6F6E67 		.ascii	"long unsigned int\000"
+ 911      20756E73 
+ 911      69676E65 
+ 911      6420696E 
+ 911      7400
+ 912              	.LASF3:
+ 913 007b 73686F72 		.ascii	"short unsigned int\000"
+ 913      7420756E 
+ 913      7369676E 
+ 913      65642069 
+ 913      6E7400
+ 914              	.LASF21:
+ 915 008e 72616E67 		.ascii	"range\000"
+ 915      6500
+ 916              	.LASF16:
+ 917 0094 56444143 		.ascii	"VDAC8_1_Start\000"
+ 917      385F315F 
+ 917      53746172 
+ 917      7400
+ 918              	.LASF10:
+ 919 00a2 646F7562 		.ascii	"double\000"
+ 919      6C6500
+ 920              	.LASF26:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 23
+
+
+ 921 00a9 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\VDAC8_1.c\000"
+ 921      6E657261 
+ 921      7465645F 
+ 921      536F7572 
+ 921      63655C50 
+ 922              	.LASF27:
+ 923 00cc 5A3A5C73 		.ascii	"Z:\\scottcarlson On My Mac\\Code\\PSoC_Creator\\Des"
+ 923      636F7474 
+ 923      6361726C 
+ 923      736F6E20 
+ 923      4F6E204D 
+ 924 00fb 69676E30 		.ascii	"ign01\\Design01.cydsn\000"
+ 924      315C4465 
+ 924      7369676E 
+ 924      30312E63 
+ 924      7964736E 
+ 925              	.LASF7:
+ 926 0110 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 926      206C6F6E 
+ 926      6720756E 
+ 926      7369676E 
+ 926      65642069 
+ 927              	.LASF22:
+ 928 0127 56444143 		.ascii	"VDAC8_1_SetValue\000"
+ 928      385F315F 
+ 928      53657456 
+ 928      616C7565 
+ 928      00
+ 929              	.LASF28:
+ 930 0138 6D6F6465 		.ascii	"mode\000"
+ 930      00
+ 931              	.LASF25:
+ 932 013d 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 932      4320342E 
+ 932      382E3420 
+ 932      32303134 
+ 932      30353236 
+ 933 0170 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 933      20726576 
+ 933      6973696F 
+ 933      6E203231 
+ 933      31333538 
+ 934 01a3 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 934      66756E63 
+ 934      74696F6E 
+ 934      2D736563 
+ 934      74696F6E 
+ 935              	.LASF20:
+ 936 01b9 73706565 		.ascii	"speed\000"
+ 936      6400
+ 937              	.LASF6:
+ 938 01bf 6C6F6E67 		.ascii	"long long int\000"
+ 938      206C6F6E 
+ 938      6720696E 
+ 938      7400
+ 939              	.LASF14:
+ 940 01cd 56444143 		.ascii	"VDAC8_1_Init\000"
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccRUniCV.s 			page 24
+
+
+ 940      385F315F 
+ 940      496E6974 
+ 940      00
+ 941              	.LASF11:
+ 942 01da 63686172 		.ascii	"char\000"
+ 942      00
+ 943              	.LASF29:
+ 944 01df 56444143 		.ascii	"VDAC8_1_initVar\000"
+ 944      385F315F 
+ 944      696E6974 
+ 944      56617200 
+ 945              	.LASF2:
+ 946 01ef 73686F72 		.ascii	"short int\000"
+ 946      7420696E 
+ 946      7400
+ 947              	.LASF12:
+ 948 01f9 75696E74 		.ascii	"uint8\000"
+ 948      3800
+ 949              	.LASF4:
+ 950 01ff 6C6F6E67 		.ascii	"long int\000"
+ 950      20696E74 
+ 950      00
+ 951              	.LASF0:
+ 952 0208 7369676E 		.ascii	"signed char\000"
+ 952      65642063 
+ 952      68617200 
+ 953              	.LASF19:
+ 954 0214 56444143 		.ascii	"VDAC8_1_SetRange\000"
+ 954      385F315F 
+ 954      53657452 
+ 954      616E6765 
+ 954      00
+ 955              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -1,0 +1,5 @@
+Stub-:dsiswitch_bottom@[DSI=(1,2)][side=bottom]:dsihc_bottom:v20+:dsiswitch_bottom@[DSI=(1,2)][side=bottom]:dsihc_bottom:v22==>:dma_idmux_10.in_0
+Stub-:dsiswitch_bottom@[DSI=(1,4)][side=bottom]:dsihc_bottom:v44+:dsiswitch_bottom@[DSI=(1,4)][side=bottom]:dsihc_bottom:v46==>:dma_idmux_8.in_0
+Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v32+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v34==>:dma_idmux_0.in_0
+Stub-:dsiswitch_bottom@[DSI=(1,3)][side=bottom]:dsihc_bottom:v12+:dsiswitch_bottom@[DSI=(1,3)][side=bottom]:dsihc_bottom:v14==>:dma_idmux_9.in_0
+Stub-:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v33+:dsiswitch_top@[DSI=(0,0)][side=top]:dsihc_top:v35==>:dma_idmux_1.in_0

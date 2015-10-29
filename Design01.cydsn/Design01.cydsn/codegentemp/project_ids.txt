@@ -1,0 +1,9 @@
+Z:\scottcarlson On My Mac\Code\PSoC_Creator\Community Components\KEES_SuperPrimitives\Library\KEES_SuperPrimitives.cylib\KEES_SuperPrimitives.cyprj|8d1c65d6-0517-45ca-a6b5-04da85a10c0e
+\\vmware-host\Shared Folders\Downloads\cmsis_dsp_2\cmsis_dsp_2.cydsn\cmsis_dsp_2.cyprj|7d0308d3-5c38-4061-9767-8df7a804893e
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|16813dec-224c-4ff1-bcef-7ee15254c326
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|e86726ae-7a6d-47b4-9f25-ee8b6b40e4ea
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|ee7997a6-37a1-4386-b881-461c69f58532
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e5b33313-6b5a-4635-b4e3-f16537d3b2fb
+Z:\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\Design01.cydsn\Design01.cyprj|e59da5a2-d7be-4490-9f00-a0efb0e4b59e
+Z:\scottcarlson On My Mac\Code\PSoC_Creator\Community Components\KEES_MultAcc\Library\KEES_MultAcc.cylib\KEES_MultAcc.cyprj|8f4f13b4-58cb-4359-bfcc-580ee20d25b3
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|d2a2c80a-09dc-43ea-82f1-08bc448ac66b

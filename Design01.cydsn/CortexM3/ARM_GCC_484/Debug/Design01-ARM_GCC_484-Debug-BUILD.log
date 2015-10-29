@@ -1,0 +1,49 @@
+--------------- Build Started: 09/02/2015 17:57:08 Project: Design01, Configuration: ARM GCC 4.8.4 Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/main.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0 -c .\main.c -o .\CortexM3\ARM_GCC_484\Debug\main.o
+.\main.c: In function 'main':
+.\main.c:123:15: warning: unused variable 'doBitReverse' [-Wunused-variable]
+       uint8_t doBitReverse = 1;
+               ^
+.\main.c:122:15: warning: unused variable 'ifftFlag' [-Wunused-variable]
+       uint8_t ifftFlag = 0;
+               ^
+.\main.c:121:16: warning: unused variable 'fftSize' [-Wunused-variable]
+       uint16_t fftSize = 1024;
+                ^
+.\main.c:120:16: warning: unused variable 'srcColumns' [-Wunused-variable]
+       uint32_t srcColumns=buffer_size/2; 
+                ^
+.\main.c:119:16: warning: unused variable 'srcRows' [-Wunused-variable]
+       uint32_t srcRows=1;
+                ^
+.\main.c: At top level:
+.\main.c:81:15: warning: 'count' defined but not used [-Wunused-variable]
+ static uint16 count=0;
+               ^
+.\main.c:82:15: warning: 'start1' defined but not used [-Wunused-variable]
+ static uint32 start1,end1,start2,end2;
+               ^
+.\main.c:82:22: warning: 'end1' defined but not used [-Wunused-variable]
+ static uint32 start1,end1,start2,end2;
+                      ^
+.\main.c:82:27: warning: 'start2' defined but not used [-Wunused-variable]
+ static uint32 start1,end1,start2,end2;
+                           ^
+.\main.c:82:34: warning: 'end2' defined but not used [-Wunused-variable]
+ static uint32 start1,end1,start2,end2;
+                                  ^
+.\main.c:83:14: warning: 'maxValue' defined but not used [-Wunused-variable]
+ static q15_t maxValue;
+              ^
+.\main.c:84:15: warning: 'testIndex' defined but not used [-Wunused-variable]
+ static uint32 testIndex;
+               ^
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_484\Debug\Design01.a .\CortexM3\ARM_GCC_484\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_484\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_484\Debug\CyDmac.o .\CortexM3\ARM_GCC_484\Debug\CyFlash.o .\CortexM3\ARM_GCC_484\Debug\CyLib.o .\CortexM3\ARM_GCC_484\Debug\cyPm.o .\CortexM3\ARM_GCC_484\Debug\CySpc.o .\CortexM3\ARM_GCC_484\Debug\cyutils.o .\CortexM3\ARM_GCC_484\Debug\LCD_Char_1.o .\CortexM3\ARM_GCC_484\Debug\LCD_Char_1_PM.o .\CortexM3\ARM_GCC_484\Debug\LCD_Char_1_LCDPort.o .\CortexM3\ARM_GCC_484\Debug\P0_0.o .\CortexM3\ARM_GCC_484\Debug\ADC_DelSig_1.o .\CortexM3\ARM_GCC_484\Debug\ADC_DelSig_1_PM.o .\CortexM3\ARM_GCC_484\Debug\ADC_DelSig_1_INT.o .\CortexM3\ARM_GCC_484\Debug\DMA_1_dma.o .\CortexM3\ARM_GCC_484\Debug\ADC_DelSig_1_Ext_CP_Clk.o .\CortexM3\ARM_GCC_484\Debug\ADC_DelSig_1_IRQ.o .\CortexM3\ARM_GCC_484\Debug\ADC_DelSig_1_theACLK.o .\CortexM3\ARM_GCC_484\Debug\DMA_2_dma.o .\CortexM3\ARM_GCC_484\Debug\P0_7.o .\CortexM3\ARM_GCC_484\Debug\isr_1.o .\CortexM3\ARM_GCC_484\Debug\Red_LED.o
+arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_484\Debug\Design01.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM3\ARM_GCC_484\Debug\Design01.elf .\CortexM3\ARM_GCC_484\Debug\main.o .\CortexM3\ARM_GCC_484\Debug\math_helper.o .\CortexM3\ARM_GCC_484\Debug\cymetadata.o .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o .\CortexM3\ARM_GCC_484\Debug\Design01.a "C:\Program Files\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_484\Debug\CyComponentLibrary.a" -mthumb -march=armv7-m -mfix-cortex-m3-ldrd -l arm_cortexM3l_math -L ..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Lib\GCC -Wl,-Map,.\CortexM3\ARM_GCC_484\Debug/Design01.map -T .\Generated_Source\PSoC5\cm3gcc.ld -g -specs=nano.specs "-u _printf_float" "" -Wl,--gc-sections -lm -Wl,--end-group
+cyelftool.exe -C "Z:\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\CortexM3\ARM_GCC_484\Debug\Design01.elf" --flash_size 262144 --flash_row_size 256
+cyelftool.exe -S "Z:\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\CortexM3\ARM_GCC_484\Debug\Design01.elf"
+Flash used: 16062 of 262144 bytes (6.1 %).
+SRAM used: 27045 of 65536 bytes (41.3 %). Stack: 16384 bytes. Heap: 4096 bytes.
+--------------- Build Succeeded: 09/02/2015 17:57:14 ---------------

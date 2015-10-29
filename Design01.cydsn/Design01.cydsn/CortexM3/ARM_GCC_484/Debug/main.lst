@@ -1,0 +1,1061 @@
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.Configure_DMA,"ax",%progbits
+  19              		.align	2
+  20              		.global	Configure_DMA
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	Configure_DMA, %function
+  24              	Configure_DMA:
+  25              	.LFB64:
+  26              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** 
+  14:.\main.c      **** /* Variable declarations for DMA_1 */
+  15:.\main.c      **** /* Move these variable declarations to the top of the function */
+  16:.\main.c      **** uint8 DMA_1_Chan;
+  17:.\main.c      **** uint8 DMA_1_TD[1];
+  18:.\main.c      **** uint16 source;
+  19:.\main.c      **** 
+  20:.\main.c      **** /* DMA Configuration for DMA_1 */
+  21:.\main.c      **** #define num_samples 1
+  22:.\main.c      **** #define DMA_1_BYTES_PER_BURST 2
+  23:.\main.c      **** #define DMA_1_REQUEST_PER_BURST 1
+  24:.\main.c      **** #define DMA_1_SRC_BASE (CYDEV_SRAM_BASE)
+  25:.\main.c      **** #define DMA_1_DST_BASE (CYDEV_PERIPH_BASE)
+  26:.\main.c      **** #define buffersize num_samples*DMA_1_BYTES_PER_BURST
+  27:.\main.c      **** 
+  28:.\main.c      **** void Configure_DMA();
+  29:.\main.c      **** 
+  30:.\main.c      **** int main()
+  31:.\main.c      **** {
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 2
+
+
+  32:.\main.c      ****     
+  33:.\main.c      ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  34:.\main.c      ****     
+  35:.\main.c      ****     source=0x0001;
+  36:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  37:.\main.c      ****     Configure_DMA();
+  38:.\main.c      ****     STC_Datapath16_v1_00_Start();
+  39:.\main.c      ****     
+  40:.\main.c      ****     for(;;)
+  41:.\main.c      ****     {
+  42:.\main.c      ****         /* Place your application code here. */
+  43:.\main.c      ****     }
+  44:.\main.c      **** }
+  45:.\main.c      **** 
+  46:.\main.c      **** /* [] END OF FILE */
+  47:.\main.c      **** 
+  48:.\main.c      **** void Configure_DMA(){
+  27              		.loc 1 48 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 38B5     		push	{r3, r4, r5, lr}
+  32              		.cfi_def_cfa_offset 16
+  33              		.cfi_offset 3, -16
+  34              		.cfi_offset 4, -12
+  35              		.cfi_offset 5, -8
+  36              		.cfi_offset 14, -4
+  49:.\main.c      **** DMA_1_Chan = DMA_1_DmaInitialize(DMA_1_BYTES_PER_BURST, DMA_1_REQUEST_PER_BURST, 
+  37              		.loc 1 49 0
+  38 0002 0220     		movs	r0, #2
+  39 0004 0121     		movs	r1, #1
+  40 0006 41F6FF72 		movw	r2, #8191
+  41 000a 4FF48043 		mov	r3, #16384
+  42 000e FFF7FEFF 		bl	DMA_1_DmaInitialize
+  43              	.LVL0:
+  44 0012 0D4C     		ldr	r4, .L2
+  45 0014 2070     		strb	r0, [r4]
+  50:.\main.c      ****     HI16(DMA_1_SRC_BASE), HI16(DMA_1_DST_BASE));
+  51:.\main.c      **** DMA_1_TD[0] = CyDmaTdAllocate();
+  46              		.loc 1 51 0
+  47 0016 FFF7FEFF 		bl	CyDmaTdAllocate
+  48              	.LVL1:
+  49 001a 0C4D     		ldr	r5, .L2+4
+  50 001c 2870     		strb	r0, [r5]
+  52:.\main.c      **** CyDmaTdSetConfiguration(DMA_1_TD[0], buffersize, CY_DMA_DISABLE_TD, TD_INC_SRC_ADR);
+  51              		.loc 1 52 0
+  52 001e 0221     		movs	r1, #2
+  53 0020 FE22     		movs	r2, #254
+  54 0022 0123     		movs	r3, #1
+  55 0024 FFF7FEFF 		bl	CyDmaTdSetConfiguration
+  56              	.LVL2:
+  53:.\main.c      **** CyDmaTdSetAddress(DMA_1_TD[0], LO16((uint32)source), LO16((uint32)STC_Datapath16_v1_00_A0_PTR));
+  57              		.loc 1 53 0
+  58 0028 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+  59 002a 094B     		ldr	r3, .L2+8
+  60 002c 1988     		ldrh	r1, [r3]
+  61 002e 46F61402 		movw	r2, #26644
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 3
+
+
+  62 0032 FFF7FEFF 		bl	CyDmaTdSetAddress
+  63              	.LVL3:
+  54:.\main.c      **** CyDmaChSetInitialTd(DMA_1_Chan, DMA_1_TD[0]);
+  64              		.loc 1 54 0
+  65 0036 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+  66 0038 2978     		ldrb	r1, [r5]	@ zero_extendqisi2
+  67 003a FFF7FEFF 		bl	CyDmaChSetInitialTd
+  68              	.LVL4:
+  55:.\main.c      **** CyDmaChEnable(DMA_1_Chan, 1);
+  69              		.loc 1 55 0
+  70 003e 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+  71 0040 0121     		movs	r1, #1
+  72 0042 FFF7FEFF 		bl	CyDmaChEnable
+  73              	.LVL5:
+  74 0046 38BD     		pop	{r3, r4, r5, pc}
+  75              	.L3:
+  76              		.align	2
+  77              	.L2:
+  78 0048 00000000 		.word	DMA_1_Chan
+  79 004c 00000000 		.word	DMA_1_TD
+  80 0050 00000000 		.word	source
+  81              		.cfi_endproc
+  82              	.LFE64:
+  83              		.size	Configure_DMA, .-Configure_DMA
+  84              		.section	.text.main,"ax",%progbits
+  85              		.align	2
+  86              		.global	main
+  87              		.thumb
+  88              		.thumb_func
+  89              		.type	main, %function
+  90              	main:
+  91              	.LFB63:
+  31:.\main.c      **** {
+  92              		.loc 1 31 0
+  93              		.cfi_startproc
+  94              		@ Volatile: function does not return.
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97 0000 08B5     		push	{r3, lr}
+  98              		.cfi_def_cfa_offset 8
+  99              		.cfi_offset 3, -8
+ 100              		.cfi_offset 14, -4
+  33:.\main.c      ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 101              		.loc 1 33 0
+ 102              	@ 33 ".\main.c" 1
+ 103 0002 62B6     		CPSIE   i
+ 104              	@ 0 "" 2
+  35:.\main.c      ****     source=0x0001;
+ 105              		.loc 1 35 0
+ 106              		.thumb
+ 107 0004 0122     		movs	r2, #1
+ 108 0006 034B     		ldr	r3, .L6
+ 109 0008 1A80     		strh	r2, [r3]	@ movhi
+  37:.\main.c      ****     Configure_DMA();
+ 110              		.loc 1 37 0
+ 111 000a FFF7FEFF 		bl	Configure_DMA
+ 112              	.LVL6:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 4
+
+
+  38:.\main.c      ****     STC_Datapath16_v1_00_Start();
+ 113              		.loc 1 38 0
+ 114 000e FFF7FEFF 		bl	STC_Datapath16_v1_00_Start
+ 115              	.LVL7:
+ 116              	.L5:
+ 117 0012 FEE7     		b	.L5
+ 118              	.L7:
+ 119              		.align	2
+ 120              	.L6:
+ 121 0014 00000000 		.word	source
+ 122              		.cfi_endproc
+ 123              	.LFE63:
+ 124              		.size	main, .-main
+ 125              		.comm	source,2,2
+ 126              		.comm	DMA_1_TD,1,4
+ 127              		.comm	DMA_1_Chan,1,1
+ 128              		.text
+ 129              	.Letext0:
+ 130              		.file 2 "c:\\program files\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.4\\arm
+ 131              		.file 3 "c:\\program files\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.4\\arm
+ 132              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 133              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 134              		.file 6 "Generated_Source\\PSoC5/DMA_1_dma.h"
+ 135              		.file 7 "Generated_Source\\PSoC5/CYDMAC.H"
+ 136              		.file 8 "Generated_Source\\PSoC5/STC_Datapath16_v1_00.h"
+ 137              		.section	.debug_info,"",%progbits
+ 138              	.Ldebug_info0:
+ 139 0000 97020000 		.4byte	0x297
+ 140 0004 0400     		.2byte	0x4
+ 141 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 142 000a 04       		.byte	0x4
+ 143 000b 01       		.uleb128 0x1
+ 144 000c 9D010000 		.4byte	.LASF29
+ 145 0010 01       		.byte	0x1
+ 146 0011 D7000000 		.4byte	.LASF30
+ 147 0015 84000000 		.4byte	.LASF31
+ 148 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 149 001d 00000000 		.4byte	0
+ 150 0021 00000000 		.4byte	.Ldebug_line0
+ 151 0025 02       		.uleb128 0x2
+ 152 0026 01       		.byte	0x1
+ 153 0027 06       		.byte	0x6
+ 154 0028 5F020000 		.4byte	.LASF0
+ 155 002c 02       		.uleb128 0x2
+ 156 002d 01       		.byte	0x1
+ 157 002e 08       		.byte	0x8
+ 158 002f 76000000 		.4byte	.LASF1
+ 159 0033 02       		.uleb128 0x2
+ 160 0034 02       		.byte	0x2
+ 161 0035 05       		.byte	0x5
+ 162 0036 4E010000 		.4byte	.LASF2
+ 163 003a 02       		.uleb128 0x2
+ 164 003b 02       		.byte	0x2
+ 165 003c 07       		.byte	0x7
+ 166 003d 0A010000 		.4byte	.LASF3
+ 167 0041 03       		.uleb128 0x3
+ 168 0042 28000000 		.4byte	.LASF9
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 5
+
+
+ 169 0046 02       		.byte	0x2
+ 170 0047 37       		.byte	0x37
+ 171 0048 4C000000 		.4byte	0x4c
+ 172 004c 02       		.uleb128 0x2
+ 173 004d 04       		.byte	0x4
+ 174 004e 05       		.byte	0x5
+ 175 004f 56020000 		.4byte	.LASF4
+ 176 0053 02       		.uleb128 0x2
+ 177 0054 04       		.byte	0x4
+ 178 0055 07       		.byte	0x7
+ 179 0056 F8000000 		.4byte	.LASF5
+ 180 005a 02       		.uleb128 0x2
+ 181 005b 08       		.byte	0x8
+ 182 005c 05       		.byte	0x5
+ 183 005d 22020000 		.4byte	.LASF6
+ 184 0061 02       		.uleb128 0x2
+ 185 0062 08       		.byte	0x8
+ 186 0063 07       		.byte	0x7
+ 187 0064 86010000 		.4byte	.LASF7
+ 188 0068 04       		.uleb128 0x4
+ 189 0069 04       		.byte	0x4
+ 190 006a 05       		.byte	0x5
+ 191 006b 696E7400 		.ascii	"int\000"
+ 192 006f 02       		.uleb128 0x2
+ 193 0070 04       		.byte	0x4
+ 194 0071 07       		.byte	0x7
+ 195 0072 79010000 		.4byte	.LASF8
+ 196 0076 03       		.uleb128 0x3
+ 197 0077 58000000 		.4byte	.LASF10
+ 198 007b 03       		.byte	0x3
+ 199 007c 41       		.byte	0x41
+ 200 007d 41000000 		.4byte	0x41
+ 201 0081 03       		.uleb128 0x3
+ 202 0082 50020000 		.4byte	.LASF11
+ 203 0086 04       		.byte	0x4
+ 204 0087 B4       		.byte	0xb4
+ 205 0088 2C000000 		.4byte	0x2c
+ 206 008c 03       		.uleb128 0x3
+ 207 008d 66010000 		.4byte	.LASF12
+ 208 0091 04       		.byte	0x4
+ 209 0092 B5       		.byte	0xb5
+ 210 0093 3A000000 		.4byte	0x3a
+ 211 0097 03       		.uleb128 0x3
+ 212 0098 6D010000 		.4byte	.LASF13
+ 213 009c 04       		.byte	0x4
+ 214 009d B6       		.byte	0xb6
+ 215 009e 53000000 		.4byte	0x53
+ 216 00a2 02       		.uleb128 0x2
+ 217 00a3 04       		.byte	0x4
+ 218 00a4 04       		.byte	0x4
+ 219 00a5 70000000 		.4byte	.LASF14
+ 220 00a9 02       		.uleb128 0x2
+ 221 00aa 08       		.byte	0x8
+ 222 00ab 04       		.byte	0x4
+ 223 00ac 47010000 		.4byte	.LASF15
+ 224 00b0 02       		.uleb128 0x2
+ 225 00b1 01       		.byte	0x1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 6
+
+
+ 226 00b2 08       		.byte	0x8
+ 227 00b3 30020000 		.4byte	.LASF16
+ 228 00b7 05       		.uleb128 0x5
+ 229 00b8 06000000 		.4byte	.LASF17
+ 230 00bc 04       		.byte	0x4
+ 231 00bd 5601     		.2byte	0x156
+ 232 00bf 53000000 		.4byte	0x53
+ 233 00c3 05       		.uleb128 0x5
+ 234 00c4 00000000 		.4byte	.LASF18
+ 235 00c8 04       		.byte	0x4
+ 236 00c9 5F01     		.2byte	0x15f
+ 237 00cb CF000000 		.4byte	0xcf
+ 238 00cf 06       		.uleb128 0x6
+ 239 00d0 8C000000 		.4byte	0x8c
+ 240 00d4 02       		.uleb128 0x2
+ 241 00d5 04       		.byte	0x4
+ 242 00d6 07       		.byte	0x7
+ 243 00d7 19020000 		.4byte	.LASF19
+ 244 00db 07       		.uleb128 0x7
+ 245 00dc 1A000000 		.4byte	.LASF32
+ 246 00e0 01       		.byte	0x1
+ 247 00e1 30       		.byte	0x30
+ 248 00e2 00000000 		.4byte	.LFB64
+ 249 00e6 54000000 		.4byte	.LFE64-.LFB64
+ 250 00ea 01       		.uleb128 0x1
+ 251 00eb 9C       		.byte	0x9c
+ 252 00ec 6B010000 		.4byte	0x16b
+ 253 00f0 08       		.uleb128 0x8
+ 254 00f1 12000000 		.4byte	.LVL0
+ 255 00f5 EB010000 		.4byte	0x1eb
+ 256 00f9 16010000 		.4byte	0x116
+ 257 00fd 09       		.uleb128 0x9
+ 258 00fe 01       		.uleb128 0x1
+ 259 00ff 53       		.byte	0x53
+ 260 0100 03       		.uleb128 0x3
+ 261 0101 0A       		.byte	0xa
+ 262 0102 0040     		.2byte	0x4000
+ 263 0104 09       		.uleb128 0x9
+ 264 0105 01       		.uleb128 0x1
+ 265 0106 52       		.byte	0x52
+ 266 0107 03       		.uleb128 0x3
+ 267 0108 0A       		.byte	0xa
+ 268 0109 FF1F     		.2byte	0x1fff
+ 269 010b 09       		.uleb128 0x9
+ 270 010c 01       		.uleb128 0x1
+ 271 010d 51       		.byte	0x51
+ 272 010e 01       		.uleb128 0x1
+ 273 010f 31       		.byte	0x31
+ 274 0110 09       		.uleb128 0x9
+ 275 0111 01       		.uleb128 0x1
+ 276 0112 50       		.byte	0x50
+ 277 0113 01       		.uleb128 0x1
+ 278 0114 32       		.byte	0x32
+ 279 0115 00       		.byte	0
+ 280 0116 0A       		.uleb128 0xa
+ 281 0117 1A000000 		.4byte	.LVL1
+ 282 011b 0F020000 		.4byte	0x20f
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 7
+
+
+ 283 011f 08       		.uleb128 0x8
+ 284 0120 28000000 		.4byte	.LVL2
+ 285 0124 1A020000 		.4byte	0x21a
+ 286 0128 3D010000 		.4byte	0x13d
+ 287 012c 09       		.uleb128 0x9
+ 288 012d 01       		.uleb128 0x1
+ 289 012e 53       		.byte	0x53
+ 290 012f 01       		.uleb128 0x1
+ 291 0130 31       		.byte	0x31
+ 292 0131 09       		.uleb128 0x9
+ 293 0132 01       		.uleb128 0x1
+ 294 0133 52       		.byte	0x52
+ 295 0134 02       		.uleb128 0x2
+ 296 0135 09       		.byte	0x9
+ 297 0136 FE       		.byte	0xfe
+ 298 0137 09       		.uleb128 0x9
+ 299 0138 01       		.uleb128 0x1
+ 300 0139 51       		.byte	0x51
+ 301 013a 01       		.uleb128 0x1
+ 302 013b 32       		.byte	0x32
+ 303 013c 00       		.byte	0
+ 304 013d 08       		.uleb128 0x8
+ 305 013e 36000000 		.4byte	.LVL3
+ 306 0142 3E020000 		.4byte	0x23e
+ 307 0146 52010000 		.4byte	0x152
+ 308 014a 09       		.uleb128 0x9
+ 309 014b 01       		.uleb128 0x1
+ 310 014c 52       		.byte	0x52
+ 311 014d 03       		.uleb128 0x3
+ 312 014e 0A       		.byte	0xa
+ 313 014f 1468     		.2byte	0x6814
+ 314 0151 00       		.byte	0
+ 315 0152 0A       		.uleb128 0xa
+ 316 0153 3E000000 		.4byte	.LVL4
+ 317 0157 5D020000 		.4byte	0x25d
+ 318 015b 0B       		.uleb128 0xb
+ 319 015c 46000000 		.4byte	.LVL5
+ 320 0160 77020000 		.4byte	0x277
+ 321 0164 09       		.uleb128 0x9
+ 322 0165 01       		.uleb128 0x1
+ 323 0166 51       		.byte	0x51
+ 324 0167 01       		.uleb128 0x1
+ 325 0168 31       		.byte	0x31
+ 326 0169 00       		.byte	0
+ 327 016a 00       		.byte	0
+ 328 016b 0C       		.uleb128 0xc
+ 329 016c 74010000 		.4byte	.LASF33
+ 330 0170 01       		.byte	0x1
+ 331 0171 1E       		.byte	0x1e
+ 332 0172 68000000 		.4byte	0x68
+ 333 0176 00000000 		.4byte	.LFB63
+ 334 017a 18000000 		.4byte	.LFE63-.LFB63
+ 335 017e 01       		.uleb128 0x1
+ 336 017f 9C       		.byte	0x9c
+ 337 0180 97010000 		.4byte	0x197
+ 338 0184 0A       		.uleb128 0xa
+ 339 0185 0E000000 		.4byte	.LVL6
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 8
+
+
+ 340 0189 DB000000 		.4byte	0xdb
+ 341 018d 0A       		.uleb128 0xa
+ 342 018e 12000000 		.4byte	.LVL7
+ 343 0192 91020000 		.4byte	0x291
+ 344 0196 00       		.byte	0
+ 345 0197 0D       		.uleb128 0xd
+ 346 0198 26010000 		.4byte	.LASF20
+ 347 019c 05       		.byte	0x5
+ 348 019d 2A06     		.2byte	0x62a
+ 349 019f A3010000 		.4byte	0x1a3
+ 350 01a3 06       		.uleb128 0x6
+ 351 01a4 76000000 		.4byte	0x76
+ 352 01a8 0E       		.uleb128 0xe
+ 353 01a9 0F000000 		.4byte	.LASF21
+ 354 01ad 01       		.byte	0x1
+ 355 01ae 10       		.byte	0x10
+ 356 01af 81000000 		.4byte	0x81
+ 357 01b3 05       		.uleb128 0x5
+ 358 01b4 03       		.byte	0x3
+ 359 01b5 00000000 		.4byte	DMA_1_Chan
+ 360 01b9 0F       		.uleb128 0xf
+ 361 01ba 81000000 		.4byte	0x81
+ 362 01be C9010000 		.4byte	0x1c9
+ 363 01c2 10       		.uleb128 0x10
+ 364 01c3 D4000000 		.4byte	0xd4
+ 365 01c7 00       		.byte	0
+ 366 01c8 00       		.byte	0
+ 367 01c9 0E       		.uleb128 0xe
+ 368 01ca 1D010000 		.4byte	.LASF22
+ 369 01ce 01       		.byte	0x1
+ 370 01cf 11       		.byte	0x11
+ 371 01d0 B9010000 		.4byte	0x1b9
+ 372 01d4 05       		.uleb128 0x5
+ 373 01d5 03       		.byte	0x3
+ 374 01d6 00000000 		.4byte	DMA_1_TD
+ 375 01da 0E       		.uleb128 0xe
+ 376 01db 6B020000 		.4byte	.LASF23
+ 377 01df 01       		.byte	0x1
+ 378 01e0 12       		.byte	0x12
+ 379 01e1 8C000000 		.4byte	0x8c
+ 380 01e5 05       		.uleb128 0x5
+ 381 01e6 03       		.byte	0x3
+ 382 01e7 00000000 		.4byte	source
+ 383 01eb 11       		.uleb128 0x11
+ 384 01ec 33010000 		.4byte	.LASF24
+ 385 01f0 06       		.byte	0x6
+ 386 01f1 1E       		.byte	0x1e
+ 387 01f2 81000000 		.4byte	0x81
+ 388 01f6 0F020000 		.4byte	0x20f
+ 389 01fa 12       		.uleb128 0x12
+ 390 01fb 81000000 		.4byte	0x81
+ 391 01ff 12       		.uleb128 0x12
+ 392 0200 81000000 		.4byte	0x81
+ 393 0204 12       		.uleb128 0x12
+ 394 0205 8C000000 		.4byte	0x8c
+ 395 0209 12       		.uleb128 0x12
+ 396 020a 8C000000 		.4byte	0x8c
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 9
+
+
+ 397 020e 00       		.byte	0
+ 398 020f 13       		.uleb128 0x13
+ 399 0210 60000000 		.4byte	.LASF34
+ 400 0214 07       		.byte	0x7
+ 401 0215 39       		.byte	0x39
+ 402 0216 81000000 		.4byte	0x81
+ 403 021a 11       		.uleb128 0x11
+ 404 021b E0000000 		.4byte	.LASF25
+ 405 021f 07       		.byte	0x7
+ 406 0220 3C       		.byte	0x3c
+ 407 0221 B7000000 		.4byte	0xb7
+ 408 0225 3E020000 		.4byte	0x23e
+ 409 0229 12       		.uleb128 0x12
+ 410 022a 81000000 		.4byte	0x81
+ 411 022e 12       		.uleb128 0x12
+ 412 022f 8C000000 		.4byte	0x8c
+ 413 0233 12       		.uleb128 0x12
+ 414 0234 81000000 		.4byte	0x81
+ 415 0238 12       		.uleb128 0x12
+ 416 0239 81000000 		.4byte	0x81
+ 417 023d 00       		.byte	0
+ 418 023e 11       		.uleb128 0x11
+ 419 023f 32000000 		.4byte	.LASF26
+ 420 0243 07       		.byte	0x7
+ 421 0244 40       		.byte	0x40
+ 422 0245 B7000000 		.4byte	0xb7
+ 423 0249 5D020000 		.4byte	0x25d
+ 424 024d 12       		.uleb128 0x12
+ 425 024e 81000000 		.4byte	0x81
+ 426 0252 12       		.uleb128 0x12
+ 427 0253 8C000000 		.4byte	0x8c
+ 428 0257 12       		.uleb128 0x12
+ 429 0258 8C000000 		.4byte	0x8c
+ 430 025c 00       		.byte	0
+ 431 025d 11       		.uleb128 0x11
+ 432 025e 44000000 		.4byte	.LASF27
+ 433 0262 07       		.byte	0x7
+ 434 0263 30       		.byte	0x30
+ 435 0264 B7000000 		.4byte	0xb7
+ 436 0268 77020000 		.4byte	0x277
+ 437 026c 12       		.uleb128 0x12
+ 438 026d 81000000 		.4byte	0x81
+ 439 0271 12       		.uleb128 0x12
+ 440 0272 81000000 		.4byte	0x81
+ 441 0276 00       		.byte	0
+ 442 0277 11       		.uleb128 0x11
+ 443 0278 58010000 		.4byte	.LASF28
+ 444 027c 07       		.byte	0x7
+ 445 027d 2A       		.byte	0x2a
+ 446 027e B7000000 		.4byte	0xb7
+ 447 0282 91020000 		.4byte	0x291
+ 448 0286 12       		.uleb128 0x12
+ 449 0287 81000000 		.4byte	0x81
+ 450 028b 12       		.uleb128 0x12
+ 451 028c 81000000 		.4byte	0x81
+ 452 0290 00       		.byte	0
+ 453 0291 14       		.uleb128 0x14
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 10
+
+
+ 454 0292 35020000 		.4byte	.LASF35
+ 455 0296 08       		.byte	0x8
+ 456 0297 4E       		.byte	0x4e
+ 457 0298 15       		.uleb128 0x15
+ 458 0299 00       		.byte	0
+ 459 029a 00       		.byte	0
+ 460              		.section	.debug_abbrev,"",%progbits
+ 461              	.Ldebug_abbrev0:
+ 462 0000 01       		.uleb128 0x1
+ 463 0001 11       		.uleb128 0x11
+ 464 0002 01       		.byte	0x1
+ 465 0003 25       		.uleb128 0x25
+ 466 0004 0E       		.uleb128 0xe
+ 467 0005 13       		.uleb128 0x13
+ 468 0006 0B       		.uleb128 0xb
+ 469 0007 03       		.uleb128 0x3
+ 470 0008 0E       		.uleb128 0xe
+ 471 0009 1B       		.uleb128 0x1b
+ 472 000a 0E       		.uleb128 0xe
+ 473 000b 55       		.uleb128 0x55
+ 474 000c 17       		.uleb128 0x17
+ 475 000d 11       		.uleb128 0x11
+ 476 000e 01       		.uleb128 0x1
+ 477 000f 10       		.uleb128 0x10
+ 478 0010 17       		.uleb128 0x17
+ 479 0011 00       		.byte	0
+ 480 0012 00       		.byte	0
+ 481 0013 02       		.uleb128 0x2
+ 482 0014 24       		.uleb128 0x24
+ 483 0015 00       		.byte	0
+ 484 0016 0B       		.uleb128 0xb
+ 485 0017 0B       		.uleb128 0xb
+ 486 0018 3E       		.uleb128 0x3e
+ 487 0019 0B       		.uleb128 0xb
+ 488 001a 03       		.uleb128 0x3
+ 489 001b 0E       		.uleb128 0xe
+ 490 001c 00       		.byte	0
+ 491 001d 00       		.byte	0
+ 492 001e 03       		.uleb128 0x3
+ 493 001f 16       		.uleb128 0x16
+ 494 0020 00       		.byte	0
+ 495 0021 03       		.uleb128 0x3
+ 496 0022 0E       		.uleb128 0xe
+ 497 0023 3A       		.uleb128 0x3a
+ 498 0024 0B       		.uleb128 0xb
+ 499 0025 3B       		.uleb128 0x3b
+ 500 0026 0B       		.uleb128 0xb
+ 501 0027 49       		.uleb128 0x49
+ 502 0028 13       		.uleb128 0x13
+ 503 0029 00       		.byte	0
+ 504 002a 00       		.byte	0
+ 505 002b 04       		.uleb128 0x4
+ 506 002c 24       		.uleb128 0x24
+ 507 002d 00       		.byte	0
+ 508 002e 0B       		.uleb128 0xb
+ 509 002f 0B       		.uleb128 0xb
+ 510 0030 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 11
+
+
+ 511 0031 0B       		.uleb128 0xb
+ 512 0032 03       		.uleb128 0x3
+ 513 0033 08       		.uleb128 0x8
+ 514 0034 00       		.byte	0
+ 515 0035 00       		.byte	0
+ 516 0036 05       		.uleb128 0x5
+ 517 0037 16       		.uleb128 0x16
+ 518 0038 00       		.byte	0
+ 519 0039 03       		.uleb128 0x3
+ 520 003a 0E       		.uleb128 0xe
+ 521 003b 3A       		.uleb128 0x3a
+ 522 003c 0B       		.uleb128 0xb
+ 523 003d 3B       		.uleb128 0x3b
+ 524 003e 05       		.uleb128 0x5
+ 525 003f 49       		.uleb128 0x49
+ 526 0040 13       		.uleb128 0x13
+ 527 0041 00       		.byte	0
+ 528 0042 00       		.byte	0
+ 529 0043 06       		.uleb128 0x6
+ 530 0044 35       		.uleb128 0x35
+ 531 0045 00       		.byte	0
+ 532 0046 49       		.uleb128 0x49
+ 533 0047 13       		.uleb128 0x13
+ 534 0048 00       		.byte	0
+ 535 0049 00       		.byte	0
+ 536 004a 07       		.uleb128 0x7
+ 537 004b 2E       		.uleb128 0x2e
+ 538 004c 01       		.byte	0x1
+ 539 004d 3F       		.uleb128 0x3f
+ 540 004e 19       		.uleb128 0x19
+ 541 004f 03       		.uleb128 0x3
+ 542 0050 0E       		.uleb128 0xe
+ 543 0051 3A       		.uleb128 0x3a
+ 544 0052 0B       		.uleb128 0xb
+ 545 0053 3B       		.uleb128 0x3b
+ 546 0054 0B       		.uleb128 0xb
+ 547 0055 11       		.uleb128 0x11
+ 548 0056 01       		.uleb128 0x1
+ 549 0057 12       		.uleb128 0x12
+ 550 0058 06       		.uleb128 0x6
+ 551 0059 40       		.uleb128 0x40
+ 552 005a 18       		.uleb128 0x18
+ 553 005b 9742     		.uleb128 0x2117
+ 554 005d 19       		.uleb128 0x19
+ 555 005e 01       		.uleb128 0x1
+ 556 005f 13       		.uleb128 0x13
+ 557 0060 00       		.byte	0
+ 558 0061 00       		.byte	0
+ 559 0062 08       		.uleb128 0x8
+ 560 0063 898201   		.uleb128 0x4109
+ 561 0066 01       		.byte	0x1
+ 562 0067 11       		.uleb128 0x11
+ 563 0068 01       		.uleb128 0x1
+ 564 0069 31       		.uleb128 0x31
+ 565 006a 13       		.uleb128 0x13
+ 566 006b 01       		.uleb128 0x1
+ 567 006c 13       		.uleb128 0x13
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 12
+
+
+ 568 006d 00       		.byte	0
+ 569 006e 00       		.byte	0
+ 570 006f 09       		.uleb128 0x9
+ 571 0070 8A8201   		.uleb128 0x410a
+ 572 0073 00       		.byte	0
+ 573 0074 02       		.uleb128 0x2
+ 574 0075 18       		.uleb128 0x18
+ 575 0076 9142     		.uleb128 0x2111
+ 576 0078 18       		.uleb128 0x18
+ 577 0079 00       		.byte	0
+ 578 007a 00       		.byte	0
+ 579 007b 0A       		.uleb128 0xa
+ 580 007c 898201   		.uleb128 0x4109
+ 581 007f 00       		.byte	0
+ 582 0080 11       		.uleb128 0x11
+ 583 0081 01       		.uleb128 0x1
+ 584 0082 31       		.uleb128 0x31
+ 585 0083 13       		.uleb128 0x13
+ 586 0084 00       		.byte	0
+ 587 0085 00       		.byte	0
+ 588 0086 0B       		.uleb128 0xb
+ 589 0087 898201   		.uleb128 0x4109
+ 590 008a 01       		.byte	0x1
+ 591 008b 11       		.uleb128 0x11
+ 592 008c 01       		.uleb128 0x1
+ 593 008d 31       		.uleb128 0x31
+ 594 008e 13       		.uleb128 0x13
+ 595 008f 00       		.byte	0
+ 596 0090 00       		.byte	0
+ 597 0091 0C       		.uleb128 0xc
+ 598 0092 2E       		.uleb128 0x2e
+ 599 0093 01       		.byte	0x1
+ 600 0094 3F       		.uleb128 0x3f
+ 601 0095 19       		.uleb128 0x19
+ 602 0096 03       		.uleb128 0x3
+ 603 0097 0E       		.uleb128 0xe
+ 604 0098 3A       		.uleb128 0x3a
+ 605 0099 0B       		.uleb128 0xb
+ 606 009a 3B       		.uleb128 0x3b
+ 607 009b 0B       		.uleb128 0xb
+ 608 009c 49       		.uleb128 0x49
+ 609 009d 13       		.uleb128 0x13
+ 610 009e 11       		.uleb128 0x11
+ 611 009f 01       		.uleb128 0x1
+ 612 00a0 12       		.uleb128 0x12
+ 613 00a1 06       		.uleb128 0x6
+ 614 00a2 40       		.uleb128 0x40
+ 615 00a3 18       		.uleb128 0x18
+ 616 00a4 9742     		.uleb128 0x2117
+ 617 00a6 19       		.uleb128 0x19
+ 618 00a7 01       		.uleb128 0x1
+ 619 00a8 13       		.uleb128 0x13
+ 620 00a9 00       		.byte	0
+ 621 00aa 00       		.byte	0
+ 622 00ab 0D       		.uleb128 0xd
+ 623 00ac 34       		.uleb128 0x34
+ 624 00ad 00       		.byte	0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 13
+
+
+ 625 00ae 03       		.uleb128 0x3
+ 626 00af 0E       		.uleb128 0xe
+ 627 00b0 3A       		.uleb128 0x3a
+ 628 00b1 0B       		.uleb128 0xb
+ 629 00b2 3B       		.uleb128 0x3b
+ 630 00b3 05       		.uleb128 0x5
+ 631 00b4 49       		.uleb128 0x49
+ 632 00b5 13       		.uleb128 0x13
+ 633 00b6 3F       		.uleb128 0x3f
+ 634 00b7 19       		.uleb128 0x19
+ 635 00b8 3C       		.uleb128 0x3c
+ 636 00b9 19       		.uleb128 0x19
+ 637 00ba 00       		.byte	0
+ 638 00bb 00       		.byte	0
+ 639 00bc 0E       		.uleb128 0xe
+ 640 00bd 34       		.uleb128 0x34
+ 641 00be 00       		.byte	0
+ 642 00bf 03       		.uleb128 0x3
+ 643 00c0 0E       		.uleb128 0xe
+ 644 00c1 3A       		.uleb128 0x3a
+ 645 00c2 0B       		.uleb128 0xb
+ 646 00c3 3B       		.uleb128 0x3b
+ 647 00c4 0B       		.uleb128 0xb
+ 648 00c5 49       		.uleb128 0x49
+ 649 00c6 13       		.uleb128 0x13
+ 650 00c7 3F       		.uleb128 0x3f
+ 651 00c8 19       		.uleb128 0x19
+ 652 00c9 02       		.uleb128 0x2
+ 653 00ca 18       		.uleb128 0x18
+ 654 00cb 00       		.byte	0
+ 655 00cc 00       		.byte	0
+ 656 00cd 0F       		.uleb128 0xf
+ 657 00ce 01       		.uleb128 0x1
+ 658 00cf 01       		.byte	0x1
+ 659 00d0 49       		.uleb128 0x49
+ 660 00d1 13       		.uleb128 0x13
+ 661 00d2 01       		.uleb128 0x1
+ 662 00d3 13       		.uleb128 0x13
+ 663 00d4 00       		.byte	0
+ 664 00d5 00       		.byte	0
+ 665 00d6 10       		.uleb128 0x10
+ 666 00d7 21       		.uleb128 0x21
+ 667 00d8 00       		.byte	0
+ 668 00d9 49       		.uleb128 0x49
+ 669 00da 13       		.uleb128 0x13
+ 670 00db 2F       		.uleb128 0x2f
+ 671 00dc 0B       		.uleb128 0xb
+ 672 00dd 00       		.byte	0
+ 673 00de 00       		.byte	0
+ 674 00df 11       		.uleb128 0x11
+ 675 00e0 2E       		.uleb128 0x2e
+ 676 00e1 01       		.byte	0x1
+ 677 00e2 3F       		.uleb128 0x3f
+ 678 00e3 19       		.uleb128 0x19
+ 679 00e4 03       		.uleb128 0x3
+ 680 00e5 0E       		.uleb128 0xe
+ 681 00e6 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 14
+
+
+ 682 00e7 0B       		.uleb128 0xb
+ 683 00e8 3B       		.uleb128 0x3b
+ 684 00e9 0B       		.uleb128 0xb
+ 685 00ea 27       		.uleb128 0x27
+ 686 00eb 19       		.uleb128 0x19
+ 687 00ec 49       		.uleb128 0x49
+ 688 00ed 13       		.uleb128 0x13
+ 689 00ee 3C       		.uleb128 0x3c
+ 690 00ef 19       		.uleb128 0x19
+ 691 00f0 01       		.uleb128 0x1
+ 692 00f1 13       		.uleb128 0x13
+ 693 00f2 00       		.byte	0
+ 694 00f3 00       		.byte	0
+ 695 00f4 12       		.uleb128 0x12
+ 696 00f5 05       		.uleb128 0x5
+ 697 00f6 00       		.byte	0
+ 698 00f7 49       		.uleb128 0x49
+ 699 00f8 13       		.uleb128 0x13
+ 700 00f9 00       		.byte	0
+ 701 00fa 00       		.byte	0
+ 702 00fb 13       		.uleb128 0x13
+ 703 00fc 2E       		.uleb128 0x2e
+ 704 00fd 00       		.byte	0
+ 705 00fe 3F       		.uleb128 0x3f
+ 706 00ff 19       		.uleb128 0x19
+ 707 0100 03       		.uleb128 0x3
+ 708 0101 0E       		.uleb128 0xe
+ 709 0102 3A       		.uleb128 0x3a
+ 710 0103 0B       		.uleb128 0xb
+ 711 0104 3B       		.uleb128 0x3b
+ 712 0105 0B       		.uleb128 0xb
+ 713 0106 27       		.uleb128 0x27
+ 714 0107 19       		.uleb128 0x19
+ 715 0108 49       		.uleb128 0x49
+ 716 0109 13       		.uleb128 0x13
+ 717 010a 3C       		.uleb128 0x3c
+ 718 010b 19       		.uleb128 0x19
+ 719 010c 00       		.byte	0
+ 720 010d 00       		.byte	0
+ 721 010e 14       		.uleb128 0x14
+ 722 010f 2E       		.uleb128 0x2e
+ 723 0110 01       		.byte	0x1
+ 724 0111 3F       		.uleb128 0x3f
+ 725 0112 19       		.uleb128 0x19
+ 726 0113 03       		.uleb128 0x3
+ 727 0114 0E       		.uleb128 0xe
+ 728 0115 3A       		.uleb128 0x3a
+ 729 0116 0B       		.uleb128 0xb
+ 730 0117 3B       		.uleb128 0x3b
+ 731 0118 0B       		.uleb128 0xb
+ 732 0119 3C       		.uleb128 0x3c
+ 733 011a 19       		.uleb128 0x19
+ 734 011b 00       		.byte	0
+ 735 011c 00       		.byte	0
+ 736 011d 15       		.uleb128 0x15
+ 737 011e 18       		.uleb128 0x18
+ 738 011f 00       		.byte	0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 15
+
+
+ 739 0120 00       		.byte	0
+ 740 0121 00       		.byte	0
+ 741 0122 00       		.byte	0
+ 742              		.section	.debug_aranges,"",%progbits
+ 743 0000 24000000 		.4byte	0x24
+ 744 0004 0200     		.2byte	0x2
+ 745 0006 00000000 		.4byte	.Ldebug_info0
+ 746 000a 04       		.byte	0x4
+ 747 000b 00       		.byte	0
+ 748 000c 0000     		.2byte	0
+ 749 000e 0000     		.2byte	0
+ 750 0010 00000000 		.4byte	.LFB64
+ 751 0014 54000000 		.4byte	.LFE64-.LFB64
+ 752 0018 00000000 		.4byte	.LFB63
+ 753 001c 18000000 		.4byte	.LFE63-.LFB63
+ 754 0020 00000000 		.4byte	0
+ 755 0024 00000000 		.4byte	0
+ 756              		.section	.debug_ranges,"",%progbits
+ 757              	.Ldebug_ranges0:
+ 758 0000 00000000 		.4byte	.LFB64
+ 759 0004 54000000 		.4byte	.LFE64
+ 760 0008 00000000 		.4byte	.LFB63
+ 761 000c 18000000 		.4byte	.LFE63
+ 762 0010 00000000 		.4byte	0
+ 763 0014 00000000 		.4byte	0
+ 764              		.section	.debug_line,"",%progbits
+ 765              	.Ldebug_line0:
+ 766 0000 A0010000 		.section	.debug_str,"MS",%progbits,1
+ 766      02007201 
+ 766      00000201 
+ 766      FB0E0D00 
+ 766      01010101 
+ 767              	.LASF18:
+ 768 0000 72656731 		.ascii	"reg16\000"
+ 768      3600
+ 769              	.LASF17:
+ 770 0006 63797374 		.ascii	"cystatus\000"
+ 770      61747573 
+ 770      00
+ 771              	.LASF21:
+ 772 000f 444D415F 		.ascii	"DMA_1_Chan\000"
+ 772      315F4368 
+ 772      616E00
+ 773              	.LASF32:
+ 774 001a 436F6E66 		.ascii	"Configure_DMA\000"
+ 774      69677572 
+ 774      655F444D 
+ 774      4100
+ 775              	.LASF9:
+ 776 0028 5F5F696E 		.ascii	"__int32_t\000"
+ 776      7433325F 
+ 776      7400
+ 777              	.LASF26:
+ 778 0032 4379446D 		.ascii	"CyDmaTdSetAddress\000"
+ 778      61546453 
+ 778      65744164 
+ 778      64726573 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 16
+
+
+ 778      7300
+ 779              	.LASF27:
+ 780 0044 4379446D 		.ascii	"CyDmaChSetInitialTd\000"
+ 780      61436853 
+ 780      6574496E 
+ 780      69746961 
+ 780      6C546400 
+ 781              	.LASF10:
+ 782 0058 696E7433 		.ascii	"int32_t\000"
+ 782      325F7400 
+ 783              	.LASF34:
+ 784 0060 4379446D 		.ascii	"CyDmaTdAllocate\000"
+ 784      61546441 
+ 784      6C6C6F63 
+ 784      61746500 
+ 785              	.LASF14:
+ 786 0070 666C6F61 		.ascii	"float\000"
+ 786      7400
+ 787              	.LASF1:
+ 788 0076 756E7369 		.ascii	"unsigned char\000"
+ 788      676E6564 
+ 788      20636861 
+ 788      7200
+ 789              	.LASF31:
+ 790 0084 5A3A5C73 		.ascii	"Z:\\scottcarlson On My Mac\\Code\\PSoC_Creator\\Des"
+ 790      636F7474 
+ 790      6361726C 
+ 790      736F6E20 
+ 790      4F6E204D 
+ 791 00b3 69676E30 		.ascii	"ign01\\Design01.cydsn\\Design01.cydsn\000"
+ 791      315C4465 
+ 791      7369676E 
+ 791      30312E63 
+ 791      7964736E 
+ 792              	.LASF30:
+ 793 00d7 2E5C6D61 		.ascii	".\\main.c\000"
+ 793      696E2E63 
+ 793      00
+ 794              	.LASF25:
+ 795 00e0 4379446D 		.ascii	"CyDmaTdSetConfiguration\000"
+ 795      61546453 
+ 795      6574436F 
+ 795      6E666967 
+ 795      75726174 
+ 796              	.LASF5:
+ 797 00f8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 797      20756E73 
+ 797      69676E65 
+ 797      6420696E 
+ 797      7400
+ 798              	.LASF3:
+ 799 010a 73686F72 		.ascii	"short unsigned int\000"
+ 799      7420756E 
+ 799      7369676E 
+ 799      65642069 
+ 799      6E7400
+ 800              	.LASF22:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 17
+
+
+ 801 011d 444D415F 		.ascii	"DMA_1_TD\000"
+ 801      315F5444 
+ 801      00
+ 802              	.LASF20:
+ 803 0126 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 803      52784275 
+ 803      66666572 
+ 803      00
+ 804              	.LASF24:
+ 805 0133 444D415F 		.ascii	"DMA_1_DmaInitialize\000"
+ 805      315F446D 
+ 805      61496E69 
+ 805      7469616C 
+ 805      697A6500 
+ 806              	.LASF15:
+ 807 0147 646F7562 		.ascii	"double\000"
+ 807      6C6500
+ 808              	.LASF2:
+ 809 014e 73686F72 		.ascii	"short int\000"
+ 809      7420696E 
+ 809      7400
+ 810              	.LASF28:
+ 811 0158 4379446D 		.ascii	"CyDmaChEnable\000"
+ 811      61436845 
+ 811      6E61626C 
+ 811      6500
+ 812              	.LASF12:
+ 813 0166 75696E74 		.ascii	"uint16\000"
+ 813      313600
+ 814              	.LASF13:
+ 815 016d 75696E74 		.ascii	"uint32\000"
+ 815      333200
+ 816              	.LASF33:
+ 817 0174 6D61696E 		.ascii	"main\000"
+ 817      00
+ 818              	.LASF8:
+ 819 0179 756E7369 		.ascii	"unsigned int\000"
+ 819      676E6564 
+ 819      20696E74 
+ 819      00
+ 820              	.LASF7:
+ 821 0186 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 821      206C6F6E 
+ 821      6720756E 
+ 821      7369676E 
+ 821      65642069 
+ 822              	.LASF29:
+ 823 019d 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 823      4320342E 
+ 823      382E3420 
+ 823      32303134 
+ 823      30353236 
+ 824 01d0 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 824      20726576 
+ 824      6973696F 
+ 824      6E203231 
+ 824      31333538 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cclG99B3.s 			page 18
+
+
+ 825 0203 67202D66 		.ascii	"g -ffunction-sections\000"
+ 825      66756E63 
+ 825      74696F6E 
+ 825      2D736563 
+ 825      74696F6E 
+ 826              	.LASF19:
+ 827 0219 73697A65 		.ascii	"sizetype\000"
+ 827      74797065 
+ 827      00
+ 828              	.LASF6:
+ 829 0222 6C6F6E67 		.ascii	"long long int\000"
+ 829      206C6F6E 
+ 829      6720696E 
+ 829      7400
+ 830              	.LASF16:
+ 831 0230 63686172 		.ascii	"char\000"
+ 831      00
+ 832              	.LASF35:
+ 833 0235 5354435F 		.ascii	"STC_Datapath16_v1_00_Start\000"
+ 833      44617461 
+ 833      70617468 
+ 833      31365F76 
+ 833      315F3030 
+ 834              	.LASF11:
+ 835 0250 75696E74 		.ascii	"uint8\000"
+ 835      3800
+ 836              	.LASF4:
+ 837 0256 6C6F6E67 		.ascii	"long int\000"
+ 837      20696E74 
+ 837      00
+ 838              	.LASF0:
+ 839 025f 7369676E 		.ascii	"signed char\000"
+ 839      65642063 
+ 839      68617200 
+ 840              	.LASF23:
+ 841 026b 736F7572 		.ascii	"source\000"
+ 841      636500
+ 842              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

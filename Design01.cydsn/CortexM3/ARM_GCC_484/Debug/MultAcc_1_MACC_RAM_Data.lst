@@ -1,0 +1,491 @@
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccE3YOPC.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"MultAcc_1_MACC_RAM_Data.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	MultAcc_1_MACC_control
+  19              		.section	.rodata
+  20              		.align	2
+  21              		.type	MultAcc_1_MACC_control, %object
+  22              		.size	MultAcc_1_MACC_control, 88
+  23              	MultAcc_1_MACC_control:
+  24 0000 00008026 		.word	645922816
+  25 0004 15008826 		.word	646447125
+  26 0008 0900986E 		.word	1855455241
+  27 000c 02008826 		.word	646447106
+  28 0010 08008826 		.word	646447112
+  29 0014 0900A026 		.word	648019977
+  30 0018 0200984E 		.word	1318584322
+  31 001c 0080806A 		.word	1786806272
+  32 0020 0440A06D 		.word	1839218692
+  33 0024 000010EE 		.word	-300941312
+  34 0028 0000886E 		.word	1854406656
+  35 002c 0320806E 		.word	1853890563
+  36 0030 0100806E 		.word	1853882369
+  37 0034 0200A04E 		.word	1319108610
+  38 0038 0080806A 		.word	1786806272
+  39 003c 0040806F 		.word	1870675968
+  40 0040 000010EE 		.word	-300941312
+  41 0044 0000886E 		.word	1854406656
+  42 0048 0320806E 		.word	1853890563
+  43 004c 0100806E 		.word	1853882369
+  44 0050 0400986E 		.word	1855455236
+  45 0054 1D00886E 		.word	1854406685
+  46              		.global	MultAcc_1_MACC_data_a
+  47              		.align	2
+  48              		.type	MultAcc_1_MACC_data_a, %object
+  49              		.size	MultAcc_1_MACC_data_a, 4
+  50              	MultAcc_1_MACC_data_a:
+  51 0058 00000000 		.space	4
+  52              		.global	MultAcc_1_MACC_data_b
+  53              		.align	2
+  54              		.type	MultAcc_1_MACC_data_b, %object
+  55              		.size	MultAcc_1_MACC_data_b, 4
+  56              	MultAcc_1_MACC_data_b:
+  57 005c 00000000 		.space	4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccE3YOPC.s 			page 2
+
+
+  58              		.global	MultAcc_1_MACC_acu
+  59              		.align	2
+  60              		.type	MultAcc_1_MACC_acu, %object
+  61              		.size	MultAcc_1_MACC_acu, 4
+  62              	MultAcc_1_MACC_acu:
+  63 0060 00000000 		.space	4
+  64              		.global	MultAcc_1_MACC_cfsm
+  65              		.align	2
+  66              		.type	MultAcc_1_MACC_cfsm, %object
+  67              		.size	MultAcc_1_MACC_cfsm, 36
+  68              	MultAcc_1_MACC_cfsm:
+  69 0064 21F80501 		.word	17168417
+  70 0068 421086C1 		.word	-1048178622
+  71 006c 65F81B01 		.word	18610277
+  72 0070 87F82901 		.word	19527815
+  73 0074 A1F80501 		.word	17168545
+  74 0078 C7F82901 		.word	19527879
+  75 007c E1F80501 		.word	17168609
+  76 0080 01F80501 		.word	17168385
+  77 0084 00000000 		.word	0
+  78              		.text
+  79              	.Letext0:
+  80              		.file 1 ".\\Generated_Source\\PSoC5\\MultAcc_1_MACC_RAM_Data.c"
+  81              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+  82              		.section	.debug_info,"",%progbits
+  83              	.Ldebug_info0:
+  84 0000 25010000 		.4byte	0x125
+  85 0004 0400     		.2byte	0x4
+  86 0006 00000000 		.4byte	.Ldebug_abbrev0
+  87 000a 04       		.byte	0x4
+  88 000b 01       		.uleb128 0x1
+  89 000c 87010000 		.4byte	.LASF18
+  90 0010 01       		.byte	0x1
+  91 0011 22000000 		.4byte	.LASF19
+  92 0015 43010000 		.4byte	.LASF20
+  93 0019 00000000 		.4byte	.Ldebug_line0
+  94 001d 02       		.uleb128 0x2
+  95 001e 01       		.byte	0x1
+  96 001f 06       		.byte	0x6
+  97 0020 27010000 		.4byte	.LASF0
+  98 0024 02       		.uleb128 0x2
+  99 0025 01       		.byte	0x1
+ 100 0026 08       		.byte	0x8
+ 101 0027 D4000000 		.4byte	.LASF1
+ 102 002b 02       		.uleb128 0x2
+ 103 002c 02       		.byte	0x2
+ 104 002d 05       		.byte	0x5
+ 105 002e 39010000 		.4byte	.LASF2
+ 106 0032 02       		.uleb128 0x2
+ 107 0033 02       		.byte	0x2
+ 108 0034 07       		.byte	0x7
+ 109 0035 14010000 		.4byte	.LASF3
+ 110 0039 02       		.uleb128 0x2
+ 111 003a 04       		.byte	0x4
+ 112 003b 05       		.byte	0x5
+ 113 003c E7000000 		.4byte	.LASF4
+ 114 0040 02       		.uleb128 0x2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccE3YOPC.s 			page 3
+
+
+ 115 0041 04       		.byte	0x4
+ 116 0042 07       		.byte	0x7
+ 117 0043 98000000 		.4byte	.LASF5
+ 118 0047 02       		.uleb128 0x2
+ 119 0048 08       		.byte	0x8
+ 120 0049 05       		.byte	0x5
+ 121 004a 00000000 		.4byte	.LASF6
+ 122 004e 02       		.uleb128 0x2
+ 123 004f 08       		.byte	0x8
+ 124 0050 07       		.byte	0x7
+ 125 0051 BD000000 		.4byte	.LASF7
+ 126 0055 03       		.uleb128 0x3
+ 127 0056 04       		.byte	0x4
+ 128 0057 05       		.byte	0x5
+ 129 0058 696E7400 		.ascii	"int\000"
+ 130 005c 02       		.uleb128 0x2
+ 131 005d 04       		.byte	0x4
+ 132 005e 07       		.byte	0x7
+ 133 005f 15000000 		.4byte	.LASF8
+ 134 0063 04       		.uleb128 0x4
+ 135 0064 0E000000 		.4byte	.LASF21
+ 136 0068 02       		.byte	0x2
+ 137 0069 A3       		.byte	0xa3
+ 138 006a 40000000 		.4byte	0x40
+ 139 006e 02       		.uleb128 0x2
+ 140 006f 04       		.byte	0x4
+ 141 0070 04       		.byte	0x4
+ 142 0071 33010000 		.4byte	.LASF9
+ 143 0075 02       		.uleb128 0x2
+ 144 0076 08       		.byte	0x8
+ 145 0077 04       		.byte	0x4
+ 146 0078 04010000 		.4byte	.LASF10
+ 147 007c 02       		.uleb128 0x2
+ 148 007d 01       		.byte	0x1
+ 149 007e 08       		.byte	0x8
+ 150 007f E2000000 		.4byte	.LASF11
+ 151 0083 02       		.uleb128 0x2
+ 152 0084 04       		.byte	0x4
+ 153 0085 07       		.byte	0x7
+ 154 0086 0B010000 		.4byte	.LASF12
+ 155 008a 05       		.uleb128 0x5
+ 156 008b 63000000 		.4byte	0x63
+ 157 008f 9A000000 		.4byte	0x9a
+ 158 0093 06       		.uleb128 0x6
+ 159 0094 83000000 		.4byte	0x83
+ 160 0098 00       		.byte	0
+ 161 0099 00       		.byte	0
+ 162 009a 05       		.uleb128 0x5
+ 163 009b 63000000 		.4byte	0x63
+ 164 009f AA000000 		.4byte	0xaa
+ 165 00a3 06       		.uleb128 0x6
+ 166 00a4 83000000 		.4byte	0x83
+ 167 00a8 15       		.byte	0x15
+ 168 00a9 00       		.byte	0
+ 169 00aa 07       		.uleb128 0x7
+ 170 00ab 55000000 		.4byte	.LASF13
+ 171 00af 01       		.byte	0x1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccE3YOPC.s 			page 4
+
+
+ 172 00b0 04       		.byte	0x4
+ 173 00b1 BB000000 		.4byte	0xbb
+ 174 00b5 05       		.uleb128 0x5
+ 175 00b6 03       		.byte	0x3
+ 176 00b7 00000000 		.4byte	MultAcc_1_MACC_control
+ 177 00bb 08       		.uleb128 0x8
+ 178 00bc 9A000000 		.4byte	0x9a
+ 179 00c0 07       		.uleb128 0x7
+ 180 00c1 6C000000 		.4byte	.LASF14
+ 181 00c5 01       		.byte	0x1
+ 182 00c6 0E       		.byte	0xe
+ 183 00c7 D1000000 		.4byte	0xd1
+ 184 00cb 05       		.uleb128 0x5
+ 185 00cc 03       		.byte	0x3
+ 186 00cd 00000000 		.4byte	MultAcc_1_MACC_data_a
+ 187 00d1 08       		.uleb128 0x8
+ 188 00d2 8A000000 		.4byte	0x8a
+ 189 00d6 07       		.uleb128 0x7
+ 190 00d7 82000000 		.4byte	.LASF15
+ 191 00db 01       		.byte	0x1
+ 192 00dc 13       		.byte	0x13
+ 193 00dd E7000000 		.4byte	0xe7
+ 194 00e1 05       		.uleb128 0x5
+ 195 00e2 03       		.byte	0x3
+ 196 00e3 00000000 		.4byte	MultAcc_1_MACC_data_b
+ 197 00e7 08       		.uleb128 0x8
+ 198 00e8 8A000000 		.4byte	0x8a
+ 199 00ec 05       		.uleb128 0x5
+ 200 00ed 63000000 		.4byte	0x63
+ 201 00f1 FC000000 		.4byte	0xfc
+ 202 00f5 06       		.uleb128 0x6
+ 203 00f6 83000000 		.4byte	0x83
+ 204 00fa 08       		.byte	0x8
+ 205 00fb 00       		.byte	0
+ 206 00fc 07       		.uleb128 0x7
+ 207 00fd F0000000 		.4byte	.LASF16
+ 208 0101 01       		.byte	0x1
+ 209 0102 1D       		.byte	0x1d
+ 210 0103 0D010000 		.4byte	0x10d
+ 211 0107 05       		.uleb128 0x5
+ 212 0108 03       		.byte	0x3
+ 213 0109 00000000 		.4byte	MultAcc_1_MACC_cfsm
+ 214 010d 08       		.uleb128 0x8
+ 215 010e EC000000 		.4byte	0xec
+ 216 0112 07       		.uleb128 0x7
+ 217 0113 AA000000 		.4byte	.LASF17
+ 218 0117 01       		.byte	0x1
+ 219 0118 18       		.byte	0x18
+ 220 0119 23010000 		.4byte	0x123
+ 221 011d 05       		.uleb128 0x5
+ 222 011e 03       		.byte	0x3
+ 223 011f 00000000 		.4byte	MultAcc_1_MACC_acu
+ 224 0123 08       		.uleb128 0x8
+ 225 0124 8A000000 		.4byte	0x8a
+ 226 0128 00       		.byte	0
+ 227              		.section	.debug_abbrev,"",%progbits
+ 228              	.Ldebug_abbrev0:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccE3YOPC.s 			page 5
+
+
+ 229 0000 01       		.uleb128 0x1
+ 230 0001 11       		.uleb128 0x11
+ 231 0002 01       		.byte	0x1
+ 232 0003 25       		.uleb128 0x25
+ 233 0004 0E       		.uleb128 0xe
+ 234 0005 13       		.uleb128 0x13
+ 235 0006 0B       		.uleb128 0xb
+ 236 0007 03       		.uleb128 0x3
+ 237 0008 0E       		.uleb128 0xe
+ 238 0009 1B       		.uleb128 0x1b
+ 239 000a 0E       		.uleb128 0xe
+ 240 000b 10       		.uleb128 0x10
+ 241 000c 17       		.uleb128 0x17
+ 242 000d 00       		.byte	0
+ 243 000e 00       		.byte	0
+ 244 000f 02       		.uleb128 0x2
+ 245 0010 24       		.uleb128 0x24
+ 246 0011 00       		.byte	0
+ 247 0012 0B       		.uleb128 0xb
+ 248 0013 0B       		.uleb128 0xb
+ 249 0014 3E       		.uleb128 0x3e
+ 250 0015 0B       		.uleb128 0xb
+ 251 0016 03       		.uleb128 0x3
+ 252 0017 0E       		.uleb128 0xe
+ 253 0018 00       		.byte	0
+ 254 0019 00       		.byte	0
+ 255 001a 03       		.uleb128 0x3
+ 256 001b 24       		.uleb128 0x24
+ 257 001c 00       		.byte	0
+ 258 001d 0B       		.uleb128 0xb
+ 259 001e 0B       		.uleb128 0xb
+ 260 001f 3E       		.uleb128 0x3e
+ 261 0020 0B       		.uleb128 0xb
+ 262 0021 03       		.uleb128 0x3
+ 263 0022 08       		.uleb128 0x8
+ 264 0023 00       		.byte	0
+ 265 0024 00       		.byte	0
+ 266 0025 04       		.uleb128 0x4
+ 267 0026 16       		.uleb128 0x16
+ 268 0027 00       		.byte	0
+ 269 0028 03       		.uleb128 0x3
+ 270 0029 0E       		.uleb128 0xe
+ 271 002a 3A       		.uleb128 0x3a
+ 272 002b 0B       		.uleb128 0xb
+ 273 002c 3B       		.uleb128 0x3b
+ 274 002d 0B       		.uleb128 0xb
+ 275 002e 49       		.uleb128 0x49
+ 276 002f 13       		.uleb128 0x13
+ 277 0030 00       		.byte	0
+ 278 0031 00       		.byte	0
+ 279 0032 05       		.uleb128 0x5
+ 280 0033 01       		.uleb128 0x1
+ 281 0034 01       		.byte	0x1
+ 282 0035 49       		.uleb128 0x49
+ 283 0036 13       		.uleb128 0x13
+ 284 0037 01       		.uleb128 0x1
+ 285 0038 13       		.uleb128 0x13
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccE3YOPC.s 			page 6
+
+
+ 286 0039 00       		.byte	0
+ 287 003a 00       		.byte	0
+ 288 003b 06       		.uleb128 0x6
+ 289 003c 21       		.uleb128 0x21
+ 290 003d 00       		.byte	0
+ 291 003e 49       		.uleb128 0x49
+ 292 003f 13       		.uleb128 0x13
+ 293 0040 2F       		.uleb128 0x2f
+ 294 0041 0B       		.uleb128 0xb
+ 295 0042 00       		.byte	0
+ 296 0043 00       		.byte	0
+ 297 0044 07       		.uleb128 0x7
+ 298 0045 34       		.uleb128 0x34
+ 299 0046 00       		.byte	0
+ 300 0047 03       		.uleb128 0x3
+ 301 0048 0E       		.uleb128 0xe
+ 302 0049 3A       		.uleb128 0x3a
+ 303 004a 0B       		.uleb128 0xb
+ 304 004b 3B       		.uleb128 0x3b
+ 305 004c 0B       		.uleb128 0xb
+ 306 004d 49       		.uleb128 0x49
+ 307 004e 13       		.uleb128 0x13
+ 308 004f 3F       		.uleb128 0x3f
+ 309 0050 19       		.uleb128 0x19
+ 310 0051 02       		.uleb128 0x2
+ 311 0052 18       		.uleb128 0x18
+ 312 0053 00       		.byte	0
+ 313 0054 00       		.byte	0
+ 314 0055 08       		.uleb128 0x8
+ 315 0056 26       		.uleb128 0x26
+ 316 0057 00       		.byte	0
+ 317 0058 49       		.uleb128 0x49
+ 318 0059 13       		.uleb128 0x13
+ 319 005a 00       		.byte	0
+ 320 005b 00       		.byte	0
+ 321 005c 00       		.byte	0
+ 322              		.section	.debug_aranges,"",%progbits
+ 323 0000 14000000 		.4byte	0x14
+ 324 0004 0200     		.2byte	0x2
+ 325 0006 00000000 		.4byte	.Ldebug_info0
+ 326 000a 04       		.byte	0x4
+ 327 000b 00       		.byte	0
+ 328 000c 0000     		.2byte	0
+ 329 000e 0000     		.2byte	0
+ 330 0010 00000000 		.4byte	0
+ 331 0014 00000000 		.4byte	0
+ 332              		.section	.debug_line,"",%progbits
+ 333              	.Ldebug_line0:
+ 334 0000 5C000000 		.section	.debug_str,"MS",%progbits,1
+ 334      02005600 
+ 334      00000201 
+ 334      FB0E0D00 
+ 334      01010101 
+ 335              	.LASF6:
+ 336 0000 6C6F6E67 		.ascii	"long long int\000"
+ 336      206C6F6E 
+ 336      6720696E 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccE3YOPC.s 			page 7
+
+
+ 336      7400
+ 337              	.LASF21:
+ 338 000e 75696E74 		.ascii	"uint32\000"
+ 338      333200
+ 339              	.LASF8:
+ 340 0015 756E7369 		.ascii	"unsigned int\000"
+ 340      676E6564 
+ 340      20696E74 
+ 340      00
+ 341              	.LASF19:
+ 342 0022 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\MultAcc_1_MACC_RAM_Data"
+ 342      6E657261 
+ 342      7465645F 
+ 342      536F7572 
+ 342      63655C50 
+ 343 0052 2E6300   		.ascii	".c\000"
+ 344              	.LASF13:
+ 345 0055 4D756C74 		.ascii	"MultAcc_1_MACC_control\000"
+ 345      4163635F 
+ 345      315F4D41 
+ 345      43435F63 
+ 345      6F6E7472 
+ 346              	.LASF14:
+ 347 006c 4D756C74 		.ascii	"MultAcc_1_MACC_data_a\000"
+ 347      4163635F 
+ 347      315F4D41 
+ 347      43435F64 
+ 347      6174615F 
+ 348              	.LASF15:
+ 349 0082 4D756C74 		.ascii	"MultAcc_1_MACC_data_b\000"
+ 349      4163635F 
+ 349      315F4D41 
+ 349      43435F64 
+ 349      6174615F 
+ 350              	.LASF5:
+ 351 0098 6C6F6E67 		.ascii	"long unsigned int\000"
+ 351      20756E73 
+ 351      69676E65 
+ 351      6420696E 
+ 351      7400
+ 352              	.LASF17:
+ 353 00aa 4D756C74 		.ascii	"MultAcc_1_MACC_acu\000"
+ 353      4163635F 
+ 353      315F4D41 
+ 353      43435F61 
+ 353      637500
+ 354              	.LASF7:
+ 355 00bd 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 355      206C6F6E 
+ 355      6720756E 
+ 355      7369676E 
+ 355      65642069 
+ 356              	.LASF1:
+ 357 00d4 756E7369 		.ascii	"unsigned char\000"
+ 357      676E6564 
+ 357      20636861 
+ 357      7200
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccE3YOPC.s 			page 8
+
+
+ 358              	.LASF11:
+ 359 00e2 63686172 		.ascii	"char\000"
+ 359      00
+ 360              	.LASF4:
+ 361 00e7 6C6F6E67 		.ascii	"long int\000"
+ 361      20696E74 
+ 361      00
+ 362              	.LASF16:
+ 363 00f0 4D756C74 		.ascii	"MultAcc_1_MACC_cfsm\000"
+ 363      4163635F 
+ 363      315F4D41 
+ 363      43435F63 
+ 363      66736D00 
+ 364              	.LASF10:
+ 365 0104 646F7562 		.ascii	"double\000"
+ 365      6C6500
+ 366              	.LASF12:
+ 367 010b 73697A65 		.ascii	"sizetype\000"
+ 367      74797065 
+ 367      00
+ 368              	.LASF3:
+ 369 0114 73686F72 		.ascii	"short unsigned int\000"
+ 369      7420756E 
+ 369      7369676E 
+ 369      65642069 
+ 369      6E7400
+ 370              	.LASF0:
+ 371 0127 7369676E 		.ascii	"signed char\000"
+ 371      65642063 
+ 371      68617200 
+ 372              	.LASF9:
+ 373 0133 666C6F61 		.ascii	"float\000"
+ 373      7400
+ 374              	.LASF2:
+ 375 0139 73686F72 		.ascii	"short int\000"
+ 375      7420696E 
+ 375      7400
+ 376              	.LASF20:
+ 377 0143 5A3A5C73 		.ascii	"Z:\\scottcarlson On My Mac\\Code\\PSoC_Creator\\Des"
+ 377      636F7474 
+ 377      6361726C 
+ 377      736F6E20 
+ 377      4F6E204D 
+ 378 0172 69676E30 		.ascii	"ign01\\Design01.cydsn\000"
+ 378      315C4465 
+ 378      7369676E 
+ 378      30312E63 
+ 378      7964736E 
+ 379              	.LASF18:
+ 380 0187 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 380      4320342E 
+ 380      382E3420 
+ 380      32303134 
+ 380      30353236 
+ 381 01ba 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 381      20726576 
+ 381      6973696F 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccE3YOPC.s 			page 9
+
+
+ 381      6E203231 
+ 381      31333538 
+ 382 01ed 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 382      66756E63 
+ 382      74696F6E 
+ 382      2D736563 
+ 382      74696F6E 
+ 383              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

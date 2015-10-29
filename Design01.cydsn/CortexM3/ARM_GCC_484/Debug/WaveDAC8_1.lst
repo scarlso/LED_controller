@@ -1,0 +1,3681 @@
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"WaveDAC8_1.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	WaveDAC8_1_initVar
+  19              		.bss
+  20              		.type	WaveDAC8_1_initVar, %object
+  21              		.size	WaveDAC8_1_initVar, 1
+  22              	WaveDAC8_1_initVar:
+  23 0000 00       		.space	1
+  24              		.global	WaveDAC8_1_wave1
+  25              		.section	.rodata
+  26              		.align	2
+  27              		.type	WaveDAC8_1_wave1, %object
+  28              		.size	WaveDAC8_1_wave1, 1000
+  29              	WaveDAC8_1_wave1:
+  30 0000 80       		.byte	-128
+  31 0001 80       		.byte	-128
+  32 0002 81       		.byte	-127
+  33 0003 82       		.byte	-126
+  34 0004 83       		.byte	-125
+  35 0005 83       		.byte	-125
+  36 0006 84       		.byte	-124
+  37 0007 85       		.byte	-123
+  38 0008 86       		.byte	-122
+  39 0009 87       		.byte	-121
+  40 000a 87       		.byte	-121
+  41 000b 88       		.byte	-120
+  42 000c 89       		.byte	-119
+  43 000d 8A       		.byte	-118
+  44 000e 8A       		.byte	-118
+  45 000f 8B       		.byte	-117
+  46 0010 8C       		.byte	-116
+  47 0011 8D       		.byte	-115
+  48 0012 8E       		.byte	-114
+  49 0013 8E       		.byte	-114
+  50 0014 8F       		.byte	-113
+  51 0015 90       		.byte	-112
+  52 0016 91       		.byte	-111
+  53 0017 92       		.byte	-110
+  54 0018 92       		.byte	-110
+  55 0019 93       		.byte	-109
+  56 001a 94       		.byte	-108
+  57 001b 95       		.byte	-107
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 2
+
+
+  58 001c 95       		.byte	-107
+  59 001d 96       		.byte	-106
+  60 001e 97       		.byte	-105
+  61 001f 98       		.byte	-104
+  62 0020 98       		.byte	-104
+  63 0021 99       		.byte	-103
+  64 0022 9A       		.byte	-102
+  65 0023 9B       		.byte	-101
+  66 0024 9C       		.byte	-100
+  67 0025 9C       		.byte	-100
+  68 0026 9D       		.byte	-99
+  69 0027 9E       		.byte	-98
+  70 0028 9F       		.byte	-97
+  71 0029 9F       		.byte	-97
+  72 002a A0       		.byte	-96
+  73 002b A1       		.byte	-95
+  74 002c A2       		.byte	-94
+  75 002d A2       		.byte	-94
+  76 002e A3       		.byte	-93
+  77 002f A4       		.byte	-92
+  78 0030 A5       		.byte	-91
+  79 0031 A5       		.byte	-91
+  80 0032 A6       		.byte	-90
+  81 0033 A7       		.byte	-89
+  82 0034 A8       		.byte	-88
+  83 0035 A8       		.byte	-88
+  84 0036 A9       		.byte	-87
+  85 0037 AA       		.byte	-86
+  86 0038 AB       		.byte	-85
+  87 0039 AB       		.byte	-85
+  88 003a AC       		.byte	-84
+  89 003b AD       		.byte	-83
+  90 003c AE       		.byte	-82
+  91 003d AE       		.byte	-82
+  92 003e AF       		.byte	-81
+  93 003f B0       		.byte	-80
+  94 0040 B0       		.byte	-80
+  95 0041 B1       		.byte	-79
+  96 0042 B2       		.byte	-78
+  97 0043 B3       		.byte	-77
+  98 0044 B3       		.byte	-77
+  99 0045 B4       		.byte	-76
+ 100 0046 B5       		.byte	-75
+ 101 0047 B5       		.byte	-75
+ 102 0048 B6       		.byte	-74
+ 103 0049 B7       		.byte	-73
+ 104 004a B8       		.byte	-72
+ 105 004b B8       		.byte	-72
+ 106 004c B9       		.byte	-71
+ 107 004d BA       		.byte	-70
+ 108 004e BA       		.byte	-70
+ 109 004f BB       		.byte	-69
+ 110 0050 BC       		.byte	-68
+ 111 0051 BC       		.byte	-68
+ 112 0052 BD       		.byte	-67
+ 113 0053 BE       		.byte	-66
+ 114 0054 BE       		.byte	-66
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 3
+
+
+ 115 0055 BF       		.byte	-65
+ 116 0056 C0       		.byte	-64
+ 117 0057 C0       		.byte	-64
+ 118 0058 C1       		.byte	-63
+ 119 0059 C2       		.byte	-62
+ 120 005a C2       		.byte	-62
+ 121 005b C3       		.byte	-61
+ 122 005c C4       		.byte	-60
+ 123 005d C4       		.byte	-60
+ 124 005e C5       		.byte	-59
+ 125 005f C6       		.byte	-58
+ 126 0060 C6       		.byte	-58
+ 127 0061 C7       		.byte	-57
+ 128 0062 C8       		.byte	-56
+ 129 0063 C8       		.byte	-56
+ 130 0064 C9       		.byte	-55
+ 131 0065 CA       		.byte	-54
+ 132 0066 CA       		.byte	-54
+ 133 0067 CB       		.byte	-53
+ 134 0068 CB       		.byte	-53
+ 135 0069 CC       		.byte	-52
+ 136 006a CD       		.byte	-51
+ 137 006b CD       		.byte	-51
+ 138 006c CE       		.byte	-50
+ 139 006d CF       		.byte	-49
+ 140 006e CF       		.byte	-49
+ 141 006f D0       		.byte	-48
+ 142 0070 D0       		.byte	-48
+ 143 0071 D1       		.byte	-47
+ 144 0072 D2       		.byte	-46
+ 145 0073 D2       		.byte	-46
+ 146 0074 D3       		.byte	-45
+ 147 0075 D3       		.byte	-45
+ 148 0076 D4       		.byte	-44
+ 149 0077 D4       		.byte	-44
+ 150 0078 D5       		.byte	-43
+ 151 0079 D6       		.byte	-42
+ 152 007a D6       		.byte	-42
+ 153 007b D7       		.byte	-41
+ 154 007c D7       		.byte	-41
+ 155 007d D8       		.byte	-40
+ 156 007e D8       		.byte	-40
+ 157 007f D9       		.byte	-39
+ 158 0080 DA       		.byte	-38
+ 159 0081 DA       		.byte	-38
+ 160 0082 DB       		.byte	-37
+ 161 0083 DB       		.byte	-37
+ 162 0084 DC       		.byte	-36
+ 163 0085 DC       		.byte	-36
+ 164 0086 DD       		.byte	-35
+ 165 0087 DD       		.byte	-35
+ 166 0088 DE       		.byte	-34
+ 167 0089 DE       		.byte	-34
+ 168 008a DF       		.byte	-33
+ 169 008b DF       		.byte	-33
+ 170 008c E0       		.byte	-32
+ 171 008d E0       		.byte	-32
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 4
+
+
+ 172 008e E1       		.byte	-31
+ 173 008f E1       		.byte	-31
+ 174 0090 E2       		.byte	-30
+ 175 0091 E2       		.byte	-30
+ 176 0092 E3       		.byte	-29
+ 177 0093 E3       		.byte	-29
+ 178 0094 E4       		.byte	-28
+ 179 0095 E4       		.byte	-28
+ 180 0096 E5       		.byte	-27
+ 181 0097 E5       		.byte	-27
+ 182 0098 E6       		.byte	-26
+ 183 0099 E6       		.byte	-26
+ 184 009a E6       		.byte	-26
+ 185 009b E7       		.byte	-25
+ 186 009c E7       		.byte	-25
+ 187 009d E8       		.byte	-24
+ 188 009e E8       		.byte	-24
+ 189 009f E9       		.byte	-23
+ 190 00a0 E9       		.byte	-23
+ 191 00a1 E9       		.byte	-23
+ 192 00a2 EA       		.byte	-22
+ 193 00a3 EA       		.byte	-22
+ 194 00a4 EB       		.byte	-21
+ 195 00a5 EB       		.byte	-21
+ 196 00a6 EB       		.byte	-21
+ 197 00a7 EC       		.byte	-20
+ 198 00a8 EC       		.byte	-20
+ 199 00a9 ED       		.byte	-19
+ 200 00aa ED       		.byte	-19
+ 201 00ab ED       		.byte	-19
+ 202 00ac EE       		.byte	-18
+ 203 00ad EE       		.byte	-18
+ 204 00ae EF       		.byte	-17
+ 205 00af EF       		.byte	-17
+ 206 00b0 EF       		.byte	-17
+ 207 00b1 F0       		.byte	-16
+ 208 00b2 F0       		.byte	-16
+ 209 00b3 F0       		.byte	-16
+ 210 00b4 F1       		.byte	-15
+ 211 00b5 F1       		.byte	-15
+ 212 00b6 F1       		.byte	-15
+ 213 00b7 F2       		.byte	-14
+ 214 00b8 F2       		.byte	-14
+ 215 00b9 F2       		.byte	-14
+ 216 00ba F3       		.byte	-13
+ 217 00bb F3       		.byte	-13
+ 218 00bc F3       		.byte	-13
+ 219 00bd F3       		.byte	-13
+ 220 00be F4       		.byte	-12
+ 221 00bf F4       		.byte	-12
+ 222 00c0 F4       		.byte	-12
+ 223 00c1 F5       		.byte	-11
+ 224 00c2 F5       		.byte	-11
+ 225 00c3 F5       		.byte	-11
+ 226 00c4 F5       		.byte	-11
+ 227 00c5 F6       		.byte	-10
+ 228 00c6 F6       		.byte	-10
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 5
+
+
+ 229 00c7 F6       		.byte	-10
+ 230 00c8 F6       		.byte	-10
+ 231 00c9 F7       		.byte	-9
+ 232 00ca F7       		.byte	-9
+ 233 00cb F7       		.byte	-9
+ 234 00cc F7       		.byte	-9
+ 235 00cd F8       		.byte	-8
+ 236 00ce F8       		.byte	-8
+ 237 00cf F8       		.byte	-8
+ 238 00d0 F8       		.byte	-8
+ 239 00d1 F8       		.byte	-8
+ 240 00d2 F9       		.byte	-7
+ 241 00d3 F9       		.byte	-7
+ 242 00d4 F9       		.byte	-7
+ 243 00d5 F9       		.byte	-7
+ 244 00d6 F9       		.byte	-7
+ 245 00d7 F9       		.byte	-7
+ 246 00d8 FA       		.byte	-6
+ 247 00d9 FA       		.byte	-6
+ 248 00da FA       		.byte	-6
+ 249 00db FA       		.byte	-6
+ 250 00dc FA       		.byte	-6
+ 251 00dd FA       		.byte	-6
+ 252 00de FB       		.byte	-5
+ 253 00df FB       		.byte	-5
+ 254 00e0 FB       		.byte	-5
+ 255 00e1 FB       		.byte	-5
+ 256 00e2 FB       		.byte	-5
+ 257 00e3 FB       		.byte	-5
+ 258 00e4 FB       		.byte	-5
+ 259 00e5 FB       		.byte	-5
+ 260 00e6 FC       		.byte	-4
+ 261 00e7 FC       		.byte	-4
+ 262 00e8 FC       		.byte	-4
+ 263 00e9 FC       		.byte	-4
+ 264 00ea FC       		.byte	-4
+ 265 00eb FC       		.byte	-4
+ 266 00ec FC       		.byte	-4
+ 267 00ed FC       		.byte	-4
+ 268 00ee FC       		.byte	-4
+ 269 00ef FC       		.byte	-4
+ 270 00f0 FC       		.byte	-4
+ 271 00f1 FC       		.byte	-4
+ 272 00f2 FC       		.byte	-4
+ 273 00f3 FC       		.byte	-4
+ 274 00f4 FC       		.byte	-4
+ 275 00f5 FC       		.byte	-4
+ 276 00f6 FC       		.byte	-4
+ 277 00f7 FC       		.byte	-4
+ 278 00f8 FC       		.byte	-4
+ 279 00f9 FC       		.byte	-4
+ 280 00fa FC       		.byte	-4
+ 281 00fb FC       		.byte	-4
+ 282 00fc FC       		.byte	-4
+ 283 00fd FC       		.byte	-4
+ 284 00fe FC       		.byte	-4
+ 285 00ff FC       		.byte	-4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 6
+
+
+ 286 0100 FC       		.byte	-4
+ 287 0101 FC       		.byte	-4
+ 288 0102 FC       		.byte	-4
+ 289 0103 FC       		.byte	-4
+ 290 0104 FC       		.byte	-4
+ 291 0105 FC       		.byte	-4
+ 292 0106 FC       		.byte	-4
+ 293 0107 FC       		.byte	-4
+ 294 0108 FC       		.byte	-4
+ 295 0109 FC       		.byte	-4
+ 296 010a FC       		.byte	-4
+ 297 010b FC       		.byte	-4
+ 298 010c FC       		.byte	-4
+ 299 010d FC       		.byte	-4
+ 300 010e FC       		.byte	-4
+ 301 010f FB       		.byte	-5
+ 302 0110 FB       		.byte	-5
+ 303 0111 FB       		.byte	-5
+ 304 0112 FB       		.byte	-5
+ 305 0113 FB       		.byte	-5
+ 306 0114 FB       		.byte	-5
+ 307 0115 FB       		.byte	-5
+ 308 0116 FB       		.byte	-5
+ 309 0117 FA       		.byte	-6
+ 310 0118 FA       		.byte	-6
+ 311 0119 FA       		.byte	-6
+ 312 011a FA       		.byte	-6
+ 313 011b FA       		.byte	-6
+ 314 011c FA       		.byte	-6
+ 315 011d F9       		.byte	-7
+ 316 011e F9       		.byte	-7
+ 317 011f F9       		.byte	-7
+ 318 0120 F9       		.byte	-7
+ 319 0121 F9       		.byte	-7
+ 320 0122 F9       		.byte	-7
+ 321 0123 F8       		.byte	-8
+ 322 0124 F8       		.byte	-8
+ 323 0125 F8       		.byte	-8
+ 324 0126 F8       		.byte	-8
+ 325 0127 F8       		.byte	-8
+ 326 0128 F7       		.byte	-9
+ 327 0129 F7       		.byte	-9
+ 328 012a F7       		.byte	-9
+ 329 012b F7       		.byte	-9
+ 330 012c F6       		.byte	-10
+ 331 012d F6       		.byte	-10
+ 332 012e F6       		.byte	-10
+ 333 012f F6       		.byte	-10
+ 334 0130 F5       		.byte	-11
+ 335 0131 F5       		.byte	-11
+ 336 0132 F5       		.byte	-11
+ 337 0133 F5       		.byte	-11
+ 338 0134 F4       		.byte	-12
+ 339 0135 F4       		.byte	-12
+ 340 0136 F4       		.byte	-12
+ 341 0137 F3       		.byte	-13
+ 342 0138 F3       		.byte	-13
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 7
+
+
+ 343 0139 F3       		.byte	-13
+ 344 013a F3       		.byte	-13
+ 345 013b F2       		.byte	-14
+ 346 013c F2       		.byte	-14
+ 347 013d F2       		.byte	-14
+ 348 013e F1       		.byte	-15
+ 349 013f F1       		.byte	-15
+ 350 0140 F1       		.byte	-15
+ 351 0141 F0       		.byte	-16
+ 352 0142 F0       		.byte	-16
+ 353 0143 F0       		.byte	-16
+ 354 0144 EF       		.byte	-17
+ 355 0145 EF       		.byte	-17
+ 356 0146 EF       		.byte	-17
+ 357 0147 EE       		.byte	-18
+ 358 0148 EE       		.byte	-18
+ 359 0149 ED       		.byte	-19
+ 360 014a ED       		.byte	-19
+ 361 014b ED       		.byte	-19
+ 362 014c EC       		.byte	-20
+ 363 014d EC       		.byte	-20
+ 364 014e EB       		.byte	-21
+ 365 014f EB       		.byte	-21
+ 366 0150 EB       		.byte	-21
+ 367 0151 EA       		.byte	-22
+ 368 0152 EA       		.byte	-22
+ 369 0153 E9       		.byte	-23
+ 370 0154 E9       		.byte	-23
+ 371 0155 E9       		.byte	-23
+ 372 0156 E8       		.byte	-24
+ 373 0157 E8       		.byte	-24
+ 374 0158 E7       		.byte	-25
+ 375 0159 E7       		.byte	-25
+ 376 015a E6       		.byte	-26
+ 377 015b E6       		.byte	-26
+ 378 015c E6       		.byte	-26
+ 379 015d E5       		.byte	-27
+ 380 015e E5       		.byte	-27
+ 381 015f E4       		.byte	-28
+ 382 0160 E4       		.byte	-28
+ 383 0161 E3       		.byte	-29
+ 384 0162 E3       		.byte	-29
+ 385 0163 E2       		.byte	-30
+ 386 0164 E2       		.byte	-30
+ 387 0165 E1       		.byte	-31
+ 388 0166 E1       		.byte	-31
+ 389 0167 E0       		.byte	-32
+ 390 0168 E0       		.byte	-32
+ 391 0169 DF       		.byte	-33
+ 392 016a DF       		.byte	-33
+ 393 016b DE       		.byte	-34
+ 394 016c DE       		.byte	-34
+ 395 016d DD       		.byte	-35
+ 396 016e DD       		.byte	-35
+ 397 016f DC       		.byte	-36
+ 398 0170 DC       		.byte	-36
+ 399 0171 DB       		.byte	-37
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 8
+
+
+ 400 0172 DB       		.byte	-37
+ 401 0173 DA       		.byte	-38
+ 402 0174 DA       		.byte	-38
+ 403 0175 D9       		.byte	-39
+ 404 0176 D8       		.byte	-40
+ 405 0177 D8       		.byte	-40
+ 406 0178 D7       		.byte	-41
+ 407 0179 D7       		.byte	-41
+ 408 017a D6       		.byte	-42
+ 409 017b D6       		.byte	-42
+ 410 017c D5       		.byte	-43
+ 411 017d D4       		.byte	-44
+ 412 017e D4       		.byte	-44
+ 413 017f D3       		.byte	-45
+ 414 0180 D3       		.byte	-45
+ 415 0181 D2       		.byte	-46
+ 416 0182 D2       		.byte	-46
+ 417 0183 D1       		.byte	-47
+ 418 0184 D0       		.byte	-48
+ 419 0185 D0       		.byte	-48
+ 420 0186 CF       		.byte	-49
+ 421 0187 CF       		.byte	-49
+ 422 0188 CE       		.byte	-50
+ 423 0189 CD       		.byte	-51
+ 424 018a CD       		.byte	-51
+ 425 018b CC       		.byte	-52
+ 426 018c CB       		.byte	-53
+ 427 018d CB       		.byte	-53
+ 428 018e CA       		.byte	-54
+ 429 018f CA       		.byte	-54
+ 430 0190 C9       		.byte	-55
+ 431 0191 C8       		.byte	-56
+ 432 0192 C8       		.byte	-56
+ 433 0193 C7       		.byte	-57
+ 434 0194 C6       		.byte	-58
+ 435 0195 C6       		.byte	-58
+ 436 0196 C5       		.byte	-59
+ 437 0197 C4       		.byte	-60
+ 438 0198 C4       		.byte	-60
+ 439 0199 C3       		.byte	-61
+ 440 019a C2       		.byte	-62
+ 441 019b C2       		.byte	-62
+ 442 019c C1       		.byte	-63
+ 443 019d C0       		.byte	-64
+ 444 019e C0       		.byte	-64
+ 445 019f BF       		.byte	-65
+ 446 01a0 BE       		.byte	-66
+ 447 01a1 BE       		.byte	-66
+ 448 01a2 BD       		.byte	-67
+ 449 01a3 BC       		.byte	-68
+ 450 01a4 BC       		.byte	-68
+ 451 01a5 BB       		.byte	-69
+ 452 01a6 BA       		.byte	-70
+ 453 01a7 BA       		.byte	-70
+ 454 01a8 B9       		.byte	-71
+ 455 01a9 B8       		.byte	-72
+ 456 01aa B8       		.byte	-72
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 9
+
+
+ 457 01ab B7       		.byte	-73
+ 458 01ac B6       		.byte	-74
+ 459 01ad B5       		.byte	-75
+ 460 01ae B5       		.byte	-75
+ 461 01af B4       		.byte	-76
+ 462 01b0 B3       		.byte	-77
+ 463 01b1 B3       		.byte	-77
+ 464 01b2 B2       		.byte	-78
+ 465 01b3 B1       		.byte	-79
+ 466 01b4 B0       		.byte	-80
+ 467 01b5 B0       		.byte	-80
+ 468 01b6 AF       		.byte	-81
+ 469 01b7 AE       		.byte	-82
+ 470 01b8 AE       		.byte	-82
+ 471 01b9 AD       		.byte	-83
+ 472 01ba AC       		.byte	-84
+ 473 01bb AB       		.byte	-85
+ 474 01bc AB       		.byte	-85
+ 475 01bd AA       		.byte	-86
+ 476 01be A9       		.byte	-87
+ 477 01bf A8       		.byte	-88
+ 478 01c0 A8       		.byte	-88
+ 479 01c1 A7       		.byte	-89
+ 480 01c2 A6       		.byte	-90
+ 481 01c3 A5       		.byte	-91
+ 482 01c4 A5       		.byte	-91
+ 483 01c5 A4       		.byte	-92
+ 484 01c6 A3       		.byte	-93
+ 485 01c7 A2       		.byte	-94
+ 486 01c8 A2       		.byte	-94
+ 487 01c9 A1       		.byte	-95
+ 488 01ca A0       		.byte	-96
+ 489 01cb 9F       		.byte	-97
+ 490 01cc 9F       		.byte	-97
+ 491 01cd 9E       		.byte	-98
+ 492 01ce 9D       		.byte	-99
+ 493 01cf 9C       		.byte	-100
+ 494 01d0 9C       		.byte	-100
+ 495 01d1 9B       		.byte	-101
+ 496 01d2 9A       		.byte	-102
+ 497 01d3 99       		.byte	-103
+ 498 01d4 98       		.byte	-104
+ 499 01d5 98       		.byte	-104
+ 500 01d6 97       		.byte	-105
+ 501 01d7 96       		.byte	-106
+ 502 01d8 95       		.byte	-107
+ 503 01d9 95       		.byte	-107
+ 504 01da 94       		.byte	-108
+ 505 01db 93       		.byte	-109
+ 506 01dc 92       		.byte	-110
+ 507 01dd 92       		.byte	-110
+ 508 01de 91       		.byte	-111
+ 509 01df 90       		.byte	-112
+ 510 01e0 8F       		.byte	-113
+ 511 01e1 8E       		.byte	-114
+ 512 01e2 8E       		.byte	-114
+ 513 01e3 8D       		.byte	-115
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 10
+
+
+ 514 01e4 8C       		.byte	-116
+ 515 01e5 8B       		.byte	-117
+ 516 01e6 8A       		.byte	-118
+ 517 01e7 8A       		.byte	-118
+ 518 01e8 89       		.byte	-119
+ 519 01e9 88       		.byte	-120
+ 520 01ea 87       		.byte	-121
+ 521 01eb 87       		.byte	-121
+ 522 01ec 86       		.byte	-122
+ 523 01ed 85       		.byte	-123
+ 524 01ee 84       		.byte	-124
+ 525 01ef 83       		.byte	-125
+ 526 01f0 83       		.byte	-125
+ 527 01f1 82       		.byte	-126
+ 528 01f2 81       		.byte	-127
+ 529 01f3 80       		.byte	-128
+ 530 01f4 80       		.byte	-128
+ 531 01f5 7F       		.byte	127
+ 532 01f6 7E       		.byte	126
+ 533 01f7 7D       		.byte	125
+ 534 01f8 7C       		.byte	124
+ 535 01f9 7C       		.byte	124
+ 536 01fa 7B       		.byte	123
+ 537 01fb 7A       		.byte	122
+ 538 01fc 79       		.byte	121
+ 539 01fd 78       		.byte	120
+ 540 01fe 78       		.byte	120
+ 541 01ff 77       		.byte	119
+ 542 0200 76       		.byte	118
+ 543 0201 75       		.byte	117
+ 544 0202 75       		.byte	117
+ 545 0203 74       		.byte	116
+ 546 0204 73       		.byte	115
+ 547 0205 72       		.byte	114
+ 548 0206 71       		.byte	113
+ 549 0207 71       		.byte	113
+ 550 0208 70       		.byte	112
+ 551 0209 6F       		.byte	111
+ 552 020a 6E       		.byte	110
+ 553 020b 6D       		.byte	109
+ 554 020c 6D       		.byte	109
+ 555 020d 6C       		.byte	108
+ 556 020e 6B       		.byte	107
+ 557 020f 6A       		.byte	106
+ 558 0210 6A       		.byte	106
+ 559 0211 69       		.byte	105
+ 560 0212 68       		.byte	104
+ 561 0213 67       		.byte	103
+ 562 0214 67       		.byte	103
+ 563 0215 66       		.byte	102
+ 564 0216 65       		.byte	101
+ 565 0217 64       		.byte	100
+ 566 0218 63       		.byte	99
+ 567 0219 63       		.byte	99
+ 568 021a 62       		.byte	98
+ 569 021b 61       		.byte	97
+ 570 021c 60       		.byte	96
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 11
+
+
+ 571 021d 60       		.byte	96
+ 572 021e 5F       		.byte	95
+ 573 021f 5E       		.byte	94
+ 574 0220 5D       		.byte	93
+ 575 0221 5D       		.byte	93
+ 576 0222 5C       		.byte	92
+ 577 0223 5B       		.byte	91
+ 578 0224 5A       		.byte	90
+ 579 0225 5A       		.byte	90
+ 580 0226 59       		.byte	89
+ 581 0227 58       		.byte	88
+ 582 0228 57       		.byte	87
+ 583 0229 57       		.byte	87
+ 584 022a 56       		.byte	86
+ 585 022b 55       		.byte	85
+ 586 022c 54       		.byte	84
+ 587 022d 54       		.byte	84
+ 588 022e 53       		.byte	83
+ 589 022f 52       		.byte	82
+ 590 0230 51       		.byte	81
+ 591 0231 51       		.byte	81
+ 592 0232 50       		.byte	80
+ 593 0233 4F       		.byte	79
+ 594 0234 4F       		.byte	79
+ 595 0235 4E       		.byte	78
+ 596 0236 4D       		.byte	77
+ 597 0237 4C       		.byte	76
+ 598 0238 4C       		.byte	76
+ 599 0239 4B       		.byte	75
+ 600 023a 4A       		.byte	74
+ 601 023b 4A       		.byte	74
+ 602 023c 49       		.byte	73
+ 603 023d 48       		.byte	72
+ 604 023e 47       		.byte	71
+ 605 023f 47       		.byte	71
+ 606 0240 46       		.byte	70
+ 607 0241 45       		.byte	69
+ 608 0242 45       		.byte	69
+ 609 0243 44       		.byte	68
+ 610 0244 43       		.byte	67
+ 611 0245 43       		.byte	67
+ 612 0246 42       		.byte	66
+ 613 0247 41       		.byte	65
+ 614 0248 41       		.byte	65
+ 615 0249 40       		.byte	64
+ 616 024a 3F       		.byte	63
+ 617 024b 3F       		.byte	63
+ 618 024c 3E       		.byte	62
+ 619 024d 3D       		.byte	61
+ 620 024e 3D       		.byte	61
+ 621 024f 3C       		.byte	60
+ 622 0250 3B       		.byte	59
+ 623 0251 3B       		.byte	59
+ 624 0252 3A       		.byte	58
+ 625 0253 39       		.byte	57
+ 626 0254 39       		.byte	57
+ 627 0255 38       		.byte	56
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 12
+
+
+ 628 0256 37       		.byte	55
+ 629 0257 37       		.byte	55
+ 630 0258 36       		.byte	54
+ 631 0259 35       		.byte	53
+ 632 025a 35       		.byte	53
+ 633 025b 34       		.byte	52
+ 634 025c 34       		.byte	52
+ 635 025d 33       		.byte	51
+ 636 025e 32       		.byte	50
+ 637 025f 32       		.byte	50
+ 638 0260 31       		.byte	49
+ 639 0261 30       		.byte	48
+ 640 0262 30       		.byte	48
+ 641 0263 2F       		.byte	47
+ 642 0264 2F       		.byte	47
+ 643 0265 2E       		.byte	46
+ 644 0266 2D       		.byte	45
+ 645 0267 2D       		.byte	45
+ 646 0268 2C       		.byte	44
+ 647 0269 2C       		.byte	44
+ 648 026a 2B       		.byte	43
+ 649 026b 2B       		.byte	43
+ 650 026c 2A       		.byte	42
+ 651 026d 29       		.byte	41
+ 652 026e 29       		.byte	41
+ 653 026f 28       		.byte	40
+ 654 0270 28       		.byte	40
+ 655 0271 27       		.byte	39
+ 656 0272 27       		.byte	39
+ 657 0273 26       		.byte	38
+ 658 0274 25       		.byte	37
+ 659 0275 25       		.byte	37
+ 660 0276 24       		.byte	36
+ 661 0277 24       		.byte	36
+ 662 0278 23       		.byte	35
+ 663 0279 23       		.byte	35
+ 664 027a 22       		.byte	34
+ 665 027b 22       		.byte	34
+ 666 027c 21       		.byte	33
+ 667 027d 21       		.byte	33
+ 668 027e 20       		.byte	32
+ 669 027f 20       		.byte	32
+ 670 0280 1F       		.byte	31
+ 671 0281 1F       		.byte	31
+ 672 0282 1E       		.byte	30
+ 673 0283 1E       		.byte	30
+ 674 0284 1D       		.byte	29
+ 675 0285 1D       		.byte	29
+ 676 0286 1C       		.byte	28
+ 677 0287 1C       		.byte	28
+ 678 0288 1B       		.byte	27
+ 679 0289 1B       		.byte	27
+ 680 028a 1A       		.byte	26
+ 681 028b 1A       		.byte	26
+ 682 028c 19       		.byte	25
+ 683 028d 19       		.byte	25
+ 684 028e 19       		.byte	25
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 13
+
+
+ 685 028f 18       		.byte	24
+ 686 0290 18       		.byte	24
+ 687 0291 17       		.byte	23
+ 688 0292 17       		.byte	23
+ 689 0293 16       		.byte	22
+ 690 0294 16       		.byte	22
+ 691 0295 16       		.byte	22
+ 692 0296 15       		.byte	21
+ 693 0297 15       		.byte	21
+ 694 0298 14       		.byte	20
+ 695 0299 14       		.byte	20
+ 696 029a 14       		.byte	20
+ 697 029b 13       		.byte	19
+ 698 029c 13       		.byte	19
+ 699 029d 12       		.byte	18
+ 700 029e 12       		.byte	18
+ 701 029f 12       		.byte	18
+ 702 02a0 11       		.byte	17
+ 703 02a1 11       		.byte	17
+ 704 02a2 10       		.byte	16
+ 705 02a3 10       		.byte	16
+ 706 02a4 10       		.byte	16
+ 707 02a5 0F       		.byte	15
+ 708 02a6 0F       		.byte	15
+ 709 02a7 0F       		.byte	15
+ 710 02a8 0E       		.byte	14
+ 711 02a9 0E       		.byte	14
+ 712 02aa 0E       		.byte	14
+ 713 02ab 0D       		.byte	13
+ 714 02ac 0D       		.byte	13
+ 715 02ad 0D       		.byte	13
+ 716 02ae 0C       		.byte	12
+ 717 02af 0C       		.byte	12
+ 718 02b0 0C       		.byte	12
+ 719 02b1 0C       		.byte	12
+ 720 02b2 0B       		.byte	11
+ 721 02b3 0B       		.byte	11
+ 722 02b4 0B       		.byte	11
+ 723 02b5 0A       		.byte	10
+ 724 02b6 0A       		.byte	10
+ 725 02b7 0A       		.byte	10
+ 726 02b8 0A       		.byte	10
+ 727 02b9 09       		.byte	9
+ 728 02ba 09       		.byte	9
+ 729 02bb 09       		.byte	9
+ 730 02bc 09       		.byte	9
+ 731 02bd 08       		.byte	8
+ 732 02be 08       		.byte	8
+ 733 02bf 08       		.byte	8
+ 734 02c0 08       		.byte	8
+ 735 02c1 07       		.byte	7
+ 736 02c2 07       		.byte	7
+ 737 02c3 07       		.byte	7
+ 738 02c4 07       		.byte	7
+ 739 02c5 07       		.byte	7
+ 740 02c6 06       		.byte	6
+ 741 02c7 06       		.byte	6
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 14
+
+
+ 742 02c8 06       		.byte	6
+ 743 02c9 06       		.byte	6
+ 744 02ca 06       		.byte	6
+ 745 02cb 06       		.byte	6
+ 746 02cc 05       		.byte	5
+ 747 02cd 05       		.byte	5
+ 748 02ce 05       		.byte	5
+ 749 02cf 05       		.byte	5
+ 750 02d0 05       		.byte	5
+ 751 02d1 05       		.byte	5
+ 752 02d2 04       		.byte	4
+ 753 02d3 04       		.byte	4
+ 754 02d4 04       		.byte	4
+ 755 02d5 04       		.byte	4
+ 756 02d6 04       		.byte	4
+ 757 02d7 04       		.byte	4
+ 758 02d8 04       		.byte	4
+ 759 02d9 04       		.byte	4
+ 760 02da 03       		.byte	3
+ 761 02db 03       		.byte	3
+ 762 02dc 03       		.byte	3
+ 763 02dd 03       		.byte	3
+ 764 02de 03       		.byte	3
+ 765 02df 03       		.byte	3
+ 766 02e0 03       		.byte	3
+ 767 02e1 03       		.byte	3
+ 768 02e2 03       		.byte	3
+ 769 02e3 03       		.byte	3
+ 770 02e4 03       		.byte	3
+ 771 02e5 03       		.byte	3
+ 772 02e6 03       		.byte	3
+ 773 02e7 03       		.byte	3
+ 774 02e8 03       		.byte	3
+ 775 02e9 03       		.byte	3
+ 776 02ea 03       		.byte	3
+ 777 02eb 03       		.byte	3
+ 778 02ec 03       		.byte	3
+ 779 02ed 03       		.byte	3
+ 780 02ee 03       		.byte	3
+ 781 02ef 03       		.byte	3
+ 782 02f0 03       		.byte	3
+ 783 02f1 03       		.byte	3
+ 784 02f2 03       		.byte	3
+ 785 02f3 03       		.byte	3
+ 786 02f4 03       		.byte	3
+ 787 02f5 03       		.byte	3
+ 788 02f6 03       		.byte	3
+ 789 02f7 03       		.byte	3
+ 790 02f8 03       		.byte	3
+ 791 02f9 03       		.byte	3
+ 792 02fa 03       		.byte	3
+ 793 02fb 03       		.byte	3
+ 794 02fc 03       		.byte	3
+ 795 02fd 03       		.byte	3
+ 796 02fe 03       		.byte	3
+ 797 02ff 03       		.byte	3
+ 798 0300 03       		.byte	3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 15
+
+
+ 799 0301 03       		.byte	3
+ 800 0302 03       		.byte	3
+ 801 0303 04       		.byte	4
+ 802 0304 04       		.byte	4
+ 803 0305 04       		.byte	4
+ 804 0306 04       		.byte	4
+ 805 0307 04       		.byte	4
+ 806 0308 04       		.byte	4
+ 807 0309 04       		.byte	4
+ 808 030a 04       		.byte	4
+ 809 030b 05       		.byte	5
+ 810 030c 05       		.byte	5
+ 811 030d 05       		.byte	5
+ 812 030e 05       		.byte	5
+ 813 030f 05       		.byte	5
+ 814 0310 05       		.byte	5
+ 815 0311 06       		.byte	6
+ 816 0312 06       		.byte	6
+ 817 0313 06       		.byte	6
+ 818 0314 06       		.byte	6
+ 819 0315 06       		.byte	6
+ 820 0316 06       		.byte	6
+ 821 0317 07       		.byte	7
+ 822 0318 07       		.byte	7
+ 823 0319 07       		.byte	7
+ 824 031a 07       		.byte	7
+ 825 031b 07       		.byte	7
+ 826 031c 08       		.byte	8
+ 827 031d 08       		.byte	8
+ 828 031e 08       		.byte	8
+ 829 031f 08       		.byte	8
+ 830 0320 09       		.byte	9
+ 831 0321 09       		.byte	9
+ 832 0322 09       		.byte	9
+ 833 0323 09       		.byte	9
+ 834 0324 0A       		.byte	10
+ 835 0325 0A       		.byte	10
+ 836 0326 0A       		.byte	10
+ 837 0327 0A       		.byte	10
+ 838 0328 0B       		.byte	11
+ 839 0329 0B       		.byte	11
+ 840 032a 0B       		.byte	11
+ 841 032b 0C       		.byte	12
+ 842 032c 0C       		.byte	12
+ 843 032d 0C       		.byte	12
+ 844 032e 0C       		.byte	12
+ 845 032f 0D       		.byte	13
+ 846 0330 0D       		.byte	13
+ 847 0331 0D       		.byte	13
+ 848 0332 0E       		.byte	14
+ 849 0333 0E       		.byte	14
+ 850 0334 0E       		.byte	14
+ 851 0335 0F       		.byte	15
+ 852 0336 0F       		.byte	15
+ 853 0337 0F       		.byte	15
+ 854 0338 10       		.byte	16
+ 855 0339 10       		.byte	16
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 16
+
+
+ 856 033a 10       		.byte	16
+ 857 033b 11       		.byte	17
+ 858 033c 11       		.byte	17
+ 859 033d 12       		.byte	18
+ 860 033e 12       		.byte	18
+ 861 033f 12       		.byte	18
+ 862 0340 13       		.byte	19
+ 863 0341 13       		.byte	19
+ 864 0342 14       		.byte	20
+ 865 0343 14       		.byte	20
+ 866 0344 14       		.byte	20
+ 867 0345 15       		.byte	21
+ 868 0346 15       		.byte	21
+ 869 0347 16       		.byte	22
+ 870 0348 16       		.byte	22
+ 871 0349 16       		.byte	22
+ 872 034a 17       		.byte	23
+ 873 034b 17       		.byte	23
+ 874 034c 18       		.byte	24
+ 875 034d 18       		.byte	24
+ 876 034e 19       		.byte	25
+ 877 034f 19       		.byte	25
+ 878 0350 19       		.byte	25
+ 879 0351 1A       		.byte	26
+ 880 0352 1A       		.byte	26
+ 881 0353 1B       		.byte	27
+ 882 0354 1B       		.byte	27
+ 883 0355 1C       		.byte	28
+ 884 0356 1C       		.byte	28
+ 885 0357 1D       		.byte	29
+ 886 0358 1D       		.byte	29
+ 887 0359 1E       		.byte	30
+ 888 035a 1E       		.byte	30
+ 889 035b 1F       		.byte	31
+ 890 035c 1F       		.byte	31
+ 891 035d 20       		.byte	32
+ 892 035e 20       		.byte	32
+ 893 035f 21       		.byte	33
+ 894 0360 21       		.byte	33
+ 895 0361 22       		.byte	34
+ 896 0362 22       		.byte	34
+ 897 0363 23       		.byte	35
+ 898 0364 23       		.byte	35
+ 899 0365 24       		.byte	36
+ 900 0366 24       		.byte	36
+ 901 0367 25       		.byte	37
+ 902 0368 25       		.byte	37
+ 903 0369 26       		.byte	38
+ 904 036a 27       		.byte	39
+ 905 036b 27       		.byte	39
+ 906 036c 28       		.byte	40
+ 907 036d 28       		.byte	40
+ 908 036e 29       		.byte	41
+ 909 036f 29       		.byte	41
+ 910 0370 2A       		.byte	42
+ 911 0371 2B       		.byte	43
+ 912 0372 2B       		.byte	43
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 17
+
+
+ 913 0373 2C       		.byte	44
+ 914 0374 2C       		.byte	44
+ 915 0375 2D       		.byte	45
+ 916 0376 2D       		.byte	45
+ 917 0377 2E       		.byte	46
+ 918 0378 2F       		.byte	47
+ 919 0379 2F       		.byte	47
+ 920 037a 30       		.byte	48
+ 921 037b 30       		.byte	48
+ 922 037c 31       		.byte	49
+ 923 037d 32       		.byte	50
+ 924 037e 32       		.byte	50
+ 925 037f 33       		.byte	51
+ 926 0380 34       		.byte	52
+ 927 0381 34       		.byte	52
+ 928 0382 35       		.byte	53
+ 929 0383 35       		.byte	53
+ 930 0384 36       		.byte	54
+ 931 0385 37       		.byte	55
+ 932 0386 37       		.byte	55
+ 933 0387 38       		.byte	56
+ 934 0388 39       		.byte	57
+ 935 0389 39       		.byte	57
+ 936 038a 3A       		.byte	58
+ 937 038b 3B       		.byte	59
+ 938 038c 3B       		.byte	59
+ 939 038d 3C       		.byte	60
+ 940 038e 3D       		.byte	61
+ 941 038f 3D       		.byte	61
+ 942 0390 3E       		.byte	62
+ 943 0391 3F       		.byte	63
+ 944 0392 3F       		.byte	63
+ 945 0393 40       		.byte	64
+ 946 0394 41       		.byte	65
+ 947 0395 41       		.byte	65
+ 948 0396 42       		.byte	66
+ 949 0397 43       		.byte	67
+ 950 0398 43       		.byte	67
+ 951 0399 44       		.byte	68
+ 952 039a 45       		.byte	69
+ 953 039b 45       		.byte	69
+ 954 039c 46       		.byte	70
+ 955 039d 47       		.byte	71
+ 956 039e 47       		.byte	71
+ 957 039f 48       		.byte	72
+ 958 03a0 49       		.byte	73
+ 959 03a1 4A       		.byte	74
+ 960 03a2 4A       		.byte	74
+ 961 03a3 4B       		.byte	75
+ 962 03a4 4C       		.byte	76
+ 963 03a5 4C       		.byte	76
+ 964 03a6 4D       		.byte	77
+ 965 03a7 4E       		.byte	78
+ 966 03a8 4F       		.byte	79
+ 967 03a9 4F       		.byte	79
+ 968 03aa 50       		.byte	80
+ 969 03ab 51       		.byte	81
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 18
+
+
+ 970 03ac 51       		.byte	81
+ 971 03ad 52       		.byte	82
+ 972 03ae 53       		.byte	83
+ 973 03af 54       		.byte	84
+ 974 03b0 54       		.byte	84
+ 975 03b1 55       		.byte	85
+ 976 03b2 56       		.byte	86
+ 977 03b3 57       		.byte	87
+ 978 03b4 57       		.byte	87
+ 979 03b5 58       		.byte	88
+ 980 03b6 59       		.byte	89
+ 981 03b7 5A       		.byte	90
+ 982 03b8 5A       		.byte	90
+ 983 03b9 5B       		.byte	91
+ 984 03ba 5C       		.byte	92
+ 985 03bb 5D       		.byte	93
+ 986 03bc 5D       		.byte	93
+ 987 03bd 5E       		.byte	94
+ 988 03be 5F       		.byte	95
+ 989 03bf 60       		.byte	96
+ 990 03c0 60       		.byte	96
+ 991 03c1 61       		.byte	97
+ 992 03c2 62       		.byte	98
+ 993 03c3 63       		.byte	99
+ 994 03c4 63       		.byte	99
+ 995 03c5 64       		.byte	100
+ 996 03c6 65       		.byte	101
+ 997 03c7 66       		.byte	102
+ 998 03c8 67       		.byte	103
+ 999 03c9 67       		.byte	103
+ 1000 03ca 68       		.byte	104
+ 1001 03cb 69       		.byte	105
+ 1002 03cc 6A       		.byte	106
+ 1003 03cd 6A       		.byte	106
+ 1004 03ce 6B       		.byte	107
+ 1005 03cf 6C       		.byte	108
+ 1006 03d0 6D       		.byte	109
+ 1007 03d1 6D       		.byte	109
+ 1008 03d2 6E       		.byte	110
+ 1009 03d3 6F       		.byte	111
+ 1010 03d4 70       		.byte	112
+ 1011 03d5 71       		.byte	113
+ 1012 03d6 71       		.byte	113
+ 1013 03d7 72       		.byte	114
+ 1014 03d8 73       		.byte	115
+ 1015 03d9 74       		.byte	116
+ 1016 03da 75       		.byte	117
+ 1017 03db 75       		.byte	117
+ 1018 03dc 76       		.byte	118
+ 1019 03dd 77       		.byte	119
+ 1020 03de 78       		.byte	120
+ 1021 03df 78       		.byte	120
+ 1022 03e0 79       		.byte	121
+ 1023 03e1 7A       		.byte	122
+ 1024 03e2 7B       		.byte	123
+ 1025 03e3 7C       		.byte	124
+ 1026 03e4 7C       		.byte	124
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 19
+
+
+ 1027 03e5 7D       		.byte	125
+ 1028 03e6 7E       		.byte	126
+ 1029 03e7 7F       		.byte	127
+ 1030              		.global	WaveDAC8_1_wave2
+ 1031              		.align	2
+ 1032              		.type	WaveDAC8_1_wave2, %object
+ 1033              		.size	WaveDAC8_1_wave2, 1000
+ 1034              	WaveDAC8_1_wave2:
+ 1035 03e8 80       		.byte	-128
+ 1036 03e9 80       		.byte	-128
+ 1037 03ea 81       		.byte	-127
+ 1038 03eb 82       		.byte	-126
+ 1039 03ec 83       		.byte	-125
+ 1040 03ed 83       		.byte	-125
+ 1041 03ee 84       		.byte	-124
+ 1042 03ef 85       		.byte	-123
+ 1043 03f0 86       		.byte	-122
+ 1044 03f1 87       		.byte	-121
+ 1045 03f2 87       		.byte	-121
+ 1046 03f3 88       		.byte	-120
+ 1047 03f4 89       		.byte	-119
+ 1048 03f5 8A       		.byte	-118
+ 1049 03f6 8A       		.byte	-118
+ 1050 03f7 8B       		.byte	-117
+ 1051 03f8 8C       		.byte	-116
+ 1052 03f9 8D       		.byte	-115
+ 1053 03fa 8E       		.byte	-114
+ 1054 03fb 8E       		.byte	-114
+ 1055 03fc 8F       		.byte	-113
+ 1056 03fd 90       		.byte	-112
+ 1057 03fe 91       		.byte	-111
+ 1058 03ff 92       		.byte	-110
+ 1059 0400 92       		.byte	-110
+ 1060 0401 93       		.byte	-109
+ 1061 0402 94       		.byte	-108
+ 1062 0403 95       		.byte	-107
+ 1063 0404 95       		.byte	-107
+ 1064 0405 96       		.byte	-106
+ 1065 0406 97       		.byte	-105
+ 1066 0407 98       		.byte	-104
+ 1067 0408 98       		.byte	-104
+ 1068 0409 99       		.byte	-103
+ 1069 040a 9A       		.byte	-102
+ 1070 040b 9B       		.byte	-101
+ 1071 040c 9C       		.byte	-100
+ 1072 040d 9C       		.byte	-100
+ 1073 040e 9D       		.byte	-99
+ 1074 040f 9E       		.byte	-98
+ 1075 0410 9F       		.byte	-97
+ 1076 0411 9F       		.byte	-97
+ 1077 0412 A0       		.byte	-96
+ 1078 0413 A1       		.byte	-95
+ 1079 0414 A2       		.byte	-94
+ 1080 0415 A2       		.byte	-94
+ 1081 0416 A3       		.byte	-93
+ 1082 0417 A4       		.byte	-92
+ 1083 0418 A5       		.byte	-91
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 20
+
+
+ 1084 0419 A5       		.byte	-91
+ 1085 041a A6       		.byte	-90
+ 1086 041b A7       		.byte	-89
+ 1087 041c A8       		.byte	-88
+ 1088 041d A8       		.byte	-88
+ 1089 041e A9       		.byte	-87
+ 1090 041f AA       		.byte	-86
+ 1091 0420 AB       		.byte	-85
+ 1092 0421 AB       		.byte	-85
+ 1093 0422 AC       		.byte	-84
+ 1094 0423 AD       		.byte	-83
+ 1095 0424 AE       		.byte	-82
+ 1096 0425 AE       		.byte	-82
+ 1097 0426 AF       		.byte	-81
+ 1098 0427 B0       		.byte	-80
+ 1099 0428 B0       		.byte	-80
+ 1100 0429 B1       		.byte	-79
+ 1101 042a B2       		.byte	-78
+ 1102 042b B3       		.byte	-77
+ 1103 042c B3       		.byte	-77
+ 1104 042d B4       		.byte	-76
+ 1105 042e B5       		.byte	-75
+ 1106 042f B5       		.byte	-75
+ 1107 0430 B6       		.byte	-74
+ 1108 0431 B7       		.byte	-73
+ 1109 0432 B8       		.byte	-72
+ 1110 0433 B8       		.byte	-72
+ 1111 0434 B9       		.byte	-71
+ 1112 0435 BA       		.byte	-70
+ 1113 0436 BA       		.byte	-70
+ 1114 0437 BB       		.byte	-69
+ 1115 0438 BC       		.byte	-68
+ 1116 0439 BC       		.byte	-68
+ 1117 043a BD       		.byte	-67
+ 1118 043b BE       		.byte	-66
+ 1119 043c BE       		.byte	-66
+ 1120 043d BF       		.byte	-65
+ 1121 043e C0       		.byte	-64
+ 1122 043f C0       		.byte	-64
+ 1123 0440 C1       		.byte	-63
+ 1124 0441 C2       		.byte	-62
+ 1125 0442 C2       		.byte	-62
+ 1126 0443 C3       		.byte	-61
+ 1127 0444 C4       		.byte	-60
+ 1128 0445 C4       		.byte	-60
+ 1129 0446 C5       		.byte	-59
+ 1130 0447 C6       		.byte	-58
+ 1131 0448 C6       		.byte	-58
+ 1132 0449 C7       		.byte	-57
+ 1133 044a C8       		.byte	-56
+ 1134 044b C8       		.byte	-56
+ 1135 044c C9       		.byte	-55
+ 1136 044d CA       		.byte	-54
+ 1137 044e CA       		.byte	-54
+ 1138 044f CB       		.byte	-53
+ 1139 0450 CB       		.byte	-53
+ 1140 0451 CC       		.byte	-52
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 21
+
+
+ 1141 0452 CD       		.byte	-51
+ 1142 0453 CD       		.byte	-51
+ 1143 0454 CE       		.byte	-50
+ 1144 0455 CF       		.byte	-49
+ 1145 0456 CF       		.byte	-49
+ 1146 0457 D0       		.byte	-48
+ 1147 0458 D0       		.byte	-48
+ 1148 0459 D1       		.byte	-47
+ 1149 045a D2       		.byte	-46
+ 1150 045b D2       		.byte	-46
+ 1151 045c D3       		.byte	-45
+ 1152 045d D3       		.byte	-45
+ 1153 045e D4       		.byte	-44
+ 1154 045f D4       		.byte	-44
+ 1155 0460 D5       		.byte	-43
+ 1156 0461 D6       		.byte	-42
+ 1157 0462 D6       		.byte	-42
+ 1158 0463 D7       		.byte	-41
+ 1159 0464 D7       		.byte	-41
+ 1160 0465 D8       		.byte	-40
+ 1161 0466 D8       		.byte	-40
+ 1162 0467 D9       		.byte	-39
+ 1163 0468 DA       		.byte	-38
+ 1164 0469 DA       		.byte	-38
+ 1165 046a DB       		.byte	-37
+ 1166 046b DB       		.byte	-37
+ 1167 046c DC       		.byte	-36
+ 1168 046d DC       		.byte	-36
+ 1169 046e DD       		.byte	-35
+ 1170 046f DD       		.byte	-35
+ 1171 0470 DE       		.byte	-34
+ 1172 0471 DE       		.byte	-34
+ 1173 0472 DF       		.byte	-33
+ 1174 0473 DF       		.byte	-33
+ 1175 0474 E0       		.byte	-32
+ 1176 0475 E0       		.byte	-32
+ 1177 0476 E1       		.byte	-31
+ 1178 0477 E1       		.byte	-31
+ 1179 0478 E2       		.byte	-30
+ 1180 0479 E2       		.byte	-30
+ 1181 047a E3       		.byte	-29
+ 1182 047b E3       		.byte	-29
+ 1183 047c E4       		.byte	-28
+ 1184 047d E4       		.byte	-28
+ 1185 047e E5       		.byte	-27
+ 1186 047f E5       		.byte	-27
+ 1187 0480 E6       		.byte	-26
+ 1188 0481 E6       		.byte	-26
+ 1189 0482 E6       		.byte	-26
+ 1190 0483 E7       		.byte	-25
+ 1191 0484 E7       		.byte	-25
+ 1192 0485 E8       		.byte	-24
+ 1193 0486 E8       		.byte	-24
+ 1194 0487 E9       		.byte	-23
+ 1195 0488 E9       		.byte	-23
+ 1196 0489 E9       		.byte	-23
+ 1197 048a EA       		.byte	-22
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 22
+
+
+ 1198 048b EA       		.byte	-22
+ 1199 048c EB       		.byte	-21
+ 1200 048d EB       		.byte	-21
+ 1201 048e EB       		.byte	-21
+ 1202 048f EC       		.byte	-20
+ 1203 0490 EC       		.byte	-20
+ 1204 0491 ED       		.byte	-19
+ 1205 0492 ED       		.byte	-19
+ 1206 0493 ED       		.byte	-19
+ 1207 0494 EE       		.byte	-18
+ 1208 0495 EE       		.byte	-18
+ 1209 0496 EF       		.byte	-17
+ 1210 0497 EF       		.byte	-17
+ 1211 0498 EF       		.byte	-17
+ 1212 0499 F0       		.byte	-16
+ 1213 049a F0       		.byte	-16
+ 1214 049b F0       		.byte	-16
+ 1215 049c F1       		.byte	-15
+ 1216 049d F1       		.byte	-15
+ 1217 049e F1       		.byte	-15
+ 1218 049f F2       		.byte	-14
+ 1219 04a0 F2       		.byte	-14
+ 1220 04a1 F2       		.byte	-14
+ 1221 04a2 F3       		.byte	-13
+ 1222 04a3 F3       		.byte	-13
+ 1223 04a4 F3       		.byte	-13
+ 1224 04a5 F3       		.byte	-13
+ 1225 04a6 F4       		.byte	-12
+ 1226 04a7 F4       		.byte	-12
+ 1227 04a8 F4       		.byte	-12
+ 1228 04a9 F5       		.byte	-11
+ 1229 04aa F5       		.byte	-11
+ 1230 04ab F5       		.byte	-11
+ 1231 04ac F5       		.byte	-11
+ 1232 04ad F6       		.byte	-10
+ 1233 04ae F6       		.byte	-10
+ 1234 04af F6       		.byte	-10
+ 1235 04b0 F6       		.byte	-10
+ 1236 04b1 F7       		.byte	-9
+ 1237 04b2 F7       		.byte	-9
+ 1238 04b3 F7       		.byte	-9
+ 1239 04b4 F7       		.byte	-9
+ 1240 04b5 F8       		.byte	-8
+ 1241 04b6 F8       		.byte	-8
+ 1242 04b7 F8       		.byte	-8
+ 1243 04b8 F8       		.byte	-8
+ 1244 04b9 F8       		.byte	-8
+ 1245 04ba F9       		.byte	-7
+ 1246 04bb F9       		.byte	-7
+ 1247 04bc F9       		.byte	-7
+ 1248 04bd F9       		.byte	-7
+ 1249 04be F9       		.byte	-7
+ 1250 04bf F9       		.byte	-7
+ 1251 04c0 FA       		.byte	-6
+ 1252 04c1 FA       		.byte	-6
+ 1253 04c2 FA       		.byte	-6
+ 1254 04c3 FA       		.byte	-6
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 23
+
+
+ 1255 04c4 FA       		.byte	-6
+ 1256 04c5 FA       		.byte	-6
+ 1257 04c6 FB       		.byte	-5
+ 1258 04c7 FB       		.byte	-5
+ 1259 04c8 FB       		.byte	-5
+ 1260 04c9 FB       		.byte	-5
+ 1261 04ca FB       		.byte	-5
+ 1262 04cb FB       		.byte	-5
+ 1263 04cc FB       		.byte	-5
+ 1264 04cd FB       		.byte	-5
+ 1265 04ce FC       		.byte	-4
+ 1266 04cf FC       		.byte	-4
+ 1267 04d0 FC       		.byte	-4
+ 1268 04d1 FC       		.byte	-4
+ 1269 04d2 FC       		.byte	-4
+ 1270 04d3 FC       		.byte	-4
+ 1271 04d4 FC       		.byte	-4
+ 1272 04d5 FC       		.byte	-4
+ 1273 04d6 FC       		.byte	-4
+ 1274 04d7 FC       		.byte	-4
+ 1275 04d8 FC       		.byte	-4
+ 1276 04d9 FC       		.byte	-4
+ 1277 04da FC       		.byte	-4
+ 1278 04db FC       		.byte	-4
+ 1279 04dc FC       		.byte	-4
+ 1280 04dd FC       		.byte	-4
+ 1281 04de FC       		.byte	-4
+ 1282 04df FC       		.byte	-4
+ 1283 04e0 FC       		.byte	-4
+ 1284 04e1 FC       		.byte	-4
+ 1285 04e2 FC       		.byte	-4
+ 1286 04e3 FC       		.byte	-4
+ 1287 04e4 FC       		.byte	-4
+ 1288 04e5 FC       		.byte	-4
+ 1289 04e6 FC       		.byte	-4
+ 1290 04e7 FC       		.byte	-4
+ 1291 04e8 FC       		.byte	-4
+ 1292 04e9 FC       		.byte	-4
+ 1293 04ea FC       		.byte	-4
+ 1294 04eb FC       		.byte	-4
+ 1295 04ec FC       		.byte	-4
+ 1296 04ed FC       		.byte	-4
+ 1297 04ee FC       		.byte	-4
+ 1298 04ef FC       		.byte	-4
+ 1299 04f0 FC       		.byte	-4
+ 1300 04f1 FC       		.byte	-4
+ 1301 04f2 FC       		.byte	-4
+ 1302 04f3 FC       		.byte	-4
+ 1303 04f4 FC       		.byte	-4
+ 1304 04f5 FC       		.byte	-4
+ 1305 04f6 FC       		.byte	-4
+ 1306 04f7 FB       		.byte	-5
+ 1307 04f8 FB       		.byte	-5
+ 1308 04f9 FB       		.byte	-5
+ 1309 04fa FB       		.byte	-5
+ 1310 04fb FB       		.byte	-5
+ 1311 04fc FB       		.byte	-5
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 24
+
+
+ 1312 04fd FB       		.byte	-5
+ 1313 04fe FB       		.byte	-5
+ 1314 04ff FA       		.byte	-6
+ 1315 0500 FA       		.byte	-6
+ 1316 0501 FA       		.byte	-6
+ 1317 0502 FA       		.byte	-6
+ 1318 0503 FA       		.byte	-6
+ 1319 0504 FA       		.byte	-6
+ 1320 0505 F9       		.byte	-7
+ 1321 0506 F9       		.byte	-7
+ 1322 0507 F9       		.byte	-7
+ 1323 0508 F9       		.byte	-7
+ 1324 0509 F9       		.byte	-7
+ 1325 050a F9       		.byte	-7
+ 1326 050b F8       		.byte	-8
+ 1327 050c F8       		.byte	-8
+ 1328 050d F8       		.byte	-8
+ 1329 050e F8       		.byte	-8
+ 1330 050f F8       		.byte	-8
+ 1331 0510 F7       		.byte	-9
+ 1332 0511 F7       		.byte	-9
+ 1333 0512 F7       		.byte	-9
+ 1334 0513 F7       		.byte	-9
+ 1335 0514 F6       		.byte	-10
+ 1336 0515 F6       		.byte	-10
+ 1337 0516 F6       		.byte	-10
+ 1338 0517 F6       		.byte	-10
+ 1339 0518 F5       		.byte	-11
+ 1340 0519 F5       		.byte	-11
+ 1341 051a F5       		.byte	-11
+ 1342 051b F5       		.byte	-11
+ 1343 051c F4       		.byte	-12
+ 1344 051d F4       		.byte	-12
+ 1345 051e F4       		.byte	-12
+ 1346 051f F3       		.byte	-13
+ 1347 0520 F3       		.byte	-13
+ 1348 0521 F3       		.byte	-13
+ 1349 0522 F3       		.byte	-13
+ 1350 0523 F2       		.byte	-14
+ 1351 0524 F2       		.byte	-14
+ 1352 0525 F2       		.byte	-14
+ 1353 0526 F1       		.byte	-15
+ 1354 0527 F1       		.byte	-15
+ 1355 0528 F1       		.byte	-15
+ 1356 0529 F0       		.byte	-16
+ 1357 052a F0       		.byte	-16
+ 1358 052b F0       		.byte	-16
+ 1359 052c EF       		.byte	-17
+ 1360 052d EF       		.byte	-17
+ 1361 052e EF       		.byte	-17
+ 1362 052f EE       		.byte	-18
+ 1363 0530 EE       		.byte	-18
+ 1364 0531 ED       		.byte	-19
+ 1365 0532 ED       		.byte	-19
+ 1366 0533 ED       		.byte	-19
+ 1367 0534 EC       		.byte	-20
+ 1368 0535 EC       		.byte	-20
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 25
+
+
+ 1369 0536 EB       		.byte	-21
+ 1370 0537 EB       		.byte	-21
+ 1371 0538 EB       		.byte	-21
+ 1372 0539 EA       		.byte	-22
+ 1373 053a EA       		.byte	-22
+ 1374 053b E9       		.byte	-23
+ 1375 053c E9       		.byte	-23
+ 1376 053d E9       		.byte	-23
+ 1377 053e E8       		.byte	-24
+ 1378 053f E8       		.byte	-24
+ 1379 0540 E7       		.byte	-25
+ 1380 0541 E7       		.byte	-25
+ 1381 0542 E6       		.byte	-26
+ 1382 0543 E6       		.byte	-26
+ 1383 0544 E6       		.byte	-26
+ 1384 0545 E5       		.byte	-27
+ 1385 0546 E5       		.byte	-27
+ 1386 0547 E4       		.byte	-28
+ 1387 0548 E4       		.byte	-28
+ 1388 0549 E3       		.byte	-29
+ 1389 054a E3       		.byte	-29
+ 1390 054b E2       		.byte	-30
+ 1391 054c E2       		.byte	-30
+ 1392 054d E1       		.byte	-31
+ 1393 054e E1       		.byte	-31
+ 1394 054f E0       		.byte	-32
+ 1395 0550 E0       		.byte	-32
+ 1396 0551 DF       		.byte	-33
+ 1397 0552 DF       		.byte	-33
+ 1398 0553 DE       		.byte	-34
+ 1399 0554 DE       		.byte	-34
+ 1400 0555 DD       		.byte	-35
+ 1401 0556 DD       		.byte	-35
+ 1402 0557 DC       		.byte	-36
+ 1403 0558 DC       		.byte	-36
+ 1404 0559 DB       		.byte	-37
+ 1405 055a DB       		.byte	-37
+ 1406 055b DA       		.byte	-38
+ 1407 055c DA       		.byte	-38
+ 1408 055d D9       		.byte	-39
+ 1409 055e D8       		.byte	-40
+ 1410 055f D8       		.byte	-40
+ 1411 0560 D7       		.byte	-41
+ 1412 0561 D7       		.byte	-41
+ 1413 0562 D6       		.byte	-42
+ 1414 0563 D6       		.byte	-42
+ 1415 0564 D5       		.byte	-43
+ 1416 0565 D4       		.byte	-44
+ 1417 0566 D4       		.byte	-44
+ 1418 0567 D3       		.byte	-45
+ 1419 0568 D3       		.byte	-45
+ 1420 0569 D2       		.byte	-46
+ 1421 056a D2       		.byte	-46
+ 1422 056b D1       		.byte	-47
+ 1423 056c D0       		.byte	-48
+ 1424 056d D0       		.byte	-48
+ 1425 056e CF       		.byte	-49
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 26
+
+
+ 1426 056f CF       		.byte	-49
+ 1427 0570 CE       		.byte	-50
+ 1428 0571 CD       		.byte	-51
+ 1429 0572 CD       		.byte	-51
+ 1430 0573 CC       		.byte	-52
+ 1431 0574 CB       		.byte	-53
+ 1432 0575 CB       		.byte	-53
+ 1433 0576 CA       		.byte	-54
+ 1434 0577 CA       		.byte	-54
+ 1435 0578 C9       		.byte	-55
+ 1436 0579 C8       		.byte	-56
+ 1437 057a C8       		.byte	-56
+ 1438 057b C7       		.byte	-57
+ 1439 057c C6       		.byte	-58
+ 1440 057d C6       		.byte	-58
+ 1441 057e C5       		.byte	-59
+ 1442 057f C4       		.byte	-60
+ 1443 0580 C4       		.byte	-60
+ 1444 0581 C3       		.byte	-61
+ 1445 0582 C2       		.byte	-62
+ 1446 0583 C2       		.byte	-62
+ 1447 0584 C1       		.byte	-63
+ 1448 0585 C0       		.byte	-64
+ 1449 0586 C0       		.byte	-64
+ 1450 0587 BF       		.byte	-65
+ 1451 0588 BE       		.byte	-66
+ 1452 0589 BE       		.byte	-66
+ 1453 058a BD       		.byte	-67
+ 1454 058b BC       		.byte	-68
+ 1455 058c BC       		.byte	-68
+ 1456 058d BB       		.byte	-69
+ 1457 058e BA       		.byte	-70
+ 1458 058f BA       		.byte	-70
+ 1459 0590 B9       		.byte	-71
+ 1460 0591 B8       		.byte	-72
+ 1461 0592 B8       		.byte	-72
+ 1462 0593 B7       		.byte	-73
+ 1463 0594 B6       		.byte	-74
+ 1464 0595 B5       		.byte	-75
+ 1465 0596 B5       		.byte	-75
+ 1466 0597 B4       		.byte	-76
+ 1467 0598 B3       		.byte	-77
+ 1468 0599 B3       		.byte	-77
+ 1469 059a B2       		.byte	-78
+ 1470 059b B1       		.byte	-79
+ 1471 059c B0       		.byte	-80
+ 1472 059d B0       		.byte	-80
+ 1473 059e AF       		.byte	-81
+ 1474 059f AE       		.byte	-82
+ 1475 05a0 AE       		.byte	-82
+ 1476 05a1 AD       		.byte	-83
+ 1477 05a2 AC       		.byte	-84
+ 1478 05a3 AB       		.byte	-85
+ 1479 05a4 AB       		.byte	-85
+ 1480 05a5 AA       		.byte	-86
+ 1481 05a6 A9       		.byte	-87
+ 1482 05a7 A8       		.byte	-88
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 27
+
+
+ 1483 05a8 A8       		.byte	-88
+ 1484 05a9 A7       		.byte	-89
+ 1485 05aa A6       		.byte	-90
+ 1486 05ab A5       		.byte	-91
+ 1487 05ac A5       		.byte	-91
+ 1488 05ad A4       		.byte	-92
+ 1489 05ae A3       		.byte	-93
+ 1490 05af A2       		.byte	-94
+ 1491 05b0 A2       		.byte	-94
+ 1492 05b1 A1       		.byte	-95
+ 1493 05b2 A0       		.byte	-96
+ 1494 05b3 9F       		.byte	-97
+ 1495 05b4 9F       		.byte	-97
+ 1496 05b5 9E       		.byte	-98
+ 1497 05b6 9D       		.byte	-99
+ 1498 05b7 9C       		.byte	-100
+ 1499 05b8 9C       		.byte	-100
+ 1500 05b9 9B       		.byte	-101
+ 1501 05ba 9A       		.byte	-102
+ 1502 05bb 99       		.byte	-103
+ 1503 05bc 98       		.byte	-104
+ 1504 05bd 98       		.byte	-104
+ 1505 05be 97       		.byte	-105
+ 1506 05bf 96       		.byte	-106
+ 1507 05c0 95       		.byte	-107
+ 1508 05c1 95       		.byte	-107
+ 1509 05c2 94       		.byte	-108
+ 1510 05c3 93       		.byte	-109
+ 1511 05c4 92       		.byte	-110
+ 1512 05c5 92       		.byte	-110
+ 1513 05c6 91       		.byte	-111
+ 1514 05c7 90       		.byte	-112
+ 1515 05c8 8F       		.byte	-113
+ 1516 05c9 8E       		.byte	-114
+ 1517 05ca 8E       		.byte	-114
+ 1518 05cb 8D       		.byte	-115
+ 1519 05cc 8C       		.byte	-116
+ 1520 05cd 8B       		.byte	-117
+ 1521 05ce 8A       		.byte	-118
+ 1522 05cf 8A       		.byte	-118
+ 1523 05d0 89       		.byte	-119
+ 1524 05d1 88       		.byte	-120
+ 1525 05d2 87       		.byte	-121
+ 1526 05d3 87       		.byte	-121
+ 1527 05d4 86       		.byte	-122
+ 1528 05d5 85       		.byte	-123
+ 1529 05d6 84       		.byte	-124
+ 1530 05d7 83       		.byte	-125
+ 1531 05d8 83       		.byte	-125
+ 1532 05d9 82       		.byte	-126
+ 1533 05da 81       		.byte	-127
+ 1534 05db 80       		.byte	-128
+ 1535 05dc 80       		.byte	-128
+ 1536 05dd 7F       		.byte	127
+ 1537 05de 7E       		.byte	126
+ 1538 05df 7D       		.byte	125
+ 1539 05e0 7C       		.byte	124
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 28
+
+
+ 1540 05e1 7C       		.byte	124
+ 1541 05e2 7B       		.byte	123
+ 1542 05e3 7A       		.byte	122
+ 1543 05e4 79       		.byte	121
+ 1544 05e5 78       		.byte	120
+ 1545 05e6 78       		.byte	120
+ 1546 05e7 77       		.byte	119
+ 1547 05e8 76       		.byte	118
+ 1548 05e9 75       		.byte	117
+ 1549 05ea 75       		.byte	117
+ 1550 05eb 74       		.byte	116
+ 1551 05ec 73       		.byte	115
+ 1552 05ed 72       		.byte	114
+ 1553 05ee 71       		.byte	113
+ 1554 05ef 71       		.byte	113
+ 1555 05f0 70       		.byte	112
+ 1556 05f1 6F       		.byte	111
+ 1557 05f2 6E       		.byte	110
+ 1558 05f3 6D       		.byte	109
+ 1559 05f4 6D       		.byte	109
+ 1560 05f5 6C       		.byte	108
+ 1561 05f6 6B       		.byte	107
+ 1562 05f7 6A       		.byte	106
+ 1563 05f8 6A       		.byte	106
+ 1564 05f9 69       		.byte	105
+ 1565 05fa 68       		.byte	104
+ 1566 05fb 67       		.byte	103
+ 1567 05fc 67       		.byte	103
+ 1568 05fd 66       		.byte	102
+ 1569 05fe 65       		.byte	101
+ 1570 05ff 64       		.byte	100
+ 1571 0600 63       		.byte	99
+ 1572 0601 63       		.byte	99
+ 1573 0602 62       		.byte	98
+ 1574 0603 61       		.byte	97
+ 1575 0604 60       		.byte	96
+ 1576 0605 60       		.byte	96
+ 1577 0606 5F       		.byte	95
+ 1578 0607 5E       		.byte	94
+ 1579 0608 5D       		.byte	93
+ 1580 0609 5D       		.byte	93
+ 1581 060a 5C       		.byte	92
+ 1582 060b 5B       		.byte	91
+ 1583 060c 5A       		.byte	90
+ 1584 060d 5A       		.byte	90
+ 1585 060e 59       		.byte	89
+ 1586 060f 58       		.byte	88
+ 1587 0610 57       		.byte	87
+ 1588 0611 57       		.byte	87
+ 1589 0612 56       		.byte	86
+ 1590 0613 55       		.byte	85
+ 1591 0614 54       		.byte	84
+ 1592 0615 54       		.byte	84
+ 1593 0616 53       		.byte	83
+ 1594 0617 52       		.byte	82
+ 1595 0618 51       		.byte	81
+ 1596 0619 51       		.byte	81
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 29
+
+
+ 1597 061a 50       		.byte	80
+ 1598 061b 4F       		.byte	79
+ 1599 061c 4F       		.byte	79
+ 1600 061d 4E       		.byte	78
+ 1601 061e 4D       		.byte	77
+ 1602 061f 4C       		.byte	76
+ 1603 0620 4C       		.byte	76
+ 1604 0621 4B       		.byte	75
+ 1605 0622 4A       		.byte	74
+ 1606 0623 4A       		.byte	74
+ 1607 0624 49       		.byte	73
+ 1608 0625 48       		.byte	72
+ 1609 0626 47       		.byte	71
+ 1610 0627 47       		.byte	71
+ 1611 0628 46       		.byte	70
+ 1612 0629 45       		.byte	69
+ 1613 062a 45       		.byte	69
+ 1614 062b 44       		.byte	68
+ 1615 062c 43       		.byte	67
+ 1616 062d 43       		.byte	67
+ 1617 062e 42       		.byte	66
+ 1618 062f 41       		.byte	65
+ 1619 0630 41       		.byte	65
+ 1620 0631 40       		.byte	64
+ 1621 0632 3F       		.byte	63
+ 1622 0633 3F       		.byte	63
+ 1623 0634 3E       		.byte	62
+ 1624 0635 3D       		.byte	61
+ 1625 0636 3D       		.byte	61
+ 1626 0637 3C       		.byte	60
+ 1627 0638 3B       		.byte	59
+ 1628 0639 3B       		.byte	59
+ 1629 063a 3A       		.byte	58
+ 1630 063b 39       		.byte	57
+ 1631 063c 39       		.byte	57
+ 1632 063d 38       		.byte	56
+ 1633 063e 37       		.byte	55
+ 1634 063f 37       		.byte	55
+ 1635 0640 36       		.byte	54
+ 1636 0641 35       		.byte	53
+ 1637 0642 35       		.byte	53
+ 1638 0643 34       		.byte	52
+ 1639 0644 34       		.byte	52
+ 1640 0645 33       		.byte	51
+ 1641 0646 32       		.byte	50
+ 1642 0647 32       		.byte	50
+ 1643 0648 31       		.byte	49
+ 1644 0649 30       		.byte	48
+ 1645 064a 30       		.byte	48
+ 1646 064b 2F       		.byte	47
+ 1647 064c 2F       		.byte	47
+ 1648 064d 2E       		.byte	46
+ 1649 064e 2D       		.byte	45
+ 1650 064f 2D       		.byte	45
+ 1651 0650 2C       		.byte	44
+ 1652 0651 2C       		.byte	44
+ 1653 0652 2B       		.byte	43
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 30
+
+
+ 1654 0653 2B       		.byte	43
+ 1655 0654 2A       		.byte	42
+ 1656 0655 29       		.byte	41
+ 1657 0656 29       		.byte	41
+ 1658 0657 28       		.byte	40
+ 1659 0658 28       		.byte	40
+ 1660 0659 27       		.byte	39
+ 1661 065a 27       		.byte	39
+ 1662 065b 26       		.byte	38
+ 1663 065c 25       		.byte	37
+ 1664 065d 25       		.byte	37
+ 1665 065e 24       		.byte	36
+ 1666 065f 24       		.byte	36
+ 1667 0660 23       		.byte	35
+ 1668 0661 23       		.byte	35
+ 1669 0662 22       		.byte	34
+ 1670 0663 22       		.byte	34
+ 1671 0664 21       		.byte	33
+ 1672 0665 21       		.byte	33
+ 1673 0666 20       		.byte	32
+ 1674 0667 20       		.byte	32
+ 1675 0668 1F       		.byte	31
+ 1676 0669 1F       		.byte	31
+ 1677 066a 1E       		.byte	30
+ 1678 066b 1E       		.byte	30
+ 1679 066c 1D       		.byte	29
+ 1680 066d 1D       		.byte	29
+ 1681 066e 1C       		.byte	28
+ 1682 066f 1C       		.byte	28
+ 1683 0670 1B       		.byte	27
+ 1684 0671 1B       		.byte	27
+ 1685 0672 1A       		.byte	26
+ 1686 0673 1A       		.byte	26
+ 1687 0674 19       		.byte	25
+ 1688 0675 19       		.byte	25
+ 1689 0676 19       		.byte	25
+ 1690 0677 18       		.byte	24
+ 1691 0678 18       		.byte	24
+ 1692 0679 17       		.byte	23
+ 1693 067a 17       		.byte	23
+ 1694 067b 16       		.byte	22
+ 1695 067c 16       		.byte	22
+ 1696 067d 16       		.byte	22
+ 1697 067e 15       		.byte	21
+ 1698 067f 15       		.byte	21
+ 1699 0680 14       		.byte	20
+ 1700 0681 14       		.byte	20
+ 1701 0682 14       		.byte	20
+ 1702 0683 13       		.byte	19
+ 1703 0684 13       		.byte	19
+ 1704 0685 12       		.byte	18
+ 1705 0686 12       		.byte	18
+ 1706 0687 12       		.byte	18
+ 1707 0688 11       		.byte	17
+ 1708 0689 11       		.byte	17
+ 1709 068a 10       		.byte	16
+ 1710 068b 10       		.byte	16
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 31
+
+
+ 1711 068c 10       		.byte	16
+ 1712 068d 0F       		.byte	15
+ 1713 068e 0F       		.byte	15
+ 1714 068f 0F       		.byte	15
+ 1715 0690 0E       		.byte	14
+ 1716 0691 0E       		.byte	14
+ 1717 0692 0E       		.byte	14
+ 1718 0693 0D       		.byte	13
+ 1719 0694 0D       		.byte	13
+ 1720 0695 0D       		.byte	13
+ 1721 0696 0C       		.byte	12
+ 1722 0697 0C       		.byte	12
+ 1723 0698 0C       		.byte	12
+ 1724 0699 0C       		.byte	12
+ 1725 069a 0B       		.byte	11
+ 1726 069b 0B       		.byte	11
+ 1727 069c 0B       		.byte	11
+ 1728 069d 0A       		.byte	10
+ 1729 069e 0A       		.byte	10
+ 1730 069f 0A       		.byte	10
+ 1731 06a0 0A       		.byte	10
+ 1732 06a1 09       		.byte	9
+ 1733 06a2 09       		.byte	9
+ 1734 06a3 09       		.byte	9
+ 1735 06a4 09       		.byte	9
+ 1736 06a5 08       		.byte	8
+ 1737 06a6 08       		.byte	8
+ 1738 06a7 08       		.byte	8
+ 1739 06a8 08       		.byte	8
+ 1740 06a9 07       		.byte	7
+ 1741 06aa 07       		.byte	7
+ 1742 06ab 07       		.byte	7
+ 1743 06ac 07       		.byte	7
+ 1744 06ad 07       		.byte	7
+ 1745 06ae 06       		.byte	6
+ 1746 06af 06       		.byte	6
+ 1747 06b0 06       		.byte	6
+ 1748 06b1 06       		.byte	6
+ 1749 06b2 06       		.byte	6
+ 1750 06b3 06       		.byte	6
+ 1751 06b4 05       		.byte	5
+ 1752 06b5 05       		.byte	5
+ 1753 06b6 05       		.byte	5
+ 1754 06b7 05       		.byte	5
+ 1755 06b8 05       		.byte	5
+ 1756 06b9 05       		.byte	5
+ 1757 06ba 04       		.byte	4
+ 1758 06bb 04       		.byte	4
+ 1759 06bc 04       		.byte	4
+ 1760 06bd 04       		.byte	4
+ 1761 06be 04       		.byte	4
+ 1762 06bf 04       		.byte	4
+ 1763 06c0 04       		.byte	4
+ 1764 06c1 04       		.byte	4
+ 1765 06c2 03       		.byte	3
+ 1766 06c3 03       		.byte	3
+ 1767 06c4 03       		.byte	3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 32
+
+
+ 1768 06c5 03       		.byte	3
+ 1769 06c6 03       		.byte	3
+ 1770 06c7 03       		.byte	3
+ 1771 06c8 03       		.byte	3
+ 1772 06c9 03       		.byte	3
+ 1773 06ca 03       		.byte	3
+ 1774 06cb 03       		.byte	3
+ 1775 06cc 03       		.byte	3
+ 1776 06cd 03       		.byte	3
+ 1777 06ce 03       		.byte	3
+ 1778 06cf 03       		.byte	3
+ 1779 06d0 03       		.byte	3
+ 1780 06d1 03       		.byte	3
+ 1781 06d2 03       		.byte	3
+ 1782 06d3 03       		.byte	3
+ 1783 06d4 03       		.byte	3
+ 1784 06d5 03       		.byte	3
+ 1785 06d6 03       		.byte	3
+ 1786 06d7 03       		.byte	3
+ 1787 06d8 03       		.byte	3
+ 1788 06d9 03       		.byte	3
+ 1789 06da 03       		.byte	3
+ 1790 06db 03       		.byte	3
+ 1791 06dc 03       		.byte	3
+ 1792 06dd 03       		.byte	3
+ 1793 06de 03       		.byte	3
+ 1794 06df 03       		.byte	3
+ 1795 06e0 03       		.byte	3
+ 1796 06e1 03       		.byte	3
+ 1797 06e2 03       		.byte	3
+ 1798 06e3 03       		.byte	3
+ 1799 06e4 03       		.byte	3
+ 1800 06e5 03       		.byte	3
+ 1801 06e6 03       		.byte	3
+ 1802 06e7 03       		.byte	3
+ 1803 06e8 03       		.byte	3
+ 1804 06e9 03       		.byte	3
+ 1805 06ea 03       		.byte	3
+ 1806 06eb 04       		.byte	4
+ 1807 06ec 04       		.byte	4
+ 1808 06ed 04       		.byte	4
+ 1809 06ee 04       		.byte	4
+ 1810 06ef 04       		.byte	4
+ 1811 06f0 04       		.byte	4
+ 1812 06f1 04       		.byte	4
+ 1813 06f2 04       		.byte	4
+ 1814 06f3 05       		.byte	5
+ 1815 06f4 05       		.byte	5
+ 1816 06f5 05       		.byte	5
+ 1817 06f6 05       		.byte	5
+ 1818 06f7 05       		.byte	5
+ 1819 06f8 05       		.byte	5
+ 1820 06f9 06       		.byte	6
+ 1821 06fa 06       		.byte	6
+ 1822 06fb 06       		.byte	6
+ 1823 06fc 06       		.byte	6
+ 1824 06fd 06       		.byte	6
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 33
+
+
+ 1825 06fe 06       		.byte	6
+ 1826 06ff 07       		.byte	7
+ 1827 0700 07       		.byte	7
+ 1828 0701 07       		.byte	7
+ 1829 0702 07       		.byte	7
+ 1830 0703 07       		.byte	7
+ 1831 0704 08       		.byte	8
+ 1832 0705 08       		.byte	8
+ 1833 0706 08       		.byte	8
+ 1834 0707 08       		.byte	8
+ 1835 0708 09       		.byte	9
+ 1836 0709 09       		.byte	9
+ 1837 070a 09       		.byte	9
+ 1838 070b 09       		.byte	9
+ 1839 070c 0A       		.byte	10
+ 1840 070d 0A       		.byte	10
+ 1841 070e 0A       		.byte	10
+ 1842 070f 0A       		.byte	10
+ 1843 0710 0B       		.byte	11
+ 1844 0711 0B       		.byte	11
+ 1845 0712 0B       		.byte	11
+ 1846 0713 0C       		.byte	12
+ 1847 0714 0C       		.byte	12
+ 1848 0715 0C       		.byte	12
+ 1849 0716 0C       		.byte	12
+ 1850 0717 0D       		.byte	13
+ 1851 0718 0D       		.byte	13
+ 1852 0719 0D       		.byte	13
+ 1853 071a 0E       		.byte	14
+ 1854 071b 0E       		.byte	14
+ 1855 071c 0E       		.byte	14
+ 1856 071d 0F       		.byte	15
+ 1857 071e 0F       		.byte	15
+ 1858 071f 0F       		.byte	15
+ 1859 0720 10       		.byte	16
+ 1860 0721 10       		.byte	16
+ 1861 0722 10       		.byte	16
+ 1862 0723 11       		.byte	17
+ 1863 0724 11       		.byte	17
+ 1864 0725 12       		.byte	18
+ 1865 0726 12       		.byte	18
+ 1866 0727 12       		.byte	18
+ 1867 0728 13       		.byte	19
+ 1868 0729 13       		.byte	19
+ 1869 072a 14       		.byte	20
+ 1870 072b 14       		.byte	20
+ 1871 072c 14       		.byte	20
+ 1872 072d 15       		.byte	21
+ 1873 072e 15       		.byte	21
+ 1874 072f 16       		.byte	22
+ 1875 0730 16       		.byte	22
+ 1876 0731 16       		.byte	22
+ 1877 0732 17       		.byte	23
+ 1878 0733 17       		.byte	23
+ 1879 0734 18       		.byte	24
+ 1880 0735 18       		.byte	24
+ 1881 0736 19       		.byte	25
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 34
+
+
+ 1882 0737 19       		.byte	25
+ 1883 0738 19       		.byte	25
+ 1884 0739 1A       		.byte	26
+ 1885 073a 1A       		.byte	26
+ 1886 073b 1B       		.byte	27
+ 1887 073c 1B       		.byte	27
+ 1888 073d 1C       		.byte	28
+ 1889 073e 1C       		.byte	28
+ 1890 073f 1D       		.byte	29
+ 1891 0740 1D       		.byte	29
+ 1892 0741 1E       		.byte	30
+ 1893 0742 1E       		.byte	30
+ 1894 0743 1F       		.byte	31
+ 1895 0744 1F       		.byte	31
+ 1896 0745 20       		.byte	32
+ 1897 0746 20       		.byte	32
+ 1898 0747 21       		.byte	33
+ 1899 0748 21       		.byte	33
+ 1900 0749 22       		.byte	34
+ 1901 074a 22       		.byte	34
+ 1902 074b 23       		.byte	35
+ 1903 074c 23       		.byte	35
+ 1904 074d 24       		.byte	36
+ 1905 074e 24       		.byte	36
+ 1906 074f 25       		.byte	37
+ 1907 0750 25       		.byte	37
+ 1908 0751 26       		.byte	38
+ 1909 0752 27       		.byte	39
+ 1910 0753 27       		.byte	39
+ 1911 0754 28       		.byte	40
+ 1912 0755 28       		.byte	40
+ 1913 0756 29       		.byte	41
+ 1914 0757 29       		.byte	41
+ 1915 0758 2A       		.byte	42
+ 1916 0759 2B       		.byte	43
+ 1917 075a 2B       		.byte	43
+ 1918 075b 2C       		.byte	44
+ 1919 075c 2C       		.byte	44
+ 1920 075d 2D       		.byte	45
+ 1921 075e 2D       		.byte	45
+ 1922 075f 2E       		.byte	46
+ 1923 0760 2F       		.byte	47
+ 1924 0761 2F       		.byte	47
+ 1925 0762 30       		.byte	48
+ 1926 0763 30       		.byte	48
+ 1927 0764 31       		.byte	49
+ 1928 0765 32       		.byte	50
+ 1929 0766 32       		.byte	50
+ 1930 0767 33       		.byte	51
+ 1931 0768 34       		.byte	52
+ 1932 0769 34       		.byte	52
+ 1933 076a 35       		.byte	53
+ 1934 076b 35       		.byte	53
+ 1935 076c 36       		.byte	54
+ 1936 076d 37       		.byte	55
+ 1937 076e 37       		.byte	55
+ 1938 076f 38       		.byte	56
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 35
+
+
+ 1939 0770 39       		.byte	57
+ 1940 0771 39       		.byte	57
+ 1941 0772 3A       		.byte	58
+ 1942 0773 3B       		.byte	59
+ 1943 0774 3B       		.byte	59
+ 1944 0775 3C       		.byte	60
+ 1945 0776 3D       		.byte	61
+ 1946 0777 3D       		.byte	61
+ 1947 0778 3E       		.byte	62
+ 1948 0779 3F       		.byte	63
+ 1949 077a 3F       		.byte	63
+ 1950 077b 40       		.byte	64
+ 1951 077c 41       		.byte	65
+ 1952 077d 41       		.byte	65
+ 1953 077e 42       		.byte	66
+ 1954 077f 43       		.byte	67
+ 1955 0780 43       		.byte	67
+ 1956 0781 44       		.byte	68
+ 1957 0782 45       		.byte	69
+ 1958 0783 45       		.byte	69
+ 1959 0784 46       		.byte	70
+ 1960 0785 47       		.byte	71
+ 1961 0786 47       		.byte	71
+ 1962 0787 48       		.byte	72
+ 1963 0788 49       		.byte	73
+ 1964 0789 4A       		.byte	74
+ 1965 078a 4A       		.byte	74
+ 1966 078b 4B       		.byte	75
+ 1967 078c 4C       		.byte	76
+ 1968 078d 4C       		.byte	76
+ 1969 078e 4D       		.byte	77
+ 1970 078f 4E       		.byte	78
+ 1971 0790 4F       		.byte	79
+ 1972 0791 4F       		.byte	79
+ 1973 0792 50       		.byte	80
+ 1974 0793 51       		.byte	81
+ 1975 0794 51       		.byte	81
+ 1976 0795 52       		.byte	82
+ 1977 0796 53       		.byte	83
+ 1978 0797 54       		.byte	84
+ 1979 0798 54       		.byte	84
+ 1980 0799 55       		.byte	85
+ 1981 079a 56       		.byte	86
+ 1982 079b 57       		.byte	87
+ 1983 079c 57       		.byte	87
+ 1984 079d 58       		.byte	88
+ 1985 079e 59       		.byte	89
+ 1986 079f 5A       		.byte	90
+ 1987 07a0 5A       		.byte	90
+ 1988 07a1 5B       		.byte	91
+ 1989 07a2 5C       		.byte	92
+ 1990 07a3 5D       		.byte	93
+ 1991 07a4 5D       		.byte	93
+ 1992 07a5 5E       		.byte	94
+ 1993 07a6 5F       		.byte	95
+ 1994 07a7 60       		.byte	96
+ 1995 07a8 60       		.byte	96
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 36
+
+
+ 1996 07a9 61       		.byte	97
+ 1997 07aa 62       		.byte	98
+ 1998 07ab 63       		.byte	99
+ 1999 07ac 63       		.byte	99
+ 2000 07ad 64       		.byte	100
+ 2001 07ae 65       		.byte	101
+ 2002 07af 66       		.byte	102
+ 2003 07b0 67       		.byte	103
+ 2004 07b1 67       		.byte	103
+ 2005 07b2 68       		.byte	104
+ 2006 07b3 69       		.byte	105
+ 2007 07b4 6A       		.byte	106
+ 2008 07b5 6A       		.byte	106
+ 2009 07b6 6B       		.byte	107
+ 2010 07b7 6C       		.byte	108
+ 2011 07b8 6D       		.byte	109
+ 2012 07b9 6D       		.byte	109
+ 2013 07ba 6E       		.byte	110
+ 2014 07bb 6F       		.byte	111
+ 2015 07bc 70       		.byte	112
+ 2016 07bd 71       		.byte	113
+ 2017 07be 71       		.byte	113
+ 2018 07bf 72       		.byte	114
+ 2019 07c0 73       		.byte	115
+ 2020 07c1 74       		.byte	116
+ 2021 07c2 75       		.byte	117
+ 2022 07c3 75       		.byte	117
+ 2023 07c4 76       		.byte	118
+ 2024 07c5 77       		.byte	119
+ 2025 07c6 78       		.byte	120
+ 2026 07c7 78       		.byte	120
+ 2027 07c8 79       		.byte	121
+ 2028 07c9 7A       		.byte	122
+ 2029 07ca 7B       		.byte	123
+ 2030 07cb 7C       		.byte	124
+ 2031 07cc 7C       		.byte	124
+ 2032 07cd 7D       		.byte	125
+ 2033 07ce 7E       		.byte	126
+ 2034 07cf 7F       		.byte	127
+ 2035              		.bss
+ 2036              	WaveDAC8_1_Wave1Chan:
+ 2037 0001 00       		.space	1
+ 2038              	WaveDAC8_1_Wave2Chan:
+ 2039 0002 00       		.space	1
+ 2040              	WaveDAC8_1_Wave1TD:
+ 2041 0003 00       		.space	1
+ 2042              	WaveDAC8_1_Wave2TD:
+ 2043 0004 00       		.space	1
+ 2044              		.section	.text.WaveDAC8_1_Init,"ax",%progbits
+ 2045              		.align	2
+ 2046              		.global	WaveDAC8_1_Init
+ 2047              		.thumb
+ 2048              		.thumb_func
+ 2049              		.type	WaveDAC8_1_Init, %function
+ 2050              	WaveDAC8_1_Init:
+ 2051              	.LFB0:
+ 2052              		.file 1 ".\\Generated_Source\\PSoC5\\WaveDAC8_1.c"
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 37
+
+
+   1:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * File Name: WaveDAC8_1.c
+   3:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Version 2.0
+   4:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+   5:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Description:
+   6:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  This file provides the source code for the 8-bit Waveform DAC 
+   7:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  (WaveDAC8) Component.
+   8:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+   9:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+  10:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+  11:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * You may use this file only in accordance with the license, terms, conditions,
+  12:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  13:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * the software package with which this file was provided.
+  14:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+  15:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  16:.\Generated_Source\PSoC5/WaveDAC8_1.c **** #include "WaveDAC8_1.h"
+  17:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  18:.\Generated_Source\PSoC5/WaveDAC8_1.c **** uint8  WaveDAC8_1_initVar = 0u;
+  19:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  20:.\Generated_Source\PSoC5/WaveDAC8_1.c **** const uint8 CYCODE WaveDAC8_1_wave1[WaveDAC8_1_WAVE1_LENGTH] = { 128u,128u,129u,130u,131u,131u,132u
+  21:.\Generated_Source\PSoC5/WaveDAC8_1.c **** const uint8 CYCODE WaveDAC8_1_wave2[WaveDAC8_1_WAVE2_LENGTH] = { 128u,128u,129u,130u,131u,131u,132u
+  22:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  23:.\Generated_Source\PSoC5/WaveDAC8_1.c **** static uint8  WaveDAC8_1_Wave1Chan;
+  24:.\Generated_Source\PSoC5/WaveDAC8_1.c **** static uint8  WaveDAC8_1_Wave2Chan;
+  25:.\Generated_Source\PSoC5/WaveDAC8_1.c **** static uint8  WaveDAC8_1_Wave1TD;
+  26:.\Generated_Source\PSoC5/WaveDAC8_1.c **** static uint8  WaveDAC8_1_Wave2TD;
+  27:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  28:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  29:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+  30:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Init
+  31:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+  32:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  33:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+  34:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Initializes component with parameters set in the customizer.
+  35:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  36:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+  37:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+  38:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  39:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+  40:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+  41:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  42:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+  43:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Init(void) 
+  44:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 2053              		.loc 1 44 0
+ 2054              		.cfi_startproc
+ 2055              		@ args = 0, pretend = 0, frame = 0
+ 2056              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2057 0000 80B5     		push	{r7, lr}
+ 2058              		.cfi_def_cfa_offset 8
+ 2059              		.cfi_offset 7, -8
+ 2060              		.cfi_offset 14, -4
+ 2061 0002 00AF     		add	r7, sp, #0
+ 2062              		.cfi_def_cfa_register 7
+  45:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_Init();
+ 2063              		.loc 1 45 0
+ 2064 0004 FFF7FEFF 		bl	WaveDAC8_1_VDAC8_Init
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 38
+
+
+  46:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_SetSpeed(WaveDAC8_1_HIGHSPEED);
+ 2065              		.loc 1 46 0
+ 2066 0008 0220     		movs	r0, #2
+ 2067 000a FFF7FEFF 		bl	WaveDAC8_1_VDAC8_SetSpeed
+  47:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_SetRange(WaveDAC8_1_DAC_RANGE);
+ 2068              		.loc 1 47 0
+ 2069 000e 0020     		movs	r0, #0
+ 2070 0010 FFF7FEFF 		bl	WaveDAC8_1_VDAC8_SetRange
+  48:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  49:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_DAC_MODE == WaveDAC8_1_CURRENT_MODE)
+  50:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_IDAC8_SetPolarity(WaveDAC8_1_DAC_POL);
+  51:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_DAC_MODE == WaveDAC8_1_CURRENT_MODE */
+  52:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  53:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_OUT_MODE == WaveDAC8_1_BUFFER_MODE)
+  54:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_BuffAmp_Init();
+  55:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_OUT_MODE == WaveDAC8_1_BUFFER_MODE */
+  56:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  57:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Get the TD Number for the DMA channel 1 and 2   */
+  58:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave1TD = CyDmaTdAllocate();
+ 2071              		.loc 1 58 0
+ 2072 0014 FFF7FEFF 		bl	CyDmaTdAllocate
+ 2073 0018 0346     		mov	r3, r0
+ 2074 001a 1A46     		mov	r2, r3
+ 2075 001c 094B     		ldr	r3, .L2
+ 2076 001e 1A70     		strb	r2, [r3]
+  59:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave2TD = CyDmaTdAllocate();
+ 2077              		.loc 1 59 0
+ 2078 0020 FFF7FEFF 		bl	CyDmaTdAllocate
+ 2079 0024 0346     		mov	r3, r0
+ 2080 0026 1A46     		mov	r2, r3
+ 2081 0028 074B     		ldr	r3, .L2+4
+ 2082 002a 1A70     		strb	r2, [r3]
+  60:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+  61:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Initialize waveform pointers  */
+  62:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave1Setup(WaveDAC8_1_wave1, WaveDAC8_1_WAVE1_LENGTH) ;
+ 2083              		.loc 1 62 0
+ 2084 002c 0748     		ldr	r0, .L2+8
+ 2085 002e 4FF47A71 		mov	r1, #1000
+ 2086 0032 FFF7FEFF 		bl	WaveDAC8_1_Wave1Setup
+  63:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave2Setup(WaveDAC8_1_wave2, WaveDAC8_1_WAVE2_LENGTH) ;
+ 2087              		.loc 1 63 0
+ 2088 0036 0648     		ldr	r0, .L2+12
+ 2089 0038 4FF47A71 		mov	r1, #1000
+ 2090 003c FFF7FEFF 		bl	WaveDAC8_1_Wave2Setup
+  64:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+  65:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Initialize the internal clock if one present  */
+  66:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if defined(WaveDAC8_1_DacClk_PHASE)
+  67:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_DacClk_SetPhase(WaveDAC8_1_CLK_PHASE_0nS);
+  68:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* defined(WaveDAC8_1_DacClk_PHASE) */
+  69:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 2091              		.loc 1 69 0
+ 2092 0040 80BD     		pop	{r7, pc}
+ 2093              	.L3:
+ 2094 0042 00BF     		.align	2
+ 2095              	.L2:
+ 2096 0044 03000000 		.word	WaveDAC8_1_Wave1TD
+ 2097 0048 04000000 		.word	WaveDAC8_1_Wave2TD
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 39
+
+
+ 2098 004c 00000000 		.word	WaveDAC8_1_wave1
+ 2099 0050 00000000 		.word	WaveDAC8_1_wave2
+ 2100              		.cfi_endproc
+ 2101              	.LFE0:
+ 2102              		.size	WaveDAC8_1_Init, .-WaveDAC8_1_Init
+ 2103              		.section	.text.WaveDAC8_1_Enable,"ax",%progbits
+ 2104              		.align	2
+ 2105              		.global	WaveDAC8_1_Enable
+ 2106              		.thumb
+ 2107              		.thumb_func
+ 2108              		.type	WaveDAC8_1_Enable, %function
+ 2109              	WaveDAC8_1_Enable:
+ 2110              	.LFB1:
+  70:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  71:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  72:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+  73:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Enable
+  74:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+  75:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  
+  76:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary: 
+  77:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Enables the DAC block and DMA operation.
+  78:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  79:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+  80:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+  81:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  82:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+  83:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+  84:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  85:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+  86:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Enable(void) 
+  87:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 2111              		.loc 1 87 0
+ 2112              		.cfi_startproc
+ 2113              		@ args = 0, pretend = 0, frame = 0
+ 2114              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2115 0000 80B5     		push	{r7, lr}
+ 2116              		.cfi_def_cfa_offset 8
+ 2117              		.cfi_offset 7, -8
+ 2118              		.cfi_offset 14, -4
+ 2119 0002 00AF     		add	r7, sp, #0
+ 2120              		.cfi_def_cfa_register 7
+  88:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_Enable();
+ 2121              		.loc 1 88 0
+ 2122 0004 FFF7FEFF 		bl	WaveDAC8_1_VDAC8_Enable
+  89:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  90:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_OUT_MODE == WaveDAC8_1_BUFFER_MODE)
+  91:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_BuffAmp_Enable();
+  92:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_OUT_MODE == WaveDAC8_1_BUFFER_MODE */
+  93:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  94:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* 
+  95:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* Enable the channel. It is configured to remember the TD value so that
+  96:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* it can be restored from the place where it has been stopped.
+  97:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	*/
+  98:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChEnable(WaveDAC8_1_Wave1Chan, 1u);
+ 2123              		.loc 1 98 0
+ 2124 0008 084B     		ldr	r3, .L5
+ 2125 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 40
+
+
+ 2126 000c 1846     		mov	r0, r3
+ 2127 000e 0121     		movs	r1, #1
+ 2128 0010 FFF7FEFF 		bl	CyDmaChEnable
+  99:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChEnable(WaveDAC8_1_Wave2Chan, 1u);
+ 2129              		.loc 1 99 0
+ 2130 0014 064B     		ldr	r3, .L5+4
+ 2131 0016 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2132 0018 1846     		mov	r0, r3
+ 2133 001a 0121     		movs	r1, #1
+ 2134 001c FFF7FEFF 		bl	CyDmaChEnable
+ 100:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 101:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* set the initial value */
+ 102:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_SetValue(0u);
+ 2135              		.loc 1 102 0
+ 2136 0020 0020     		movs	r0, #0
+ 2137 0022 FFF7FEFF 		bl	WaveDAC8_1_VDAC8_SetValue
+ 103:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 104:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_CLOCK_SRC == WaveDAC8_1_CLOCK_INT)  	
+ 105:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_DacClk_Start();
+ 2138              		.loc 1 105 0
+ 2139 0026 FFF7FEFF 		bl	WaveDAC8_1_DacClk_Start
+ 106:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_CLOCK_SRC == WaveDAC8_1_CLOCK_INT */
+ 107:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 2140              		.loc 1 107 0
+ 2141 002a 80BD     		pop	{r7, pc}
+ 2142              	.L6:
+ 2143              		.align	2
+ 2144              	.L5:
+ 2145 002c 01000000 		.word	WaveDAC8_1_Wave1Chan
+ 2146 0030 02000000 		.word	WaveDAC8_1_Wave2Chan
+ 2147              		.cfi_endproc
+ 2148              	.LFE1:
+ 2149              		.size	WaveDAC8_1_Enable, .-WaveDAC8_1_Enable
+ 2150              		.section	.text.WaveDAC8_1_Start,"ax",%progbits
+ 2151              		.align	2
+ 2152              		.global	WaveDAC8_1_Start
+ 2153              		.thumb
+ 2154              		.thumb_func
+ 2155              		.type	WaveDAC8_1_Start, %function
+ 2156              	WaveDAC8_1_Start:
+ 2157              	.LFB2:
+ 108:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 109:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 110:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 111:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Start
+ 112:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 113:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 114:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 115:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  The start function initializes the voltage DAC with the default values, 
+ 116:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  and sets the power to the given level.  A power level of 0, is the same as 
+ 117:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  executing the stop function.
+ 118:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 119:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 120:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ 121:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 122:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 123:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 41
+
+
+ 124:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 125:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Reentrant:
+ 126:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  No
+ 127:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 128:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 129:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Start(void) 
+ 130:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 2158              		.loc 1 130 0
+ 2159              		.cfi_startproc
+ 2160              		@ args = 0, pretend = 0, frame = 0
+ 2161              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2162 0000 80B5     		push	{r7, lr}
+ 2163              		.cfi_def_cfa_offset 8
+ 2164              		.cfi_offset 7, -8
+ 2165              		.cfi_offset 14, -4
+ 2166 0002 00AF     		add	r7, sp, #0
+ 2167              		.cfi_def_cfa_register 7
+ 131:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* If not Initialized then initialize all required hardware and software */
+ 132:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	if(WaveDAC8_1_initVar == 0u)
+ 2168              		.loc 1 132 0
+ 2169 0004 054B     		ldr	r3, .L9
+ 2170 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2171 0008 002B     		cmp	r3, #0
+ 2172 000a 04D1     		bne	.L8
+ 133:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	{
+ 134:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Init();
+ 2173              		.loc 1 134 0
+ 2174 000c FFF7FEFF 		bl	WaveDAC8_1_Init
+ 135:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_initVar = 1u;
+ 2175              		.loc 1 135 0
+ 2176 0010 024B     		ldr	r3, .L9
+ 2177 0012 0122     		movs	r2, #1
+ 2178 0014 1A70     		strb	r2, [r3]
+ 2179              	.L8:
+ 136:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	}
+ 137:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 138:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Enable();
+ 2180              		.loc 1 138 0
+ 2181 0016 FFF7FEFF 		bl	WaveDAC8_1_Enable
+ 139:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 2182              		.loc 1 139 0
+ 2183 001a 80BD     		pop	{r7, pc}
+ 2184              	.L10:
+ 2185              		.align	2
+ 2186              	.L9:
+ 2187 001c 00000000 		.word	WaveDAC8_1_initVar
+ 2188              		.cfi_endproc
+ 2189              	.LFE2:
+ 2190              		.size	WaveDAC8_1_Start, .-WaveDAC8_1_Start
+ 2191              		.section	.text.WaveDAC8_1_StartEx,"ax",%progbits
+ 2192              		.align	2
+ 2193              		.global	WaveDAC8_1_StartEx
+ 2194              		.thumb
+ 2195              		.thumb_func
+ 2196              		.type	WaveDAC8_1_StartEx, %function
+ 2197              	WaveDAC8_1_StartEx:
+ 2198              	.LFB3:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 42
+
+
+ 140:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 141:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 142:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 143:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_StartEx
+ 144:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 145:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 146:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 147:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  The StartEx function sets pointers and sizes for both waveforms
+ 148:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  and then starts the component.
+ 149:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 150:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 151:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *   uint8 * wavePtr1:     Pointer to the waveform 1 array.
+ 152:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *   uint16  sampleSize1:  The amount of samples in the waveform 1.
+ 153:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *   uint8 * wavePtr2:     Pointer to the waveform 2 array.
+ 154:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *   uint16  sampleSize2:  The amount of samples in the waveform 2.
+ 155:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 156:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 157:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ 158:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 159:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Reentrant:
+ 160:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  No
+ 161:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 162:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 163:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_StartEx(const uint8 * wavePtr1, uint16 sampleSize1, const uint8 * wavePtr2, uint16 
+ 164:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 165:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 2199              		.loc 1 165 0
+ 2200              		.cfi_startproc
+ 2201              		@ args = 0, pretend = 0, frame = 16
+ 2202              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2203 0000 80B5     		push	{r7, lr}
+ 2204              		.cfi_def_cfa_offset 8
+ 2205              		.cfi_offset 7, -8
+ 2206              		.cfi_offset 14, -4
+ 2207 0002 84B0     		sub	sp, sp, #16
+ 2208              		.cfi_def_cfa_offset 24
+ 2209 0004 00AF     		add	r7, sp, #0
+ 2210              		.cfi_def_cfa_register 7
+ 2211 0006 F860     		str	r0, [r7, #12]
+ 2212 0008 7A60     		str	r2, [r7, #4]
+ 2213 000a 0A46     		mov	r2, r1	@ movhi
+ 2214 000c 7A81     		strh	r2, [r7, #10]	@ movhi
+ 2215 000e 3B81     		strh	r3, [r7, #8]	@ movhi
+ 166:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave1Setup(wavePtr1, sampleSize1);
+ 2216              		.loc 1 166 0
+ 2217 0010 7B89     		ldrh	r3, [r7, #10]
+ 2218 0012 F868     		ldr	r0, [r7, #12]
+ 2219 0014 1946     		mov	r1, r3
+ 2220 0016 FFF7FEFF 		bl	WaveDAC8_1_Wave1Setup
+ 167:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave2Setup(wavePtr2, sampleSize2);
+ 2221              		.loc 1 167 0
+ 2222 001a 3B89     		ldrh	r3, [r7, #8]
+ 2223 001c 7868     		ldr	r0, [r7, #4]
+ 2224 001e 1946     		mov	r1, r3
+ 2225 0020 FFF7FEFF 		bl	WaveDAC8_1_Wave2Setup
+ 168:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Start();
+ 2226              		.loc 1 168 0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 43
+
+
+ 2227 0024 FFF7FEFF 		bl	WaveDAC8_1_Start
+ 169:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 2228              		.loc 1 169 0
+ 2229 0028 1037     		adds	r7, r7, #16
+ 2230 002a BD46     		mov	sp, r7
+ 2231              		@ sp needed
+ 2232 002c 80BD     		pop	{r7, pc}
+ 2233              		.cfi_endproc
+ 2234              	.LFE3:
+ 2235              		.size	WaveDAC8_1_StartEx, .-WaveDAC8_1_StartEx
+ 2236 002e 00BF     		.section	.text.WaveDAC8_1_Stop,"ax",%progbits
+ 2237              		.align	2
+ 2238              		.global	WaveDAC8_1_Stop
+ 2239              		.thumb
+ 2240              		.thumb_func
+ 2241              		.type	WaveDAC8_1_Stop, %function
+ 2242              	WaveDAC8_1_Stop:
+ 2243              	.LFB4:
+ 170:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 171:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 172:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 173:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Stop
+ 174:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 175:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 176:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 177:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Stops the clock (if internal), disables the DMA channels
+ 178:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  and powers down the DAC.
+ 179:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 180:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 181:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None  
+ 182:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 183:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 184:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ 185:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 186:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 187:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Stop(void) 
+ 188:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 2244              		.loc 1 188 0
+ 2245              		.cfi_startproc
+ 2246              		@ args = 0, pretend = 0, frame = 0
+ 2247              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2248 0000 80B5     		push	{r7, lr}
+ 2249              		.cfi_def_cfa_offset 8
+ 2250              		.cfi_offset 7, -8
+ 2251              		.cfi_offset 14, -4
+ 2252 0002 00AF     		add	r7, sp, #0
+ 2253              		.cfi_def_cfa_register 7
+ 189:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Turn off internal clock, if one present */
+ 190:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_CLOCK_SRC == WaveDAC8_1_CLOCK_INT)  	
+ 191:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_DacClk_Stop();
+ 2254              		.loc 1 191 0
+ 2255 0004 FFF7FEFF 		bl	WaveDAC8_1_DacClk_Stop
+ 192:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_CLOCK_SRC == WaveDAC8_1_CLOCK_INT */
+ 193:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 194:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Disble DMA channels */
+ 195:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChDisable(WaveDAC8_1_Wave1Chan);
+ 2256              		.loc 1 195 0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 44
+
+
+ 2257 0008 064B     		ldr	r3, .L13
+ 2258 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2259 000c 1846     		mov	r0, r3
+ 2260 000e FFF7FEFF 		bl	CyDmaChDisable
+ 196:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChDisable(WaveDAC8_1_Wave2Chan);
+ 2261              		.loc 1 196 0
+ 2262 0012 054B     		ldr	r3, .L13+4
+ 2263 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2264 0016 1846     		mov	r0, r3
+ 2265 0018 FFF7FEFF 		bl	CyDmaChDisable
+ 197:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 198:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Disable power to DAC */
+ 199:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_Stop();
+ 2266              		.loc 1 199 0
+ 2267 001c FFF7FEFF 		bl	WaveDAC8_1_VDAC8_Stop
+ 200:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 2268              		.loc 1 200 0
+ 2269 0020 80BD     		pop	{r7, pc}
+ 2270              	.L14:
+ 2271 0022 00BF     		.align	2
+ 2272              	.L13:
+ 2273 0024 01000000 		.word	WaveDAC8_1_Wave1Chan
+ 2274 0028 02000000 		.word	WaveDAC8_1_Wave2Chan
+ 2275              		.cfi_endproc
+ 2276              	.LFE4:
+ 2277              		.size	WaveDAC8_1_Stop, .-WaveDAC8_1_Stop
+ 2278              		.section	.text.WaveDAC8_1_Wave1Setup,"ax",%progbits
+ 2279              		.align	2
+ 2280              		.global	WaveDAC8_1_Wave1Setup
+ 2281              		.thumb
+ 2282              		.thumb_func
+ 2283              		.type	WaveDAC8_1_Wave1Setup, %function
+ 2284              	WaveDAC8_1_Wave1Setup:
+ 2285              	.LFB5:
+ 201:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 202:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 203:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 204:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Wave1Setup
+ 205:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 206:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 207:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 208:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Sets pointer and size for waveform 1.                                    
+ 209:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 210:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 211:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  uint8 * WavePtr:     Pointer to the waveform array.
+ 212:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  uint16  SampleSize:  The amount of samples in the waveform.
+ 213:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 214:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 215:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None 
+ 216:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 217:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 218:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Wave1Setup(const uint8 * wavePtr, uint16 sampleSize)
+ 219:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 220:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 2286              		.loc 1 220 0
+ 2287              		.cfi_startproc
+ 2288              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 45
+
+
+ 2289              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2290 0000 80B5     		push	{r7, lr}
+ 2291              		.cfi_def_cfa_offset 8
+ 2292              		.cfi_offset 7, -8
+ 2293              		.cfi_offset 14, -4
+ 2294 0002 82B0     		sub	sp, sp, #8
+ 2295              		.cfi_def_cfa_offset 16
+ 2296 0004 00AF     		add	r7, sp, #0
+ 2297              		.cfi_def_cfa_register 7
+ 2298 0006 7860     		str	r0, [r7, #4]
+ 2299 0008 0B46     		mov	r3, r1
+ 2300 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 221:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if (CY_PSOC3)
+ 222:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		uint16 memoryType; /* determining the source memory type */
+ 223:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		memoryType = (WaveDAC8_1_HI16FLASHPTR == HI16(wavePtr)) ? HI16(CYDEV_FLS_BASE) : HI16(CYDEV_SRAM_
+ 224:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		
+ 225:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1Chan = WaveDAC8_1_Wave1_DMA_DmaInitialize(
+ 226:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave1_DMA_REQUEST_PER_BURST,
+ 227:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		memoryType, HI16(CYDEV_PERIPH_BASE));
+ 228:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#else /* PSoC 5 */
+ 229:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1Chan = WaveDAC8_1_Wave1_DMA_DmaInitialize(
+ 230:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave1_DMA_REQUEST_PER_BURST,
+ 231:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		HI16(wavePtr), HI16(WaveDAC8_1_DAC8__D));
+ 2301              		.loc 1 231 0
+ 2302 000c 7B68     		ldr	r3, [r7, #4]
+ 2303 000e 1B0C     		lsrs	r3, r3, #16
+ 229:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1Chan = WaveDAC8_1_Wave1_DMA_DmaInitialize(
+ 2304              		.loc 1 229 0
+ 2305 0010 9BB2     		uxth	r3, r3
+ 2306 0012 0120     		movs	r0, #1
+ 2307 0014 0121     		movs	r1, #1
+ 2308 0016 1A46     		mov	r2, r3
+ 2309 0018 4FF48043 		mov	r3, #16384
+ 2310 001c FFF7FEFF 		bl	WaveDAC8_1_Wave1_DMA_DmaInitialize
+ 2311 0020 0346     		mov	r3, r0
+ 2312 0022 1A46     		mov	r2, r3
+ 2313 0024 104B     		ldr	r3, .L16
+ 2314 0026 1A70     		strb	r2, [r3]
+ 232:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* CY_PSOC3 */
+ 233:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 234:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/*
+ 235:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* TD is looping on itself. 
+ 236:.\Generated_Source\PSoC5/WaveDAC8_1.c ****     * Increment the source address, but not the destination address. 
+ 237:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	*/
+ 238:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaTdSetConfiguration(WaveDAC8_1_Wave1TD, sampleSize, WaveDAC8_1_Wave1TD, 
+ 2315              		.loc 1 238 0
+ 2316 0028 104B     		ldr	r3, .L16+4
+ 2317 002a 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 2318 002c 0F4B     		ldr	r3, .L16+4
+ 2319 002e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2320 0030 7A88     		ldrh	r2, [r7, #2]
+ 2321 0032 0846     		mov	r0, r1
+ 2322 0034 1146     		mov	r1, r2
+ 2323 0036 1A46     		mov	r2, r3
+ 2324 0038 0123     		movs	r3, #1
+ 2325 003a FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 239:.\Generated_Source\PSoC5/WaveDAC8_1.c ****                                     (uint8)CY_DMA_TD_INC_SRC_ADR | (uint8)WaveDAC8_1_Wave1_DMA__TD_
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 46
+
+
+ 240:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 241:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Set the TD source and destination address */
+ 242:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaTdSetAddress(WaveDAC8_1_Wave1TD, LO16((uint32)wavePtr), LO16(WaveDAC8_1_DAC8__D));
+ 2326              		.loc 1 242 0
+ 2327 003e 0B4B     		ldr	r3, .L16+4
+ 2328 0040 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 2329 0042 7B68     		ldr	r3, [r7, #4]
+ 2330 0044 9BB2     		uxth	r3, r3
+ 2331 0046 1046     		mov	r0, r2
+ 2332 0048 1946     		mov	r1, r3
+ 2333 004a 45F68232 		movw	r2, #23426
+ 2334 004e FFF7FEFF 		bl	CyDmaTdSetAddress
+ 243:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 244:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Associate the TD with the channel */
+ 245:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChSetInitialTd(WaveDAC8_1_Wave1Chan, WaveDAC8_1_Wave1TD);
+ 2335              		.loc 1 245 0
+ 2336 0052 054B     		ldr	r3, .L16
+ 2337 0054 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 2338 0056 054B     		ldr	r3, .L16+4
+ 2339 0058 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2340 005a 1046     		mov	r0, r2
+ 2341 005c 1946     		mov	r1, r3
+ 2342 005e FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 246:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 2343              		.loc 1 246 0
+ 2344 0062 0837     		adds	r7, r7, #8
+ 2345 0064 BD46     		mov	sp, r7
+ 2346              		@ sp needed
+ 2347 0066 80BD     		pop	{r7, pc}
+ 2348              	.L17:
+ 2349              		.align	2
+ 2350              	.L16:
+ 2351 0068 01000000 		.word	WaveDAC8_1_Wave1Chan
+ 2352 006c 03000000 		.word	WaveDAC8_1_Wave1TD
+ 2353              		.cfi_endproc
+ 2354              	.LFE5:
+ 2355              		.size	WaveDAC8_1_Wave1Setup, .-WaveDAC8_1_Wave1Setup
+ 2356              		.section	.text.WaveDAC8_1_Wave2Setup,"ax",%progbits
+ 2357              		.align	2
+ 2358              		.global	WaveDAC8_1_Wave2Setup
+ 2359              		.thumb
+ 2360              		.thumb_func
+ 2361              		.type	WaveDAC8_1_Wave2Setup, %function
+ 2362              	WaveDAC8_1_Wave2Setup:
+ 2363              	.LFB6:
+ 247:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 248:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 249:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 250:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Wave2Setup
+ 251:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 252:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 253:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 254:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Sets pointer and size for waveform 2.                                    
+ 255:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 256:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 257:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  uint8 * WavePtr:     Pointer to the waveform array.
+ 258:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  uint16  SampleSize:  The amount of samples in the waveform.
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 47
+
+
+ 259:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 260:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 261:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ 262:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 263:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 264:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Wave2Setup(const uint8 * wavePtr, uint16 sampleSize)
+ 265:.\Generated_Source\PSoC5/WaveDAC8_1.c ****  
+ 266:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 2364              		.loc 1 266 0
+ 2365              		.cfi_startproc
+ 2366              		@ args = 0, pretend = 0, frame = 8
+ 2367              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2368 0000 80B5     		push	{r7, lr}
+ 2369              		.cfi_def_cfa_offset 8
+ 2370              		.cfi_offset 7, -8
+ 2371              		.cfi_offset 14, -4
+ 2372 0002 82B0     		sub	sp, sp, #8
+ 2373              		.cfi_def_cfa_offset 16
+ 2374 0004 00AF     		add	r7, sp, #0
+ 2375              		.cfi_def_cfa_register 7
+ 2376 0006 7860     		str	r0, [r7, #4]
+ 2377 0008 0B46     		mov	r3, r1
+ 2378 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 267:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if (CY_PSOC3)
+ 268:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		uint16 memoryType; /* determining the source memory type */
+ 269:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		memoryType = (WaveDAC8_1_HI16FLASHPTR == HI16(wavePtr)) ? HI16(CYDEV_FLS_BASE) : HI16(CYDEV_SRAM_
+ 270:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 			
+ 271:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2Chan = WaveDAC8_1_Wave2_DMA_DmaInitialize(
+ 272:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave2_DMA_REQUEST_PER_BURST,
+ 273:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		memoryType, HI16(CYDEV_PERIPH_BASE));
+ 274:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#else /* PSoC 5 */
+ 275:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2Chan = WaveDAC8_1_Wave2_DMA_DmaInitialize(
+ 276:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave2_DMA_REQUEST_PER_BURST,
+ 277:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		HI16(wavePtr), HI16(WaveDAC8_1_DAC8__D));
+ 2379              		.loc 1 277 0
+ 2380 000c 7B68     		ldr	r3, [r7, #4]
+ 2381 000e 1B0C     		lsrs	r3, r3, #16
+ 275:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2Chan = WaveDAC8_1_Wave2_DMA_DmaInitialize(
+ 2382              		.loc 1 275 0
+ 2383 0010 9BB2     		uxth	r3, r3
+ 2384 0012 0120     		movs	r0, #1
+ 2385 0014 0121     		movs	r1, #1
+ 2386 0016 1A46     		mov	r2, r3
+ 2387 0018 4FF48043 		mov	r3, #16384
+ 2388 001c FFF7FEFF 		bl	WaveDAC8_1_Wave2_DMA_DmaInitialize
+ 2389 0020 0346     		mov	r3, r0
+ 2390 0022 1A46     		mov	r2, r3
+ 2391 0024 104B     		ldr	r3, .L19
+ 2392 0026 1A70     		strb	r2, [r3]
+ 278:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* CY_PSOC3 */
+ 279:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 280:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/*
+ 281:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* TD is looping on itself. 
+ 282:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* Increment the source address, but not the destination address. 
+ 283:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	*/
+ 284:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaTdSetConfiguration(WaveDAC8_1_Wave2TD, sampleSize, WaveDAC8_1_Wave2TD, 
+ 2393              		.loc 1 284 0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 48
+
+
+ 2394 0028 104B     		ldr	r3, .L19+4
+ 2395 002a 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 2396 002c 0F4B     		ldr	r3, .L19+4
+ 2397 002e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2398 0030 7A88     		ldrh	r2, [r7, #2]
+ 2399 0032 0846     		mov	r0, r1
+ 2400 0034 1146     		mov	r1, r2
+ 2401 0036 1A46     		mov	r2, r3
+ 2402 0038 0123     		movs	r3, #1
+ 2403 003a FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 285:.\Generated_Source\PSoC5/WaveDAC8_1.c ****                                     (uint8)CY_DMA_TD_INC_SRC_ADR | (uint8)WaveDAC8_1_Wave2_DMA__TD_
+ 286:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 287:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Set the TD source and destination address */
+ 288:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaTdSetAddress(WaveDAC8_1_Wave2TD, LO16((uint32)wavePtr), LO16(WaveDAC8_1_DAC8__D));
+ 2404              		.loc 1 288 0
+ 2405 003e 0B4B     		ldr	r3, .L19+4
+ 2406 0040 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 2407 0042 7B68     		ldr	r3, [r7, #4]
+ 2408 0044 9BB2     		uxth	r3, r3
+ 2409 0046 1046     		mov	r0, r2
+ 2410 0048 1946     		mov	r1, r3
+ 2411 004a 45F68232 		movw	r2, #23426
+ 2412 004e FFF7FEFF 		bl	CyDmaTdSetAddress
+ 289:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 290:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Associate the TD with the channel */
+ 291:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChSetInitialTd(WaveDAC8_1_Wave2Chan, WaveDAC8_1_Wave2TD);
+ 2413              		.loc 1 291 0
+ 2414 0052 054B     		ldr	r3, .L19
+ 2415 0054 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 2416 0056 054B     		ldr	r3, .L19+4
+ 2417 0058 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2418 005a 1046     		mov	r0, r2
+ 2419 005c 1946     		mov	r1, r3
+ 2420 005e FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 292:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 2421              		.loc 1 292 0
+ 2422 0062 0837     		adds	r7, r7, #8
+ 2423 0064 BD46     		mov	sp, r7
+ 2424              		@ sp needed
+ 2425 0066 80BD     		pop	{r7, pc}
+ 2426              	.L20:
+ 2427              		.align	2
+ 2428              	.L19:
+ 2429 0068 02000000 		.word	WaveDAC8_1_Wave2Chan
+ 2430 006c 04000000 		.word	WaveDAC8_1_Wave2TD
+ 2431              		.cfi_endproc
+ 2432              	.LFE6:
+ 2433              		.size	WaveDAC8_1_Wave2Setup, .-WaveDAC8_1_Wave2Setup
+ 2434              		.text
+ 2435              	.Letext0:
+ 2436              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 2437              		.section	.debug_info,"",%progbits
+ 2438              	.Ldebug_info0:
+ 2439 0000 3B020000 		.4byte	0x23b
+ 2440 0004 0400     		.2byte	0x4
+ 2441 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 2442 000a 04       		.byte	0x4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 49
+
+
+ 2443 000b 01       		.uleb128 0x1
+ 2444 000c AB010000 		.4byte	.LASF36
+ 2445 0010 01       		.byte	0x1
+ 2446 0011 43020000 		.4byte	.LASF37
+ 2447 0015 3D010000 		.4byte	.LASF38
+ 2448 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 2449 001d 00000000 		.4byte	0
+ 2450 0021 00000000 		.4byte	.Ldebug_line0
+ 2451 0025 02       		.uleb128 0x2
+ 2452 0026 01       		.byte	0x1
+ 2453 0027 06       		.byte	0x6
+ 2454 0028 D1020000 		.4byte	.LASF0
+ 2455 002c 02       		.uleb128 0x2
+ 2456 002d 01       		.byte	0x1
+ 2457 002e 08       		.byte	0x8
+ 2458 002f 22010000 		.4byte	.LASF1
+ 2459 0033 02       		.uleb128 0x2
+ 2460 0034 02       		.byte	0x2
+ 2461 0035 05       		.byte	0x5
+ 2462 0036 0A010000 		.4byte	.LASF2
+ 2463 003a 02       		.uleb128 0x2
+ 2464 003b 02       		.byte	0x2
+ 2465 003c 07       		.byte	0x7
+ 2466 003d 38000000 		.4byte	.LASF3
+ 2467 0041 02       		.uleb128 0x2
+ 2468 0042 04       		.byte	0x4
+ 2469 0043 05       		.byte	0x5
+ 2470 0044 C8020000 		.4byte	.LASF4
+ 2471 0048 02       		.uleb128 0x2
+ 2472 0049 04       		.byte	0x4
+ 2473 004a 07       		.byte	0x7
+ 2474 004b A5000000 		.4byte	.LASF5
+ 2475 004f 02       		.uleb128 0x2
+ 2476 0050 08       		.byte	0x8
+ 2477 0051 05       		.byte	0x5
+ 2478 0052 30020000 		.4byte	.LASF6
+ 2479 0056 02       		.uleb128 0x2
+ 2480 0057 08       		.byte	0x8
+ 2481 0058 07       		.byte	0x7
+ 2482 0059 81010000 		.4byte	.LASF7
+ 2483 005d 03       		.uleb128 0x3
+ 2484 005e 04       		.byte	0x4
+ 2485 005f 05       		.byte	0x5
+ 2486 0060 696E7400 		.ascii	"int\000"
+ 2487 0064 02       		.uleb128 0x2
+ 2488 0065 04       		.byte	0x4
+ 2489 0066 07       		.byte	0x7
+ 2490 0067 30010000 		.4byte	.LASF8
+ 2491 006b 04       		.uleb128 0x4
+ 2492 006c BF000000 		.4byte	.LASF9
+ 2493 0070 02       		.byte	0x2
+ 2494 0071 A1       		.byte	0xa1
+ 2495 0072 2C000000 		.4byte	0x2c
+ 2496 0076 04       		.uleb128 0x4
+ 2497 0077 14010000 		.4byte	.LASF10
+ 2498 007b 02       		.byte	0x2
+ 2499 007c A2       		.byte	0xa2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 50
+
+
+ 2500 007d 3A000000 		.4byte	0x3a
+ 2501 0081 04       		.uleb128 0x4
+ 2502 0082 1B010000 		.4byte	.LASF11
+ 2503 0086 02       		.byte	0x2
+ 2504 0087 A3       		.byte	0xa3
+ 2505 0088 48000000 		.4byte	0x48
+ 2506 008c 02       		.uleb128 0x2
+ 2507 008d 04       		.byte	0x4
+ 2508 008e 04       		.byte	0x4
+ 2509 008f 81000000 		.4byte	.LASF12
+ 2510 0093 02       		.uleb128 0x2
+ 2511 0094 08       		.byte	0x8
+ 2512 0095 04       		.byte	0x4
+ 2513 0096 F3000000 		.4byte	.LASF13
+ 2514 009a 02       		.uleb128 0x2
+ 2515 009b 01       		.byte	0x1
+ 2516 009c 08       		.byte	0x8
+ 2517 009d 3E020000 		.4byte	.LASF14
+ 2518 00a1 02       		.uleb128 0x2
+ 2519 00a2 04       		.byte	0x4
+ 2520 00a3 07       		.byte	0x7
+ 2521 00a4 27020000 		.4byte	.LASF15
+ 2522 00a8 05       		.uleb128 0x5
+ 2523 00a9 28000000 		.4byte	.LASF16
+ 2524 00ad 01       		.byte	0x1
+ 2525 00ae 2B       		.byte	0x2b
+ 2526 00af 00000000 		.4byte	.LFB0
+ 2527 00b3 54000000 		.4byte	.LFE0-.LFB0
+ 2528 00b7 01       		.uleb128 0x1
+ 2529 00b8 9C       		.byte	0x9c
+ 2530 00b9 05       		.uleb128 0x5
+ 2531 00ba 7F020000 		.4byte	.LASF17
+ 2532 00be 01       		.byte	0x1
+ 2533 00bf 56       		.byte	0x56
+ 2534 00c0 00000000 		.4byte	.LFB1
+ 2535 00c4 34000000 		.4byte	.LFE1-.LFB1
+ 2536 00c8 01       		.uleb128 0x1
+ 2537 00c9 9C       		.byte	0x9c
+ 2538 00ca 05       		.uleb128 0x5
+ 2539 00cb 4B000000 		.4byte	.LASF18
+ 2540 00cf 01       		.byte	0x1
+ 2541 00d0 81       		.byte	0x81
+ 2542 00d1 00000000 		.4byte	.LFB2
+ 2543 00d5 20000000 		.4byte	.LFE2-.LFB2
+ 2544 00d9 01       		.uleb128 0x1
+ 2545 00da 9C       		.byte	0x9c
+ 2546 00db 06       		.uleb128 0x6
+ 2547 00dc 6E000000 		.4byte	.LASF24
+ 2548 00e0 01       		.byte	0x1
+ 2549 00e1 A3       		.byte	0xa3
+ 2550 00e2 00000000 		.4byte	.LFB3
+ 2551 00e6 2E000000 		.4byte	.LFE3-.LFB3
+ 2552 00ea 01       		.uleb128 0x1
+ 2553 00eb 9C       		.byte	0x9c
+ 2554 00ec 29010000 		.4byte	0x129
+ 2555 00f0 07       		.uleb128 0x7
+ 2556 00f1 5C000000 		.4byte	.LASF19
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 51
+
+
+ 2557 00f5 01       		.byte	0x1
+ 2558 00f6 A3       		.byte	0xa3
+ 2559 00f7 29010000 		.4byte	0x129
+ 2560 00fb 02       		.uleb128 0x2
+ 2561 00fc 91       		.byte	0x91
+ 2562 00fd 74       		.sleb128 -12
+ 2563 00fe 07       		.uleb128 0x7
+ 2564 00ff C5000000 		.4byte	.LASF20
+ 2565 0103 01       		.byte	0x1
+ 2566 0104 A3       		.byte	0xa3
+ 2567 0105 76000000 		.4byte	0x76
+ 2568 0109 02       		.uleb128 0x2
+ 2569 010a 91       		.byte	0x91
+ 2570 010b 72       		.sleb128 -14
+ 2571 010c 07       		.uleb128 0x7
+ 2572 010d 65000000 		.4byte	.LASF21
+ 2573 0111 01       		.byte	0x1
+ 2574 0112 A3       		.byte	0xa3
+ 2575 0113 29010000 		.4byte	0x129
+ 2576 0117 02       		.uleb128 0x2
+ 2577 0118 91       		.byte	0x91
+ 2578 0119 6C       		.sleb128 -20
+ 2579 011a 07       		.uleb128 0x7
+ 2580 011b D1000000 		.4byte	.LASF22
+ 2581 011f 01       		.byte	0x1
+ 2582 0120 A3       		.byte	0xa3
+ 2583 0121 76000000 		.4byte	0x76
+ 2584 0125 02       		.uleb128 0x2
+ 2585 0126 91       		.byte	0x91
+ 2586 0127 70       		.sleb128 -16
+ 2587 0128 00       		.byte	0
+ 2588 0129 08       		.uleb128 0x8
+ 2589 012a 04       		.byte	0x4
+ 2590 012b 2F010000 		.4byte	0x12f
+ 2591 012f 09       		.uleb128 0x9
+ 2592 0130 6B000000 		.4byte	0x6b
+ 2593 0134 05       		.uleb128 0x5
+ 2594 0135 FA000000 		.4byte	.LASF23
+ 2595 0139 01       		.byte	0x1
+ 2596 013a BB       		.byte	0xbb
+ 2597 013b 00000000 		.4byte	.LFB4
+ 2598 013f 2C000000 		.4byte	.LFE4-.LFB4
+ 2599 0143 01       		.uleb128 0x1
+ 2600 0144 9C       		.byte	0x9c
+ 2601 0145 06       		.uleb128 0x6
+ 2602 0146 DD000000 		.4byte	.LASF25
+ 2603 014a 01       		.byte	0x1
+ 2604 014b DA       		.byte	0xda
+ 2605 014c 00000000 		.4byte	.LFB5
+ 2606 0150 70000000 		.4byte	.LFE5-.LFB5
+ 2607 0154 01       		.uleb128 0x1
+ 2608 0155 9C       		.byte	0x9c
+ 2609 0156 77010000 		.4byte	0x177
+ 2610 015a 07       		.uleb128 0x7
+ 2611 015b B7000000 		.4byte	.LASF26
+ 2612 015f 01       		.byte	0x1
+ 2613 0160 DA       		.byte	0xda
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 52
+
+
+ 2614 0161 29010000 		.4byte	0x129
+ 2615 0165 02       		.uleb128 0x2
+ 2616 0166 91       		.byte	0x91
+ 2617 0167 74       		.sleb128 -12
+ 2618 0168 07       		.uleb128 0x7
+ 2619 0169 9A000000 		.4byte	.LASF27
+ 2620 016d 01       		.byte	0x1
+ 2621 016e DA       		.byte	0xda
+ 2622 016f 76000000 		.4byte	0x76
+ 2623 0173 02       		.uleb128 0x2
+ 2624 0174 91       		.byte	0x91
+ 2625 0175 72       		.sleb128 -14
+ 2626 0176 00       		.byte	0
+ 2627 0177 0A       		.uleb128 0xa
+ 2628 0178 69020000 		.4byte	.LASF28
+ 2629 017c 01       		.byte	0x1
+ 2630 017d 0801     		.2byte	0x108
+ 2631 017f 00000000 		.4byte	.LFB6
+ 2632 0183 70000000 		.4byte	.LFE6-.LFB6
+ 2633 0187 01       		.uleb128 0x1
+ 2634 0188 9C       		.byte	0x9c
+ 2635 0189 AC010000 		.4byte	0x1ac
+ 2636 018d 0B       		.uleb128 0xb
+ 2637 018e B7000000 		.4byte	.LASF26
+ 2638 0192 01       		.byte	0x1
+ 2639 0193 0801     		.2byte	0x108
+ 2640 0195 29010000 		.4byte	0x129
+ 2641 0199 02       		.uleb128 0x2
+ 2642 019a 91       		.byte	0x91
+ 2643 019b 74       		.sleb128 -12
+ 2644 019c 0B       		.uleb128 0xb
+ 2645 019d 9A000000 		.4byte	.LASF27
+ 2646 01a1 01       		.byte	0x1
+ 2647 01a2 0801     		.2byte	0x108
+ 2648 01a4 76000000 		.4byte	0x76
+ 2649 01a8 02       		.uleb128 0x2
+ 2650 01a9 91       		.byte	0x91
+ 2651 01aa 72       		.sleb128 -14
+ 2652 01ab 00       		.byte	0
+ 2653 01ac 0C       		.uleb128 0xc
+ 2654 01ad B3020000 		.4byte	.LASF29
+ 2655 01b1 01       		.byte	0x1
+ 2656 01b2 17       		.byte	0x17
+ 2657 01b3 6B000000 		.4byte	0x6b
+ 2658 01b7 05       		.uleb128 0x5
+ 2659 01b8 03       		.byte	0x3
+ 2660 01b9 01000000 		.4byte	WaveDAC8_1_Wave1Chan
+ 2661 01bd 0C       		.uleb128 0xc
+ 2662 01be 13000000 		.4byte	.LASF30
+ 2663 01c2 01       		.byte	0x1
+ 2664 01c3 18       		.byte	0x18
+ 2665 01c4 6B000000 		.4byte	0x6b
+ 2666 01c8 05       		.uleb128 0x5
+ 2667 01c9 03       		.byte	0x3
+ 2668 01ca 02000000 		.4byte	WaveDAC8_1_Wave2Chan
+ 2669 01ce 0C       		.uleb128 0xc
+ 2670 01cf 87000000 		.4byte	.LASF31
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 53
+
+
+ 2671 01d3 01       		.byte	0x1
+ 2672 01d4 19       		.byte	0x19
+ 2673 01d5 6B000000 		.4byte	0x6b
+ 2674 01d9 05       		.uleb128 0x5
+ 2675 01da 03       		.byte	0x3
+ 2676 01db 03000000 		.4byte	WaveDAC8_1_Wave1TD
+ 2677 01df 0C       		.uleb128 0xc
+ 2678 01e0 98010000 		.4byte	.LASF32
+ 2679 01e4 01       		.byte	0x1
+ 2680 01e5 1A       		.byte	0x1a
+ 2681 01e6 6B000000 		.4byte	0x6b
+ 2682 01ea 05       		.uleb128 0x5
+ 2683 01eb 03       		.byte	0x3
+ 2684 01ec 04000000 		.4byte	WaveDAC8_1_Wave2TD
+ 2685 01f0 0D       		.uleb128 0xd
+ 2686 01f1 00000000 		.4byte	.LASF33
+ 2687 01f5 01       		.byte	0x1
+ 2688 01f6 12       		.byte	0x12
+ 2689 01f7 6B000000 		.4byte	0x6b
+ 2690 01fb 05       		.uleb128 0x5
+ 2691 01fc 03       		.byte	0x3
+ 2692 01fd 00000000 		.4byte	WaveDAC8_1_initVar
+ 2693 0201 0E       		.uleb128 0xe
+ 2694 0202 6B000000 		.4byte	0x6b
+ 2695 0206 12020000 		.4byte	0x212
+ 2696 020a 0F       		.uleb128 0xf
+ 2697 020b A1000000 		.4byte	0xa1
+ 2698 020f E703     		.2byte	0x3e7
+ 2699 0211 00       		.byte	0
+ 2700 0212 0D       		.uleb128 0xd
+ 2701 0213 91020000 		.4byte	.LASF34
+ 2702 0217 01       		.byte	0x1
+ 2703 0218 14       		.byte	0x14
+ 2704 0219 23020000 		.4byte	0x223
+ 2705 021d 05       		.uleb128 0x5
+ 2706 021e 03       		.byte	0x3
+ 2707 021f 00000000 		.4byte	WaveDAC8_1_wave1
+ 2708 0223 09       		.uleb128 0x9
+ 2709 0224 01020000 		.4byte	0x201
+ 2710 0228 0D       		.uleb128 0xd
+ 2711 0229 A2020000 		.4byte	.LASF35
+ 2712 022d 01       		.byte	0x1
+ 2713 022e 15       		.byte	0x15
+ 2714 022f 39020000 		.4byte	0x239
+ 2715 0233 05       		.uleb128 0x5
+ 2716 0234 03       		.byte	0x3
+ 2717 0235 00000000 		.4byte	WaveDAC8_1_wave2
+ 2718 0239 09       		.uleb128 0x9
+ 2719 023a 01020000 		.4byte	0x201
+ 2720 023e 00       		.byte	0
+ 2721              		.section	.debug_abbrev,"",%progbits
+ 2722              	.Ldebug_abbrev0:
+ 2723 0000 01       		.uleb128 0x1
+ 2724 0001 11       		.uleb128 0x11
+ 2725 0002 01       		.byte	0x1
+ 2726 0003 25       		.uleb128 0x25
+ 2727 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 54
+
+
+ 2728 0005 13       		.uleb128 0x13
+ 2729 0006 0B       		.uleb128 0xb
+ 2730 0007 03       		.uleb128 0x3
+ 2731 0008 0E       		.uleb128 0xe
+ 2732 0009 1B       		.uleb128 0x1b
+ 2733 000a 0E       		.uleb128 0xe
+ 2734 000b 55       		.uleb128 0x55
+ 2735 000c 17       		.uleb128 0x17
+ 2736 000d 11       		.uleb128 0x11
+ 2737 000e 01       		.uleb128 0x1
+ 2738 000f 10       		.uleb128 0x10
+ 2739 0010 17       		.uleb128 0x17
+ 2740 0011 00       		.byte	0
+ 2741 0012 00       		.byte	0
+ 2742 0013 02       		.uleb128 0x2
+ 2743 0014 24       		.uleb128 0x24
+ 2744 0015 00       		.byte	0
+ 2745 0016 0B       		.uleb128 0xb
+ 2746 0017 0B       		.uleb128 0xb
+ 2747 0018 3E       		.uleb128 0x3e
+ 2748 0019 0B       		.uleb128 0xb
+ 2749 001a 03       		.uleb128 0x3
+ 2750 001b 0E       		.uleb128 0xe
+ 2751 001c 00       		.byte	0
+ 2752 001d 00       		.byte	0
+ 2753 001e 03       		.uleb128 0x3
+ 2754 001f 24       		.uleb128 0x24
+ 2755 0020 00       		.byte	0
+ 2756 0021 0B       		.uleb128 0xb
+ 2757 0022 0B       		.uleb128 0xb
+ 2758 0023 3E       		.uleb128 0x3e
+ 2759 0024 0B       		.uleb128 0xb
+ 2760 0025 03       		.uleb128 0x3
+ 2761 0026 08       		.uleb128 0x8
+ 2762 0027 00       		.byte	0
+ 2763 0028 00       		.byte	0
+ 2764 0029 04       		.uleb128 0x4
+ 2765 002a 16       		.uleb128 0x16
+ 2766 002b 00       		.byte	0
+ 2767 002c 03       		.uleb128 0x3
+ 2768 002d 0E       		.uleb128 0xe
+ 2769 002e 3A       		.uleb128 0x3a
+ 2770 002f 0B       		.uleb128 0xb
+ 2771 0030 3B       		.uleb128 0x3b
+ 2772 0031 0B       		.uleb128 0xb
+ 2773 0032 49       		.uleb128 0x49
+ 2774 0033 13       		.uleb128 0x13
+ 2775 0034 00       		.byte	0
+ 2776 0035 00       		.byte	0
+ 2777 0036 05       		.uleb128 0x5
+ 2778 0037 2E       		.uleb128 0x2e
+ 2779 0038 00       		.byte	0
+ 2780 0039 3F       		.uleb128 0x3f
+ 2781 003a 19       		.uleb128 0x19
+ 2782 003b 03       		.uleb128 0x3
+ 2783 003c 0E       		.uleb128 0xe
+ 2784 003d 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 55
+
+
+ 2785 003e 0B       		.uleb128 0xb
+ 2786 003f 3B       		.uleb128 0x3b
+ 2787 0040 0B       		.uleb128 0xb
+ 2788 0041 27       		.uleb128 0x27
+ 2789 0042 19       		.uleb128 0x19
+ 2790 0043 11       		.uleb128 0x11
+ 2791 0044 01       		.uleb128 0x1
+ 2792 0045 12       		.uleb128 0x12
+ 2793 0046 06       		.uleb128 0x6
+ 2794 0047 40       		.uleb128 0x40
+ 2795 0048 18       		.uleb128 0x18
+ 2796 0049 9642     		.uleb128 0x2116
+ 2797 004b 19       		.uleb128 0x19
+ 2798 004c 00       		.byte	0
+ 2799 004d 00       		.byte	0
+ 2800 004e 06       		.uleb128 0x6
+ 2801 004f 2E       		.uleb128 0x2e
+ 2802 0050 01       		.byte	0x1
+ 2803 0051 3F       		.uleb128 0x3f
+ 2804 0052 19       		.uleb128 0x19
+ 2805 0053 03       		.uleb128 0x3
+ 2806 0054 0E       		.uleb128 0xe
+ 2807 0055 3A       		.uleb128 0x3a
+ 2808 0056 0B       		.uleb128 0xb
+ 2809 0057 3B       		.uleb128 0x3b
+ 2810 0058 0B       		.uleb128 0xb
+ 2811 0059 27       		.uleb128 0x27
+ 2812 005a 19       		.uleb128 0x19
+ 2813 005b 11       		.uleb128 0x11
+ 2814 005c 01       		.uleb128 0x1
+ 2815 005d 12       		.uleb128 0x12
+ 2816 005e 06       		.uleb128 0x6
+ 2817 005f 40       		.uleb128 0x40
+ 2818 0060 18       		.uleb128 0x18
+ 2819 0061 9642     		.uleb128 0x2116
+ 2820 0063 19       		.uleb128 0x19
+ 2821 0064 01       		.uleb128 0x1
+ 2822 0065 13       		.uleb128 0x13
+ 2823 0066 00       		.byte	0
+ 2824 0067 00       		.byte	0
+ 2825 0068 07       		.uleb128 0x7
+ 2826 0069 05       		.uleb128 0x5
+ 2827 006a 00       		.byte	0
+ 2828 006b 03       		.uleb128 0x3
+ 2829 006c 0E       		.uleb128 0xe
+ 2830 006d 3A       		.uleb128 0x3a
+ 2831 006e 0B       		.uleb128 0xb
+ 2832 006f 3B       		.uleb128 0x3b
+ 2833 0070 0B       		.uleb128 0xb
+ 2834 0071 49       		.uleb128 0x49
+ 2835 0072 13       		.uleb128 0x13
+ 2836 0073 02       		.uleb128 0x2
+ 2837 0074 18       		.uleb128 0x18
+ 2838 0075 00       		.byte	0
+ 2839 0076 00       		.byte	0
+ 2840 0077 08       		.uleb128 0x8
+ 2841 0078 0F       		.uleb128 0xf
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 56
+
+
+ 2842 0079 00       		.byte	0
+ 2843 007a 0B       		.uleb128 0xb
+ 2844 007b 0B       		.uleb128 0xb
+ 2845 007c 49       		.uleb128 0x49
+ 2846 007d 13       		.uleb128 0x13
+ 2847 007e 00       		.byte	0
+ 2848 007f 00       		.byte	0
+ 2849 0080 09       		.uleb128 0x9
+ 2850 0081 26       		.uleb128 0x26
+ 2851 0082 00       		.byte	0
+ 2852 0083 49       		.uleb128 0x49
+ 2853 0084 13       		.uleb128 0x13
+ 2854 0085 00       		.byte	0
+ 2855 0086 00       		.byte	0
+ 2856 0087 0A       		.uleb128 0xa
+ 2857 0088 2E       		.uleb128 0x2e
+ 2858 0089 01       		.byte	0x1
+ 2859 008a 3F       		.uleb128 0x3f
+ 2860 008b 19       		.uleb128 0x19
+ 2861 008c 03       		.uleb128 0x3
+ 2862 008d 0E       		.uleb128 0xe
+ 2863 008e 3A       		.uleb128 0x3a
+ 2864 008f 0B       		.uleb128 0xb
+ 2865 0090 3B       		.uleb128 0x3b
+ 2866 0091 05       		.uleb128 0x5
+ 2867 0092 27       		.uleb128 0x27
+ 2868 0093 19       		.uleb128 0x19
+ 2869 0094 11       		.uleb128 0x11
+ 2870 0095 01       		.uleb128 0x1
+ 2871 0096 12       		.uleb128 0x12
+ 2872 0097 06       		.uleb128 0x6
+ 2873 0098 40       		.uleb128 0x40
+ 2874 0099 18       		.uleb128 0x18
+ 2875 009a 9642     		.uleb128 0x2116
+ 2876 009c 19       		.uleb128 0x19
+ 2877 009d 01       		.uleb128 0x1
+ 2878 009e 13       		.uleb128 0x13
+ 2879 009f 00       		.byte	0
+ 2880 00a0 00       		.byte	0
+ 2881 00a1 0B       		.uleb128 0xb
+ 2882 00a2 05       		.uleb128 0x5
+ 2883 00a3 00       		.byte	0
+ 2884 00a4 03       		.uleb128 0x3
+ 2885 00a5 0E       		.uleb128 0xe
+ 2886 00a6 3A       		.uleb128 0x3a
+ 2887 00a7 0B       		.uleb128 0xb
+ 2888 00a8 3B       		.uleb128 0x3b
+ 2889 00a9 05       		.uleb128 0x5
+ 2890 00aa 49       		.uleb128 0x49
+ 2891 00ab 13       		.uleb128 0x13
+ 2892 00ac 02       		.uleb128 0x2
+ 2893 00ad 18       		.uleb128 0x18
+ 2894 00ae 00       		.byte	0
+ 2895 00af 00       		.byte	0
+ 2896 00b0 0C       		.uleb128 0xc
+ 2897 00b1 34       		.uleb128 0x34
+ 2898 00b2 00       		.byte	0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 57
+
+
+ 2899 00b3 03       		.uleb128 0x3
+ 2900 00b4 0E       		.uleb128 0xe
+ 2901 00b5 3A       		.uleb128 0x3a
+ 2902 00b6 0B       		.uleb128 0xb
+ 2903 00b7 3B       		.uleb128 0x3b
+ 2904 00b8 0B       		.uleb128 0xb
+ 2905 00b9 49       		.uleb128 0x49
+ 2906 00ba 13       		.uleb128 0x13
+ 2907 00bb 02       		.uleb128 0x2
+ 2908 00bc 18       		.uleb128 0x18
+ 2909 00bd 00       		.byte	0
+ 2910 00be 00       		.byte	0
+ 2911 00bf 0D       		.uleb128 0xd
+ 2912 00c0 34       		.uleb128 0x34
+ 2913 00c1 00       		.byte	0
+ 2914 00c2 03       		.uleb128 0x3
+ 2915 00c3 0E       		.uleb128 0xe
+ 2916 00c4 3A       		.uleb128 0x3a
+ 2917 00c5 0B       		.uleb128 0xb
+ 2918 00c6 3B       		.uleb128 0x3b
+ 2919 00c7 0B       		.uleb128 0xb
+ 2920 00c8 49       		.uleb128 0x49
+ 2921 00c9 13       		.uleb128 0x13
+ 2922 00ca 3F       		.uleb128 0x3f
+ 2923 00cb 19       		.uleb128 0x19
+ 2924 00cc 02       		.uleb128 0x2
+ 2925 00cd 18       		.uleb128 0x18
+ 2926 00ce 00       		.byte	0
+ 2927 00cf 00       		.byte	0
+ 2928 00d0 0E       		.uleb128 0xe
+ 2929 00d1 01       		.uleb128 0x1
+ 2930 00d2 01       		.byte	0x1
+ 2931 00d3 49       		.uleb128 0x49
+ 2932 00d4 13       		.uleb128 0x13
+ 2933 00d5 01       		.uleb128 0x1
+ 2934 00d6 13       		.uleb128 0x13
+ 2935 00d7 00       		.byte	0
+ 2936 00d8 00       		.byte	0
+ 2937 00d9 0F       		.uleb128 0xf
+ 2938 00da 21       		.uleb128 0x21
+ 2939 00db 00       		.byte	0
+ 2940 00dc 49       		.uleb128 0x49
+ 2941 00dd 13       		.uleb128 0x13
+ 2942 00de 2F       		.uleb128 0x2f
+ 2943 00df 05       		.uleb128 0x5
+ 2944 00e0 00       		.byte	0
+ 2945 00e1 00       		.byte	0
+ 2946 00e2 00       		.byte	0
+ 2947              		.section	.debug_aranges,"",%progbits
+ 2948 0000 4C000000 		.4byte	0x4c
+ 2949 0004 0200     		.2byte	0x2
+ 2950 0006 00000000 		.4byte	.Ldebug_info0
+ 2951 000a 04       		.byte	0x4
+ 2952 000b 00       		.byte	0
+ 2953 000c 0000     		.2byte	0
+ 2954 000e 0000     		.2byte	0
+ 2955 0010 00000000 		.4byte	.LFB0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 58
+
+
+ 2956 0014 54000000 		.4byte	.LFE0-.LFB0
+ 2957 0018 00000000 		.4byte	.LFB1
+ 2958 001c 34000000 		.4byte	.LFE1-.LFB1
+ 2959 0020 00000000 		.4byte	.LFB2
+ 2960 0024 20000000 		.4byte	.LFE2-.LFB2
+ 2961 0028 00000000 		.4byte	.LFB3
+ 2962 002c 2E000000 		.4byte	.LFE3-.LFB3
+ 2963 0030 00000000 		.4byte	.LFB4
+ 2964 0034 2C000000 		.4byte	.LFE4-.LFB4
+ 2965 0038 00000000 		.4byte	.LFB5
+ 2966 003c 70000000 		.4byte	.LFE5-.LFB5
+ 2967 0040 00000000 		.4byte	.LFB6
+ 2968 0044 70000000 		.4byte	.LFE6-.LFB6
+ 2969 0048 00000000 		.4byte	0
+ 2970 004c 00000000 		.4byte	0
+ 2971              		.section	.debug_ranges,"",%progbits
+ 2972              	.Ldebug_ranges0:
+ 2973 0000 00000000 		.4byte	.LFB0
+ 2974 0004 54000000 		.4byte	.LFE0
+ 2975 0008 00000000 		.4byte	.LFB1
+ 2976 000c 34000000 		.4byte	.LFE1
+ 2977 0010 00000000 		.4byte	.LFB2
+ 2978 0014 20000000 		.4byte	.LFE2
+ 2979 0018 00000000 		.4byte	.LFB3
+ 2980 001c 2E000000 		.4byte	.LFE3
+ 2981 0020 00000000 		.4byte	.LFB4
+ 2982 0024 2C000000 		.4byte	.LFE4
+ 2983 0028 00000000 		.4byte	.LFB5
+ 2984 002c 70000000 		.4byte	.LFE5
+ 2985 0030 00000000 		.4byte	.LFB6
+ 2986 0034 70000000 		.4byte	.LFE6
+ 2987 0038 00000000 		.4byte	0
+ 2988 003c 00000000 		.4byte	0
+ 2989              		.section	.debug_line,"",%progbits
+ 2990              	.Ldebug_line0:
+ 2991 0000 F2000000 		.section	.debug_str,"MS",%progbits,1
+ 2991      02004900 
+ 2991      00000201 
+ 2991      FB0E0D00 
+ 2991      01010101 
+ 2992              	.LASF33:
+ 2993 0000 57617665 		.ascii	"WaveDAC8_1_initVar\000"
+ 2993      44414338 
+ 2993      5F315F69 
+ 2993      6E697456 
+ 2993      617200
+ 2994              	.LASF30:
+ 2995 0013 57617665 		.ascii	"WaveDAC8_1_Wave2Chan\000"
+ 2995      44414338 
+ 2995      5F315F57 
+ 2995      61766532 
+ 2995      4368616E 
+ 2996              	.LASF16:
+ 2997 0028 57617665 		.ascii	"WaveDAC8_1_Init\000"
+ 2997      44414338 
+ 2997      5F315F49 
+ 2997      6E697400 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 59
+
+
+ 2998              	.LASF3:
+ 2999 0038 73686F72 		.ascii	"short unsigned int\000"
+ 2999      7420756E 
+ 2999      7369676E 
+ 2999      65642069 
+ 2999      6E7400
+ 3000              	.LASF18:
+ 3001 004b 57617665 		.ascii	"WaveDAC8_1_Start\000"
+ 3001      44414338 
+ 3001      5F315F53 
+ 3001      74617274 
+ 3001      00
+ 3002              	.LASF19:
+ 3003 005c 77617665 		.ascii	"wavePtr1\000"
+ 3003      50747231 
+ 3003      00
+ 3004              	.LASF21:
+ 3005 0065 77617665 		.ascii	"wavePtr2\000"
+ 3005      50747232 
+ 3005      00
+ 3006              	.LASF24:
+ 3007 006e 57617665 		.ascii	"WaveDAC8_1_StartEx\000"
+ 3007      44414338 
+ 3007      5F315F53 
+ 3007      74617274 
+ 3007      457800
+ 3008              	.LASF12:
+ 3009 0081 666C6F61 		.ascii	"float\000"
+ 3009      7400
+ 3010              	.LASF31:
+ 3011 0087 57617665 		.ascii	"WaveDAC8_1_Wave1TD\000"
+ 3011      44414338 
+ 3011      5F315F57 
+ 3011      61766531 
+ 3011      544400
+ 3012              	.LASF27:
+ 3013 009a 73616D70 		.ascii	"sampleSize\000"
+ 3013      6C655369 
+ 3013      7A6500
+ 3014              	.LASF5:
+ 3015 00a5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3015      20756E73 
+ 3015      69676E65 
+ 3015      6420696E 
+ 3015      7400
+ 3016              	.LASF26:
+ 3017 00b7 77617665 		.ascii	"wavePtr\000"
+ 3017      50747200 
+ 3018              	.LASF9:
+ 3019 00bf 75696E74 		.ascii	"uint8\000"
+ 3019      3800
+ 3020              	.LASF20:
+ 3021 00c5 73616D70 		.ascii	"sampleSize1\000"
+ 3021      6C655369 
+ 3021      7A653100 
+ 3022              	.LASF22:
+ 3023 00d1 73616D70 		.ascii	"sampleSize2\000"
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 60
+
+
+ 3023      6C655369 
+ 3023      7A653200 
+ 3024              	.LASF25:
+ 3025 00dd 57617665 		.ascii	"WaveDAC8_1_Wave1Setup\000"
+ 3025      44414338 
+ 3025      5F315F57 
+ 3025      61766531 
+ 3025      53657475 
+ 3026              	.LASF13:
+ 3027 00f3 646F7562 		.ascii	"double\000"
+ 3027      6C6500
+ 3028              	.LASF23:
+ 3029 00fa 57617665 		.ascii	"WaveDAC8_1_Stop\000"
+ 3029      44414338 
+ 3029      5F315F53 
+ 3029      746F7000 
+ 3030              	.LASF2:
+ 3031 010a 73686F72 		.ascii	"short int\000"
+ 3031      7420696E 
+ 3031      7400
+ 3032              	.LASF10:
+ 3033 0114 75696E74 		.ascii	"uint16\000"
+ 3033      313600
+ 3034              	.LASF11:
+ 3035 011b 75696E74 		.ascii	"uint32\000"
+ 3035      333200
+ 3036              	.LASF1:
+ 3037 0122 756E7369 		.ascii	"unsigned char\000"
+ 3037      676E6564 
+ 3037      20636861 
+ 3037      7200
+ 3038              	.LASF8:
+ 3039 0130 756E7369 		.ascii	"unsigned int\000"
+ 3039      676E6564 
+ 3039      20696E74 
+ 3039      00
+ 3040              	.LASF38:
+ 3041 013d 5A3A5C73 		.ascii	"Z:\\scottcarlson On My Mac\\Code\\PSoC_Creator\\Des"
+ 3041      636F7474 
+ 3041      6361726C 
+ 3041      736F6E20 
+ 3041      4F6E204D 
+ 3042 016c 69676E30 		.ascii	"ign01\\Design01.cydsn\000"
+ 3042      315C4465 
+ 3042      7369676E 
+ 3042      30312E63 
+ 3042      7964736E 
+ 3043              	.LASF7:
+ 3044 0181 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3044      206C6F6E 
+ 3044      6720756E 
+ 3044      7369676E 
+ 3044      65642069 
+ 3045              	.LASF32:
+ 3046 0198 57617665 		.ascii	"WaveDAC8_1_Wave2TD\000"
+ 3046      44414338 
+ 3046      5F315F57 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 61
+
+
+ 3046      61766532 
+ 3046      544400
+ 3047              	.LASF36:
+ 3048 01ab 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 3048      4320342E 
+ 3048      382E3420 
+ 3048      32303134 
+ 3048      30353236 
+ 3049 01de 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 3049      20726576 
+ 3049      6973696F 
+ 3049      6E203231 
+ 3049      31333538 
+ 3050 0211 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 3050      66756E63 
+ 3050      74696F6E 
+ 3050      2D736563 
+ 3050      74696F6E 
+ 3051              	.LASF15:
+ 3052 0227 73697A65 		.ascii	"sizetype\000"
+ 3052      74797065 
+ 3052      00
+ 3053              	.LASF6:
+ 3054 0230 6C6F6E67 		.ascii	"long long int\000"
+ 3054      206C6F6E 
+ 3054      6720696E 
+ 3054      7400
+ 3055              	.LASF14:
+ 3056 023e 63686172 		.ascii	"char\000"
+ 3056      00
+ 3057              	.LASF37:
+ 3058 0243 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WaveDAC8_1.c\000"
+ 3058      6E657261 
+ 3058      7465645F 
+ 3058      536F7572 
+ 3058      63655C50 
+ 3059              	.LASF28:
+ 3060 0269 57617665 		.ascii	"WaveDAC8_1_Wave2Setup\000"
+ 3060      44414338 
+ 3060      5F315F57 
+ 3060      61766532 
+ 3060      53657475 
+ 3061              	.LASF17:
+ 3062 027f 57617665 		.ascii	"WaveDAC8_1_Enable\000"
+ 3062      44414338 
+ 3062      5F315F45 
+ 3062      6E61626C 
+ 3062      6500
+ 3063              	.LASF34:
+ 3064 0291 57617665 		.ascii	"WaveDAC8_1_wave1\000"
+ 3064      44414338 
+ 3064      5F315F77 
+ 3064      61766531 
+ 3064      00
+ 3065              	.LASF35:
+ 3066 02a2 57617665 		.ascii	"WaveDAC8_1_wave2\000"
+ 3066      44414338 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccX52Ejw.s 			page 62
+
+
+ 3066      5F315F77 
+ 3066      61766532 
+ 3066      00
+ 3067              	.LASF29:
+ 3068 02b3 57617665 		.ascii	"WaveDAC8_1_Wave1Chan\000"
+ 3068      44414338 
+ 3068      5F315F57 
+ 3068      61766531 
+ 3068      4368616E 
+ 3069              	.LASF4:
+ 3070 02c8 6C6F6E67 		.ascii	"long int\000"
+ 3070      20696E74 
+ 3070      00
+ 3071              	.LASF0:
+ 3072 02d1 7369676E 		.ascii	"signed char\000"
+ 3072      65642063 
+ 3072      68617200 
+ 3073              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

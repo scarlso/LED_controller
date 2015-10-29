@@ -1,0 +1,7 @@
+Z:\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\Filter_ADC_VDAC01.cydsn\Filter_ADC_VDAC01.cyprj|d3eedb9f-12e0-44b5-a230-8f7c6a1a1b49
+\\vmware-host\Shared Folders\Downloads\cmsis_dsp_2\cmsis_dsp_2.cydsn\cmsis_dsp_2.cyprj|f1d7a9ff-25f4-4d5f-8157-99abc7f7e853
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|19f0f4d0-2099-44f6-86b4-8ff9327403e7
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|1900e4e7-1db6-48ef-9847-009d7c6b4c1a
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|80d7a37e-de6a-4f9c-b797-48366724dcd8
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|2c96a313-0bea-4d0f-b263-f06c90210b6c
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|591de40d-ccff-4f5e-bb66-070d0711d620

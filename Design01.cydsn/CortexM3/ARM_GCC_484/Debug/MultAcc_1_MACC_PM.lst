@@ -1,0 +1,1234 @@
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"MultAcc_1_MACC_PM.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.bss
+  19              		.align	2
+  20              	MultAcc_1_MACC_backup:
+  21 0000 00000000 		.space	8
+  21      00000000 
+  22              		.section	.text.MultAcc_1_MACC_SaveConfig,"ax",%progbits
+  23              		.align	2
+  24              		.global	MultAcc_1_MACC_SaveConfig
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	MultAcc_1_MACC_SaveConfig, %function
+  28              	MultAcc_1_MACC_SaveConfig:
+  29              	.LFB0:
+  30              		.file 1 ".\\Generated_Source\\PSoC5\\MultAcc_1_MACC_PM.c"
+   1:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * File Name: MultAcc_1_MACC_PM.c
+   3:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Version 1.30
+   4:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+   5:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Description:
+   6:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  This file contains the setup, control and status commands to support
+   7:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  component operations in low power mode.
+   8:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+   9:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Note:
+  10:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+  11:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Copyright 2011-2013, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+  18:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** #include "MultAcc_1_MACC.h"
+  19:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+  20:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** static MultAcc_1_MACC_BACKUP_STRUCT MultAcc_1_MACC_backup = { 0u };
+  21:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+  22:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+  23:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** /*******************************************************************************
+  24:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Function Name: MultAcc_1_MACC_SaveConfig
+  25:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** ********************************************************************************
+  26:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 2
+
+
+  27:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Summary:
+  28:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  Saves the user configuration of the DFB non-retention registers. This routine
+  29:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  is called by DFB_Sleep() to save the component configuration before entering
+  30:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  sleep.
+  31:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+  32:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Parameters:
+  33:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  None.
+  34:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+  35:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Return:
+  36:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  None.
+  37:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+  38:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *******************************************************************************/
+  39:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** void MultAcc_1_MACC_SaveConfig(void) 
+  40:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** {
+  31              		.loc 1 40 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 8
+  34              		@ frame_needed = 1, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36 0000 80B4     		push	{r7}
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 7, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              		.cfi_def_cfa_offset 16
+  41 0004 00AF     		add	r7, sp, #0
+  42              		.cfi_def_cfa_register 7
+  41:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     uint8 count;
+  42:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     uint8 i = 0u;
+  43              		.loc 1 42 0
+  44 0006 0023     		movs	r3, #0
+  45 0008 BB71     		strb	r3, [r7, #6]
+  43:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 	
+  44:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_backup.cr = MultAcc_1_MACC_CR_REG;
+  46              		.loc 1 44 0
+  47 000a 194B     		ldr	r3, .L4
+  48 000c 1B78     		ldrb	r3, [r3]
+  49 000e DAB2     		uxtb	r2, r3
+  50 0010 184B     		ldr	r3, .L4+4
+  51 0012 5A70     		strb	r2, [r3, #1]
+  45:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_backup.sr = MultAcc_1_MACC_SR_REG;
+  52              		.loc 1 45 0
+  53 0014 184B     		ldr	r3, .L4+8
+  54 0016 1B78     		ldrb	r3, [r3]
+  55 0018 DAB2     		uxtb	r2, r3
+  56 001a 164B     		ldr	r3, .L4+4
+  57 001c 9A70     		strb	r2, [r3, #2]
+  46:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_backup.sem = MultAcc_1_MACC_SEM_REG;
+  58              		.loc 1 46 0
+  59 001e 174B     		ldr	r3, .L4+12
+  60 0020 1B78     		ldrb	r3, [r3]
+  61 0022 DAB2     		uxtb	r2, r3
+  62 0024 134B     		ldr	r3, .L4+4
+  63 0026 DA70     		strb	r2, [r3, #3]
+  47:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 	
+  48:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Put DFB RAM on the bus */
+  49:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_RAM_DIR_REG = MultAcc_1_MACC_RAM_DIR_BUS;
+  64              		.loc 1 49 0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 3
+
+
+  65 0028 154B     		ldr	r3, .L4+16
+  66 002a 3F22     		movs	r2, #63
+  67 002c 1A70     		strb	r2, [r3]
+  50:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+  51:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* ACU RAM */
+  52:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     count = MultAcc_1_MACC_ACU_RAM_SIZE_CUR;
+  68              		.loc 1 52 0
+  69 002e 0123     		movs	r3, #1
+  70 0030 FB71     		strb	r3, [r7, #7]
+  53:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     while (count > 0u)
+  71              		.loc 1 53 0
+  72 0032 11E0     		b	.L2
+  73              	.L3:
+  54:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     {
+  55:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         MultAcc_1_MACC_backup.acu[i] = CY_GET_REG32(& MultAcc_1_MACC_ACU_RAM_PTR[i]);
+  74              		.loc 1 55 0
+  75 0034 B879     		ldrb	r0, [r7, #6]	@ zero_extendqisi2
+  76 0036 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  77 0038 9B00     		lsls	r3, r3, #2
+  78 003a 03F18043 		add	r3, r3, #1073741824
+  79 003e 03F54743 		add	r3, r3, #50944
+  80 0042 1A68     		ldr	r2, [r3]
+  81 0044 0B49     		ldr	r1, .L4+4
+  82 0046 8300     		lsls	r3, r0, #2
+  83 0048 0B44     		add	r3, r3, r1
+  84 004a 5A60     		str	r2, [r3, #4]
+  56:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         count--;
+  85              		.loc 1 56 0
+  86 004c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  87 004e 013B     		subs	r3, r3, #1
+  88 0050 FB71     		strb	r3, [r7, #7]
+  57:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         i++;
+  89              		.loc 1 57 0
+  90 0052 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  91 0054 0133     		adds	r3, r3, #1
+  92 0056 BB71     		strb	r3, [r7, #6]
+  93              	.L2:
+  53:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     while (count > 0u)
+  94              		.loc 1 53 0 discriminator 1
+  95 0058 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  96 005a 002B     		cmp	r3, #0
+  97 005c EAD1     		bne	.L3
+  58:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     }
+  59:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 	
+  60:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Take DFB RAM off the bus */
+  61:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_RAM_DIR_REG = MultAcc_1_MACC_RAM_DIR_DFB;
+  98              		.loc 1 61 0
+  99 005e 084B     		ldr	r3, .L4+16
+ 100 0060 0022     		movs	r2, #0
+ 101 0062 1A70     		strb	r2, [r3]
+  62:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** }
+ 102              		.loc 1 62 0
+ 103 0064 0C37     		adds	r7, r7, #12
+ 104 0066 BD46     		mov	sp, r7
+ 105              		@ sp needed
+ 106 0068 5DF8047B 		ldr	r7, [sp], #4
+ 107 006c 7047     		bx	lr
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 4
+
+
+ 108              	.L5:
+ 109 006e 00BF     		.align	2
+ 110              	.L4:
+ 111 0070 80C70040 		.word	1073792896
+ 112 0074 00000000 		.word	MultAcc_1_MACC_backup
+ 113 0078 84C70040 		.word	1073792900
+ 114 007c 90C70040 		.word	1073792912
+ 115 0080 8CC70040 		.word	1073792908
+ 116              		.cfi_endproc
+ 117              	.LFE0:
+ 118              		.size	MultAcc_1_MACC_SaveConfig, .-MultAcc_1_MACC_SaveConfig
+ 119              		.section	.text.MultAcc_1_MACC_RestoreConfig,"ax",%progbits
+ 120              		.align	2
+ 121              		.global	MultAcc_1_MACC_RestoreConfig
+ 122              		.thumb
+ 123              		.thumb_func
+ 124              		.type	MultAcc_1_MACC_RestoreConfig, %function
+ 125              	MultAcc_1_MACC_RestoreConfig:
+ 126              	.LFB1:
+  63:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+  64:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+  65:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** /*******************************************************************************
+  66:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Function Name: MultAcc_1_MACC_RestoreConfig
+  67:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** ********************************************************************************
+  68:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+  69:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Summary:
+  70:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  Restores the user configuration of the DFB non-retention registers. This
+  71:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  routine is called by DFB_Wakeup() to restore the component configuration when
+  72:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  exiting sleep.
+  73:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+  74:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Parameters:
+  75:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  None.
+  76:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+  77:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Return:
+  78:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  None.
+  79:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+  80:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *******************************************************************************/
+  81:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** void MultAcc_1_MACC_RestoreConfig(void) 
+  82:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** {
+ 127              		.loc 1 82 0
+ 128              		.cfi_startproc
+ 129              		@ args = 0, pretend = 0, frame = 8
+ 130              		@ frame_needed = 1, uses_anonymous_args = 0
+ 131              		@ link register save eliminated.
+ 132 0000 80B4     		push	{r7}
+ 133              		.cfi_def_cfa_offset 4
+ 134              		.cfi_offset 7, -4
+ 135 0002 83B0     		sub	sp, sp, #12
+ 136              		.cfi_def_cfa_offset 16
+ 137 0004 00AF     		add	r7, sp, #0
+ 138              		.cfi_def_cfa_register 7
+  83:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     uint8 count;
+  84:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     uint8 i = 0u;
+ 139              		.loc 1 84 0
+ 140 0006 0023     		movs	r3, #0
+ 141 0008 BB71     		strb	r3, [r7, #6]
+  85:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 		
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 5
+
+
+  86:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_CR_REG = MultAcc_1_MACC_backup.cr;
+ 142              		.loc 1 86 0
+ 143 000a 1F4B     		ldr	r3, .L9
+ 144 000c 1F4A     		ldr	r2, .L9+4
+ 145 000e 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
+ 146 0010 1A70     		strb	r2, [r3]
+  87:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_SR_REG = MultAcc_1_MACC_backup.sr;
+ 147              		.loc 1 87 0
+ 148 0012 1F4B     		ldr	r3, .L9+8
+ 149 0014 1D4A     		ldr	r2, .L9+4
+ 150 0016 9278     		ldrb	r2, [r2, #2]	@ zero_extendqisi2
+ 151 0018 1A70     		strb	r2, [r3]
+  88:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_SEM_REG = MultAcc_1_MACC_backup.sem;
+ 152              		.loc 1 88 0
+ 153 001a 1E4B     		ldr	r3, .L9+12
+ 154 001c 1B4A     		ldr	r2, .L9+4
+ 155 001e D278     		ldrb	r2, [r2, #3]	@ zero_extendqisi2
+ 156 0020 1A70     		strb	r2, [r3]
+  89:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     
+  90:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Power on DFB before initializing the RAMs */
+  91:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_PM_ACT_CFG_REG |= MultAcc_1_MACC_PM_ACT_MSK;
+ 157              		.loc 1 91 0
+ 158 0022 1D4B     		ldr	r3, .L9+16
+ 159 0024 1C4A     		ldr	r2, .L9+16
+ 160 0026 1278     		ldrb	r2, [r2]
+ 161 0028 D2B2     		uxtb	r2, r2
+ 162 002a 42F01002 		orr	r2, r2, #16
+ 163 002e D2B2     		uxtb	r2, r2
+ 164 0030 1A70     		strb	r2, [r3]
+  92:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Enables DFB block in Alternate Active (Standby) mode */
+  93:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_PM_STBY_CFG_REG |= MultAcc_1_MACC_PM_STBY_MSK;
+ 165              		.loc 1 93 0
+ 166 0032 1A4B     		ldr	r3, .L9+20
+ 167 0034 194A     		ldr	r2, .L9+20
+ 168 0036 1278     		ldrb	r2, [r2]
+ 169 0038 D2B2     		uxtb	r2, r2
+ 170 003a 42F01002 		orr	r2, r2, #16
+ 171 003e D2B2     		uxtb	r2, r2
+ 172 0040 1A70     		strb	r2, [r3]
+  94:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     
+  95:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Put DFB RAM on the bus */
+  96:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_RAM_DIR_REG = MultAcc_1_MACC_RAM_DIR_BUS;
+ 173              		.loc 1 96 0
+ 174 0042 174B     		ldr	r3, .L9+24
+ 175 0044 3F22     		movs	r2, #63
+ 176 0046 1A70     		strb	r2, [r3]
+  97:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+  98:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* ACU RAM */
+  99:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     count = MultAcc_1_MACC_ACU_RAM_SIZE_CUR;
+ 177              		.loc 1 99 0
+ 178 0048 0123     		movs	r3, #1
+ 179 004a FB71     		strb	r3, [r7, #7]
+ 100:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     while (count > 0u)
+ 180              		.loc 1 100 0
+ 181 004c 11E0     		b	.L7
+ 182              	.L8:
+ 101:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     {
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 6
+
+
+ 102:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         CY_SET_REG32(& MultAcc_1_MACC_ACU_RAM_PTR[i], MultAcc_1_MACC_backup.acu[i]);
+ 183              		.loc 1 102 0
+ 184 004e BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 185 0050 9B00     		lsls	r3, r3, #2
+ 186 0052 03F18043 		add	r3, r3, #1073741824
+ 187 0056 03F54743 		add	r3, r3, #50944
+ 188 005a BA79     		ldrb	r2, [r7, #6]	@ zero_extendqisi2
+ 189 005c 0B49     		ldr	r1, .L9+4
+ 190 005e 9200     		lsls	r2, r2, #2
+ 191 0060 0A44     		add	r2, r2, r1
+ 192 0062 5268     		ldr	r2, [r2, #4]
+ 193 0064 1A60     		str	r2, [r3]
+ 103:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         count--;
+ 194              		.loc 1 103 0
+ 195 0066 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 196 0068 013B     		subs	r3, r3, #1
+ 197 006a FB71     		strb	r3, [r7, #7]
+ 104:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         i++;
+ 198              		.loc 1 104 0
+ 199 006c BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 200 006e 0133     		adds	r3, r3, #1
+ 201 0070 BB71     		strb	r3, [r7, #6]
+ 202              	.L7:
+ 100:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     while (count > 0u)
+ 203              		.loc 1 100 0 discriminator 1
+ 204 0072 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 205 0074 002B     		cmp	r3, #0
+ 206 0076 EAD1     		bne	.L8
+ 105:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     }
+ 106:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+ 107:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Take DFB RAM off the bus */
+ 108:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_RAM_DIR_REG = MultAcc_1_MACC_RAM_DIR_DFB;
+ 207              		.loc 1 108 0
+ 208 0078 094B     		ldr	r3, .L9+24
+ 209 007a 0022     		movs	r2, #0
+ 210 007c 1A70     		strb	r2, [r3]
+ 109:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** }
+ 211              		.loc 1 109 0
+ 212 007e 0C37     		adds	r7, r7, #12
+ 213 0080 BD46     		mov	sp, r7
+ 214              		@ sp needed
+ 215 0082 5DF8047B 		ldr	r7, [sp], #4
+ 216 0086 7047     		bx	lr
+ 217              	.L10:
+ 218              		.align	2
+ 219              	.L9:
+ 220 0088 80C70040 		.word	1073792896
+ 221 008c 00000000 		.word	MultAcc_1_MACC_backup
+ 222 0090 84C70040 		.word	1073792900
+ 223 0094 90C70040 		.word	1073792912
+ 224 0098 A6430040 		.word	1073759142
+ 225 009c B6430040 		.word	1073759158
+ 226 00a0 8CC70040 		.word	1073792908
+ 227              		.cfi_endproc
+ 228              	.LFE1:
+ 229              		.size	MultAcc_1_MACC_RestoreConfig, .-MultAcc_1_MACC_RestoreConfig
+ 230              		.section	.text.MultAcc_1_MACC_Sleep,"ax",%progbits
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 7
+
+
+ 231              		.align	2
+ 232              		.global	MultAcc_1_MACC_Sleep
+ 233              		.thumb
+ 234              		.thumb_func
+ 235              		.type	MultAcc_1_MACC_Sleep, %function
+ 236              	MultAcc_1_MACC_Sleep:
+ 237              	.LFB2:
+ 110:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+ 111:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+ 112:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** /*******************************************************************************
+ 113:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Function Name: MultAcc_1_MACC_Sleep
+ 114:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** ********************************************************************************
+ 115:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 116:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Summary:
+ 117:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  This is the preferred routine to prepare the component for sleep. The
+ 118:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  MultAcc_1_MACC_Sleep() routine saves the current component state. Then it
+ 119:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  calls the DFB_Stop() function and calls MultAcc_1_MACC_SaveConfig() to save
+ 120:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  the hardware configuration. Call the MultAcc_1_MACC_Sleep() function before
+ 121:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  calling the CyPmSleep() or the CyPmHibernate() function. Refer to the PSoC
+ 122:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  Creator System Reference Guide for more information about power management
+ 123:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  functions.
+ 124:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 125:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Parameters:
+ 126:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  None.
+ 127:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 128:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Return:
+ 129:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  None.
+ 130:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 131:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Reentrant:
+ 132:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  No.
+ 133:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 134:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *******************************************************************************/
+ 135:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** void MultAcc_1_MACC_Sleep(void) 
+ 136:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** {
+ 238              		.loc 1 136 0
+ 239              		.cfi_startproc
+ 240              		@ args = 0, pretend = 0, frame = 0
+ 241              		@ frame_needed = 1, uses_anonymous_args = 0
+ 242 0000 80B5     		push	{r7, lr}
+ 243              		.cfi_def_cfa_offset 8
+ 244              		.cfi_offset 7, -8
+ 245              		.cfi_offset 14, -4
+ 246 0002 00AF     		add	r7, sp, #0
+ 247              		.cfi_def_cfa_register 7
+ 137:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     if (0u != (MultAcc_1_MACC_CR_REG & MultAcc_1_MACC_RUN_MASK))
+ 248              		.loc 1 137 0
+ 249 0004 0D4B     		ldr	r3, .L14
+ 250 0006 1B78     		ldrb	r3, [r3]
+ 251 0008 DBB2     		uxtb	r3, r3
+ 252 000a 03F00103 		and	r3, r3, #1
+ 253 000e 002B     		cmp	r3, #0
+ 254 0010 03D0     		beq	.L12
+ 138:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     {
+ 139:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         MultAcc_1_MACC_backup.enableState = 1u;
+ 255              		.loc 1 139 0
+ 256 0012 0B4B     		ldr	r3, .L14+4
+ 257 0014 0122     		movs	r2, #1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 8
+
+
+ 258 0016 1A70     		strb	r2, [r3]
+ 259 0018 02E0     		b	.L13
+ 260              	.L12:
+ 140:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     }
+ 141:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     else /* The DFB block is disabled */
+ 142:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     {
+ 143:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         MultAcc_1_MACC_backup.enableState = 0u;
+ 261              		.loc 1 143 0
+ 262 001a 094B     		ldr	r3, .L14+4
+ 263 001c 0022     		movs	r2, #0
+ 264 001e 1A70     		strb	r2, [r3]
+ 265              	.L13:
+ 144:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     }
+ 145:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+ 146:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Save the configuration */
+ 147:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_SaveConfig();
+ 266              		.loc 1 147 0
+ 267 0020 FFF7FEFF 		bl	MultAcc_1_MACC_SaveConfig
+ 148:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     
+ 149:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Disables the clock to the entire core of the block */
+ 150:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_CR_REG |= MultAcc_1_MACC_CORECLK_DISABLE;
+ 268              		.loc 1 150 0
+ 269 0024 054B     		ldr	r3, .L14
+ 270 0026 054A     		ldr	r2, .L14
+ 271 0028 1278     		ldrb	r2, [r2]
+ 272 002a D2B2     		uxtb	r2, r2
+ 273 002c 42F00402 		orr	r2, r2, #4
+ 274 0030 D2B2     		uxtb	r2, r2
+ 275 0032 1A70     		strb	r2, [r3]
+ 151:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     
+ 152:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Turn off the run bit */
+ 153:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_Pause();
+ 276              		.loc 1 153 0
+ 277 0034 FFF7FEFF 		bl	MultAcc_1_MACC_Pause
+ 154:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** }
+ 278              		.loc 1 154 0
+ 279 0038 80BD     		pop	{r7, pc}
+ 280              	.L15:
+ 281 003a 00BF     		.align	2
+ 282              	.L14:
+ 283 003c 80C70040 		.word	1073792896
+ 284 0040 00000000 		.word	MultAcc_1_MACC_backup
+ 285              		.cfi_endproc
+ 286              	.LFE2:
+ 287              		.size	MultAcc_1_MACC_Sleep, .-MultAcc_1_MACC_Sleep
+ 288              		.section	.text.MultAcc_1_MACC_Wakeup,"ax",%progbits
+ 289              		.align	2
+ 290              		.global	MultAcc_1_MACC_Wakeup
+ 291              		.thumb
+ 292              		.thumb_func
+ 293              		.type	MultAcc_1_MACC_Wakeup, %function
+ 294              	MultAcc_1_MACC_Wakeup:
+ 295              	.LFB3:
+ 155:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+ 156:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+ 157:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** /*******************************************************************************
+ 158:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Function Name: MultAcc_1_MACC_Wakeup
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 9
+
+
+ 159:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** ********************************************************************************
+ 160:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 161:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Summary:
+ 162:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  This is the preferred routine to restore the component to the state when
+ 163:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  MultAcc_1_MACC_Sleep() was called. The MultAcc_1_MACC_Wakeup() function
+ 164:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  calls the MultAcc_1_MACC_RestoreConfig() function to restore the
+ 165:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  configuration. If the component was enabled before the
+ 166:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  MultAcc_1_MACC_Sleep() function was called, the MultAcc_1_MACC_Wakeup()
+ 167:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  function will also re-enable the component.
+ 168:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 169:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Parameters:
+ 170:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  None.
+ 171:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 172:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Return:
+ 173:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  None.
+ 174:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 175:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** * Side Effects:
+ 176:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  Calling the MultAcc_1_MACC_Wakeup() function without first calling the
+ 177:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  MultAcc_1_MACC_Sleep() or MultAcc_1_MACC_SaveConfig() function may
+ 178:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *  produce unexpected behavior.
+ 179:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *
+ 180:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** *******************************************************************************/
+ 181:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** void MultAcc_1_MACC_Wakeup(void) 
+ 182:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** {
+ 296              		.loc 1 182 0
+ 297              		.cfi_startproc
+ 298              		@ args = 0, pretend = 0, frame = 0
+ 299              		@ frame_needed = 1, uses_anonymous_args = 0
+ 300 0000 80B5     		push	{r7, lr}
+ 301              		.cfi_def_cfa_offset 8
+ 302              		.cfi_offset 7, -8
+ 303              		.cfi_offset 14, -4
+ 304 0002 00AF     		add	r7, sp, #0
+ 305              		.cfi_def_cfa_register 7
+ 183:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_RestoreConfig();
+ 306              		.loc 1 183 0
+ 307 0004 FFF7FEFF 		bl	MultAcc_1_MACC_RestoreConfig
+ 184:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+ 185:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     /* Enables the clock to the entire core of the block */
+ 186:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     MultAcc_1_MACC_CR_REG &= (uint8) (~MultAcc_1_MACC_CORECLK_DISABLE);
+ 308              		.loc 1 186 0
+ 309 0008 0A4B     		ldr	r3, .L19
+ 310 000a 0A4A     		ldr	r2, .L19
+ 311 000c 1278     		ldrb	r2, [r2]
+ 312 000e D2B2     		uxtb	r2, r2
+ 313 0010 22F00402 		bic	r2, r2, #4
+ 314 0014 D2B2     		uxtb	r2, r2
+ 315 0016 1A70     		strb	r2, [r3]
+ 187:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** 
+ 188:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     if (MultAcc_1_MACC_backup.enableState != 0u)
+ 316              		.loc 1 188 0
+ 317 0018 074B     		ldr	r3, .L19+4
+ 318 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 319 001c 002B     		cmp	r3, #0
+ 320 001e 02D0     		beq	.L17
+ 189:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     {
+ 190:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         /* Enables component's operation */
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 10
+
+
+ 191:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         MultAcc_1_MACC_Resume();
+ 321              		.loc 1 191 0
+ 322 0020 FFF7FEFF 		bl	MultAcc_1_MACC_Resume
+ 323 0024 05E0     		b	.L16
+ 324              	.L17:
+ 192:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     } /* Left Run Bit in off state if component's block was disabled before */
+ 193:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     else
+ 194:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     {
+ 195:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         /* Takes DFB RAM off the bus */
+ 196:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         MultAcc_1_MACC_RAM_DIR_REG = MultAcc_1_MACC_RAM_DIR_DFB;
+ 325              		.loc 1 196 0
+ 326 0026 054B     		ldr	r3, .L19+8
+ 327 0028 0022     		movs	r2, #0
+ 328 002a 1A70     		strb	r2, [r3]
+ 197:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         /* Clears any pending interrupts */
+ 198:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****         MultAcc_1_MACC_SR_REG = 0xFFu;
+ 329              		.loc 1 198 0
+ 330 002c 044B     		ldr	r3, .L19+12
+ 331 002e FF22     		movs	r2, #255
+ 332 0030 1A70     		strb	r2, [r3]
+ 333              	.L16:
+ 199:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c ****     }
+ 200:.\Generated_Source\PSoC5/MultAcc_1_MACC_PM.c **** }
+ 334              		.loc 1 200 0
+ 335 0032 80BD     		pop	{r7, pc}
+ 336              	.L20:
+ 337              		.align	2
+ 338              	.L19:
+ 339 0034 80C70040 		.word	1073792896
+ 340 0038 00000000 		.word	MultAcc_1_MACC_backup
+ 341 003c 8CC70040 		.word	1073792908
+ 342 0040 84C70040 		.word	1073792900
+ 343              		.cfi_endproc
+ 344              	.LFE3:
+ 345              		.size	MultAcc_1_MACC_Wakeup, .-MultAcc_1_MACC_Wakeup
+ 346              		.text
+ 347              	.Letext0:
+ 348              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 349              		.file 3 ".\\Generated_Source\\PSoC5\\MultAcc_1_MACC.h"
+ 350              		.section	.debug_info,"",%progbits
+ 351              	.Ldebug_info0:
+ 352 0000 AD010000 		.4byte	0x1ad
+ 353 0004 0400     		.2byte	0x4
+ 354 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 355 000a 04       		.byte	0x4
+ 356 000b 01       		.uleb128 0x1
+ 357 000c 5A010000 		.4byte	.LASF25
+ 358 0010 01       		.byte	0x1
+ 359 0011 7F000000 		.4byte	.LASF26
+ 360 0015 E9000000 		.4byte	.LASF27
+ 361 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 362 001d 00000000 		.4byte	0
+ 363 0021 00000000 		.4byte	.Ldebug_line0
+ 364 0025 02       		.uleb128 0x2
+ 365 0026 04       		.byte	0x4
+ 366 0027 05       		.byte	0x5
+ 367 0028 696E7400 		.ascii	"int\000"
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 11
+
+
+ 368 002c 03       		.uleb128 0x3
+ 369 002d 04       		.byte	0x4
+ 370 002e 07       		.byte	0x7
+ 371 002f DC000000 		.4byte	.LASF0
+ 372 0033 03       		.uleb128 0x3
+ 373 0034 01       		.byte	0x1
+ 374 0035 06       		.byte	0x6
+ 375 0036 10020000 		.4byte	.LASF1
+ 376 003a 03       		.uleb128 0x3
+ 377 003b 01       		.byte	0x1
+ 378 003c 08       		.byte	0x8
+ 379 003d 59000000 		.4byte	.LASF2
+ 380 0041 03       		.uleb128 0x3
+ 381 0042 02       		.byte	0x2
+ 382 0043 05       		.byte	0x5
+ 383 0044 F7010000 		.4byte	.LASF3
+ 384 0048 03       		.uleb128 0x3
+ 385 0049 02       		.byte	0x2
+ 386 004a 07       		.byte	0x7
+ 387 004b 23000000 		.4byte	.LASF4
+ 388 004f 03       		.uleb128 0x3
+ 389 0050 04       		.byte	0x4
+ 390 0051 05       		.byte	0x5
+ 391 0052 01020000 		.4byte	.LASF5
+ 392 0056 03       		.uleb128 0x3
+ 393 0057 04       		.byte	0x4
+ 394 0058 07       		.byte	0x7
+ 395 0059 67000000 		.4byte	.LASF6
+ 396 005d 03       		.uleb128 0x3
+ 397 005e 08       		.byte	0x8
+ 398 005f 05       		.byte	0x5
+ 399 0060 E4010000 		.4byte	.LASF7
+ 400 0064 03       		.uleb128 0x3
+ 401 0065 08       		.byte	0x8
+ 402 0066 07       		.byte	0x7
+ 403 0067 2D010000 		.4byte	.LASF8
+ 404 006b 03       		.uleb128 0x3
+ 405 006c 04       		.byte	0x4
+ 406 006d 07       		.byte	0x7
+ 407 006e DB010000 		.4byte	.LASF9
+ 408 0072 03       		.uleb128 0x3
+ 409 0073 01       		.byte	0x1
+ 410 0074 08       		.byte	0x8
+ 411 0075 F2010000 		.4byte	.LASF10
+ 412 0079 04       		.uleb128 0x4
+ 413 007a 79000000 		.4byte	.LASF11
+ 414 007e 02       		.byte	0x2
+ 415 007f A1       		.byte	0xa1
+ 416 0080 3A000000 		.4byte	0x3a
+ 417 0084 04       		.uleb128 0x4
+ 418 0085 C9000000 		.4byte	.LASF12
+ 419 0089 02       		.byte	0x2
+ 420 008a A3       		.byte	0xa3
+ 421 008b 56000000 		.4byte	0x56
+ 422 008f 03       		.uleb128 0x3
+ 423 0090 04       		.byte	0x4
+ 424 0091 04       		.byte	0x4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 12
+
+
+ 425 0092 53000000 		.4byte	.LASF13
+ 426 0096 03       		.uleb128 0x3
+ 427 0097 08       		.byte	0x8
+ 428 0098 04       		.byte	0x4
+ 429 0099 C2000000 		.4byte	.LASF14
+ 430 009d 05       		.uleb128 0x5
+ 431 009e D6010000 		.4byte	.LASF15
+ 432 00a2 02       		.byte	0x2
+ 433 00a3 4B01     		.2byte	0x14b
+ 434 00a5 A9000000 		.4byte	0xa9
+ 435 00a9 06       		.uleb128 0x6
+ 436 00aa 79000000 		.4byte	0x79
+ 437 00ae 05       		.uleb128 0x5
+ 438 00af 0A020000 		.4byte	.LASF16
+ 439 00b3 02       		.byte	0x2
+ 440 00b4 4D01     		.2byte	0x14d
+ 441 00b6 BA000000 		.4byte	0xba
+ 442 00ba 06       		.uleb128 0x6
+ 443 00bb 84000000 		.4byte	0x84
+ 444 00bf 07       		.uleb128 0x7
+ 445 00c0 08       		.byte	0x8
+ 446 00c1 03       		.byte	0x3
+ 447 00c2 45       		.byte	0x45
+ 448 00c3 02010000 		.4byte	0x102
+ 449 00c7 08       		.uleb128 0x8
+ 450 00c8 D0000000 		.4byte	.LASF17
+ 451 00cc 03       		.byte	0x3
+ 452 00cd 47       		.byte	0x47
+ 453 00ce 79000000 		.4byte	0x79
+ 454 00d2 00       		.byte	0
+ 455 00d3 09       		.uleb128 0x9
+ 456 00d4 637200   		.ascii	"cr\000"
+ 457 00d7 03       		.byte	0x3
+ 458 00d8 48       		.byte	0x48
+ 459 00d9 79000000 		.4byte	0x79
+ 460 00dd 01       		.byte	0x1
+ 461 00de 09       		.uleb128 0x9
+ 462 00df 737200   		.ascii	"sr\000"
+ 463 00e2 03       		.byte	0x3
+ 464 00e3 49       		.byte	0x49
+ 465 00e4 79000000 		.4byte	0x79
+ 466 00e8 02       		.byte	0x2
+ 467 00e9 09       		.uleb128 0x9
+ 468 00ea 73656D00 		.ascii	"sem\000"
+ 469 00ee 03       		.byte	0x3
+ 470 00ef 4A       		.byte	0x4a
+ 471 00f0 79000000 		.4byte	0x79
+ 472 00f4 03       		.byte	0x3
+ 473 00f5 09       		.uleb128 0x9
+ 474 00f6 61637500 		.ascii	"acu\000"
+ 475 00fa 03       		.byte	0x3
+ 476 00fb 4B       		.byte	0x4b
+ 477 00fc 02010000 		.4byte	0x102
+ 478 0100 04       		.byte	0x4
+ 479 0101 00       		.byte	0
+ 480 0102 0A       		.uleb128 0xa
+ 481 0103 84000000 		.4byte	0x84
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 13
+
+
+ 482 0107 12010000 		.4byte	0x112
+ 483 010b 0B       		.uleb128 0xb
+ 484 010c 6B000000 		.4byte	0x6b
+ 485 0110 00       		.byte	0
+ 486 0111 00       		.byte	0
+ 487 0112 04       		.uleb128 0x4
+ 488 0113 00000000 		.4byte	.LASF18
+ 489 0117 03       		.byte	0x3
+ 490 0118 4C       		.byte	0x4c
+ 491 0119 BF000000 		.4byte	0xbf
+ 492 011d 0C       		.uleb128 0xc
+ 493 011e 1C020000 		.4byte	.LASF20
+ 494 0122 01       		.byte	0x1
+ 495 0123 27       		.byte	0x27
+ 496 0124 00000000 		.4byte	.LFB0
+ 497 0128 84000000 		.4byte	.LFE0-.LFB0
+ 498 012c 01       		.uleb128 0x1
+ 499 012d 9C       		.byte	0x9c
+ 500 012e 4D010000 		.4byte	0x14d
+ 501 0132 0D       		.uleb128 0xd
+ 502 0133 1D000000 		.4byte	.LASF19
+ 503 0137 01       		.byte	0x1
+ 504 0138 29       		.byte	0x29
+ 505 0139 79000000 		.4byte	0x79
+ 506 013d 02       		.uleb128 0x2
+ 507 013e 91       		.byte	0x91
+ 508 013f 77       		.sleb128 -9
+ 509 0140 0E       		.uleb128 0xe
+ 510 0141 6900     		.ascii	"i\000"
+ 511 0143 01       		.byte	0x1
+ 512 0144 2A       		.byte	0x2a
+ 513 0145 79000000 		.4byte	0x79
+ 514 0149 02       		.uleb128 0x2
+ 515 014a 91       		.byte	0x91
+ 516 014b 76       		.sleb128 -10
+ 517 014c 00       		.byte	0
+ 518 014d 0C       		.uleb128 0xc
+ 519 014e 36000000 		.4byte	.LASF21
+ 520 0152 01       		.byte	0x1
+ 521 0153 51       		.byte	0x51
+ 522 0154 00000000 		.4byte	.LFB1
+ 523 0158 A4000000 		.4byte	.LFE1-.LFB1
+ 524 015c 01       		.uleb128 0x1
+ 525 015d 9C       		.byte	0x9c
+ 526 015e 7D010000 		.4byte	0x17d
+ 527 0162 0D       		.uleb128 0xd
+ 528 0163 1D000000 		.4byte	.LASF19
+ 529 0167 01       		.byte	0x1
+ 530 0168 53       		.byte	0x53
+ 531 0169 79000000 		.4byte	0x79
+ 532 016d 02       		.uleb128 0x2
+ 533 016e 91       		.byte	0x91
+ 534 016f 77       		.sleb128 -9
+ 535 0170 0E       		.uleb128 0xe
+ 536 0171 6900     		.ascii	"i\000"
+ 537 0173 01       		.byte	0x1
+ 538 0174 54       		.byte	0x54
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 14
+
+
+ 539 0175 79000000 		.4byte	0x79
+ 540 0179 02       		.uleb128 0x2
+ 541 017a 91       		.byte	0x91
+ 542 017b 76       		.sleb128 -10
+ 543 017c 00       		.byte	0
+ 544 017d 0F       		.uleb128 0xf
+ 545 017e 36020000 		.4byte	.LASF22
+ 546 0182 01       		.byte	0x1
+ 547 0183 87       		.byte	0x87
+ 548 0184 00000000 		.4byte	.LFB2
+ 549 0188 44000000 		.4byte	.LFE2-.LFB2
+ 550 018c 01       		.uleb128 0x1
+ 551 018d 9C       		.byte	0x9c
+ 552 018e 0F       		.uleb128 0xf
+ 553 018f 44010000 		.4byte	.LASF23
+ 554 0193 01       		.byte	0x1
+ 555 0194 B5       		.byte	0xb5
+ 556 0195 00000000 		.4byte	.LFB3
+ 557 0199 44000000 		.4byte	.LFE3-.LFB3
+ 558 019d 01       		.uleb128 0x1
+ 559 019e 9C       		.byte	0x9c
+ 560 019f 0D       		.uleb128 0xd
+ 561 01a0 AC000000 		.4byte	.LASF24
+ 562 01a4 01       		.byte	0x1
+ 563 01a5 14       		.byte	0x14
+ 564 01a6 12010000 		.4byte	0x112
+ 565 01aa 05       		.uleb128 0x5
+ 566 01ab 03       		.byte	0x3
+ 567 01ac 00000000 		.4byte	MultAcc_1_MACC_backup
+ 568 01b0 00       		.byte	0
+ 569              		.section	.debug_abbrev,"",%progbits
+ 570              	.Ldebug_abbrev0:
+ 571 0000 01       		.uleb128 0x1
+ 572 0001 11       		.uleb128 0x11
+ 573 0002 01       		.byte	0x1
+ 574 0003 25       		.uleb128 0x25
+ 575 0004 0E       		.uleb128 0xe
+ 576 0005 13       		.uleb128 0x13
+ 577 0006 0B       		.uleb128 0xb
+ 578 0007 03       		.uleb128 0x3
+ 579 0008 0E       		.uleb128 0xe
+ 580 0009 1B       		.uleb128 0x1b
+ 581 000a 0E       		.uleb128 0xe
+ 582 000b 55       		.uleb128 0x55
+ 583 000c 17       		.uleb128 0x17
+ 584 000d 11       		.uleb128 0x11
+ 585 000e 01       		.uleb128 0x1
+ 586 000f 10       		.uleb128 0x10
+ 587 0010 17       		.uleb128 0x17
+ 588 0011 00       		.byte	0
+ 589 0012 00       		.byte	0
+ 590 0013 02       		.uleb128 0x2
+ 591 0014 24       		.uleb128 0x24
+ 592 0015 00       		.byte	0
+ 593 0016 0B       		.uleb128 0xb
+ 594 0017 0B       		.uleb128 0xb
+ 595 0018 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 15
+
+
+ 596 0019 0B       		.uleb128 0xb
+ 597 001a 03       		.uleb128 0x3
+ 598 001b 08       		.uleb128 0x8
+ 599 001c 00       		.byte	0
+ 600 001d 00       		.byte	0
+ 601 001e 03       		.uleb128 0x3
+ 602 001f 24       		.uleb128 0x24
+ 603 0020 00       		.byte	0
+ 604 0021 0B       		.uleb128 0xb
+ 605 0022 0B       		.uleb128 0xb
+ 606 0023 3E       		.uleb128 0x3e
+ 607 0024 0B       		.uleb128 0xb
+ 608 0025 03       		.uleb128 0x3
+ 609 0026 0E       		.uleb128 0xe
+ 610 0027 00       		.byte	0
+ 611 0028 00       		.byte	0
+ 612 0029 04       		.uleb128 0x4
+ 613 002a 16       		.uleb128 0x16
+ 614 002b 00       		.byte	0
+ 615 002c 03       		.uleb128 0x3
+ 616 002d 0E       		.uleb128 0xe
+ 617 002e 3A       		.uleb128 0x3a
+ 618 002f 0B       		.uleb128 0xb
+ 619 0030 3B       		.uleb128 0x3b
+ 620 0031 0B       		.uleb128 0xb
+ 621 0032 49       		.uleb128 0x49
+ 622 0033 13       		.uleb128 0x13
+ 623 0034 00       		.byte	0
+ 624 0035 00       		.byte	0
+ 625 0036 05       		.uleb128 0x5
+ 626 0037 16       		.uleb128 0x16
+ 627 0038 00       		.byte	0
+ 628 0039 03       		.uleb128 0x3
+ 629 003a 0E       		.uleb128 0xe
+ 630 003b 3A       		.uleb128 0x3a
+ 631 003c 0B       		.uleb128 0xb
+ 632 003d 3B       		.uleb128 0x3b
+ 633 003e 05       		.uleb128 0x5
+ 634 003f 49       		.uleb128 0x49
+ 635 0040 13       		.uleb128 0x13
+ 636 0041 00       		.byte	0
+ 637 0042 00       		.byte	0
+ 638 0043 06       		.uleb128 0x6
+ 639 0044 35       		.uleb128 0x35
+ 640 0045 00       		.byte	0
+ 641 0046 49       		.uleb128 0x49
+ 642 0047 13       		.uleb128 0x13
+ 643 0048 00       		.byte	0
+ 644 0049 00       		.byte	0
+ 645 004a 07       		.uleb128 0x7
+ 646 004b 13       		.uleb128 0x13
+ 647 004c 01       		.byte	0x1
+ 648 004d 0B       		.uleb128 0xb
+ 649 004e 0B       		.uleb128 0xb
+ 650 004f 3A       		.uleb128 0x3a
+ 651 0050 0B       		.uleb128 0xb
+ 652 0051 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 16
+
+
+ 653 0052 0B       		.uleb128 0xb
+ 654 0053 01       		.uleb128 0x1
+ 655 0054 13       		.uleb128 0x13
+ 656 0055 00       		.byte	0
+ 657 0056 00       		.byte	0
+ 658 0057 08       		.uleb128 0x8
+ 659 0058 0D       		.uleb128 0xd
+ 660 0059 00       		.byte	0
+ 661 005a 03       		.uleb128 0x3
+ 662 005b 0E       		.uleb128 0xe
+ 663 005c 3A       		.uleb128 0x3a
+ 664 005d 0B       		.uleb128 0xb
+ 665 005e 3B       		.uleb128 0x3b
+ 666 005f 0B       		.uleb128 0xb
+ 667 0060 49       		.uleb128 0x49
+ 668 0061 13       		.uleb128 0x13
+ 669 0062 38       		.uleb128 0x38
+ 670 0063 0B       		.uleb128 0xb
+ 671 0064 00       		.byte	0
+ 672 0065 00       		.byte	0
+ 673 0066 09       		.uleb128 0x9
+ 674 0067 0D       		.uleb128 0xd
+ 675 0068 00       		.byte	0
+ 676 0069 03       		.uleb128 0x3
+ 677 006a 08       		.uleb128 0x8
+ 678 006b 3A       		.uleb128 0x3a
+ 679 006c 0B       		.uleb128 0xb
+ 680 006d 3B       		.uleb128 0x3b
+ 681 006e 0B       		.uleb128 0xb
+ 682 006f 49       		.uleb128 0x49
+ 683 0070 13       		.uleb128 0x13
+ 684 0071 38       		.uleb128 0x38
+ 685 0072 0B       		.uleb128 0xb
+ 686 0073 00       		.byte	0
+ 687 0074 00       		.byte	0
+ 688 0075 0A       		.uleb128 0xa
+ 689 0076 01       		.uleb128 0x1
+ 690 0077 01       		.byte	0x1
+ 691 0078 49       		.uleb128 0x49
+ 692 0079 13       		.uleb128 0x13
+ 693 007a 01       		.uleb128 0x1
+ 694 007b 13       		.uleb128 0x13
+ 695 007c 00       		.byte	0
+ 696 007d 00       		.byte	0
+ 697 007e 0B       		.uleb128 0xb
+ 698 007f 21       		.uleb128 0x21
+ 699 0080 00       		.byte	0
+ 700 0081 49       		.uleb128 0x49
+ 701 0082 13       		.uleb128 0x13
+ 702 0083 2F       		.uleb128 0x2f
+ 703 0084 0B       		.uleb128 0xb
+ 704 0085 00       		.byte	0
+ 705 0086 00       		.byte	0
+ 706 0087 0C       		.uleb128 0xc
+ 707 0088 2E       		.uleb128 0x2e
+ 708 0089 01       		.byte	0x1
+ 709 008a 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 17
+
+
+ 710 008b 19       		.uleb128 0x19
+ 711 008c 03       		.uleb128 0x3
+ 712 008d 0E       		.uleb128 0xe
+ 713 008e 3A       		.uleb128 0x3a
+ 714 008f 0B       		.uleb128 0xb
+ 715 0090 3B       		.uleb128 0x3b
+ 716 0091 0B       		.uleb128 0xb
+ 717 0092 27       		.uleb128 0x27
+ 718 0093 19       		.uleb128 0x19
+ 719 0094 11       		.uleb128 0x11
+ 720 0095 01       		.uleb128 0x1
+ 721 0096 12       		.uleb128 0x12
+ 722 0097 06       		.uleb128 0x6
+ 723 0098 40       		.uleb128 0x40
+ 724 0099 18       		.uleb128 0x18
+ 725 009a 9742     		.uleb128 0x2117
+ 726 009c 19       		.uleb128 0x19
+ 727 009d 01       		.uleb128 0x1
+ 728 009e 13       		.uleb128 0x13
+ 729 009f 00       		.byte	0
+ 730 00a0 00       		.byte	0
+ 731 00a1 0D       		.uleb128 0xd
+ 732 00a2 34       		.uleb128 0x34
+ 733 00a3 00       		.byte	0
+ 734 00a4 03       		.uleb128 0x3
+ 735 00a5 0E       		.uleb128 0xe
+ 736 00a6 3A       		.uleb128 0x3a
+ 737 00a7 0B       		.uleb128 0xb
+ 738 00a8 3B       		.uleb128 0x3b
+ 739 00a9 0B       		.uleb128 0xb
+ 740 00aa 49       		.uleb128 0x49
+ 741 00ab 13       		.uleb128 0x13
+ 742 00ac 02       		.uleb128 0x2
+ 743 00ad 18       		.uleb128 0x18
+ 744 00ae 00       		.byte	0
+ 745 00af 00       		.byte	0
+ 746 00b0 0E       		.uleb128 0xe
+ 747 00b1 34       		.uleb128 0x34
+ 748 00b2 00       		.byte	0
+ 749 00b3 03       		.uleb128 0x3
+ 750 00b4 08       		.uleb128 0x8
+ 751 00b5 3A       		.uleb128 0x3a
+ 752 00b6 0B       		.uleb128 0xb
+ 753 00b7 3B       		.uleb128 0x3b
+ 754 00b8 0B       		.uleb128 0xb
+ 755 00b9 49       		.uleb128 0x49
+ 756 00ba 13       		.uleb128 0x13
+ 757 00bb 02       		.uleb128 0x2
+ 758 00bc 18       		.uleb128 0x18
+ 759 00bd 00       		.byte	0
+ 760 00be 00       		.byte	0
+ 761 00bf 0F       		.uleb128 0xf
+ 762 00c0 2E       		.uleb128 0x2e
+ 763 00c1 00       		.byte	0
+ 764 00c2 3F       		.uleb128 0x3f
+ 765 00c3 19       		.uleb128 0x19
+ 766 00c4 03       		.uleb128 0x3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 18
+
+
+ 767 00c5 0E       		.uleb128 0xe
+ 768 00c6 3A       		.uleb128 0x3a
+ 769 00c7 0B       		.uleb128 0xb
+ 770 00c8 3B       		.uleb128 0x3b
+ 771 00c9 0B       		.uleb128 0xb
+ 772 00ca 27       		.uleb128 0x27
+ 773 00cb 19       		.uleb128 0x19
+ 774 00cc 11       		.uleb128 0x11
+ 775 00cd 01       		.uleb128 0x1
+ 776 00ce 12       		.uleb128 0x12
+ 777 00cf 06       		.uleb128 0x6
+ 778 00d0 40       		.uleb128 0x40
+ 779 00d1 18       		.uleb128 0x18
+ 780 00d2 9642     		.uleb128 0x2116
+ 781 00d4 19       		.uleb128 0x19
+ 782 00d5 00       		.byte	0
+ 783 00d6 00       		.byte	0
+ 784 00d7 00       		.byte	0
+ 785              		.section	.debug_aranges,"",%progbits
+ 786 0000 34000000 		.4byte	0x34
+ 787 0004 0200     		.2byte	0x2
+ 788 0006 00000000 		.4byte	.Ldebug_info0
+ 789 000a 04       		.byte	0x4
+ 790 000b 00       		.byte	0
+ 791 000c 0000     		.2byte	0
+ 792 000e 0000     		.2byte	0
+ 793 0010 00000000 		.4byte	.LFB0
+ 794 0014 84000000 		.4byte	.LFE0-.LFB0
+ 795 0018 00000000 		.4byte	.LFB1
+ 796 001c A4000000 		.4byte	.LFE1-.LFB1
+ 797 0020 00000000 		.4byte	.LFB2
+ 798 0024 44000000 		.4byte	.LFE2-.LFB2
+ 799 0028 00000000 		.4byte	.LFB3
+ 800 002c 44000000 		.4byte	.LFE3-.LFB3
+ 801 0030 00000000 		.4byte	0
+ 802 0034 00000000 		.4byte	0
+ 803              		.section	.debug_ranges,"",%progbits
+ 804              	.Ldebug_ranges0:
+ 805 0000 00000000 		.4byte	.LFB0
+ 806 0004 84000000 		.4byte	.LFE0
+ 807 0008 00000000 		.4byte	.LFB1
+ 808 000c A4000000 		.4byte	.LFE1
+ 809 0010 00000000 		.4byte	.LFB2
+ 810 0014 44000000 		.4byte	.LFE2
+ 811 0018 00000000 		.4byte	.LFB3
+ 812 001c 44000000 		.4byte	.LFE3
+ 813 0020 00000000 		.4byte	0
+ 814 0024 00000000 		.4byte	0
+ 815              		.section	.debug_line,"",%progbits
+ 816              	.Ldebug_line0:
+ 817 0000 DB000000 		.section	.debug_str,"MS",%progbits,1
+ 817      02006400 
+ 817      00000201 
+ 817      FB0E0D00 
+ 817      01010101 
+ 818              	.LASF18:
+ 819 0000 4D756C74 		.ascii	"MultAcc_1_MACC_BACKUP_STRUCT\000"
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 19
+
+
+ 819      4163635F 
+ 819      315F4D41 
+ 819      43435F42 
+ 819      41434B55 
+ 820              	.LASF19:
+ 821 001d 636F756E 		.ascii	"count\000"
+ 821      7400
+ 822              	.LASF4:
+ 823 0023 73686F72 		.ascii	"short unsigned int\000"
+ 823      7420756E 
+ 823      7369676E 
+ 823      65642069 
+ 823      6E7400
+ 824              	.LASF21:
+ 825 0036 4D756C74 		.ascii	"MultAcc_1_MACC_RestoreConfig\000"
+ 825      4163635F 
+ 825      315F4D41 
+ 825      43435F52 
+ 825      6573746F 
+ 826              	.LASF13:
+ 827 0053 666C6F61 		.ascii	"float\000"
+ 827      7400
+ 828              	.LASF2:
+ 829 0059 756E7369 		.ascii	"unsigned char\000"
+ 829      676E6564 
+ 829      20636861 
+ 829      7200
+ 830              	.LASF6:
+ 831 0067 6C6F6E67 		.ascii	"long unsigned int\000"
+ 831      20756E73 
+ 831      69676E65 
+ 831      6420696E 
+ 831      7400
+ 832              	.LASF11:
+ 833 0079 75696E74 		.ascii	"uint8\000"
+ 833      3800
+ 834              	.LASF26:
+ 835 007f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\MultAcc_1_MACC_PM.c\000"
+ 835      6E657261 
+ 835      7465645F 
+ 835      536F7572 
+ 835      63655C50 
+ 836              	.LASF24:
+ 837 00ac 4D756C74 		.ascii	"MultAcc_1_MACC_backup\000"
+ 837      4163635F 
+ 837      315F4D41 
+ 837      43435F62 
+ 837      61636B75 
+ 838              	.LASF14:
+ 839 00c2 646F7562 		.ascii	"double\000"
+ 839      6C6500
+ 840              	.LASF12:
+ 841 00c9 75696E74 		.ascii	"uint32\000"
+ 841      333200
+ 842              	.LASF17:
+ 843 00d0 656E6162 		.ascii	"enableState\000"
+ 843      6C655374 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 20
+
+
+ 843      61746500 
+ 844              	.LASF0:
+ 845 00dc 756E7369 		.ascii	"unsigned int\000"
+ 845      676E6564 
+ 845      20696E74 
+ 845      00
+ 846              	.LASF27:
+ 847 00e9 5A3A5C73 		.ascii	"Z:\\scottcarlson On My Mac\\Code\\PSoC_Creator\\Des"
+ 847      636F7474 
+ 847      6361726C 
+ 847      736F6E20 
+ 847      4F6E204D 
+ 848 0118 69676E30 		.ascii	"ign01\\Design01.cydsn\000"
+ 848      315C4465 
+ 848      7369676E 
+ 848      30312E63 
+ 848      7964736E 
+ 849              	.LASF8:
+ 850 012d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 850      206C6F6E 
+ 850      6720756E 
+ 850      7369676E 
+ 850      65642069 
+ 851              	.LASF23:
+ 852 0144 4D756C74 		.ascii	"MultAcc_1_MACC_Wakeup\000"
+ 852      4163635F 
+ 852      315F4D41 
+ 852      43435F57 
+ 852      616B6575 
+ 853              	.LASF25:
+ 854 015a 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 854      4320342E 
+ 854      382E3420 
+ 854      32303134 
+ 854      30353236 
+ 855 018d 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 855      20726576 
+ 855      6973696F 
+ 855      6E203231 
+ 855      31333538 
+ 856 01c0 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 856      66756E63 
+ 856      74696F6E 
+ 856      2D736563 
+ 856      74696F6E 
+ 857              	.LASF15:
+ 858 01d6 72656738 		.ascii	"reg8\000"
+ 858      00
+ 859              	.LASF9:
+ 860 01db 73697A65 		.ascii	"sizetype\000"
+ 860      74797065 
+ 860      00
+ 861              	.LASF7:
+ 862 01e4 6C6F6E67 		.ascii	"long long int\000"
+ 862      206C6F6E 
+ 862      6720696E 
+ 862      7400
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccpC76d0.s 			page 21
+
+
+ 863              	.LASF10:
+ 864 01f2 63686172 		.ascii	"char\000"
+ 864      00
+ 865              	.LASF3:
+ 866 01f7 73686F72 		.ascii	"short int\000"
+ 866      7420696E 
+ 866      7400
+ 867              	.LASF5:
+ 868 0201 6C6F6E67 		.ascii	"long int\000"
+ 868      20696E74 
+ 868      00
+ 869              	.LASF16:
+ 870 020a 72656733 		.ascii	"reg32\000"
+ 870      3200
+ 871              	.LASF1:
+ 872 0210 7369676E 		.ascii	"signed char\000"
+ 872      65642063 
+ 872      68617200 
+ 873              	.LASF20:
+ 874 021c 4D756C74 		.ascii	"MultAcc_1_MACC_SaveConfig\000"
+ 874      4163635F 
+ 874      315F4D41 
+ 874      43435F53 
+ 874      61766543 
+ 875              	.LASF22:
+ 876 0236 4D756C74 		.ascii	"MultAcc_1_MACC_Sleep\000"
+ 876      4163635F 
+ 876      315F4D41 
+ 876      43435F53 
+ 876      6C656570 
+ 877              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

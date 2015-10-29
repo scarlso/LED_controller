@@ -1,0 +1,10 @@
+dont_use_io iocell 1 0
+dont_use_io iocell 1 1
+dont_use_io iocell 1 3
+set_location "Net_47" macrocell 0 3 0 1
+set_location "Net_48" macrocell 0 3 0 0
+set_location "\STC_Datapath16_v1_00:datapath:u0\" datapathcell 0 3 2 
+set_location "\STC_Datapath16_v1_00:datapath:u1\" datapathcell 1 3 2 
+set_location "\Status_Reg_1:sts:sts_reg\" statuscell 0 3 3 
+set_location "DMA_1" drqcell -1 -1 0
+set_location "ClockBlock" clockblockcell -1 -1 0

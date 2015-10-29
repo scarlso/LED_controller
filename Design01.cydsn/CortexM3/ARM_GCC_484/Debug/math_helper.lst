@@ -1,0 +1,3830 @@
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"math_helper.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	__aeabi_fmul
+  19              		.global	__aeabi_fadd
+  20              		.global	__aeabi_fsub
+  21              		.global	__aeabi_fdiv
+  22              		.global	__aeabi_f2d
+  23              		.global	__aeabi_dmul
+  24              		.global	__aeabi_d2f
+  25              		.section	.text.arm_snr_f32,"ax",%progbits
+  26              		.align	2
+  27              		.global	arm_snr_f32
+  28              		.thumb
+  29              		.thumb_func
+  30              		.type	arm_snr_f32, %function
+  31              	arm_snr_f32:
+  32              	.LFB118:
+  33              		.file 1 ".\\math_helper.c"
+   1:.\math_helper.c **** /* ----------------------------------------------------------------------   
+   2:.\math_helper.c **** * Copyright (C) 2010-2012 ARM Limited. All rights reserved.   
+   3:.\math_helper.c **** *   
+   4:.\math_helper.c **** * $Date:        17. January 2013  
+   5:.\math_helper.c **** * $Revision: 	V1.4.0    
+   6:.\math_helper.c **** *  
+   7:.\math_helper.c **** * Project: 	    CMSIS DSP Library 
+   8:.\math_helper.c **** *
+   9:.\math_helper.c **** * Title:	    math_helper.c
+  10:.\math_helper.c **** *
+  11:.\math_helper.c **** * Description:	Definition of all helper functions required.  
+  12:.\math_helper.c **** *  
+  13:.\math_helper.c **** * Target Processor: Cortex-M4/Cortex-M3
+  14:.\math_helper.c **** *  
+  15:.\math_helper.c **** * Redistribution and use in source and binary forms, with or without 
+  16:.\math_helper.c **** * modification, are permitted provided that the following conditions
+  17:.\math_helper.c **** * are met:
+  18:.\math_helper.c **** *   - Redistributions of source code must retain the above copyright
+  19:.\math_helper.c **** *     notice, this list of conditions and the following disclaimer.
+  20:.\math_helper.c **** *   - Redistributions in binary form must reproduce the above copyright
+  21:.\math_helper.c **** *     notice, this list of conditions and the following disclaimer in
+  22:.\math_helper.c **** *     the documentation and/or other materials provided with the 
+  23:.\math_helper.c **** *     distribution.
+  24:.\math_helper.c **** *   - Neither the name of ARM LIMITED nor the names of its contributors
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 2
+
+
+  25:.\math_helper.c **** *     may be used to endorse or promote products derived from this
+  26:.\math_helper.c **** *     software without specific prior written permission.
+  27:.\math_helper.c **** *
+  28:.\math_helper.c **** * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  29:.\math_helper.c **** * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  30:.\math_helper.c **** * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+  31:.\math_helper.c **** * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE 
+  32:.\math_helper.c **** * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  33:.\math_helper.c **** * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  34:.\math_helper.c **** * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  35:.\math_helper.c **** * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  36:.\math_helper.c **** * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+  37:.\math_helper.c **** * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+  38:.\math_helper.c **** * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  39:.\math_helper.c **** * POSSIBILITY OF SUCH DAMAGE.  
+  40:.\math_helper.c **** * -------------------------------------------------------------------- */
+  41:.\math_helper.c **** 
+  42:.\math_helper.c **** /* ----------------------------------------------------------------------
+  43:.\math_helper.c **** *		Include standard header files  
+  44:.\math_helper.c **** * -------------------------------------------------------------------- */
+  45:.\math_helper.c **** #include<math.h>
+  46:.\math_helper.c **** 
+  47:.\math_helper.c **** /* ----------------------------------------------------------------------
+  48:.\math_helper.c **** *		Include project header files  
+  49:.\math_helper.c **** * -------------------------------------------------------------------- */
+  50:.\math_helper.c **** #include "math_helper.h"
+  51:.\math_helper.c **** 
+  52:.\math_helper.c **** /** 
+  53:.\math_helper.c ****  * @brief  Caluclation of SNR
+  54:.\math_helper.c ****  * @param  float* 	Pointer to the reference buffer
+  55:.\math_helper.c ****  * @param  float*	Pointer to the test buffer
+  56:.\math_helper.c ****  * @param  uint32_t	total number of samples
+  57:.\math_helper.c ****  * @return float	SNR
+  58:.\math_helper.c ****  * The function Caluclates signal to noise ratio for the reference output 
+  59:.\math_helper.c ****  * and test output 
+  60:.\math_helper.c ****  */
+  61:.\math_helper.c **** 
+  62:.\math_helper.c **** float arm_snr_f32(float *pRef, float *pTest, uint32_t buffSize)
+  63:.\math_helper.c **** {
+  34              		.loc 1 63 0
+  35              		.cfi_startproc
+  36              		@ args = 0, pretend = 0, frame = 40
+  37              		@ frame_needed = 1, uses_anonymous_args = 0
+  38 0000 90B5     		push	{r4, r7, lr}
+  39              		.cfi_def_cfa_offset 12
+  40              		.cfi_offset 4, -12
+  41              		.cfi_offset 7, -8
+  42              		.cfi_offset 14, -4
+  43 0002 8BB0     		sub	sp, sp, #44
+  44              		.cfi_def_cfa_offset 56
+  45 0004 00AF     		add	r7, sp, #0
+  46              		.cfi_def_cfa_register 7
+  47 0006 F860     		str	r0, [r7, #12]
+  48 0008 B960     		str	r1, [r7, #8]
+  49 000a 7A60     		str	r2, [r7, #4]
+  64:.\math_helper.c ****   float EnergySignal = 0.0, EnergyError = 0.0;
+  50              		.loc 1 64 0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 3
+
+
+  51 000c 4FF00003 		mov	r3, #0
+  52 0010 7B62     		str	r3, [r7, #36]	@ float
+  53 0012 4FF00003 		mov	r3, #0
+  54 0016 3B61     		str	r3, [r7, #16]	@ float
+  65:.\math_helper.c ****   uint32_t i;
+  66:.\math_helper.c ****   float SNR;
+  67:.\math_helper.c ****   int temp;
+  68:.\math_helper.c ****   int *test;
+  69:.\math_helper.c **** 
+  70:.\math_helper.c ****   for (i = 0; i < buffSize; i++)
+  55              		.loc 1 70 0
+  56 0018 0023     		movs	r3, #0
+  57 001a 3B62     		str	r3, [r7, #32]
+  58 001c 61E0     		b	.L2
+  59              	.L6:
+  71:.\math_helper.c ****     {
+  72:.\math_helper.c ****  	  /* Checking for a NAN value in pRef array */
+  73:.\math_helper.c **** 	  test =   (int *)(&pRef[i]);
+  60              		.loc 1 73 0
+  61 001e 3B6A     		ldr	r3, [r7, #32]
+  62 0020 9B00     		lsls	r3, r3, #2
+  63 0022 FA68     		ldr	r2, [r7, #12]
+  64 0024 1344     		add	r3, r3, r2
+  65 0026 FB61     		str	r3, [r7, #28]
+  74:.\math_helper.c ****       temp =  *test;
+  66              		.loc 1 74 0
+  67 0028 FB69     		ldr	r3, [r7, #28]
+  68 002a 1B68     		ldr	r3, [r3]
+  69 002c BB61     		str	r3, [r7, #24]
+  75:.\math_helper.c **** 
+  76:.\math_helper.c **** 	  if(temp == 0x7FC00000)
+  70              		.loc 1 76 0
+  71 002e BA69     		ldr	r2, [r7, #24]
+  72 0030 474B     		ldr	r3, .L9
+  73 0032 9A42     		cmp	r2, r3
+  74 0034 02D1     		bne	.L3
+  77:.\math_helper.c **** 	  {
+  78:.\math_helper.c **** 	  		return(0);
+  75              		.loc 1 78 0
+  76 0036 4FF00003 		mov	r3, #0
+  77 003a 84E0     		b	.L8
+  78              	.L3:
+  79:.\math_helper.c **** 	  }
+  80:.\math_helper.c **** 
+  81:.\math_helper.c **** 	  /* Checking for a NAN value in pTest array */
+  82:.\math_helper.c **** 	  test =   (int *)(&pTest[i]);
+  79              		.loc 1 82 0
+  80 003c 3B6A     		ldr	r3, [r7, #32]
+  81 003e 9B00     		lsls	r3, r3, #2
+  82 0040 BA68     		ldr	r2, [r7, #8]
+  83 0042 1344     		add	r3, r3, r2
+  84 0044 FB61     		str	r3, [r7, #28]
+  83:.\math_helper.c ****       temp =  *test;
+  85              		.loc 1 83 0
+  86 0046 FB69     		ldr	r3, [r7, #28]
+  87 0048 1B68     		ldr	r3, [r3]
+  88 004a BB61     		str	r3, [r7, #24]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 4
+
+
+  84:.\math_helper.c **** 
+  85:.\math_helper.c **** 	  if(temp == 0x7FC00000)
+  89              		.loc 1 85 0
+  90 004c BA69     		ldr	r2, [r7, #24]
+  91 004e 404B     		ldr	r3, .L9
+  92 0050 9A42     		cmp	r2, r3
+  93 0052 02D1     		bne	.L5
+  86:.\math_helper.c **** 	  {
+  87:.\math_helper.c **** 	  		return(0);
+  94              		.loc 1 87 0
+  95 0054 4FF00003 		mov	r3, #0
+  96 0058 75E0     		b	.L8
+  97              	.L5:
+  88:.\math_helper.c **** 	  }
+  89:.\math_helper.c ****       EnergySignal += pRef[i] * pRef[i];
+  98              		.loc 1 89 0
+  99 005a 3B6A     		ldr	r3, [r7, #32]
+ 100 005c 9B00     		lsls	r3, r3, #2
+ 101 005e FA68     		ldr	r2, [r7, #12]
+ 102 0060 1344     		add	r3, r3, r2
+ 103 0062 1A68     		ldr	r2, [r3]	@ float
+ 104 0064 3B6A     		ldr	r3, [r7, #32]
+ 105 0066 9B00     		lsls	r3, r3, #2
+ 106 0068 F968     		ldr	r1, [r7, #12]
+ 107 006a 0B44     		add	r3, r3, r1
+ 108 006c 1B68     		ldr	r3, [r3]	@ float
+ 109 006e 1046     		mov	r0, r2
+ 110 0070 1946     		mov	r1, r3
+ 111 0072 FFF7FEFF 		bl	__aeabi_fmul
+ 112 0076 0346     		mov	r3, r0
+ 113 0078 786A     		ldr	r0, [r7, #36]	@ float
+ 114 007a 1946     		mov	r1, r3
+ 115 007c FFF7FEFF 		bl	__aeabi_fadd
+ 116 0080 0346     		mov	r3, r0
+ 117 0082 7B62     		str	r3, [r7, #36]	@ float
+  90:.\math_helper.c ****       EnergyError += (pRef[i] - pTest[i]) * (pRef[i] - pTest[i]); 
+ 118              		.loc 1 90 0
+ 119 0084 3B6A     		ldr	r3, [r7, #32]
+ 120 0086 9B00     		lsls	r3, r3, #2
+ 121 0088 FA68     		ldr	r2, [r7, #12]
+ 122 008a 1344     		add	r3, r3, r2
+ 123 008c 1A68     		ldr	r2, [r3]	@ float
+ 124 008e 3B6A     		ldr	r3, [r7, #32]
+ 125 0090 9B00     		lsls	r3, r3, #2
+ 126 0092 B968     		ldr	r1, [r7, #8]
+ 127 0094 0B44     		add	r3, r3, r1
+ 128 0096 1B68     		ldr	r3, [r3]	@ float
+ 129 0098 1046     		mov	r0, r2
+ 130 009a 1946     		mov	r1, r3
+ 131 009c FFF7FEFF 		bl	__aeabi_fsub
+ 132 00a0 0346     		mov	r3, r0
+ 133 00a2 1C46     		mov	r4, r3
+ 134 00a4 3B6A     		ldr	r3, [r7, #32]
+ 135 00a6 9B00     		lsls	r3, r3, #2
+ 136 00a8 FA68     		ldr	r2, [r7, #12]
+ 137 00aa 1344     		add	r3, r3, r2
+ 138 00ac 1A68     		ldr	r2, [r3]	@ float
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 5
+
+
+ 139 00ae 3B6A     		ldr	r3, [r7, #32]
+ 140 00b0 9B00     		lsls	r3, r3, #2
+ 141 00b2 B968     		ldr	r1, [r7, #8]
+ 142 00b4 0B44     		add	r3, r3, r1
+ 143 00b6 1B68     		ldr	r3, [r3]	@ float
+ 144 00b8 1046     		mov	r0, r2
+ 145 00ba 1946     		mov	r1, r3
+ 146 00bc FFF7FEFF 		bl	__aeabi_fsub
+ 147 00c0 0346     		mov	r3, r0
+ 148 00c2 2046     		mov	r0, r4
+ 149 00c4 1946     		mov	r1, r3
+ 150 00c6 FFF7FEFF 		bl	__aeabi_fmul
+ 151 00ca 0346     		mov	r3, r0
+ 152 00cc 1A46     		mov	r2, r3
+ 153 00ce 3B69     		ldr	r3, [r7, #16]	@ float
+ 154 00d0 1046     		mov	r0, r2
+ 155 00d2 1946     		mov	r1, r3
+ 156 00d4 FFF7FEFF 		bl	__aeabi_fadd
+ 157 00d8 0346     		mov	r3, r0
+ 158 00da 3B61     		str	r3, [r7, #16]	@ float
+  70:.\math_helper.c ****   for (i = 0; i < buffSize; i++)
+ 159              		.loc 1 70 0
+ 160 00dc 3B6A     		ldr	r3, [r7, #32]
+ 161 00de 0133     		adds	r3, r3, #1
+ 162 00e0 3B62     		str	r3, [r7, #32]
+ 163              	.L2:
+  70:.\math_helper.c ****   for (i = 0; i < buffSize; i++)
+ 164              		.loc 1 70 0 is_stmt 0 discriminator 1
+ 165 00e2 3A6A     		ldr	r2, [r7, #32]
+ 166 00e4 7B68     		ldr	r3, [r7, #4]
+ 167 00e6 9A42     		cmp	r2, r3
+ 168 00e8 99D3     		bcc	.L6
+  91:.\math_helper.c ****     }
+  92:.\math_helper.c **** 
+  93:.\math_helper.c **** 	/* Checking for a NAN value in EnergyError */
+  94:.\math_helper.c **** 	test =   (int *)(&EnergyError);
+ 169              		.loc 1 94 0 is_stmt 1
+ 170 00ea 07F11003 		add	r3, r7, #16
+ 171 00ee FB61     		str	r3, [r7, #28]
+  95:.\math_helper.c ****     temp =  *test;
+ 172              		.loc 1 95 0
+ 173 00f0 FB69     		ldr	r3, [r7, #28]
+ 174 00f2 1B68     		ldr	r3, [r3]
+ 175 00f4 BB61     		str	r3, [r7, #24]
+  96:.\math_helper.c **** 
+  97:.\math_helper.c ****     if(temp == 0x7FC00000)
+ 176              		.loc 1 97 0
+ 177 00f6 BA69     		ldr	r2, [r7, #24]
+ 178 00f8 154B     		ldr	r3, .L9
+ 179 00fa 9A42     		cmp	r2, r3
+ 180 00fc 02D1     		bne	.L7
+  98:.\math_helper.c ****     {
+  99:.\math_helper.c ****   		return(0);
+ 181              		.loc 1 99 0
+ 182 00fe 4FF00003 		mov	r3, #0
+ 183 0102 20E0     		b	.L8
+ 184              	.L7:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 6
+
+
+ 100:.\math_helper.c ****     }
+ 101:.\math_helper.c **** 	
+ 102:.\math_helper.c **** 
+ 103:.\math_helper.c ****   SNR = 10 * log10 (EnergySignal / EnergyError);
+ 185              		.loc 1 103 0
+ 186 0104 3B69     		ldr	r3, [r7, #16]	@ float
+ 187 0106 786A     		ldr	r0, [r7, #36]	@ float
+ 188 0108 1946     		mov	r1, r3
+ 189 010a FFF7FEFF 		bl	__aeabi_fdiv
+ 190 010e 0346     		mov	r3, r0
+ 191 0110 1846     		mov	r0, r3
+ 192 0112 FFF7FEFF 		bl	__aeabi_f2d
+ 193 0116 0246     		mov	r2, r0
+ 194 0118 0B46     		mov	r3, r1
+ 195 011a 1046     		mov	r0, r2
+ 196 011c 1946     		mov	r1, r3
+ 197 011e FFF7FEFF 		bl	log10
+ 198 0122 0246     		mov	r2, r0
+ 199 0124 0B46     		mov	r3, r1
+ 200 0126 1046     		mov	r0, r2
+ 201 0128 1946     		mov	r1, r3
+ 202 012a 4FF00002 		mov	r2, #0
+ 203 012e 094B     		ldr	r3, .L9+4
+ 204 0130 FFF7FEFF 		bl	__aeabi_dmul
+ 205 0134 0246     		mov	r2, r0
+ 206 0136 0B46     		mov	r3, r1
+ 207 0138 1046     		mov	r0, r2
+ 208 013a 1946     		mov	r1, r3
+ 209 013c FFF7FEFF 		bl	__aeabi_d2f
+ 210 0140 0346     		mov	r3, r0
+ 211 0142 7B61     		str	r3, [r7, #20]	@ float
+ 104:.\math_helper.c **** 
+ 105:.\math_helper.c ****   return (SNR);
+ 212              		.loc 1 105 0
+ 213 0144 7B69     		ldr	r3, [r7, #20]	@ float
+ 214              	.L8:
+ 106:.\math_helper.c **** 
+ 107:.\math_helper.c **** }
+ 215              		.loc 1 107 0
+ 216 0146 1846     		mov	r0, r3
+ 217 0148 2C37     		adds	r7, r7, #44
+ 218 014a BD46     		mov	sp, r7
+ 219              		@ sp needed
+ 220 014c 90BD     		pop	{r4, r7, pc}
+ 221              	.L10:
+ 222 014e 00BF     		.align	2
+ 223              	.L9:
+ 224 0150 0000C07F 		.word	2143289344
+ 225 0154 00002440 		.word	1076101120
+ 226              		.cfi_endproc
+ 227              	.LFE118:
+ 228              		.size	arm_snr_f32, .-arm_snr_f32
+ 229              		.section	.text.arm_provide_guard_bits_q15,"ax",%progbits
+ 230              		.align	2
+ 231              		.global	arm_provide_guard_bits_q15
+ 232              		.thumb
+ 233              		.thumb_func
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 7
+
+
+ 234              		.type	arm_provide_guard_bits_q15, %function
+ 235              	arm_provide_guard_bits_q15:
+ 236              	.LFB119:
+ 108:.\math_helper.c **** 
+ 109:.\math_helper.c **** 
+ 110:.\math_helper.c **** /** 
+ 111:.\math_helper.c ****  * @brief  Provide guard bits for Input buffer
+ 112:.\math_helper.c ****  * @param  q15_t* 	    Pointer to input buffer
+ 113:.\math_helper.c ****  * @param  uint32_t 	blockSize
+ 114:.\math_helper.c ****  * @param  uint32_t 	guard_bits
+ 115:.\math_helper.c ****  * @return none
+ 116:.\math_helper.c ****  * The function Provides the guard bits for the buffer 
+ 117:.\math_helper.c ****  * to avoid overflow 
+ 118:.\math_helper.c ****  */
+ 119:.\math_helper.c **** 
+ 120:.\math_helper.c **** void arm_provide_guard_bits_q15 (q15_t * input_buf, uint32_t blockSize,
+ 121:.\math_helper.c ****                             uint32_t guard_bits)
+ 122:.\math_helper.c **** {
+ 237              		.loc 1 122 0
+ 238              		.cfi_startproc
+ 239              		@ args = 0, pretend = 0, frame = 24
+ 240              		@ frame_needed = 1, uses_anonymous_args = 0
+ 241              		@ link register save eliminated.
+ 242 0000 80B4     		push	{r7}
+ 243              		.cfi_def_cfa_offset 4
+ 244              		.cfi_offset 7, -4
+ 245 0002 87B0     		sub	sp, sp, #28
+ 246              		.cfi_def_cfa_offset 32
+ 247 0004 00AF     		add	r7, sp, #0
+ 248              		.cfi_def_cfa_register 7
+ 249 0006 F860     		str	r0, [r7, #12]
+ 250 0008 B960     		str	r1, [r7, #8]
+ 251 000a 7A60     		str	r2, [r7, #4]
+ 123:.\math_helper.c ****   uint32_t i;
+ 124:.\math_helper.c **** 
+ 125:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
+ 252              		.loc 1 125 0
+ 253 000c 0023     		movs	r3, #0
+ 254 000e 7B61     		str	r3, [r7, #20]
+ 255 0010 11E0     		b	.L12
+ 256              	.L13:
+ 126:.\math_helper.c ****     {
+ 127:.\math_helper.c ****       input_buf[i] = input_buf[i] >> guard_bits;
+ 257              		.loc 1 127 0 discriminator 2
+ 258 0012 7B69     		ldr	r3, [r7, #20]
+ 259 0014 5B00     		lsls	r3, r3, #1
+ 260 0016 FA68     		ldr	r2, [r7, #12]
+ 261 0018 1344     		add	r3, r3, r2
+ 262 001a 7A69     		ldr	r2, [r7, #20]
+ 263 001c 5200     		lsls	r2, r2, #1
+ 264 001e F968     		ldr	r1, [r7, #12]
+ 265 0020 0A44     		add	r2, r2, r1
+ 266 0022 1288     		ldrh	r2, [r2]
+ 267 0024 11B2     		sxth	r1, r2
+ 268 0026 7A68     		ldr	r2, [r7, #4]
+ 269 0028 41FA02F2 		asr	r2, r1, r2
+ 270 002c 92B2     		uxth	r2, r2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 8
+
+
+ 271 002e 1A80     		strh	r2, [r3]	@ movhi
+ 125:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
+ 272              		.loc 1 125 0 discriminator 2
+ 273 0030 7B69     		ldr	r3, [r7, #20]
+ 274 0032 0133     		adds	r3, r3, #1
+ 275 0034 7B61     		str	r3, [r7, #20]
+ 276              	.L12:
+ 125:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
+ 277              		.loc 1 125 0 is_stmt 0 discriminator 1
+ 278 0036 7A69     		ldr	r2, [r7, #20]
+ 279 0038 BB68     		ldr	r3, [r7, #8]
+ 280 003a 9A42     		cmp	r2, r3
+ 281 003c E9D3     		bcc	.L13
+ 128:.\math_helper.c ****     }
+ 129:.\math_helper.c **** }
+ 282              		.loc 1 129 0 is_stmt 1
+ 283 003e 1C37     		adds	r7, r7, #28
+ 284 0040 BD46     		mov	sp, r7
+ 285              		@ sp needed
+ 286 0042 5DF8047B 		ldr	r7, [sp], #4
+ 287 0046 7047     		bx	lr
+ 288              		.cfi_endproc
+ 289              	.LFE119:
+ 290              		.size	arm_provide_guard_bits_q15, .-arm_provide_guard_bits_q15
+ 291              		.global	__aeabi_f2iz
+ 292              		.global	__aeabi_i2d
+ 293              		.global	__aeabi_fcmpgt
+ 294              		.global	__aeabi_dadd
+ 295              		.global	__aeabi_d2iz
+ 296              		.global	__aeabi_fcmpeq
+ 297              		.section	.text.arm_float_to_q12_20,"ax",%progbits
+ 298              		.align	2
+ 299              		.global	arm_float_to_q12_20
+ 300              		.thumb
+ 301              		.thumb_func
+ 302              		.type	arm_float_to_q12_20, %function
+ 303              	arm_float_to_q12_20:
+ 304              	.LFB120:
+ 130:.\math_helper.c **** 
+ 131:.\math_helper.c **** /** 
+ 132:.\math_helper.c ****  * @brief  Converts float to fixed in q12.20 format
+ 133:.\math_helper.c ****  * @param  uint32_t 	number of samples in the buffer
+ 134:.\math_helper.c ****  * @return none
+ 135:.\math_helper.c ****  * The function converts floating point values to fixed point(q12.20) values 
+ 136:.\math_helper.c ****  */
+ 137:.\math_helper.c **** 
+ 138:.\math_helper.c **** void arm_float_to_q12_20(float *pIn, q31_t * pOut, uint32_t numSamples)
+ 139:.\math_helper.c **** {
+ 305              		.loc 1 139 0
+ 306              		.cfi_startproc
+ 307              		@ args = 0, pretend = 0, frame = 24
+ 308              		@ frame_needed = 1, uses_anonymous_args = 0
+ 309 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 310              		.cfi_def_cfa_offset 20
+ 311              		.cfi_offset 4, -20
+ 312              		.cfi_offset 5, -16
+ 313              		.cfi_offset 6, -12
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 9
+
+
+ 314              		.cfi_offset 7, -8
+ 315              		.cfi_offset 14, -4
+ 316 0002 87B0     		sub	sp, sp, #28
+ 317              		.cfi_def_cfa_offset 48
+ 318 0004 00AF     		add	r7, sp, #0
+ 319              		.cfi_def_cfa_register 7
+ 320 0006 F860     		str	r0, [r7, #12]
+ 321 0008 B960     		str	r1, [r7, #8]
+ 322 000a 7A60     		str	r2, [r7, #4]
+ 140:.\math_helper.c ****   uint32_t i;
+ 141:.\math_helper.c **** 
+ 142:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 323              		.loc 1 142 0
+ 324 000c 0023     		movs	r3, #0
+ 325 000e 7B61     		str	r3, [r7, #20]
+ 326 0010 57E0     		b	.L15
+ 327              	.L21:
+ 143:.\math_helper.c ****     {
+ 144:.\math_helper.c **** 	  /* 1048576.0f corresponds to pow(2, 20) */
+ 145:.\math_helper.c ****       pOut[i] = (q31_t) (pIn[i] * 1048576.0f);
+ 328              		.loc 1 145 0
+ 329 0012 7B69     		ldr	r3, [r7, #20]
+ 330 0014 9B00     		lsls	r3, r3, #2
+ 331 0016 BA68     		ldr	r2, [r7, #8]
+ 332 0018 D418     		adds	r4, r2, r3
+ 333 001a 7B69     		ldr	r3, [r7, #20]
+ 334 001c 9B00     		lsls	r3, r3, #2
+ 335 001e FA68     		ldr	r2, [r7, #12]
+ 336 0020 1344     		add	r3, r3, r2
+ 337 0022 1B68     		ldr	r3, [r3]	@ float
+ 338 0024 1846     		mov	r0, r3
+ 339 0026 4FF09341 		mov	r1, #1233125376
+ 340 002a FFF7FEFF 		bl	__aeabi_fmul
+ 341 002e 0346     		mov	r3, r0
+ 342 0030 1846     		mov	r0, r3
+ 343 0032 FFF7FEFF 		bl	__aeabi_f2iz
+ 344 0036 0346     		mov	r3, r0
+ 345 0038 2360     		str	r3, [r4]
+ 146:.\math_helper.c **** 
+ 147:.\math_helper.c ****       pOut[i] += pIn[i] > 0 ? 0.5 : -0.5;
+ 346              		.loc 1 147 0
+ 347 003a 7B69     		ldr	r3, [r7, #20]
+ 348 003c 9B00     		lsls	r3, r3, #2
+ 349 003e BA68     		ldr	r2, [r7, #8]
+ 350 0040 D618     		adds	r6, r2, r3
+ 351 0042 7B69     		ldr	r3, [r7, #20]
+ 352 0044 9B00     		lsls	r3, r3, #2
+ 353 0046 BA68     		ldr	r2, [r7, #8]
+ 354 0048 1344     		add	r3, r3, r2
+ 355 004a 1B68     		ldr	r3, [r3]
+ 356 004c 1846     		mov	r0, r3
+ 357 004e FFF7FEFF 		bl	__aeabi_i2d
+ 358 0052 0446     		mov	r4, r0
+ 359 0054 0D46     		mov	r5, r1
+ 360 0056 7B69     		ldr	r3, [r7, #20]
+ 361 0058 9B00     		lsls	r3, r3, #2
+ 362 005a FA68     		ldr	r2, [r7, #12]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 10
+
+
+ 363 005c 1344     		add	r3, r3, r2
+ 364 005e 1B68     		ldr	r3, [r3]	@ float
+ 365 0060 1846     		mov	r0, r3
+ 366 0062 4FF00001 		mov	r1, #0
+ 367 0066 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 368 006a 0346     		mov	r3, r0
+ 369 006c 002B     		cmp	r3, #0
+ 370 006e 03D0     		beq	.L24
+ 371              		.loc 1 147 0 is_stmt 0 discriminator 1
+ 372 0070 4FF00002 		mov	r2, #0
+ 373 0074 164B     		ldr	r3, .L25
+ 374 0076 02E0     		b	.L18
+ 375              	.L24:
+ 376              		.loc 1 147 0 discriminator 2
+ 377 0078 4FF00002 		mov	r2, #0
+ 378 007c 154B     		ldr	r3, .L25+4
+ 379              	.L18:
+ 380              		.loc 1 147 0 discriminator 3
+ 381 007e 2046     		mov	r0, r4
+ 382 0080 2946     		mov	r1, r5
+ 383 0082 FFF7FEFF 		bl	__aeabi_dadd
+ 384 0086 0246     		mov	r2, r0
+ 385 0088 0B46     		mov	r3, r1
+ 386 008a 1046     		mov	r0, r2
+ 387 008c 1946     		mov	r1, r3
+ 388 008e FFF7FEFF 		bl	__aeabi_d2iz
+ 389 0092 0346     		mov	r3, r0
+ 390 0094 3360     		str	r3, [r6]
+ 148:.\math_helper.c **** 
+ 149:.\math_helper.c ****       if (pIn[i] == (float) 1.0)
+ 391              		.loc 1 149 0 is_stmt 1 discriminator 3
+ 392 0096 7B69     		ldr	r3, [r7, #20]
+ 393 0098 9B00     		lsls	r3, r3, #2
+ 394 009a FA68     		ldr	r2, [r7, #12]
+ 395 009c 1344     		add	r3, r3, r2
+ 396 009e 1B68     		ldr	r3, [r3]	@ float
+ 397 00a0 1846     		mov	r0, r3
+ 398 00a2 4FF07E51 		mov	r1, #1065353216
+ 399 00a6 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 400 00aa 0346     		mov	r3, r0
+ 401 00ac 002B     		cmp	r3, #0
+ 402 00ae 05D0     		beq	.L19
+ 150:.\math_helper.c ****         {
+ 151:.\math_helper.c ****           pOut[i] = 0x000FFFFF;
+ 403              		.loc 1 151 0
+ 404 00b0 7B69     		ldr	r3, [r7, #20]
+ 405 00b2 9B00     		lsls	r3, r3, #2
+ 406 00b4 BA68     		ldr	r2, [r7, #8]
+ 407 00b6 1344     		add	r3, r3, r2
+ 408 00b8 074A     		ldr	r2, .L25+8
+ 409 00ba 1A60     		str	r2, [r3]
+ 410              	.L19:
+ 142:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 411              		.loc 1 142 0
+ 412 00bc 7B69     		ldr	r3, [r7, #20]
+ 413 00be 0133     		adds	r3, r3, #1
+ 414 00c0 7B61     		str	r3, [r7, #20]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 11
+
+
+ 415              	.L15:
+ 142:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 416              		.loc 1 142 0 is_stmt 0 discriminator 1
+ 417 00c2 7A69     		ldr	r2, [r7, #20]
+ 418 00c4 7B68     		ldr	r3, [r7, #4]
+ 419 00c6 9A42     		cmp	r2, r3
+ 420 00c8 A3D3     		bcc	.L21
+ 152:.\math_helper.c ****         }
+ 153:.\math_helper.c ****     }
+ 154:.\math_helper.c **** }
+ 421              		.loc 1 154 0 is_stmt 1
+ 422 00ca 1C37     		adds	r7, r7, #28
+ 423 00cc BD46     		mov	sp, r7
+ 424              		@ sp needed
+ 425 00ce F0BD     		pop	{r4, r5, r6, r7, pc}
+ 426              	.L26:
+ 427              		.align	2
+ 428              	.L25:
+ 429 00d0 0000E03F 		.word	1071644672
+ 430 00d4 0000E0BF 		.word	-1075838976
+ 431 00d8 FFFF0F00 		.word	1048575
+ 432              		.cfi_endproc
+ 433              	.LFE120:
+ 434              		.size	arm_float_to_q12_20, .-arm_float_to_q12_20
+ 435              		.section	.text.arm_compare_fixed_q15,"ax",%progbits
+ 436              		.align	2
+ 437              		.global	arm_compare_fixed_q15
+ 438              		.thumb
+ 439              		.thumb_func
+ 440              		.type	arm_compare_fixed_q15, %function
+ 441              	arm_compare_fixed_q15:
+ 442              	.LFB121:
+ 155:.\math_helper.c **** 
+ 156:.\math_helper.c **** /** 
+ 157:.\math_helper.c ****  * @brief  Compare MATLAB Reference Output and ARM Test output
+ 158:.\math_helper.c ****  * @param  q15_t* 	Pointer to Ref buffer
+ 159:.\math_helper.c ****  * @param  q15_t* 	Pointer to Test buffer
+ 160:.\math_helper.c ****  * @param  uint32_t 	number of samples in the buffer
+ 161:.\math_helper.c ****  * @return none 
+ 162:.\math_helper.c ****  */
+ 163:.\math_helper.c **** 
+ 164:.\math_helper.c **** uint32_t arm_compare_fixed_q15(q15_t *pIn, q15_t * pOut, uint32_t numSamples)
+ 165:.\math_helper.c **** {
+ 443              		.loc 1 165 0
+ 444              		.cfi_startproc
+ 445              		@ args = 0, pretend = 0, frame = 32
+ 446              		@ frame_needed = 1, uses_anonymous_args = 0
+ 447              		@ link register save eliminated.
+ 448 0000 80B4     		push	{r7}
+ 449              		.cfi_def_cfa_offset 4
+ 450              		.cfi_offset 7, -4
+ 451 0002 89B0     		sub	sp, sp, #36
+ 452              		.cfi_def_cfa_offset 40
+ 453 0004 00AF     		add	r7, sp, #0
+ 454              		.cfi_def_cfa_register 7
+ 455 0006 F860     		str	r0, [r7, #12]
+ 456 0008 B960     		str	r1, [r7, #8]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 12
+
+
+ 457 000a 7A60     		str	r2, [r7, #4]
+ 166:.\math_helper.c ****   uint32_t i; 
+ 167:.\math_helper.c ****   int32_t diff, diffCrnt = 0;
+ 458              		.loc 1 167 0
+ 459 000c 0023     		movs	r3, #0
+ 460 000e 7B61     		str	r3, [r7, #20]
+ 168:.\math_helper.c ****   uint32_t maxDiff = 0;
+ 461              		.loc 1 168 0
+ 462 0010 0023     		movs	r3, #0
+ 463 0012 BB61     		str	r3, [r7, #24]
+ 169:.\math_helper.c **** 
+ 170:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 464              		.loc 1 170 0
+ 465 0014 0023     		movs	r3, #0
+ 466 0016 FB61     		str	r3, [r7, #28]
+ 467 0018 1BE0     		b	.L28
+ 468              	.L30:
+ 171:.\math_helper.c ****   {
+ 172:.\math_helper.c ****   	diff = pIn[i] - pOut[i];
+ 469              		.loc 1 172 0
+ 470 001a FB69     		ldr	r3, [r7, #28]
+ 471 001c 5B00     		lsls	r3, r3, #1
+ 472 001e FA68     		ldr	r2, [r7, #12]
+ 473 0020 1344     		add	r3, r3, r2
+ 474 0022 1B88     		ldrh	r3, [r3]
+ 475 0024 1AB2     		sxth	r2, r3
+ 476 0026 FB69     		ldr	r3, [r7, #28]
+ 477 0028 5B00     		lsls	r3, r3, #1
+ 478 002a B968     		ldr	r1, [r7, #8]
+ 479 002c 0B44     		add	r3, r3, r1
+ 480 002e 1B88     		ldrh	r3, [r3]
+ 481 0030 1BB2     		sxth	r3, r3
+ 482 0032 D31A     		subs	r3, r2, r3
+ 483 0034 3B61     		str	r3, [r7, #16]
+ 173:.\math_helper.c ****   	diffCrnt = (diff > 0) ? diff : -diff;
+ 484              		.loc 1 173 0
+ 485 0036 3B69     		ldr	r3, [r7, #16]
+ 486 0038 002B     		cmp	r3, #0
+ 487 003a B8BF     		it	lt
+ 488 003c 5B42     		rsblt	r3, r3, #0
+ 489 003e 7B61     		str	r3, [r7, #20]
+ 174:.\math_helper.c **** 
+ 175:.\math_helper.c **** 	if(diffCrnt > maxDiff)
+ 490              		.loc 1 175 0
+ 491 0040 7A69     		ldr	r2, [r7, #20]
+ 492 0042 BB69     		ldr	r3, [r7, #24]
+ 493 0044 9A42     		cmp	r2, r3
+ 494 0046 01D9     		bls	.L29
+ 176:.\math_helper.c **** 	{
+ 177:.\math_helper.c **** 		maxDiff = diffCrnt;
+ 495              		.loc 1 177 0
+ 496 0048 7B69     		ldr	r3, [r7, #20]
+ 497 004a BB61     		str	r3, [r7, #24]
+ 498              	.L29:
+ 170:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 499              		.loc 1 170 0
+ 500 004c FB69     		ldr	r3, [r7, #28]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 13
+
+
+ 501 004e 0133     		adds	r3, r3, #1
+ 502 0050 FB61     		str	r3, [r7, #28]
+ 503              	.L28:
+ 170:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 504              		.loc 1 170 0 is_stmt 0 discriminator 1
+ 505 0052 FA69     		ldr	r2, [r7, #28]
+ 506 0054 7B68     		ldr	r3, [r7, #4]
+ 507 0056 9A42     		cmp	r2, r3
+ 508 0058 DFD3     		bcc	.L30
+ 178:.\math_helper.c **** 	}	
+ 179:.\math_helper.c ****   }
+ 180:.\math_helper.c **** 
+ 181:.\math_helper.c ****   return(maxDiff);
+ 509              		.loc 1 181 0 is_stmt 1
+ 510 005a BB69     		ldr	r3, [r7, #24]
+ 182:.\math_helper.c **** }
+ 511              		.loc 1 182 0
+ 512 005c 1846     		mov	r0, r3
+ 513 005e 2437     		adds	r7, r7, #36
+ 514 0060 BD46     		mov	sp, r7
+ 515              		@ sp needed
+ 516 0062 5DF8047B 		ldr	r7, [sp], #4
+ 517 0066 7047     		bx	lr
+ 518              		.cfi_endproc
+ 519              	.LFE121:
+ 520              		.size	arm_compare_fixed_q15, .-arm_compare_fixed_q15
+ 521              		.section	.text.arm_compare_fixed_q31,"ax",%progbits
+ 522              		.align	2
+ 523              		.global	arm_compare_fixed_q31
+ 524              		.thumb
+ 525              		.thumb_func
+ 526              		.type	arm_compare_fixed_q31, %function
+ 527              	arm_compare_fixed_q31:
+ 528              	.LFB122:
+ 183:.\math_helper.c **** 
+ 184:.\math_helper.c **** /** 
+ 185:.\math_helper.c ****  * @brief  Compare MATLAB Reference Output and ARM Test output
+ 186:.\math_helper.c ****  * @param  q31_t* 	Pointer to Ref buffer
+ 187:.\math_helper.c ****  * @param  q31_t* 	Pointer to Test buffer
+ 188:.\math_helper.c ****  * @param  uint32_t 	number of samples in the buffer
+ 189:.\math_helper.c ****  * @return none 
+ 190:.\math_helper.c ****  */
+ 191:.\math_helper.c **** 
+ 192:.\math_helper.c **** uint32_t arm_compare_fixed_q31(q31_t *pIn, q31_t * pOut, uint32_t numSamples)
+ 193:.\math_helper.c **** {
+ 529              		.loc 1 193 0
+ 530              		.cfi_startproc
+ 531              		@ args = 0, pretend = 0, frame = 32
+ 532              		@ frame_needed = 1, uses_anonymous_args = 0
+ 533              		@ link register save eliminated.
+ 534 0000 80B4     		push	{r7}
+ 535              		.cfi_def_cfa_offset 4
+ 536              		.cfi_offset 7, -4
+ 537 0002 89B0     		sub	sp, sp, #36
+ 538              		.cfi_def_cfa_offset 40
+ 539 0004 00AF     		add	r7, sp, #0
+ 540              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 14
+
+
+ 541 0006 F860     		str	r0, [r7, #12]
+ 542 0008 B960     		str	r1, [r7, #8]
+ 543 000a 7A60     		str	r2, [r7, #4]
+ 194:.\math_helper.c ****   uint32_t i; 
+ 195:.\math_helper.c ****   int32_t diff, diffCrnt = 0;
+ 544              		.loc 1 195 0
+ 545 000c 0023     		movs	r3, #0
+ 546 000e 7B61     		str	r3, [r7, #20]
+ 196:.\math_helper.c ****   uint32_t maxDiff = 0;
+ 547              		.loc 1 196 0
+ 548 0010 0023     		movs	r3, #0
+ 549 0012 BB61     		str	r3, [r7, #24]
+ 197:.\math_helper.c **** 
+ 198:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 550              		.loc 1 198 0
+ 551 0014 0023     		movs	r3, #0
+ 552 0016 FB61     		str	r3, [r7, #28]
+ 553 0018 19E0     		b	.L33
+ 554              	.L35:
+ 199:.\math_helper.c ****   {
+ 200:.\math_helper.c ****   	diff = pIn[i] - pOut[i];
+ 555              		.loc 1 200 0
+ 556 001a FB69     		ldr	r3, [r7, #28]
+ 557 001c 9B00     		lsls	r3, r3, #2
+ 558 001e FA68     		ldr	r2, [r7, #12]
+ 559 0020 1344     		add	r3, r3, r2
+ 560 0022 1A68     		ldr	r2, [r3]
+ 561 0024 FB69     		ldr	r3, [r7, #28]
+ 562 0026 9B00     		lsls	r3, r3, #2
+ 563 0028 B968     		ldr	r1, [r7, #8]
+ 564 002a 0B44     		add	r3, r3, r1
+ 565 002c 1B68     		ldr	r3, [r3]
+ 566 002e D31A     		subs	r3, r2, r3
+ 567 0030 3B61     		str	r3, [r7, #16]
+ 201:.\math_helper.c ****   	diffCrnt = (diff > 0) ? diff : -diff;
+ 568              		.loc 1 201 0
+ 569 0032 3B69     		ldr	r3, [r7, #16]
+ 570 0034 002B     		cmp	r3, #0
+ 571 0036 B8BF     		it	lt
+ 572 0038 5B42     		rsblt	r3, r3, #0
+ 573 003a 7B61     		str	r3, [r7, #20]
+ 202:.\math_helper.c **** 
+ 203:.\math_helper.c **** 	if(diffCrnt > maxDiff)
+ 574              		.loc 1 203 0
+ 575 003c 7A69     		ldr	r2, [r7, #20]
+ 576 003e BB69     		ldr	r3, [r7, #24]
+ 577 0040 9A42     		cmp	r2, r3
+ 578 0042 01D9     		bls	.L34
+ 204:.\math_helper.c **** 	{
+ 205:.\math_helper.c **** 		maxDiff = diffCrnt;
+ 579              		.loc 1 205 0
+ 580 0044 7B69     		ldr	r3, [r7, #20]
+ 581 0046 BB61     		str	r3, [r7, #24]
+ 582              	.L34:
+ 198:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 583              		.loc 1 198 0
+ 584 0048 FB69     		ldr	r3, [r7, #28]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 15
+
+
+ 585 004a 0133     		adds	r3, r3, #1
+ 586 004c FB61     		str	r3, [r7, #28]
+ 587              	.L33:
+ 198:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 588              		.loc 1 198 0 is_stmt 0 discriminator 1
+ 589 004e FA69     		ldr	r2, [r7, #28]
+ 590 0050 7B68     		ldr	r3, [r7, #4]
+ 591 0052 9A42     		cmp	r2, r3
+ 592 0054 E1D3     		bcc	.L35
+ 206:.\math_helper.c **** 	}
+ 207:.\math_helper.c ****   }
+ 208:.\math_helper.c **** 
+ 209:.\math_helper.c ****   return(maxDiff);
+ 593              		.loc 1 209 0 is_stmt 1
+ 594 0056 BB69     		ldr	r3, [r7, #24]
+ 210:.\math_helper.c **** }
+ 595              		.loc 1 210 0
+ 596 0058 1846     		mov	r0, r3
+ 597 005a 2437     		adds	r7, r7, #36
+ 598 005c BD46     		mov	sp, r7
+ 599              		@ sp needed
+ 600 005e 5DF8047B 		ldr	r7, [sp], #4
+ 601 0062 7047     		bx	lr
+ 602              		.cfi_endproc
+ 603              	.LFE122:
+ 604              		.size	arm_compare_fixed_q31, .-arm_compare_fixed_q31
+ 605              		.section	.text.arm_provide_guard_bits_q31,"ax",%progbits
+ 606              		.align	2
+ 607              		.global	arm_provide_guard_bits_q31
+ 608              		.thumb
+ 609              		.thumb_func
+ 610              		.type	arm_provide_guard_bits_q31, %function
+ 611              	arm_provide_guard_bits_q31:
+ 612              	.LFB123:
+ 211:.\math_helper.c **** 
+ 212:.\math_helper.c **** /** 
+ 213:.\math_helper.c ****  * @brief  Provide guard bits for Input buffer
+ 214:.\math_helper.c ****  * @param  q31_t* 	Pointer to input buffer
+ 215:.\math_helper.c ****  * @param  uint32_t 	blockSize
+ 216:.\math_helper.c ****  * @param  uint32_t 	guard_bits
+ 217:.\math_helper.c ****  * @return none
+ 218:.\math_helper.c ****  * The function Provides the guard bits for the buffer 
+ 219:.\math_helper.c ****  * to avoid overflow 
+ 220:.\math_helper.c ****  */
+ 221:.\math_helper.c **** 
+ 222:.\math_helper.c **** void arm_provide_guard_bits_q31 (q31_t * input_buf, 
+ 223:.\math_helper.c **** 								 uint32_t blockSize,
+ 224:.\math_helper.c ****                                  uint32_t guard_bits)
+ 225:.\math_helper.c **** {
+ 613              		.loc 1 225 0
+ 614              		.cfi_startproc
+ 615              		@ args = 0, pretend = 0, frame = 24
+ 616              		@ frame_needed = 1, uses_anonymous_args = 0
+ 617              		@ link register save eliminated.
+ 618 0000 80B4     		push	{r7}
+ 619              		.cfi_def_cfa_offset 4
+ 620              		.cfi_offset 7, -4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 16
+
+
+ 621 0002 87B0     		sub	sp, sp, #28
+ 622              		.cfi_def_cfa_offset 32
+ 623 0004 00AF     		add	r7, sp, #0
+ 624              		.cfi_def_cfa_register 7
+ 625 0006 F860     		str	r0, [r7, #12]
+ 626 0008 B960     		str	r1, [r7, #8]
+ 627 000a 7A60     		str	r2, [r7, #4]
+ 226:.\math_helper.c ****   uint32_t i;
+ 227:.\math_helper.c **** 
+ 228:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
+ 628              		.loc 1 228 0
+ 629 000c 0023     		movs	r3, #0
+ 630 000e 7B61     		str	r3, [r7, #20]
+ 631 0010 0FE0     		b	.L38
+ 632              	.L39:
+ 229:.\math_helper.c ****     {
+ 230:.\math_helper.c ****       input_buf[i] = input_buf[i] >> guard_bits;
+ 633              		.loc 1 230 0 discriminator 2
+ 634 0012 7B69     		ldr	r3, [r7, #20]
+ 635 0014 9B00     		lsls	r3, r3, #2
+ 636 0016 FA68     		ldr	r2, [r7, #12]
+ 637 0018 1344     		add	r3, r3, r2
+ 638 001a 7A69     		ldr	r2, [r7, #20]
+ 639 001c 9200     		lsls	r2, r2, #2
+ 640 001e F968     		ldr	r1, [r7, #12]
+ 641 0020 0A44     		add	r2, r2, r1
+ 642 0022 1168     		ldr	r1, [r2]
+ 643 0024 7A68     		ldr	r2, [r7, #4]
+ 644 0026 41FA02F2 		asr	r2, r1, r2
+ 645 002a 1A60     		str	r2, [r3]
+ 228:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
+ 646              		.loc 1 228 0 discriminator 2
+ 647 002c 7B69     		ldr	r3, [r7, #20]
+ 648 002e 0133     		adds	r3, r3, #1
+ 649 0030 7B61     		str	r3, [r7, #20]
+ 650              	.L38:
+ 228:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
+ 651              		.loc 1 228 0 is_stmt 0 discriminator 1
+ 652 0032 7A69     		ldr	r2, [r7, #20]
+ 653 0034 BB68     		ldr	r3, [r7, #8]
+ 654 0036 9A42     		cmp	r2, r3
+ 655 0038 EBD3     		bcc	.L39
+ 231:.\math_helper.c ****     }
+ 232:.\math_helper.c **** }
+ 656              		.loc 1 232 0 is_stmt 1
+ 657 003a 1C37     		adds	r7, r7, #28
+ 658 003c BD46     		mov	sp, r7
+ 659              		@ sp needed
+ 660 003e 5DF8047B 		ldr	r7, [sp], #4
+ 661 0042 7047     		bx	lr
+ 662              		.cfi_endproc
+ 663              	.LFE123:
+ 664              		.size	arm_provide_guard_bits_q31, .-arm_provide_guard_bits_q31
+ 665              		.section	.text.arm_provide_guard_bits_q7,"ax",%progbits
+ 666              		.align	2
+ 667              		.global	arm_provide_guard_bits_q7
+ 668              		.thumb
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 17
+
+
+ 669              		.thumb_func
+ 670              		.type	arm_provide_guard_bits_q7, %function
+ 671              	arm_provide_guard_bits_q7:
+ 672              	.LFB124:
+ 233:.\math_helper.c **** 
+ 234:.\math_helper.c **** /** 
+ 235:.\math_helper.c ****  * @brief  Provide guard bits for Input buffer
+ 236:.\math_helper.c ****  * @param  q31_t* 	Pointer to input buffer
+ 237:.\math_helper.c ****  * @param  uint32_t 	blockSize
+ 238:.\math_helper.c ****  * @param  uint32_t 	guard_bits
+ 239:.\math_helper.c ****  * @return none
+ 240:.\math_helper.c ****  * The function Provides the guard bits for the buffer 
+ 241:.\math_helper.c ****  * to avoid overflow 
+ 242:.\math_helper.c ****  */
+ 243:.\math_helper.c **** 
+ 244:.\math_helper.c **** void arm_provide_guard_bits_q7 (q7_t * input_buf, 
+ 245:.\math_helper.c **** 								uint32_t blockSize,
+ 246:.\math_helper.c ****                                 uint32_t guard_bits)
+ 247:.\math_helper.c **** {
+ 673              		.loc 1 247 0
+ 674              		.cfi_startproc
+ 675              		@ args = 0, pretend = 0, frame = 24
+ 676              		@ frame_needed = 1, uses_anonymous_args = 0
+ 677              		@ link register save eliminated.
+ 678 0000 80B4     		push	{r7}
+ 679              		.cfi_def_cfa_offset 4
+ 680              		.cfi_offset 7, -4
+ 681 0002 87B0     		sub	sp, sp, #28
+ 682              		.cfi_def_cfa_offset 32
+ 683 0004 00AF     		add	r7, sp, #0
+ 684              		.cfi_def_cfa_register 7
+ 685 0006 F860     		str	r0, [r7, #12]
+ 686 0008 B960     		str	r1, [r7, #8]
+ 687 000a 7A60     		str	r2, [r7, #4]
+ 248:.\math_helper.c ****   uint32_t i;
+ 249:.\math_helper.c **** 
+ 250:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
+ 688              		.loc 1 250 0
+ 689 000c 0023     		movs	r3, #0
+ 690 000e 7B61     		str	r3, [r7, #20]
+ 691 0010 0FE0     		b	.L41
+ 692              	.L42:
+ 251:.\math_helper.c ****     {
+ 252:.\math_helper.c ****       input_buf[i] = input_buf[i] >> guard_bits;
+ 693              		.loc 1 252 0 discriminator 2
+ 694 0012 FA68     		ldr	r2, [r7, #12]
+ 695 0014 7B69     		ldr	r3, [r7, #20]
+ 696 0016 1344     		add	r3, r3, r2
+ 697 0018 F968     		ldr	r1, [r7, #12]
+ 698 001a 7A69     		ldr	r2, [r7, #20]
+ 699 001c 0A44     		add	r2, r2, r1
+ 700 001e 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 701 0020 51B2     		sxtb	r1, r2
+ 702 0022 7A68     		ldr	r2, [r7, #4]
+ 703 0024 41FA02F2 		asr	r2, r1, r2
+ 704 0028 D2B2     		uxtb	r2, r2
+ 705 002a 1A70     		strb	r2, [r3]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 18
+
+
+ 250:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
+ 706              		.loc 1 250 0 discriminator 2
+ 707 002c 7B69     		ldr	r3, [r7, #20]
+ 708 002e 0133     		adds	r3, r3, #1
+ 709 0030 7B61     		str	r3, [r7, #20]
+ 710              	.L41:
+ 250:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
+ 711              		.loc 1 250 0 is_stmt 0 discriminator 1
+ 712 0032 7A69     		ldr	r2, [r7, #20]
+ 713 0034 BB68     		ldr	r3, [r7, #8]
+ 714 0036 9A42     		cmp	r2, r3
+ 715 0038 EBD3     		bcc	.L42
+ 253:.\math_helper.c ****     }
+ 254:.\math_helper.c **** }
+ 716              		.loc 1 254 0 is_stmt 1
+ 717 003a 1C37     		adds	r7, r7, #28
+ 718 003c BD46     		mov	sp, r7
+ 719              		@ sp needed
+ 720 003e 5DF8047B 		ldr	r7, [sp], #4
+ 721 0042 7047     		bx	lr
+ 722              		.cfi_endproc
+ 723              	.LFE124:
+ 724              		.size	arm_provide_guard_bits_q7, .-arm_provide_guard_bits_q7
+ 725              		.section	.text.arm_calc_guard_bits,"ax",%progbits
+ 726              		.align	2
+ 727              		.global	arm_calc_guard_bits
+ 728              		.thumb
+ 729              		.thumb_func
+ 730              		.type	arm_calc_guard_bits, %function
+ 731              	arm_calc_guard_bits:
+ 732              	.LFB125:
+ 255:.\math_helper.c **** 
+ 256:.\math_helper.c **** 
+ 257:.\math_helper.c **** 
+ 258:.\math_helper.c **** /** 
+ 259:.\math_helper.c ****  * @brief  Caluclates number of guard bits 
+ 260:.\math_helper.c ****  * @param  uint32_t 	number of additions
+ 261:.\math_helper.c ****  * @return none
+ 262:.\math_helper.c ****  * The function Caluclates the number of guard bits  
+ 263:.\math_helper.c ****  * depending on the numtaps 
+ 264:.\math_helper.c ****  */
+ 265:.\math_helper.c **** 
+ 266:.\math_helper.c **** uint32_t arm_calc_guard_bits (uint32_t num_adds)
+ 267:.\math_helper.c **** {
+ 733              		.loc 1 267 0
+ 734              		.cfi_startproc
+ 735              		@ args = 0, pretend = 0, frame = 16
+ 736              		@ frame_needed = 1, uses_anonymous_args = 0
+ 737              		@ link register save eliminated.
+ 738 0000 80B4     		push	{r7}
+ 739              		.cfi_def_cfa_offset 4
+ 740              		.cfi_offset 7, -4
+ 741 0002 85B0     		sub	sp, sp, #20
+ 742              		.cfi_def_cfa_offset 24
+ 743 0004 00AF     		add	r7, sp, #0
+ 744              		.cfi_def_cfa_register 7
+ 745 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 19
+
+
+ 268:.\math_helper.c ****   uint32_t i = 1, j = 0;
+ 746              		.loc 1 268 0
+ 747 0008 0123     		movs	r3, #1
+ 748 000a FB60     		str	r3, [r7, #12]
+ 749 000c 0023     		movs	r3, #0
+ 750 000e BB60     		str	r3, [r7, #8]
+ 269:.\math_helper.c **** 
+ 270:.\math_helper.c ****   if (num_adds == 1)
+ 751              		.loc 1 270 0
+ 752 0010 7B68     		ldr	r3, [r7, #4]
+ 753 0012 012B     		cmp	r3, #1
+ 754 0014 01D1     		bne	.L44
+ 271:.\math_helper.c ****     {
+ 272:.\math_helper.c ****       return (0);
+ 755              		.loc 1 272 0
+ 756 0016 0023     		movs	r3, #0
+ 757 0018 0BE0     		b	.L45
+ 758              	.L44:
+ 273:.\math_helper.c ****     }
+ 274:.\math_helper.c **** 
+ 275:.\math_helper.c ****   while (i < num_adds)
+ 759              		.loc 1 275 0
+ 760 001a 05E0     		b	.L46
+ 761              	.L47:
+ 276:.\math_helper.c ****     {
+ 277:.\math_helper.c ****       i = i * 2;
+ 762              		.loc 1 277 0
+ 763 001c FB68     		ldr	r3, [r7, #12]
+ 764 001e 5B00     		lsls	r3, r3, #1
+ 765 0020 FB60     		str	r3, [r7, #12]
+ 278:.\math_helper.c ****       j++;
+ 766              		.loc 1 278 0
+ 767 0022 BB68     		ldr	r3, [r7, #8]
+ 768 0024 0133     		adds	r3, r3, #1
+ 769 0026 BB60     		str	r3, [r7, #8]
+ 770              	.L46:
+ 275:.\math_helper.c ****   while (i < num_adds)
+ 771              		.loc 1 275 0 discriminator 1
+ 772 0028 FA68     		ldr	r2, [r7, #12]
+ 773 002a 7B68     		ldr	r3, [r7, #4]
+ 774 002c 9A42     		cmp	r2, r3
+ 775 002e F5D3     		bcc	.L47
+ 279:.\math_helper.c ****     }
+ 280:.\math_helper.c **** 
+ 281:.\math_helper.c ****   return (j);
+ 776              		.loc 1 281 0
+ 777 0030 BB68     		ldr	r3, [r7, #8]
+ 778              	.L45:
+ 282:.\math_helper.c **** }
+ 779              		.loc 1 282 0
+ 780 0032 1846     		mov	r0, r3
+ 781 0034 1437     		adds	r7, r7, #20
+ 782 0036 BD46     		mov	sp, r7
+ 783              		@ sp needed
+ 784 0038 5DF8047B 		ldr	r7, [sp], #4
+ 785 003c 7047     		bx	lr
+ 786              		.cfi_endproc
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 20
+
+
+ 787              	.LFE125:
+ 788              		.size	arm_calc_guard_bits, .-arm_calc_guard_bits
+ 789              		.global	__aeabi_ui2f
+ 790 003e 00BF     		.section	.text.arm_apply_guard_bits,"ax",%progbits
+ 791              		.align	2
+ 792              		.global	arm_apply_guard_bits
+ 793              		.thumb
+ 794              		.thumb_func
+ 795              		.type	arm_apply_guard_bits, %function
+ 796              	arm_apply_guard_bits:
+ 797              	.LFB126:
+ 283:.\math_helper.c **** 
+ 284:.\math_helper.c **** /** 
+ 285:.\math_helper.c ****  * @brief  Converts Q15 to floating-point
+ 286:.\math_helper.c ****  * @param  uint32_t 	number of samples in the buffer
+ 287:.\math_helper.c ****  * @return none
+ 288:.\math_helper.c ****  */
+ 289:.\math_helper.c **** 
+ 290:.\math_helper.c **** void arm_apply_guard_bits (float32_t * pIn, 
+ 291:.\math_helper.c **** 						   uint32_t numSamples, 
+ 292:.\math_helper.c **** 						   uint32_t guard_bits)
+ 293:.\math_helper.c **** {
+ 798              		.loc 1 293 0
+ 799              		.cfi_startproc
+ 800              		@ args = 0, pretend = 0, frame = 24
+ 801              		@ frame_needed = 1, uses_anonymous_args = 0
+ 802 0000 B0B5     		push	{r4, r5, r7, lr}
+ 803              		.cfi_def_cfa_offset 16
+ 804              		.cfi_offset 4, -16
+ 805              		.cfi_offset 5, -12
+ 806              		.cfi_offset 7, -8
+ 807              		.cfi_offset 14, -4
+ 808 0002 86B0     		sub	sp, sp, #24
+ 809              		.cfi_def_cfa_offset 40
+ 810 0004 00AF     		add	r7, sp, #0
+ 811              		.cfi_def_cfa_register 7
+ 812 0006 F860     		str	r0, [r7, #12]
+ 813 0008 B960     		str	r1, [r7, #8]
+ 814 000a 7A60     		str	r2, [r7, #4]
+ 294:.\math_helper.c ****   uint32_t i;
+ 295:.\math_helper.c **** 
+ 296:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 815              		.loc 1 296 0
+ 816 000c 0023     		movs	r3, #0
+ 817 000e 7B61     		str	r3, [r7, #20]
+ 818 0010 19E0     		b	.L49
+ 819              	.L50:
+ 297:.\math_helper.c ****     {
+ 298:.\math_helper.c ****       pIn[i] = pIn[i] * arm_calc_2pow(guard_bits);
+ 820              		.loc 1 298 0 discriminator 2
+ 821 0012 7B69     		ldr	r3, [r7, #20]
+ 822 0014 9B00     		lsls	r3, r3, #2
+ 823 0016 FA68     		ldr	r2, [r7, #12]
+ 824 0018 D418     		adds	r4, r2, r3
+ 825 001a 7B69     		ldr	r3, [r7, #20]
+ 826 001c 9B00     		lsls	r3, r3, #2
+ 827 001e FA68     		ldr	r2, [r7, #12]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 21
+
+
+ 828 0020 1344     		add	r3, r3, r2
+ 829 0022 1D68     		ldr	r5, [r3]	@ float
+ 830 0024 7868     		ldr	r0, [r7, #4]
+ 831 0026 FFF7FEFF 		bl	arm_calc_2pow
+ 832 002a 0346     		mov	r3, r0
+ 833 002c 1846     		mov	r0, r3
+ 834 002e FFF7FEFF 		bl	__aeabi_ui2f
+ 835 0032 0346     		mov	r3, r0
+ 836 0034 2846     		mov	r0, r5
+ 837 0036 1946     		mov	r1, r3
+ 838 0038 FFF7FEFF 		bl	__aeabi_fmul
+ 839 003c 0346     		mov	r3, r0
+ 840 003e 2360     		str	r3, [r4]	@ float
+ 296:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 841              		.loc 1 296 0 discriminator 2
+ 842 0040 7B69     		ldr	r3, [r7, #20]
+ 843 0042 0133     		adds	r3, r3, #1
+ 844 0044 7B61     		str	r3, [r7, #20]
+ 845              	.L49:
+ 296:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 846              		.loc 1 296 0 is_stmt 0 discriminator 1
+ 847 0046 7A69     		ldr	r2, [r7, #20]
+ 848 0048 BB68     		ldr	r3, [r7, #8]
+ 849 004a 9A42     		cmp	r2, r3
+ 850 004c E1D3     		bcc	.L50
+ 299:.\math_helper.c ****     }
+ 300:.\math_helper.c **** }
+ 851              		.loc 1 300 0 is_stmt 1
+ 852 004e 1837     		adds	r7, r7, #24
+ 853 0050 BD46     		mov	sp, r7
+ 854              		@ sp needed
+ 855 0052 B0BD     		pop	{r4, r5, r7, pc}
+ 856              		.cfi_endproc
+ 857              	.LFE126:
+ 858              		.size	arm_apply_guard_bits, .-arm_apply_guard_bits
+ 859              		.section	.text.arm_calc_2pow,"ax",%progbits
+ 860              		.align	2
+ 861              		.global	arm_calc_2pow
+ 862              		.thumb
+ 863              		.thumb_func
+ 864              		.type	arm_calc_2pow, %function
+ 865              	arm_calc_2pow:
+ 866              	.LFB127:
+ 301:.\math_helper.c **** 
+ 302:.\math_helper.c **** /** 
+ 303:.\math_helper.c ****  * @brief  Calculates pow(2, numShifts)
+ 304:.\math_helper.c ****  * @param  uint32_t 	number of shifts
+ 305:.\math_helper.c ****  * @return pow(2, numShifts)
+ 306:.\math_helper.c ****  */
+ 307:.\math_helper.c **** uint32_t arm_calc_2pow(uint32_t numShifts)
+ 308:.\math_helper.c **** {
+ 867              		.loc 1 308 0
+ 868              		.cfi_startproc
+ 869              		@ args = 0, pretend = 0, frame = 16
+ 870              		@ frame_needed = 1, uses_anonymous_args = 0
+ 871              		@ link register save eliminated.
+ 872 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 22
+
+
+ 873              		.cfi_def_cfa_offset 4
+ 874              		.cfi_offset 7, -4
+ 875 0002 85B0     		sub	sp, sp, #20
+ 876              		.cfi_def_cfa_offset 24
+ 877 0004 00AF     		add	r7, sp, #0
+ 878              		.cfi_def_cfa_register 7
+ 879 0006 7860     		str	r0, [r7, #4]
+ 309:.\math_helper.c **** 
+ 310:.\math_helper.c ****   uint32_t i, val = 1;
+ 880              		.loc 1 310 0
+ 881 0008 0123     		movs	r3, #1
+ 882 000a BB60     		str	r3, [r7, #8]
+ 311:.\math_helper.c **** 
+ 312:.\math_helper.c ****   for (i = 0; i < numShifts; i++)
+ 883              		.loc 1 312 0
+ 884 000c 0023     		movs	r3, #0
+ 885 000e FB60     		str	r3, [r7, #12]
+ 886 0010 05E0     		b	.L52
+ 887              	.L53:
+ 313:.\math_helper.c ****     {
+ 314:.\math_helper.c ****       val = val * 2;
+ 888              		.loc 1 314 0 discriminator 2
+ 889 0012 BB68     		ldr	r3, [r7, #8]
+ 890 0014 5B00     		lsls	r3, r3, #1
+ 891 0016 BB60     		str	r3, [r7, #8]
+ 312:.\math_helper.c ****   for (i = 0; i < numShifts; i++)
+ 892              		.loc 1 312 0 discriminator 2
+ 893 0018 FB68     		ldr	r3, [r7, #12]
+ 894 001a 0133     		adds	r3, r3, #1
+ 895 001c FB60     		str	r3, [r7, #12]
+ 896              	.L52:
+ 312:.\math_helper.c ****   for (i = 0; i < numShifts; i++)
+ 897              		.loc 1 312 0 is_stmt 0 discriminator 1
+ 898 001e FA68     		ldr	r2, [r7, #12]
+ 899 0020 7B68     		ldr	r3, [r7, #4]
+ 900 0022 9A42     		cmp	r2, r3
+ 901 0024 F5D3     		bcc	.L53
+ 315:.\math_helper.c ****     }	
+ 316:.\math_helper.c **** 
+ 317:.\math_helper.c ****   return(val);
+ 902              		.loc 1 317 0 is_stmt 1
+ 903 0026 BB68     		ldr	r3, [r7, #8]
+ 318:.\math_helper.c **** }
+ 904              		.loc 1 318 0
+ 905 0028 1846     		mov	r0, r3
+ 906 002a 1437     		adds	r7, r7, #20
+ 907 002c BD46     		mov	sp, r7
+ 908              		@ sp needed
+ 909 002e 5DF8047B 		ldr	r7, [sp], #4
+ 910 0032 7047     		bx	lr
+ 911              		.cfi_endproc
+ 912              	.LFE127:
+ 913              		.size	arm_calc_2pow, .-arm_calc_2pow
+ 914              		.section	.text.arm_float_to_q14,"ax",%progbits
+ 915              		.align	2
+ 916              		.global	arm_float_to_q14
+ 917              		.thumb
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 23
+
+
+ 918              		.thumb_func
+ 919              		.type	arm_float_to_q14, %function
+ 920              	arm_float_to_q14:
+ 921              	.LFB128:
+ 319:.\math_helper.c **** 
+ 320:.\math_helper.c **** 
+ 321:.\math_helper.c **** 
+ 322:.\math_helper.c **** /** 
+ 323:.\math_helper.c ****  * @brief  Converts float to fixed q14 
+ 324:.\math_helper.c ****  * @param  uint32_t 	number of samples in the buffer
+ 325:.\math_helper.c ****  * @return none
+ 326:.\math_helper.c ****  * The function converts floating point values to fixed point values 
+ 327:.\math_helper.c ****  */
+ 328:.\math_helper.c **** 
+ 329:.\math_helper.c **** void arm_float_to_q14 (float *pIn, q15_t * pOut, 
+ 330:.\math_helper.c ****                        uint32_t numSamples)
+ 331:.\math_helper.c **** {
+ 922              		.loc 1 331 0
+ 923              		.cfi_startproc
+ 924              		@ args = 0, pretend = 0, frame = 24
+ 925              		@ frame_needed = 1, uses_anonymous_args = 0
+ 926 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 927              		.cfi_def_cfa_offset 20
+ 928              		.cfi_offset 4, -20
+ 929              		.cfi_offset 5, -16
+ 930              		.cfi_offset 6, -12
+ 931              		.cfi_offset 7, -8
+ 932              		.cfi_offset 14, -4
+ 933 0002 87B0     		sub	sp, sp, #28
+ 934              		.cfi_def_cfa_offset 48
+ 935 0004 00AF     		add	r7, sp, #0
+ 936              		.cfi_def_cfa_register 7
+ 937 0006 F860     		str	r0, [r7, #12]
+ 938 0008 B960     		str	r1, [r7, #8]
+ 939 000a 7A60     		str	r2, [r7, #4]
+ 332:.\math_helper.c ****   uint32_t i;
+ 333:.\math_helper.c **** 
+ 334:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 940              		.loc 1 334 0
+ 941 000c 0023     		movs	r3, #0
+ 942 000e 7B61     		str	r3, [r7, #20]
+ 943 0010 5BE0     		b	.L56
+ 944              	.L62:
+ 335:.\math_helper.c ****     {
+ 336:.\math_helper.c **** 	  /* 16384.0f corresponds to pow(2, 14) */
+ 337:.\math_helper.c ****       pOut[i] = (q15_t) (pIn[i] * 16384.0f);
+ 945              		.loc 1 337 0
+ 946 0012 7B69     		ldr	r3, [r7, #20]
+ 947 0014 5B00     		lsls	r3, r3, #1
+ 948 0016 BA68     		ldr	r2, [r7, #8]
+ 949 0018 D418     		adds	r4, r2, r3
+ 950 001a 7B69     		ldr	r3, [r7, #20]
+ 951 001c 9B00     		lsls	r3, r3, #2
+ 952 001e FA68     		ldr	r2, [r7, #12]
+ 953 0020 1344     		add	r3, r3, r2
+ 954 0022 1B68     		ldr	r3, [r3]	@ float
+ 955 0024 1846     		mov	r0, r3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 24
+
+
+ 956 0026 4FF08D41 		mov	r1, #1182793728
+ 957 002a FFF7FEFF 		bl	__aeabi_fmul
+ 958 002e 0346     		mov	r3, r0
+ 959 0030 1846     		mov	r0, r3
+ 960 0032 FFF7FEFF 		bl	__aeabi_f2iz
+ 961 0036 0346     		mov	r3, r0
+ 962 0038 9BB2     		uxth	r3, r3
+ 963 003a 2380     		strh	r3, [r4]	@ movhi
+ 338:.\math_helper.c **** 
+ 339:.\math_helper.c ****       pOut[i] += pIn[i] > 0 ? 0.5 : -0.5;
+ 964              		.loc 1 339 0
+ 965 003c 7B69     		ldr	r3, [r7, #20]
+ 966 003e 5B00     		lsls	r3, r3, #1
+ 967 0040 BA68     		ldr	r2, [r7, #8]
+ 968 0042 D618     		adds	r6, r2, r3
+ 969 0044 7B69     		ldr	r3, [r7, #20]
+ 970 0046 5B00     		lsls	r3, r3, #1
+ 971 0048 BA68     		ldr	r2, [r7, #8]
+ 972 004a 1344     		add	r3, r3, r2
+ 973 004c 1B88     		ldrh	r3, [r3]
+ 974 004e 1BB2     		sxth	r3, r3
+ 975 0050 1846     		mov	r0, r3
+ 976 0052 FFF7FEFF 		bl	__aeabi_i2d
+ 977 0056 0446     		mov	r4, r0
+ 978 0058 0D46     		mov	r5, r1
+ 979 005a 7B69     		ldr	r3, [r7, #20]
+ 980 005c 9B00     		lsls	r3, r3, #2
+ 981 005e FA68     		ldr	r2, [r7, #12]
+ 982 0060 1344     		add	r3, r3, r2
+ 983 0062 1B68     		ldr	r3, [r3]	@ float
+ 984 0064 1846     		mov	r0, r3
+ 985 0066 4FF00001 		mov	r1, #0
+ 986 006a FFF7FEFF 		bl	__aeabi_fcmpgt
+ 987 006e 0346     		mov	r3, r0
+ 988 0070 002B     		cmp	r3, #0
+ 989 0072 03D0     		beq	.L65
+ 990              		.loc 1 339 0 is_stmt 0 discriminator 1
+ 991 0074 4FF00002 		mov	r2, #0
+ 992 0078 174B     		ldr	r3, .L66
+ 993 007a 02E0     		b	.L59
+ 994              	.L65:
+ 995              		.loc 1 339 0 discriminator 2
+ 996 007c 4FF00002 		mov	r2, #0
+ 997 0080 164B     		ldr	r3, .L66+4
+ 998              	.L59:
+ 999              		.loc 1 339 0 discriminator 3
+ 1000 0082 2046     		mov	r0, r4
+ 1001 0084 2946     		mov	r1, r5
+ 1002 0086 FFF7FEFF 		bl	__aeabi_dadd
+ 1003 008a 0246     		mov	r2, r0
+ 1004 008c 0B46     		mov	r3, r1
+ 1005 008e 1046     		mov	r0, r2
+ 1006 0090 1946     		mov	r1, r3
+ 1007 0092 FFF7FEFF 		bl	__aeabi_d2iz
+ 1008 0096 0346     		mov	r3, r0
+ 1009 0098 9BB2     		uxth	r3, r3
+ 1010 009a 3380     		strh	r3, [r6]	@ movhi
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 25
+
+
+ 340:.\math_helper.c **** 
+ 341:.\math_helper.c ****       if (pIn[i] == (float) 2.0)
+ 1011              		.loc 1 341 0 is_stmt 1 discriminator 3
+ 1012 009c 7B69     		ldr	r3, [r7, #20]
+ 1013 009e 9B00     		lsls	r3, r3, #2
+ 1014 00a0 FA68     		ldr	r2, [r7, #12]
+ 1015 00a2 1344     		add	r3, r3, r2
+ 1016 00a4 1B68     		ldr	r3, [r3]	@ float
+ 1017 00a6 1846     		mov	r0, r3
+ 1018 00a8 4FF08041 		mov	r1, #1073741824
+ 1019 00ac FFF7FEFF 		bl	__aeabi_fcmpeq
+ 1020 00b0 0346     		mov	r3, r0
+ 1021 00b2 002B     		cmp	r3, #0
+ 1022 00b4 06D0     		beq	.L60
+ 342:.\math_helper.c ****         {
+ 343:.\math_helper.c ****           pOut[i] = 0x7FFF;
+ 1023              		.loc 1 343 0
+ 1024 00b6 7B69     		ldr	r3, [r7, #20]
+ 1025 00b8 5B00     		lsls	r3, r3, #1
+ 1026 00ba BA68     		ldr	r2, [r7, #8]
+ 1027 00bc 1344     		add	r3, r3, r2
+ 1028 00be 47F6FF72 		movw	r2, #32767
+ 1029 00c2 1A80     		strh	r2, [r3]	@ movhi
+ 1030              	.L60:
+ 334:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1031              		.loc 1 334 0
+ 1032 00c4 7B69     		ldr	r3, [r7, #20]
+ 1033 00c6 0133     		adds	r3, r3, #1
+ 1034 00c8 7B61     		str	r3, [r7, #20]
+ 1035              	.L56:
+ 334:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1036              		.loc 1 334 0 is_stmt 0 discriminator 1
+ 1037 00ca 7A69     		ldr	r2, [r7, #20]
+ 1038 00cc 7B68     		ldr	r3, [r7, #4]
+ 1039 00ce 9A42     		cmp	r2, r3
+ 1040 00d0 9FD3     		bcc	.L62
+ 344:.\math_helper.c ****         }
+ 345:.\math_helper.c **** 
+ 346:.\math_helper.c ****     }
+ 347:.\math_helper.c **** 
+ 348:.\math_helper.c **** }
+ 1041              		.loc 1 348 0 is_stmt 1
+ 1042 00d2 1C37     		adds	r7, r7, #28
+ 1043 00d4 BD46     		mov	sp, r7
+ 1044              		@ sp needed
+ 1045 00d6 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1046              	.L67:
+ 1047              		.align	2
+ 1048              	.L66:
+ 1049 00d8 0000E03F 		.word	1071644672
+ 1050 00dc 0000E0BF 		.word	-1075838976
+ 1051              		.cfi_endproc
+ 1052              	.LFE128:
+ 1053              		.size	arm_float_to_q14, .-arm_float_to_q14
+ 1054              		.section	.text.arm_float_to_q30,"ax",%progbits
+ 1055              		.align	2
+ 1056              		.global	arm_float_to_q30
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 26
+
+
+ 1057              		.thumb
+ 1058              		.thumb_func
+ 1059              		.type	arm_float_to_q30, %function
+ 1060              	arm_float_to_q30:
+ 1061              	.LFB129:
+ 349:.\math_helper.c **** 
+ 350:.\math_helper.c ****  
+ 351:.\math_helper.c **** /** 
+ 352:.\math_helper.c ****  * @brief  Converts float to fixed q30 format
+ 353:.\math_helper.c ****  * @param  uint32_t 	number of samples in the buffer
+ 354:.\math_helper.c ****  * @return none
+ 355:.\math_helper.c ****  * The function converts floating point values to fixed point values 
+ 356:.\math_helper.c ****  */
+ 357:.\math_helper.c **** 
+ 358:.\math_helper.c **** void arm_float_to_q30 (float *pIn, q31_t * pOut, 
+ 359:.\math_helper.c **** 					   uint32_t numSamples)
+ 360:.\math_helper.c **** {
+ 1062              		.loc 1 360 0
+ 1063              		.cfi_startproc
+ 1064              		@ args = 0, pretend = 0, frame = 24
+ 1065              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1066 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1067              		.cfi_def_cfa_offset 20
+ 1068              		.cfi_offset 4, -20
+ 1069              		.cfi_offset 5, -16
+ 1070              		.cfi_offset 6, -12
+ 1071              		.cfi_offset 7, -8
+ 1072              		.cfi_offset 14, -4
+ 1073 0002 87B0     		sub	sp, sp, #28
+ 1074              		.cfi_def_cfa_offset 48
+ 1075 0004 00AF     		add	r7, sp, #0
+ 1076              		.cfi_def_cfa_register 7
+ 1077 0006 F860     		str	r0, [r7, #12]
+ 1078 0008 B960     		str	r1, [r7, #8]
+ 1079 000a 7A60     		str	r2, [r7, #4]
+ 361:.\math_helper.c ****   uint32_t i;
+ 362:.\math_helper.c **** 
+ 363:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1080              		.loc 1 363 0
+ 1081 000c 0023     		movs	r3, #0
+ 1082 000e 7B61     		str	r3, [r7, #20]
+ 1083 0010 58E0     		b	.L69
+ 1084              	.L75:
+ 364:.\math_helper.c ****     {
+ 365:.\math_helper.c **** 	  /* 1073741824.0f corresponds to pow(2, 30) */
+ 366:.\math_helper.c ****       pOut[i] = (q31_t) (pIn[i] * 1073741824.0f);
+ 1085              		.loc 1 366 0
+ 1086 0012 7B69     		ldr	r3, [r7, #20]
+ 1087 0014 9B00     		lsls	r3, r3, #2
+ 1088 0016 BA68     		ldr	r2, [r7, #8]
+ 1089 0018 D418     		adds	r4, r2, r3
+ 1090 001a 7B69     		ldr	r3, [r7, #20]
+ 1091 001c 9B00     		lsls	r3, r3, #2
+ 1092 001e FA68     		ldr	r2, [r7, #12]
+ 1093 0020 1344     		add	r3, r3, r2
+ 1094 0022 1B68     		ldr	r3, [r3]	@ float
+ 1095 0024 1846     		mov	r0, r3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 27
+
+
+ 1096 0026 4FF09D41 		mov	r1, #1317011456
+ 1097 002a FFF7FEFF 		bl	__aeabi_fmul
+ 1098 002e 0346     		mov	r3, r0
+ 1099 0030 1846     		mov	r0, r3
+ 1100 0032 FFF7FEFF 		bl	__aeabi_f2iz
+ 1101 0036 0346     		mov	r3, r0
+ 1102 0038 2360     		str	r3, [r4]
+ 367:.\math_helper.c **** 
+ 368:.\math_helper.c ****       pOut[i] += pIn[i] > 0 ? 0.5 : -0.5;
+ 1103              		.loc 1 368 0
+ 1104 003a 7B69     		ldr	r3, [r7, #20]
+ 1105 003c 9B00     		lsls	r3, r3, #2
+ 1106 003e BA68     		ldr	r2, [r7, #8]
+ 1107 0040 D618     		adds	r6, r2, r3
+ 1108 0042 7B69     		ldr	r3, [r7, #20]
+ 1109 0044 9B00     		lsls	r3, r3, #2
+ 1110 0046 BA68     		ldr	r2, [r7, #8]
+ 1111 0048 1344     		add	r3, r3, r2
+ 1112 004a 1B68     		ldr	r3, [r3]
+ 1113 004c 1846     		mov	r0, r3
+ 1114 004e FFF7FEFF 		bl	__aeabi_i2d
+ 1115 0052 0446     		mov	r4, r0
+ 1116 0054 0D46     		mov	r5, r1
+ 1117 0056 7B69     		ldr	r3, [r7, #20]
+ 1118 0058 9B00     		lsls	r3, r3, #2
+ 1119 005a FA68     		ldr	r2, [r7, #12]
+ 1120 005c 1344     		add	r3, r3, r2
+ 1121 005e 1B68     		ldr	r3, [r3]	@ float
+ 1122 0060 1846     		mov	r0, r3
+ 1123 0062 4FF00001 		mov	r1, #0
+ 1124 0066 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 1125 006a 0346     		mov	r3, r0
+ 1126 006c 002B     		cmp	r3, #0
+ 1127 006e 03D0     		beq	.L78
+ 1128              		.loc 1 368 0 is_stmt 0 discriminator 1
+ 1129 0070 4FF00002 		mov	r2, #0
+ 1130 0074 174B     		ldr	r3, .L79
+ 1131 0076 02E0     		b	.L72
+ 1132              	.L78:
+ 1133              		.loc 1 368 0 discriminator 2
+ 1134 0078 4FF00002 		mov	r2, #0
+ 1135 007c 164B     		ldr	r3, .L79+4
+ 1136              	.L72:
+ 1137              		.loc 1 368 0 discriminator 3
+ 1138 007e 2046     		mov	r0, r4
+ 1139 0080 2946     		mov	r1, r5
+ 1140 0082 FFF7FEFF 		bl	__aeabi_dadd
+ 1141 0086 0246     		mov	r2, r0
+ 1142 0088 0B46     		mov	r3, r1
+ 1143 008a 1046     		mov	r0, r2
+ 1144 008c 1946     		mov	r1, r3
+ 1145 008e FFF7FEFF 		bl	__aeabi_d2iz
+ 1146 0092 0346     		mov	r3, r0
+ 1147 0094 3360     		str	r3, [r6]
+ 369:.\math_helper.c **** 
+ 370:.\math_helper.c ****       if (pIn[i] == (float) 2.0)
+ 1148              		.loc 1 370 0 is_stmt 1 discriminator 3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 28
+
+
+ 1149 0096 7B69     		ldr	r3, [r7, #20]
+ 1150 0098 9B00     		lsls	r3, r3, #2
+ 1151 009a FA68     		ldr	r2, [r7, #12]
+ 1152 009c 1344     		add	r3, r3, r2
+ 1153 009e 1B68     		ldr	r3, [r3]	@ float
+ 1154 00a0 1846     		mov	r0, r3
+ 1155 00a2 4FF08041 		mov	r1, #1073741824
+ 1156 00a6 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 1157 00aa 0346     		mov	r3, r0
+ 1158 00ac 002B     		cmp	r3, #0
+ 1159 00ae 06D0     		beq	.L73
+ 371:.\math_helper.c ****         {
+ 372:.\math_helper.c ****           pOut[i] = 0x7FFFFFFF;
+ 1160              		.loc 1 372 0
+ 1161 00b0 7B69     		ldr	r3, [r7, #20]
+ 1162 00b2 9B00     		lsls	r3, r3, #2
+ 1163 00b4 BA68     		ldr	r2, [r7, #8]
+ 1164 00b6 1344     		add	r3, r3, r2
+ 1165 00b8 6FF00042 		mvn	r2, #-2147483648
+ 1166 00bc 1A60     		str	r2, [r3]
+ 1167              	.L73:
+ 363:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1168              		.loc 1 363 0
+ 1169 00be 7B69     		ldr	r3, [r7, #20]
+ 1170 00c0 0133     		adds	r3, r3, #1
+ 1171 00c2 7B61     		str	r3, [r7, #20]
+ 1172              	.L69:
+ 363:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1173              		.loc 1 363 0 is_stmt 0 discriminator 1
+ 1174 00c4 7A69     		ldr	r2, [r7, #20]
+ 1175 00c6 7B68     		ldr	r3, [r7, #4]
+ 1176 00c8 9A42     		cmp	r2, r3
+ 1177 00ca A2D3     		bcc	.L75
+ 373:.\math_helper.c ****         }
+ 374:.\math_helper.c ****     }
+ 375:.\math_helper.c **** }
+ 1178              		.loc 1 375 0 is_stmt 1
+ 1179 00cc 1C37     		adds	r7, r7, #28
+ 1180 00ce BD46     		mov	sp, r7
+ 1181              		@ sp needed
+ 1182 00d0 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1183              	.L80:
+ 1184 00d2 00BF     		.align	2
+ 1185              	.L79:
+ 1186 00d4 0000E03F 		.word	1071644672
+ 1187 00d8 0000E0BF 		.word	-1075838976
+ 1188              		.cfi_endproc
+ 1189              	.LFE129:
+ 1190              		.size	arm_float_to_q30, .-arm_float_to_q30
+ 1191              		.section	.text.arm_float_to_q29,"ax",%progbits
+ 1192              		.align	2
+ 1193              		.global	arm_float_to_q29
+ 1194              		.thumb
+ 1195              		.thumb_func
+ 1196              		.type	arm_float_to_q29, %function
+ 1197              	arm_float_to_q29:
+ 1198              	.LFB130:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 29
+
+
+ 376:.\math_helper.c **** 
+ 377:.\math_helper.c **** /** 
+ 378:.\math_helper.c ****  * @brief  Converts float to fixed q30 format
+ 379:.\math_helper.c ****  * @param  uint32_t 	number of samples in the buffer
+ 380:.\math_helper.c ****  * @return none
+ 381:.\math_helper.c ****  * The function converts floating point values to fixed point values 
+ 382:.\math_helper.c ****  */
+ 383:.\math_helper.c **** 
+ 384:.\math_helper.c **** void arm_float_to_q29 (float *pIn, q31_t * pOut, 
+ 385:.\math_helper.c **** 					   uint32_t numSamples)
+ 386:.\math_helper.c **** {
+ 1199              		.loc 1 386 0
+ 1200              		.cfi_startproc
+ 1201              		@ args = 0, pretend = 0, frame = 24
+ 1202              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1203 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1204              		.cfi_def_cfa_offset 20
+ 1205              		.cfi_offset 4, -20
+ 1206              		.cfi_offset 5, -16
+ 1207              		.cfi_offset 6, -12
+ 1208              		.cfi_offset 7, -8
+ 1209              		.cfi_offset 14, -4
+ 1210 0002 87B0     		sub	sp, sp, #28
+ 1211              		.cfi_def_cfa_offset 48
+ 1212 0004 00AF     		add	r7, sp, #0
+ 1213              		.cfi_def_cfa_register 7
+ 1214 0006 F860     		str	r0, [r7, #12]
+ 1215 0008 B960     		str	r1, [r7, #8]
+ 1216 000a 7A60     		str	r2, [r7, #4]
+ 387:.\math_helper.c ****   uint32_t i;
+ 388:.\math_helper.c **** 
+ 389:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1217              		.loc 1 389 0
+ 1218 000c 0023     		movs	r3, #0
+ 1219 000e 7B61     		str	r3, [r7, #20]
+ 1220 0010 58E0     		b	.L82
+ 1221              	.L88:
+ 390:.\math_helper.c ****     {
+ 391:.\math_helper.c **** 	  /* 1073741824.0f corresponds to pow(2, 30) */
+ 392:.\math_helper.c ****       pOut[i] = (q31_t) (pIn[i] * 536870912.0f);
+ 1222              		.loc 1 392 0
+ 1223 0012 7B69     		ldr	r3, [r7, #20]
+ 1224 0014 9B00     		lsls	r3, r3, #2
+ 1225 0016 BA68     		ldr	r2, [r7, #8]
+ 1226 0018 D418     		adds	r4, r2, r3
+ 1227 001a 7B69     		ldr	r3, [r7, #20]
+ 1228 001c 9B00     		lsls	r3, r3, #2
+ 1229 001e FA68     		ldr	r2, [r7, #12]
+ 1230 0020 1344     		add	r3, r3, r2
+ 1231 0022 1B68     		ldr	r3, [r3]	@ float
+ 1232 0024 1846     		mov	r0, r3
+ 1233 0026 4FF09C41 		mov	r1, #1308622848
+ 1234 002a FFF7FEFF 		bl	__aeabi_fmul
+ 1235 002e 0346     		mov	r3, r0
+ 1236 0030 1846     		mov	r0, r3
+ 1237 0032 FFF7FEFF 		bl	__aeabi_f2iz
+ 1238 0036 0346     		mov	r3, r0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 30
+
+
+ 1239 0038 2360     		str	r3, [r4]
+ 393:.\math_helper.c **** 
+ 394:.\math_helper.c ****       pOut[i] += pIn[i] > 0 ? 0.5 : -0.5;
+ 1240              		.loc 1 394 0
+ 1241 003a 7B69     		ldr	r3, [r7, #20]
+ 1242 003c 9B00     		lsls	r3, r3, #2
+ 1243 003e BA68     		ldr	r2, [r7, #8]
+ 1244 0040 D618     		adds	r6, r2, r3
+ 1245 0042 7B69     		ldr	r3, [r7, #20]
+ 1246 0044 9B00     		lsls	r3, r3, #2
+ 1247 0046 BA68     		ldr	r2, [r7, #8]
+ 1248 0048 1344     		add	r3, r3, r2
+ 1249 004a 1B68     		ldr	r3, [r3]
+ 1250 004c 1846     		mov	r0, r3
+ 1251 004e FFF7FEFF 		bl	__aeabi_i2d
+ 1252 0052 0446     		mov	r4, r0
+ 1253 0054 0D46     		mov	r5, r1
+ 1254 0056 7B69     		ldr	r3, [r7, #20]
+ 1255 0058 9B00     		lsls	r3, r3, #2
+ 1256 005a FA68     		ldr	r2, [r7, #12]
+ 1257 005c 1344     		add	r3, r3, r2
+ 1258 005e 1B68     		ldr	r3, [r3]	@ float
+ 1259 0060 1846     		mov	r0, r3
+ 1260 0062 4FF00001 		mov	r1, #0
+ 1261 0066 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 1262 006a 0346     		mov	r3, r0
+ 1263 006c 002B     		cmp	r3, #0
+ 1264 006e 03D0     		beq	.L91
+ 1265              		.loc 1 394 0 is_stmt 0 discriminator 1
+ 1266 0070 4FF00002 		mov	r2, #0
+ 1267 0074 174B     		ldr	r3, .L92
+ 1268 0076 02E0     		b	.L85
+ 1269              	.L91:
+ 1270              		.loc 1 394 0 discriminator 2
+ 1271 0078 4FF00002 		mov	r2, #0
+ 1272 007c 164B     		ldr	r3, .L92+4
+ 1273              	.L85:
+ 1274              		.loc 1 394 0 discriminator 3
+ 1275 007e 2046     		mov	r0, r4
+ 1276 0080 2946     		mov	r1, r5
+ 1277 0082 FFF7FEFF 		bl	__aeabi_dadd
+ 1278 0086 0246     		mov	r2, r0
+ 1279 0088 0B46     		mov	r3, r1
+ 1280 008a 1046     		mov	r0, r2
+ 1281 008c 1946     		mov	r1, r3
+ 1282 008e FFF7FEFF 		bl	__aeabi_d2iz
+ 1283 0092 0346     		mov	r3, r0
+ 1284 0094 3360     		str	r3, [r6]
+ 395:.\math_helper.c **** 
+ 396:.\math_helper.c ****       if (pIn[i] == (float) 4.0)
+ 1285              		.loc 1 396 0 is_stmt 1 discriminator 3
+ 1286 0096 7B69     		ldr	r3, [r7, #20]
+ 1287 0098 9B00     		lsls	r3, r3, #2
+ 1288 009a FA68     		ldr	r2, [r7, #12]
+ 1289 009c 1344     		add	r3, r3, r2
+ 1290 009e 1B68     		ldr	r3, [r3]	@ float
+ 1291 00a0 1846     		mov	r0, r3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 31
+
+
+ 1292 00a2 4FF08141 		mov	r1, #1082130432
+ 1293 00a6 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 1294 00aa 0346     		mov	r3, r0
+ 1295 00ac 002B     		cmp	r3, #0
+ 1296 00ae 06D0     		beq	.L86
+ 397:.\math_helper.c ****         {
+ 398:.\math_helper.c ****           pOut[i] = 0x7FFFFFFF;
+ 1297              		.loc 1 398 0
+ 1298 00b0 7B69     		ldr	r3, [r7, #20]
+ 1299 00b2 9B00     		lsls	r3, r3, #2
+ 1300 00b4 BA68     		ldr	r2, [r7, #8]
+ 1301 00b6 1344     		add	r3, r3, r2
+ 1302 00b8 6FF00042 		mvn	r2, #-2147483648
+ 1303 00bc 1A60     		str	r2, [r3]
+ 1304              	.L86:
+ 389:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1305              		.loc 1 389 0
+ 1306 00be 7B69     		ldr	r3, [r7, #20]
+ 1307 00c0 0133     		adds	r3, r3, #1
+ 1308 00c2 7B61     		str	r3, [r7, #20]
+ 1309              	.L82:
+ 389:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1310              		.loc 1 389 0 is_stmt 0 discriminator 1
+ 1311 00c4 7A69     		ldr	r2, [r7, #20]
+ 1312 00c6 7B68     		ldr	r3, [r7, #4]
+ 1313 00c8 9A42     		cmp	r2, r3
+ 1314 00ca A2D3     		bcc	.L88
+ 399:.\math_helper.c ****         }
+ 400:.\math_helper.c ****     }
+ 401:.\math_helper.c **** }
+ 1315              		.loc 1 401 0 is_stmt 1
+ 1316 00cc 1C37     		adds	r7, r7, #28
+ 1317 00ce BD46     		mov	sp, r7
+ 1318              		@ sp needed
+ 1319 00d0 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1320              	.L93:
+ 1321 00d2 00BF     		.align	2
+ 1322              	.L92:
+ 1323 00d4 0000E03F 		.word	1071644672
+ 1324 00d8 0000E0BF 		.word	-1075838976
+ 1325              		.cfi_endproc
+ 1326              	.LFE130:
+ 1327              		.size	arm_float_to_q29, .-arm_float_to_q29
+ 1328              		.section	.text.arm_float_to_q28,"ax",%progbits
+ 1329              		.align	2
+ 1330              		.global	arm_float_to_q28
+ 1331              		.thumb
+ 1332              		.thumb_func
+ 1333              		.type	arm_float_to_q28, %function
+ 1334              	arm_float_to_q28:
+ 1335              	.LFB131:
+ 402:.\math_helper.c **** 
+ 403:.\math_helper.c **** 
+ 404:.\math_helper.c **** /** 
+ 405:.\math_helper.c ****  * @brief  Converts float to fixed q28 format
+ 406:.\math_helper.c ****  * @param  uint32_t 	number of samples in the buffer
+ 407:.\math_helper.c ****  * @return none
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 32
+
+
+ 408:.\math_helper.c ****  * The function converts floating point values to fixed point values 
+ 409:.\math_helper.c ****  */
+ 410:.\math_helper.c **** 
+ 411:.\math_helper.c **** void arm_float_to_q28 (float *pIn, q31_t * pOut, 
+ 412:.\math_helper.c ****                        uint32_t numSamples)
+ 413:.\math_helper.c **** {
+ 1336              		.loc 1 413 0
+ 1337              		.cfi_startproc
+ 1338              		@ args = 0, pretend = 0, frame = 24
+ 1339              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1340 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1341              		.cfi_def_cfa_offset 20
+ 1342              		.cfi_offset 4, -20
+ 1343              		.cfi_offset 5, -16
+ 1344              		.cfi_offset 6, -12
+ 1345              		.cfi_offset 7, -8
+ 1346              		.cfi_offset 14, -4
+ 1347 0002 87B0     		sub	sp, sp, #28
+ 1348              		.cfi_def_cfa_offset 48
+ 1349 0004 00AF     		add	r7, sp, #0
+ 1350              		.cfi_def_cfa_register 7
+ 1351 0006 F860     		str	r0, [r7, #12]
+ 1352 0008 B960     		str	r1, [r7, #8]
+ 1353 000a 7A60     		str	r2, [r7, #4]
+ 414:.\math_helper.c ****   uint32_t i;
+ 415:.\math_helper.c **** 
+ 416:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1354              		.loc 1 416 0
+ 1355 000c 0023     		movs	r3, #0
+ 1356 000e 7B61     		str	r3, [r7, #20]
+ 1357 0010 58E0     		b	.L95
+ 1358              	.L101:
+ 417:.\math_helper.c ****     {
+ 418:.\math_helper.c **** 	/* 268435456.0f corresponds to pow(2, 28) */
+ 419:.\math_helper.c ****       pOut[i] = (q31_t) (pIn[i] * 268435456.0f);
+ 1359              		.loc 1 419 0
+ 1360 0012 7B69     		ldr	r3, [r7, #20]
+ 1361 0014 9B00     		lsls	r3, r3, #2
+ 1362 0016 BA68     		ldr	r2, [r7, #8]
+ 1363 0018 D418     		adds	r4, r2, r3
+ 1364 001a 7B69     		ldr	r3, [r7, #20]
+ 1365 001c 9B00     		lsls	r3, r3, #2
+ 1366 001e FA68     		ldr	r2, [r7, #12]
+ 1367 0020 1344     		add	r3, r3, r2
+ 1368 0022 1B68     		ldr	r3, [r3]	@ float
+ 1369 0024 1846     		mov	r0, r3
+ 1370 0026 4FF09B41 		mov	r1, #1300234240
+ 1371 002a FFF7FEFF 		bl	__aeabi_fmul
+ 1372 002e 0346     		mov	r3, r0
+ 1373 0030 1846     		mov	r0, r3
+ 1374 0032 FFF7FEFF 		bl	__aeabi_f2iz
+ 1375 0036 0346     		mov	r3, r0
+ 1376 0038 2360     		str	r3, [r4]
+ 420:.\math_helper.c **** 
+ 421:.\math_helper.c ****       pOut[i] += pIn[i] > 0 ? 0.5 : -0.5;
+ 1377              		.loc 1 421 0
+ 1378 003a 7B69     		ldr	r3, [r7, #20]
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 33
+
+
+ 1379 003c 9B00     		lsls	r3, r3, #2
+ 1380 003e BA68     		ldr	r2, [r7, #8]
+ 1381 0040 D618     		adds	r6, r2, r3
+ 1382 0042 7B69     		ldr	r3, [r7, #20]
+ 1383 0044 9B00     		lsls	r3, r3, #2
+ 1384 0046 BA68     		ldr	r2, [r7, #8]
+ 1385 0048 1344     		add	r3, r3, r2
+ 1386 004a 1B68     		ldr	r3, [r3]
+ 1387 004c 1846     		mov	r0, r3
+ 1388 004e FFF7FEFF 		bl	__aeabi_i2d
+ 1389 0052 0446     		mov	r4, r0
+ 1390 0054 0D46     		mov	r5, r1
+ 1391 0056 7B69     		ldr	r3, [r7, #20]
+ 1392 0058 9B00     		lsls	r3, r3, #2
+ 1393 005a FA68     		ldr	r2, [r7, #12]
+ 1394 005c 1344     		add	r3, r3, r2
+ 1395 005e 1B68     		ldr	r3, [r3]	@ float
+ 1396 0060 1846     		mov	r0, r3
+ 1397 0062 4FF00001 		mov	r1, #0
+ 1398 0066 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 1399 006a 0346     		mov	r3, r0
+ 1400 006c 002B     		cmp	r3, #0
+ 1401 006e 03D0     		beq	.L104
+ 1402              		.loc 1 421 0 is_stmt 0 discriminator 1
+ 1403 0070 4FF00002 		mov	r2, #0
+ 1404 0074 174B     		ldr	r3, .L105
+ 1405 0076 02E0     		b	.L98
+ 1406              	.L104:
+ 1407              		.loc 1 421 0 discriminator 2
+ 1408 0078 4FF00002 		mov	r2, #0
+ 1409 007c 164B     		ldr	r3, .L105+4
+ 1410              	.L98:
+ 1411              		.loc 1 421 0 discriminator 3
+ 1412 007e 2046     		mov	r0, r4
+ 1413 0080 2946     		mov	r1, r5
+ 1414 0082 FFF7FEFF 		bl	__aeabi_dadd
+ 1415 0086 0246     		mov	r2, r0
+ 1416 0088 0B46     		mov	r3, r1
+ 1417 008a 1046     		mov	r0, r2
+ 1418 008c 1946     		mov	r1, r3
+ 1419 008e FFF7FEFF 		bl	__aeabi_d2iz
+ 1420 0092 0346     		mov	r3, r0
+ 1421 0094 3360     		str	r3, [r6]
+ 422:.\math_helper.c **** 
+ 423:.\math_helper.c ****       if (pIn[i] == (float) 8.0)
+ 1422              		.loc 1 423 0 is_stmt 1 discriminator 3
+ 1423 0096 7B69     		ldr	r3, [r7, #20]
+ 1424 0098 9B00     		lsls	r3, r3, #2
+ 1425 009a FA68     		ldr	r2, [r7, #12]
+ 1426 009c 1344     		add	r3, r3, r2
+ 1427 009e 1B68     		ldr	r3, [r3]	@ float
+ 1428 00a0 1846     		mov	r0, r3
+ 1429 00a2 4FF08241 		mov	r1, #1090519040
+ 1430 00a6 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 1431 00aa 0346     		mov	r3, r0
+ 1432 00ac 002B     		cmp	r3, #0
+ 1433 00ae 06D0     		beq	.L99
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 34
+
+
+ 424:.\math_helper.c ****         {
+ 425:.\math_helper.c ****           pOut[i] = 0x7FFFFFFF;
+ 1434              		.loc 1 425 0
+ 1435 00b0 7B69     		ldr	r3, [r7, #20]
+ 1436 00b2 9B00     		lsls	r3, r3, #2
+ 1437 00b4 BA68     		ldr	r2, [r7, #8]
+ 1438 00b6 1344     		add	r3, r3, r2
+ 1439 00b8 6FF00042 		mvn	r2, #-2147483648
+ 1440 00bc 1A60     		str	r2, [r3]
+ 1441              	.L99:
+ 416:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1442              		.loc 1 416 0
+ 1443 00be 7B69     		ldr	r3, [r7, #20]
+ 1444 00c0 0133     		adds	r3, r3, #1
+ 1445 00c2 7B61     		str	r3, [r7, #20]
+ 1446              	.L95:
+ 416:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1447              		.loc 1 416 0 is_stmt 0 discriminator 1
+ 1448 00c4 7A69     		ldr	r2, [r7, #20]
+ 1449 00c6 7B68     		ldr	r3, [r7, #4]
+ 1450 00c8 9A42     		cmp	r2, r3
+ 1451 00ca A2D3     		bcc	.L101
+ 426:.\math_helper.c ****         }
+ 427:.\math_helper.c ****     }
+ 428:.\math_helper.c **** }
+ 1452              		.loc 1 428 0 is_stmt 1
+ 1453 00cc 1C37     		adds	r7, r7, #28
+ 1454 00ce BD46     		mov	sp, r7
+ 1455              		@ sp needed
+ 1456 00d0 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1457              	.L106:
+ 1458 00d2 00BF     		.align	2
+ 1459              	.L105:
+ 1460 00d4 0000E03F 		.word	1071644672
+ 1461 00d8 0000E0BF 		.word	-1075838976
+ 1462              		.cfi_endproc
+ 1463              	.LFE131:
+ 1464              		.size	arm_float_to_q28, .-arm_float_to_q28
+ 1465              		.global	__aeabi_fcmplt
+ 1466              		.section	.text.arm_clip_f32,"ax",%progbits
+ 1467              		.align	2
+ 1468              		.global	arm_clip_f32
+ 1469              		.thumb
+ 1470              		.thumb_func
+ 1471              		.type	arm_clip_f32, %function
+ 1472              	arm_clip_f32:
+ 1473              	.LFB132:
+ 429:.\math_helper.c **** 
+ 430:.\math_helper.c **** /** 
+ 431:.\math_helper.c ****  * @brief  Clip the float values to +/- 1 
+ 432:.\math_helper.c ****  * @param  pIn 	input buffer
+ 433:.\math_helper.c ****  * @param  numSamples 	number of samples in the buffer
+ 434:.\math_helper.c ****  * @return none
+ 435:.\math_helper.c ****  * The function converts floating point values to fixed point values 
+ 436:.\math_helper.c ****  */
+ 437:.\math_helper.c **** 
+ 438:.\math_helper.c **** void arm_clip_f32 (float *pIn, uint32_t numSamples)
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 35
+
+
+ 439:.\math_helper.c **** {
+ 1474              		.loc 1 439 0
+ 1475              		.cfi_startproc
+ 1476              		@ args = 0, pretend = 0, frame = 16
+ 1477              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1478 0000 80B5     		push	{r7, lr}
+ 1479              		.cfi_def_cfa_offset 8
+ 1480              		.cfi_offset 7, -8
+ 1481              		.cfi_offset 14, -4
+ 1482 0002 84B0     		sub	sp, sp, #16
+ 1483              		.cfi_def_cfa_offset 24
+ 1484 0004 00AF     		add	r7, sp, #0
+ 1485              		.cfi_def_cfa_register 7
+ 1486 0006 7860     		str	r0, [r7, #4]
+ 1487 0008 3960     		str	r1, [r7]
+ 440:.\math_helper.c ****   uint32_t i;
+ 441:.\math_helper.c **** 
+ 442:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1488              		.loc 1 442 0
+ 1489 000a 0023     		movs	r3, #0
+ 1490 000c FB60     		str	r3, [r7, #12]
+ 1491 000e 29E0     		b	.L108
+ 1492              	.L113:
+ 443:.\math_helper.c ****     {
+ 444:.\math_helper.c ****       if(pIn[i] > 1.0f)
+ 1493              		.loc 1 444 0
+ 1494 0010 FB68     		ldr	r3, [r7, #12]
+ 1495 0012 9B00     		lsls	r3, r3, #2
+ 1496 0014 7A68     		ldr	r2, [r7, #4]
+ 1497 0016 1344     		add	r3, r3, r2
+ 1498 0018 1B68     		ldr	r3, [r3]	@ float
+ 1499 001a 1846     		mov	r0, r3
+ 1500 001c 4FF07E51 		mov	r1, #1065353216
+ 1501 0020 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 1502 0024 0346     		mov	r3, r0
+ 1503 0026 002B     		cmp	r3, #0
+ 1504 0028 07D0     		beq	.L116
+ 445:.\math_helper.c **** 	  {
+ 446:.\math_helper.c **** 	    pIn[i] = 1.0;
+ 1505              		.loc 1 446 0
+ 1506 002a FB68     		ldr	r3, [r7, #12]
+ 1507 002c 9B00     		lsls	r3, r3, #2
+ 1508 002e 7A68     		ldr	r2, [r7, #4]
+ 1509 0030 1344     		add	r3, r3, r2
+ 1510 0032 4FF07E52 		mov	r2, #1065353216
+ 1511 0036 1A60     		str	r2, [r3]	@ float
+ 1512 0038 11E0     		b	.L111
+ 1513              	.L116:
+ 447:.\math_helper.c **** 	  }
+ 448:.\math_helper.c **** 	  else if( pIn[i] < -1.0f)
+ 1514              		.loc 1 448 0
+ 1515 003a FB68     		ldr	r3, [r7, #12]
+ 1516 003c 9B00     		lsls	r3, r3, #2
+ 1517 003e 7A68     		ldr	r2, [r7, #4]
+ 1518 0040 1344     		add	r3, r3, r2
+ 1519 0042 1B68     		ldr	r3, [r3]	@ float
+ 1520 0044 1846     		mov	r0, r3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 36
+
+
+ 1521 0046 0B49     		ldr	r1, .L117
+ 1522 0048 FFF7FEFF 		bl	__aeabi_fcmplt
+ 1523 004c 0346     		mov	r3, r0
+ 1524 004e 002B     		cmp	r3, #0
+ 1525 0050 05D0     		beq	.L111
+ 449:.\math_helper.c **** 	  {
+ 450:.\math_helper.c **** 	    pIn[i] = -1.0;
+ 1526              		.loc 1 450 0
+ 1527 0052 FB68     		ldr	r3, [r7, #12]
+ 1528 0054 9B00     		lsls	r3, r3, #2
+ 1529 0056 7A68     		ldr	r2, [r7, #4]
+ 1530 0058 1344     		add	r3, r3, r2
+ 1531 005a 064A     		ldr	r2, .L117
+ 1532 005c 1A60     		str	r2, [r3]	@ float
+ 1533              	.L111:
+ 442:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1534              		.loc 1 442 0
+ 1535 005e FB68     		ldr	r3, [r7, #12]
+ 1536 0060 0133     		adds	r3, r3, #1
+ 1537 0062 FB60     		str	r3, [r7, #12]
+ 1538              	.L108:
+ 442:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
+ 1539              		.loc 1 442 0 is_stmt 0 discriminator 1
+ 1540 0064 FA68     		ldr	r2, [r7, #12]
+ 1541 0066 3B68     		ldr	r3, [r7]
+ 1542 0068 9A42     		cmp	r2, r3
+ 1543 006a D1D3     		bcc	.L113
+ 451:.\math_helper.c **** 	  }
+ 452:.\math_helper.c **** 	       
+ 453:.\math_helper.c ****     }
+ 454:.\math_helper.c **** }
+ 1544              		.loc 1 454 0 is_stmt 1
+ 1545 006c 1037     		adds	r7, r7, #16
+ 1546 006e BD46     		mov	sp, r7
+ 1547              		@ sp needed
+ 1548 0070 80BD     		pop	{r7, pc}
+ 1549              	.L118:
+ 1550 0072 00BF     		.align	2
+ 1551              	.L117:
+ 1552 0074 000080BF 		.word	-1082130432
+ 1553              		.cfi_endproc
+ 1554              	.LFE132:
+ 1555              		.size	arm_clip_f32, .-arm_clip_f32
+ 1556              		.text
+ 1557              	.Letext0:
+ 1558              		.file 2 "c:\\program files\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.4\\arm
+ 1559              		.file 3 "c:\\program files\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.4\\arm
+ 1560              		.file 4 "..\\..\\CMSIS_project\\CMSIS_project.cydsn\\CMSISfile\\CMSIS\\Include/arm_math.h"
+ 1561              		.file 5 "..\\..\\CMSIS_project\\CMSIS_project.cydsn\\CMSISfile\\CMSIS\\Include/core_cm3.h"
+ 1562              		.section	.debug_info,"",%progbits
+ 1563              	.Ldebug_info0:
+ 1564 0000 63060000 		.4byte	0x663
+ 1565 0004 0400     		.2byte	0x4
+ 1566 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1567 000a 04       		.byte	0x4
+ 1568 000b 01       		.uleb128 0x1
+ 1569 000c 8D010000 		.4byte	.LASF58
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 37
+
+
+ 1570 0010 01       		.byte	0x1
+ 1571 0011 6A000000 		.4byte	.LASF59
+ 1572 0015 11030000 		.4byte	.LASF60
+ 1573 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1574 001d 00000000 		.4byte	0
+ 1575 0021 00000000 		.4byte	.Ldebug_line0
+ 1576 0025 02       		.uleb128 0x2
+ 1577 0026 04       		.byte	0x4
+ 1578 0027 05       		.byte	0x5
+ 1579 0028 696E7400 		.ascii	"int\000"
+ 1580 002c 03       		.uleb128 0x3
+ 1581 002d 04       		.byte	0x4
+ 1582 002e 07       		.byte	0x7
+ 1583 002f 75010000 		.4byte	.LASF0
+ 1584 0033 04       		.uleb128 0x4
+ 1585 0034 3D020000 		.4byte	.LASF3
+ 1586 0038 02       		.byte	0x2
+ 1587 0039 1B       		.byte	0x1b
+ 1588 003a 3E000000 		.4byte	0x3e
+ 1589 003e 03       		.uleb128 0x3
+ 1590 003f 01       		.byte	0x1
+ 1591 0040 06       		.byte	0x6
+ 1592 0041 41010000 		.4byte	.LASF1
+ 1593 0045 03       		.uleb128 0x3
+ 1594 0046 01       		.byte	0x1
+ 1595 0047 08       		.byte	0x8
+ 1596 0048 33010000 		.4byte	.LASF2
+ 1597 004c 04       		.uleb128 0x4
+ 1598 004d 6F030000 		.4byte	.LASF4
+ 1599 0051 02       		.byte	0x2
+ 1600 0052 25       		.byte	0x25
+ 1601 0053 57000000 		.4byte	0x57
+ 1602 0057 03       		.uleb128 0x3
+ 1603 0058 02       		.byte	0x2
+ 1604 0059 05       		.byte	0x5
+ 1605 005a 21000000 		.4byte	.LASF5
+ 1606 005e 03       		.uleb128 0x3
+ 1607 005f 02       		.byte	0x2
+ 1608 0060 07       		.byte	0x7
+ 1609 0061 2A020000 		.4byte	.LASF6
+ 1610 0065 04       		.uleb128 0x4
+ 1611 0066 07030000 		.4byte	.LASF7
+ 1612 006a 02       		.byte	0x2
+ 1613 006b 37       		.byte	0x37
+ 1614 006c 70000000 		.4byte	0x70
+ 1615 0070 03       		.uleb128 0x3
+ 1616 0071 04       		.byte	0x4
+ 1617 0072 05       		.byte	0x5
+ 1618 0073 F6000000 		.4byte	.LASF8
+ 1619 0077 04       		.uleb128 0x4
+ 1620 0078 5F000000 		.4byte	.LASF9
+ 1621 007c 02       		.byte	0x2
+ 1622 007d 38       		.byte	0x38
+ 1623 007e 82000000 		.4byte	0x82
+ 1624 0082 03       		.uleb128 0x3
+ 1625 0083 04       		.byte	0x4
+ 1626 0084 07       		.byte	0x7
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 38
+
+
+ 1627 0085 A9020000 		.4byte	.LASF10
+ 1628 0089 03       		.uleb128 0x3
+ 1629 008a 08       		.byte	0x8
+ 1630 008b 05       		.byte	0x5
+ 1631 008c D4000000 		.4byte	.LASF11
+ 1632 0090 03       		.uleb128 0x3
+ 1633 0091 08       		.byte	0x8
+ 1634 0092 07       		.byte	0x7
+ 1635 0093 55010000 		.4byte	.LASF12
+ 1636 0097 03       		.uleb128 0x3
+ 1637 0098 04       		.byte	0x4
+ 1638 0099 07       		.byte	0x7
+ 1639 009a 85030000 		.4byte	.LASF13
+ 1640 009e 03       		.uleb128 0x3
+ 1641 009f 01       		.byte	0x1
+ 1642 00a0 08       		.byte	0x8
+ 1643 00a1 46020000 		.4byte	.LASF14
+ 1644 00a5 03       		.uleb128 0x3
+ 1645 00a6 08       		.byte	0x8
+ 1646 00a7 04       		.byte	0x4
+ 1647 00a8 9F030000 		.4byte	.LASF15
+ 1648 00ac 03       		.uleb128 0x3
+ 1649 00ad 04       		.byte	0x4
+ 1650 00ae 04       		.byte	0x4
+ 1651 00af B8000000 		.4byte	.LASF16
+ 1652 00b3 03       		.uleb128 0x3
+ 1653 00b4 08       		.byte	0x8
+ 1654 00b5 04       		.byte	0x4
+ 1655 00b6 27010000 		.4byte	.LASF17
+ 1656 00ba 04       		.uleb128 0x4
+ 1657 00bb 0C000000 		.4byte	.LASF18
+ 1658 00bf 03       		.byte	0x3
+ 1659 00c0 29       		.byte	0x29
+ 1660 00c1 33000000 		.4byte	0x33
+ 1661 00c5 04       		.uleb128 0x4
+ 1662 00c6 79020000 		.4byte	.LASF19
+ 1663 00ca 03       		.byte	0x3
+ 1664 00cb 35       		.byte	0x35
+ 1665 00cc 4C000000 		.4byte	0x4c
+ 1666 00d0 04       		.uleb128 0x4
+ 1667 00d1 4D010000 		.4byte	.LASF20
+ 1668 00d5 03       		.byte	0x3
+ 1669 00d6 41       		.byte	0x41
+ 1670 00d7 65000000 		.4byte	0x65
+ 1671 00db 04       		.uleb128 0x4
+ 1672 00dc 6C010000 		.4byte	.LASF21
+ 1673 00e0 03       		.byte	0x3
+ 1674 00e1 42       		.byte	0x42
+ 1675 00e2 77000000 		.4byte	0x77
+ 1676 00e6 05       		.uleb128 0x5
+ 1677 00e7 1A010000 		.4byte	.LASF22
+ 1678 00eb 04       		.byte	0x4
+ 1679 00ec 7C01     		.2byte	0x17c
+ 1680 00ee BA000000 		.4byte	0xba
+ 1681 00f2 05       		.uleb128 0x5
+ 1682 00f3 06000000 		.4byte	.LASF23
+ 1683 00f7 04       		.byte	0x4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 39
+
+
+ 1684 00f8 8101     		.2byte	0x181
+ 1685 00fa C5000000 		.4byte	0xc5
+ 1686 00fe 05       		.uleb128 0x5
+ 1687 00ff 00000000 		.4byte	.LASF24
+ 1688 0103 04       		.byte	0x4
+ 1689 0104 8601     		.2byte	0x186
+ 1690 0106 D0000000 		.4byte	0xd0
+ 1691 010a 05       		.uleb128 0x5
+ 1692 010b 10010000 		.4byte	.LASF25
+ 1693 010f 04       		.byte	0x4
+ 1694 0110 9001     		.2byte	0x190
+ 1695 0112 AC000000 		.4byte	0xac
+ 1696 0116 06       		.uleb128 0x6
+ 1697 0117 04       		.byte	0x4
+ 1698 0118 E6000000 		.4byte	0xe6
+ 1699 011c 06       		.uleb128 0x6
+ 1700 011d 04       		.byte	0x4
+ 1701 011e F2000000 		.4byte	0xf2
+ 1702 0122 06       		.uleb128 0x6
+ 1703 0123 04       		.byte	0x4
+ 1704 0124 FE000000 		.4byte	0xfe
+ 1705 0128 06       		.uleb128 0x6
+ 1706 0129 04       		.byte	0x4
+ 1707 012a 0A010000 		.4byte	0x10a
+ 1708 012e 07       		.uleb128 0x7
+ 1709 012f 79030000 		.4byte	.LASF40
+ 1710 0133 01       		.byte	0x1
+ 1711 0134 3E       		.byte	0x3e
+ 1712 0135 AC000000 		.4byte	0xac
+ 1713 0139 00000000 		.4byte	.LFB118
+ 1714 013d 58010000 		.4byte	.LFE118-.LFB118
+ 1715 0141 01       		.uleb128 0x1
+ 1716 0142 9C       		.byte	0x9c
+ 1717 0143 C4010000 		.4byte	0x1c4
+ 1718 0147 08       		.uleb128 0x8
+ 1719 0148 88010000 		.4byte	.LASF26
+ 1720 014c 01       		.byte	0x1
+ 1721 014d 3E       		.byte	0x3e
+ 1722 014e C4010000 		.4byte	0x1c4
+ 1723 0152 02       		.uleb128 0x2
+ 1724 0153 91       		.byte	0x91
+ 1725 0154 54       		.sleb128 -44
+ 1726 0155 08       		.uleb128 0x8
+ 1727 0156 82010000 		.4byte	.LASF27
+ 1728 015a 01       		.byte	0x1
+ 1729 015b 3E       		.byte	0x3e
+ 1730 015c C4010000 		.4byte	0x1c4
+ 1731 0160 02       		.uleb128 0x2
+ 1732 0161 91       		.byte	0x91
+ 1733 0162 50       		.sleb128 -48
+ 1734 0163 08       		.uleb128 0x8
+ 1735 0164 7A000000 		.4byte	.LASF28
+ 1736 0168 01       		.byte	0x1
+ 1737 0169 3E       		.byte	0x3e
+ 1738 016a DB000000 		.4byte	0xdb
+ 1739 016e 02       		.uleb128 0x2
+ 1740 016f 91       		.byte	0x91
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 40
+
+
+ 1741 0170 4C       		.sleb128 -52
+ 1742 0171 09       		.uleb128 0x9
+ 1743 0172 D6020000 		.4byte	.LASF29
+ 1744 0176 01       		.byte	0x1
+ 1745 0177 40       		.byte	0x40
+ 1746 0178 AC000000 		.4byte	0xac
+ 1747 017c 02       		.uleb128 0x2
+ 1748 017d 91       		.byte	0x91
+ 1749 017e 6C       		.sleb128 -20
+ 1750 017f 09       		.uleb128 0x9
+ 1751 0180 4B020000 		.4byte	.LASF30
+ 1752 0184 01       		.byte	0x1
+ 1753 0185 40       		.byte	0x40
+ 1754 0186 AC000000 		.4byte	0xac
+ 1755 018a 02       		.uleb128 0x2
+ 1756 018b 91       		.byte	0x91
+ 1757 018c 58       		.sleb128 -40
+ 1758 018d 0A       		.uleb128 0xa
+ 1759 018e 6900     		.ascii	"i\000"
+ 1760 0190 01       		.byte	0x1
+ 1761 0191 41       		.byte	0x41
+ 1762 0192 DB000000 		.4byte	0xdb
+ 1763 0196 02       		.uleb128 0x2
+ 1764 0197 91       		.byte	0x91
+ 1765 0198 68       		.sleb128 -24
+ 1766 0199 0A       		.uleb128 0xa
+ 1767 019a 534E5200 		.ascii	"SNR\000"
+ 1768 019e 01       		.byte	0x1
+ 1769 019f 42       		.byte	0x42
+ 1770 01a0 AC000000 		.4byte	0xac
+ 1771 01a4 02       		.uleb128 0x2
+ 1772 01a5 91       		.byte	0x91
+ 1773 01a6 5C       		.sleb128 -36
+ 1774 01a7 09       		.uleb128 0x9
+ 1775 01a8 1C000000 		.4byte	.LASF31
+ 1776 01ac 01       		.byte	0x1
+ 1777 01ad 43       		.byte	0x43
+ 1778 01ae 25000000 		.4byte	0x25
+ 1779 01b2 02       		.uleb128 0x2
+ 1780 01b3 91       		.byte	0x91
+ 1781 01b4 60       		.sleb128 -32
+ 1782 01b5 09       		.uleb128 0x9
+ 1783 01b6 9B020000 		.4byte	.LASF32
+ 1784 01ba 01       		.byte	0x1
+ 1785 01bb 44       		.byte	0x44
+ 1786 01bc CA010000 		.4byte	0x1ca
+ 1787 01c0 02       		.uleb128 0x2
+ 1788 01c1 91       		.byte	0x91
+ 1789 01c2 64       		.sleb128 -28
+ 1790 01c3 00       		.byte	0
+ 1791 01c4 06       		.uleb128 0x6
+ 1792 01c5 04       		.byte	0x4
+ 1793 01c6 AC000000 		.4byte	0xac
+ 1794 01ca 06       		.uleb128 0x6
+ 1795 01cb 04       		.byte	0x4
+ 1796 01cc 25000000 		.4byte	0x25
+ 1797 01d0 0B       		.uleb128 0xb
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 41
+
+
+ 1798 01d1 88000000 		.4byte	.LASF36
+ 1799 01d5 01       		.byte	0x1
+ 1800 01d6 78       		.byte	0x78
+ 1801 01d7 00000000 		.4byte	.LFB119
+ 1802 01db 48000000 		.4byte	.LFE119-.LFB119
+ 1803 01df 01       		.uleb128 0x1
+ 1804 01e0 9C       		.byte	0x9c
+ 1805 01e1 1C020000 		.4byte	0x21c
+ 1806 01e5 08       		.uleb128 0x8
+ 1807 01e6 A3000000 		.4byte	.LASF33
+ 1808 01ea 01       		.byte	0x1
+ 1809 01eb 78       		.byte	0x78
+ 1810 01ec 1C010000 		.4byte	0x11c
+ 1811 01f0 02       		.uleb128 0x2
+ 1812 01f1 91       		.byte	0x91
+ 1813 01f2 6C       		.sleb128 -20
+ 1814 01f3 08       		.uleb128 0x8
+ 1815 01f4 55000000 		.4byte	.LASF34
+ 1816 01f8 01       		.byte	0x1
+ 1817 01f9 78       		.byte	0x78
+ 1818 01fa DB000000 		.4byte	0xdb
+ 1819 01fe 02       		.uleb128 0x2
+ 1820 01ff 91       		.byte	0x91
+ 1821 0200 68       		.sleb128 -24
+ 1822 0201 08       		.uleb128 0x8
+ 1823 0202 AD000000 		.4byte	.LASF35
+ 1824 0206 01       		.byte	0x1
+ 1825 0207 79       		.byte	0x79
+ 1826 0208 DB000000 		.4byte	0xdb
+ 1827 020c 02       		.uleb128 0x2
+ 1828 020d 91       		.byte	0x91
+ 1829 020e 64       		.sleb128 -28
+ 1830 020f 0A       		.uleb128 0xa
+ 1831 0210 6900     		.ascii	"i\000"
+ 1832 0212 01       		.byte	0x1
+ 1833 0213 7B       		.byte	0x7b
+ 1834 0214 DB000000 		.4byte	0xdb
+ 1835 0218 02       		.uleb128 0x2
+ 1836 0219 91       		.byte	0x91
+ 1837 021a 74       		.sleb128 -12
+ 1838 021b 00       		.byte	0
+ 1839 021c 0C       		.uleb128 0xc
+ 1840 021d 16020000 		.4byte	.LASF37
+ 1841 0221 01       		.byte	0x1
+ 1842 0222 8A       		.byte	0x8a
+ 1843 0223 00000000 		.4byte	.LFB120
+ 1844 0227 DC000000 		.4byte	.LFE120-.LFB120
+ 1845 022b 01       		.uleb128 0x1
+ 1846 022c 9C       		.byte	0x9c
+ 1847 022d 68020000 		.4byte	0x268
+ 1848 0231 0D       		.uleb128 0xd
+ 1849 0232 70496E00 		.ascii	"pIn\000"
+ 1850 0236 01       		.byte	0x1
+ 1851 0237 8A       		.byte	0x8a
+ 1852 0238 C4010000 		.4byte	0x1c4
+ 1853 023c 02       		.uleb128 0x2
+ 1854 023d 91       		.byte	0x91
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 42
+
+
+ 1855 023e 5C       		.sleb128 -36
+ 1856 023f 08       		.uleb128 0x8
+ 1857 0240 83000000 		.4byte	.LASF38
+ 1858 0244 01       		.byte	0x1
+ 1859 0245 8A       		.byte	0x8a
+ 1860 0246 22010000 		.4byte	0x122
+ 1861 024a 02       		.uleb128 0x2
+ 1862 024b 91       		.byte	0x91
+ 1863 024c 58       		.sleb128 -40
+ 1864 024d 08       		.uleb128 0x8
+ 1865 024e 2B000000 		.4byte	.LASF39
+ 1866 0252 01       		.byte	0x1
+ 1867 0253 8A       		.byte	0x8a
+ 1868 0254 DB000000 		.4byte	0xdb
+ 1869 0258 02       		.uleb128 0x2
+ 1870 0259 91       		.byte	0x91
+ 1871 025a 54       		.sleb128 -44
+ 1872 025b 0A       		.uleb128 0xa
+ 1873 025c 6900     		.ascii	"i\000"
+ 1874 025e 01       		.byte	0x1
+ 1875 025f 8C       		.byte	0x8c
+ 1876 0260 DB000000 		.4byte	0xdb
+ 1877 0264 02       		.uleb128 0x2
+ 1878 0265 91       		.byte	0x91
+ 1879 0266 64       		.sleb128 -28
+ 1880 0267 00       		.byte	0
+ 1881 0268 0E       		.uleb128 0xe
+ 1882 0269 F1020000 		.4byte	.LASF41
+ 1883 026d 01       		.byte	0x1
+ 1884 026e A4       		.byte	0xa4
+ 1885 026f DB000000 		.4byte	0xdb
+ 1886 0273 00000000 		.4byte	.LFB121
+ 1887 0277 68000000 		.4byte	.LFE121-.LFB121
+ 1888 027b 01       		.uleb128 0x1
+ 1889 027c 9C       		.byte	0x9c
+ 1890 027d E2020000 		.4byte	0x2e2
+ 1891 0281 0D       		.uleb128 0xd
+ 1892 0282 70496E00 		.ascii	"pIn\000"
+ 1893 0286 01       		.byte	0x1
+ 1894 0287 A4       		.byte	0xa4
+ 1895 0288 1C010000 		.4byte	0x11c
+ 1896 028c 02       		.uleb128 0x2
+ 1897 028d 91       		.byte	0x91
+ 1898 028e 64       		.sleb128 -28
+ 1899 028f 08       		.uleb128 0x8
+ 1900 0290 83000000 		.4byte	.LASF38
+ 1901 0294 01       		.byte	0x1
+ 1902 0295 A4       		.byte	0xa4
+ 1903 0296 1C010000 		.4byte	0x11c
+ 1904 029a 02       		.uleb128 0x2
+ 1905 029b 91       		.byte	0x91
+ 1906 029c 60       		.sleb128 -32
+ 1907 029d 08       		.uleb128 0x8
+ 1908 029e 2B000000 		.4byte	.LASF39
+ 1909 02a2 01       		.byte	0x1
+ 1910 02a3 A4       		.byte	0xa4
+ 1911 02a4 DB000000 		.4byte	0xdb
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 43
+
+
+ 1912 02a8 02       		.uleb128 0x2
+ 1913 02a9 91       		.byte	0x91
+ 1914 02aa 5C       		.sleb128 -36
+ 1915 02ab 0A       		.uleb128 0xa
+ 1916 02ac 6900     		.ascii	"i\000"
+ 1917 02ae 01       		.byte	0x1
+ 1918 02af A6       		.byte	0xa6
+ 1919 02b0 DB000000 		.4byte	0xdb
+ 1920 02b4 02       		.uleb128 0x2
+ 1921 02b5 91       		.byte	0x91
+ 1922 02b6 74       		.sleb128 -12
+ 1923 02b7 09       		.uleb128 0x9
+ 1924 02b8 B3030000 		.4byte	.LASF42
+ 1925 02bc 01       		.byte	0x1
+ 1926 02bd A7       		.byte	0xa7
+ 1927 02be D0000000 		.4byte	0xd0
+ 1928 02c2 02       		.uleb128 0x2
+ 1929 02c3 91       		.byte	0x91
+ 1930 02c4 68       		.sleb128 -24
+ 1931 02c5 09       		.uleb128 0x9
+ 1932 02c6 13000000 		.4byte	.LASF43
+ 1933 02ca 01       		.byte	0x1
+ 1934 02cb A7       		.byte	0xa7
+ 1935 02cc D0000000 		.4byte	0xd0
+ 1936 02d0 02       		.uleb128 0x2
+ 1937 02d1 91       		.byte	0x91
+ 1938 02d2 6C       		.sleb128 -20
+ 1939 02d3 09       		.uleb128 0x9
+ 1940 02d4 1F010000 		.4byte	.LASF44
+ 1941 02d8 01       		.byte	0x1
+ 1942 02d9 A8       		.byte	0xa8
+ 1943 02da DB000000 		.4byte	0xdb
+ 1944 02de 02       		.uleb128 0x2
+ 1945 02df 91       		.byte	0x91
+ 1946 02e0 70       		.sleb128 -16
+ 1947 02e1 00       		.byte	0
+ 1948 02e2 0E       		.uleb128 0xe
+ 1949 02e3 BE000000 		.4byte	.LASF45
+ 1950 02e7 01       		.byte	0x1
+ 1951 02e8 C0       		.byte	0xc0
+ 1952 02e9 DB000000 		.4byte	0xdb
+ 1953 02ed 00000000 		.4byte	.LFB122
+ 1954 02f1 64000000 		.4byte	.LFE122-.LFB122
+ 1955 02f5 01       		.uleb128 0x1
+ 1956 02f6 9C       		.byte	0x9c
+ 1957 02f7 5C030000 		.4byte	0x35c
+ 1958 02fb 0D       		.uleb128 0xd
+ 1959 02fc 70496E00 		.ascii	"pIn\000"
+ 1960 0300 01       		.byte	0x1
+ 1961 0301 C0       		.byte	0xc0
+ 1962 0302 22010000 		.4byte	0x122
+ 1963 0306 02       		.uleb128 0x2
+ 1964 0307 91       		.byte	0x91
+ 1965 0308 64       		.sleb128 -28
+ 1966 0309 08       		.uleb128 0x8
+ 1967 030a 83000000 		.4byte	.LASF38
+ 1968 030e 01       		.byte	0x1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 44
+
+
+ 1969 030f C0       		.byte	0xc0
+ 1970 0310 22010000 		.4byte	0x122
+ 1971 0314 02       		.uleb128 0x2
+ 1972 0315 91       		.byte	0x91
+ 1973 0316 60       		.sleb128 -32
+ 1974 0317 08       		.uleb128 0x8
+ 1975 0318 2B000000 		.4byte	.LASF39
+ 1976 031c 01       		.byte	0x1
+ 1977 031d C0       		.byte	0xc0
+ 1978 031e DB000000 		.4byte	0xdb
+ 1979 0322 02       		.uleb128 0x2
+ 1980 0323 91       		.byte	0x91
+ 1981 0324 5C       		.sleb128 -36
+ 1982 0325 0A       		.uleb128 0xa
+ 1983 0326 6900     		.ascii	"i\000"
+ 1984 0328 01       		.byte	0x1
+ 1985 0329 C2       		.byte	0xc2
+ 1986 032a DB000000 		.4byte	0xdb
+ 1987 032e 02       		.uleb128 0x2
+ 1988 032f 91       		.byte	0x91
+ 1989 0330 74       		.sleb128 -12
+ 1990 0331 09       		.uleb128 0x9
+ 1991 0332 B3030000 		.4byte	.LASF42
+ 1992 0336 01       		.byte	0x1
+ 1993 0337 C3       		.byte	0xc3
+ 1994 0338 D0000000 		.4byte	0xd0
+ 1995 033c 02       		.uleb128 0x2
+ 1996 033d 91       		.byte	0x91
+ 1997 033e 68       		.sleb128 -24
+ 1998 033f 09       		.uleb128 0x9
+ 1999 0340 13000000 		.4byte	.LASF43
+ 2000 0344 01       		.byte	0x1
+ 2001 0345 C3       		.byte	0xc3
+ 2002 0346 D0000000 		.4byte	0xd0
+ 2003 034a 02       		.uleb128 0x2
+ 2004 034b 91       		.byte	0x91
+ 2005 034c 6C       		.sleb128 -20
+ 2006 034d 09       		.uleb128 0x9
+ 2007 034e 1F010000 		.4byte	.LASF44
+ 2008 0352 01       		.byte	0x1
+ 2009 0353 C4       		.byte	0xc4
+ 2010 0354 DB000000 		.4byte	0xdb
+ 2011 0358 02       		.uleb128 0x2
+ 2012 0359 91       		.byte	0x91
+ 2013 035a 70       		.sleb128 -16
+ 2014 035b 00       		.byte	0
+ 2015 035c 0B       		.uleb128 0xb
+ 2016 035d BB020000 		.4byte	.LASF46
+ 2017 0361 01       		.byte	0x1
+ 2018 0362 DE       		.byte	0xde
+ 2019 0363 00000000 		.4byte	.LFB123
+ 2020 0367 44000000 		.4byte	.LFE123-.LFB123
+ 2021 036b 01       		.uleb128 0x1
+ 2022 036c 9C       		.byte	0x9c
+ 2023 036d A8030000 		.4byte	0x3a8
+ 2024 0371 08       		.uleb128 0x8
+ 2025 0372 A3000000 		.4byte	.LASF33
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 45
+
+
+ 2026 0376 01       		.byte	0x1
+ 2027 0377 DE       		.byte	0xde
+ 2028 0378 22010000 		.4byte	0x122
+ 2029 037c 02       		.uleb128 0x2
+ 2030 037d 91       		.byte	0x91
+ 2031 037e 6C       		.sleb128 -20
+ 2032 037f 08       		.uleb128 0x8
+ 2033 0380 55000000 		.4byte	.LASF34
+ 2034 0384 01       		.byte	0x1
+ 2035 0385 DF       		.byte	0xdf
+ 2036 0386 DB000000 		.4byte	0xdb
+ 2037 038a 02       		.uleb128 0x2
+ 2038 038b 91       		.byte	0x91
+ 2039 038c 68       		.sleb128 -24
+ 2040 038d 08       		.uleb128 0x8
+ 2041 038e AD000000 		.4byte	.LASF35
+ 2042 0392 01       		.byte	0x1
+ 2043 0393 E0       		.byte	0xe0
+ 2044 0394 DB000000 		.4byte	0xdb
+ 2045 0398 02       		.uleb128 0x2
+ 2046 0399 91       		.byte	0x91
+ 2047 039a 64       		.sleb128 -28
+ 2048 039b 0A       		.uleb128 0xa
+ 2049 039c 6900     		.ascii	"i\000"
+ 2050 039e 01       		.byte	0x1
+ 2051 039f E2       		.byte	0xe2
+ 2052 03a0 DB000000 		.4byte	0xdb
+ 2053 03a4 02       		.uleb128 0x2
+ 2054 03a5 91       		.byte	0x91
+ 2055 03a6 74       		.sleb128 -12
+ 2056 03a7 00       		.byte	0
+ 2057 03a8 0B       		.uleb128 0xb
+ 2058 03a9 81020000 		.4byte	.LASF47
+ 2059 03ad 01       		.byte	0x1
+ 2060 03ae F4       		.byte	0xf4
+ 2061 03af 00000000 		.4byte	.LFB124
+ 2062 03b3 44000000 		.4byte	.LFE124-.LFB124
+ 2063 03b7 01       		.uleb128 0x1
+ 2064 03b8 9C       		.byte	0x9c
+ 2065 03b9 F4030000 		.4byte	0x3f4
+ 2066 03bd 08       		.uleb128 0x8
+ 2067 03be A3000000 		.4byte	.LASF33
+ 2068 03c2 01       		.byte	0x1
+ 2069 03c3 F4       		.byte	0xf4
+ 2070 03c4 16010000 		.4byte	0x116
+ 2071 03c8 02       		.uleb128 0x2
+ 2072 03c9 91       		.byte	0x91
+ 2073 03ca 6C       		.sleb128 -20
+ 2074 03cb 08       		.uleb128 0x8
+ 2075 03cc 55000000 		.4byte	.LASF34
+ 2076 03d0 01       		.byte	0x1
+ 2077 03d1 F5       		.byte	0xf5
+ 2078 03d2 DB000000 		.4byte	0xdb
+ 2079 03d6 02       		.uleb128 0x2
+ 2080 03d7 91       		.byte	0x91
+ 2081 03d8 68       		.sleb128 -24
+ 2082 03d9 08       		.uleb128 0x8
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 46
+
+
+ 2083 03da AD000000 		.4byte	.LASF35
+ 2084 03de 01       		.byte	0x1
+ 2085 03df F6       		.byte	0xf6
+ 2086 03e0 DB000000 		.4byte	0xdb
+ 2087 03e4 02       		.uleb128 0x2
+ 2088 03e5 91       		.byte	0x91
+ 2089 03e6 64       		.sleb128 -28
+ 2090 03e7 0A       		.uleb128 0xa
+ 2091 03e8 6900     		.ascii	"i\000"
+ 2092 03ea 01       		.byte	0x1
+ 2093 03eb F8       		.byte	0xf8
+ 2094 03ec DB000000 		.4byte	0xdb
+ 2095 03f0 02       		.uleb128 0x2
+ 2096 03f1 91       		.byte	0x91
+ 2097 03f2 74       		.sleb128 -12
+ 2098 03f3 00       		.byte	0
+ 2099 03f4 0F       		.uleb128 0xf
+ 2100 03f5 E2000000 		.4byte	.LASF48
+ 2101 03f9 01       		.byte	0x1
+ 2102 03fa 0A01     		.2byte	0x10a
+ 2103 03fc DB000000 		.4byte	0xdb
+ 2104 0400 00000000 		.4byte	.LFB125
+ 2105 0404 3E000000 		.4byte	.LFE125-.LFB125
+ 2106 0408 01       		.uleb128 0x1
+ 2107 0409 9C       		.byte	0x9c
+ 2108 040a 38040000 		.4byte	0x438
+ 2109 040e 10       		.uleb128 0x10
+ 2110 040f A0020000 		.4byte	.LASF49
+ 2111 0413 01       		.byte	0x1
+ 2112 0414 0A01     		.2byte	0x10a
+ 2113 0416 DB000000 		.4byte	0xdb
+ 2114 041a 02       		.uleb128 0x2
+ 2115 041b 91       		.byte	0x91
+ 2116 041c 6C       		.sleb128 -20
+ 2117 041d 11       		.uleb128 0x11
+ 2118 041e 6900     		.ascii	"i\000"
+ 2119 0420 01       		.byte	0x1
+ 2120 0421 0C01     		.2byte	0x10c
+ 2121 0423 DB000000 		.4byte	0xdb
+ 2122 0427 02       		.uleb128 0x2
+ 2123 0428 91       		.byte	0x91
+ 2124 0429 74       		.sleb128 -12
+ 2125 042a 11       		.uleb128 0x11
+ 2126 042b 6A00     		.ascii	"j\000"
+ 2127 042d 01       		.byte	0x1
+ 2128 042e 0C01     		.2byte	0x10c
+ 2129 0430 DB000000 		.4byte	0xdb
+ 2130 0434 02       		.uleb128 0x2
+ 2131 0435 91       		.byte	0x91
+ 2132 0436 70       		.sleb128 -16
+ 2133 0437 00       		.byte	0
+ 2134 0438 12       		.uleb128 0x12
+ 2135 0439 36000000 		.4byte	.LASF50
+ 2136 043d 01       		.byte	0x1
+ 2137 043e 2201     		.2byte	0x122
+ 2138 0440 00000000 		.4byte	.LFB126
+ 2139 0444 54000000 		.4byte	.LFE126-.LFB126
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 47
+
+
+ 2140 0448 01       		.uleb128 0x1
+ 2141 0449 9C       		.byte	0x9c
+ 2142 044a 89040000 		.4byte	0x489
+ 2143 044e 13       		.uleb128 0x13
+ 2144 044f 70496E00 		.ascii	"pIn\000"
+ 2145 0453 01       		.byte	0x1
+ 2146 0454 2201     		.2byte	0x122
+ 2147 0456 28010000 		.4byte	0x128
+ 2148 045a 02       		.uleb128 0x2
+ 2149 045b 91       		.byte	0x91
+ 2150 045c 64       		.sleb128 -28
+ 2151 045d 10       		.uleb128 0x10
+ 2152 045e 2B000000 		.4byte	.LASF39
+ 2153 0462 01       		.byte	0x1
+ 2154 0463 2301     		.2byte	0x123
+ 2155 0465 DB000000 		.4byte	0xdb
+ 2156 0469 02       		.uleb128 0x2
+ 2157 046a 91       		.byte	0x91
+ 2158 046b 60       		.sleb128 -32
+ 2159 046c 10       		.uleb128 0x10
+ 2160 046d AD000000 		.4byte	.LASF35
+ 2161 0471 01       		.byte	0x1
+ 2162 0472 2401     		.2byte	0x124
+ 2163 0474 DB000000 		.4byte	0xdb
+ 2164 0478 02       		.uleb128 0x2
+ 2165 0479 91       		.byte	0x91
+ 2166 047a 5C       		.sleb128 -36
+ 2167 047b 11       		.uleb128 0x11
+ 2168 047c 6900     		.ascii	"i\000"
+ 2169 047e 01       		.byte	0x1
+ 2170 047f 2601     		.2byte	0x126
+ 2171 0481 DB000000 		.4byte	0xdb
+ 2172 0485 02       		.uleb128 0x2
+ 2173 0486 91       		.byte	0x91
+ 2174 0487 6C       		.sleb128 -20
+ 2175 0488 00       		.byte	0
+ 2176 0489 0F       		.uleb128 0xf
+ 2177 048a E3020000 		.4byte	.LASF51
+ 2178 048e 01       		.byte	0x1
+ 2179 048f 3301     		.2byte	0x133
+ 2180 0491 DB000000 		.4byte	0xdb
+ 2181 0495 00000000 		.4byte	.LFB127
+ 2182 0499 34000000 		.4byte	.LFE127-.LFB127
+ 2183 049d 01       		.uleb128 0x1
+ 2184 049e 9C       		.byte	0x9c
+ 2185 049f CF040000 		.4byte	0x4cf
+ 2186 04a3 10       		.uleb128 0x10
+ 2187 04a4 4B000000 		.4byte	.LASF52
+ 2188 04a8 01       		.byte	0x1
+ 2189 04a9 3301     		.2byte	0x133
+ 2190 04ab DB000000 		.4byte	0xdb
+ 2191 04af 02       		.uleb128 0x2
+ 2192 04b0 91       		.byte	0x91
+ 2193 04b1 6C       		.sleb128 -20
+ 2194 04b2 11       		.uleb128 0x11
+ 2195 04b3 6900     		.ascii	"i\000"
+ 2196 04b5 01       		.byte	0x1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 48
+
+
+ 2197 04b6 3601     		.2byte	0x136
+ 2198 04b8 DB000000 		.4byte	0xdb
+ 2199 04bc 02       		.uleb128 0x2
+ 2200 04bd 91       		.byte	0x91
+ 2201 04be 74       		.sleb128 -12
+ 2202 04bf 11       		.uleb128 0x11
+ 2203 04c0 76616C00 		.ascii	"val\000"
+ 2204 04c4 01       		.byte	0x1
+ 2205 04c5 3601     		.2byte	0x136
+ 2206 04c7 DB000000 		.4byte	0xdb
+ 2207 04cb 02       		.uleb128 0x2
+ 2208 04cc 91       		.byte	0x91
+ 2209 04cd 70       		.sleb128 -16
+ 2210 04ce 00       		.byte	0
+ 2211 04cf 12       		.uleb128 0x12
+ 2212 04d0 FF000000 		.4byte	.LASF53
+ 2213 04d4 01       		.byte	0x1
+ 2214 04d5 4901     		.2byte	0x149
+ 2215 04d7 00000000 		.4byte	.LFB128
+ 2216 04db E0000000 		.4byte	.LFE128-.LFB128
+ 2217 04df 01       		.uleb128 0x1
+ 2218 04e0 9C       		.byte	0x9c
+ 2219 04e1 20050000 		.4byte	0x520
+ 2220 04e5 13       		.uleb128 0x13
+ 2221 04e6 70496E00 		.ascii	"pIn\000"
+ 2222 04ea 01       		.byte	0x1
+ 2223 04eb 4901     		.2byte	0x149
+ 2224 04ed C4010000 		.4byte	0x1c4
+ 2225 04f1 02       		.uleb128 0x2
+ 2226 04f2 91       		.byte	0x91
+ 2227 04f3 5C       		.sleb128 -36
+ 2228 04f4 10       		.uleb128 0x10
+ 2229 04f5 83000000 		.4byte	.LASF38
+ 2230 04f9 01       		.byte	0x1
+ 2231 04fa 4901     		.2byte	0x149
+ 2232 04fc 1C010000 		.4byte	0x11c
+ 2233 0500 02       		.uleb128 0x2
+ 2234 0501 91       		.byte	0x91
+ 2235 0502 58       		.sleb128 -40
+ 2236 0503 10       		.uleb128 0x10
+ 2237 0504 2B000000 		.4byte	.LASF39
+ 2238 0508 01       		.byte	0x1
+ 2239 0509 4A01     		.2byte	0x14a
+ 2240 050b DB000000 		.4byte	0xdb
+ 2241 050f 02       		.uleb128 0x2
+ 2242 0510 91       		.byte	0x91
+ 2243 0511 54       		.sleb128 -44
+ 2244 0512 11       		.uleb128 0x11
+ 2245 0513 6900     		.ascii	"i\000"
+ 2246 0515 01       		.byte	0x1
+ 2247 0516 4C01     		.2byte	0x14c
+ 2248 0518 DB000000 		.4byte	0xdb
+ 2249 051c 02       		.uleb128 0x2
+ 2250 051d 91       		.byte	0x91
+ 2251 051e 64       		.sleb128 -28
+ 2252 051f 00       		.byte	0
+ 2253 0520 12       		.uleb128 0x12
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 49
+
+
+ 2254 0521 8E030000 		.4byte	.LASF54
+ 2255 0525 01       		.byte	0x1
+ 2256 0526 6601     		.2byte	0x166
+ 2257 0528 00000000 		.4byte	.LFB129
+ 2258 052c DC000000 		.4byte	.LFE129-.LFB129
+ 2259 0530 01       		.uleb128 0x1
+ 2260 0531 9C       		.byte	0x9c
+ 2261 0532 71050000 		.4byte	0x571
+ 2262 0536 13       		.uleb128 0x13
+ 2263 0537 70496E00 		.ascii	"pIn\000"
+ 2264 053b 01       		.byte	0x1
+ 2265 053c 6601     		.2byte	0x166
+ 2266 053e C4010000 		.4byte	0x1c4
+ 2267 0542 02       		.uleb128 0x2
+ 2268 0543 91       		.byte	0x91
+ 2269 0544 5C       		.sleb128 -36
+ 2270 0545 10       		.uleb128 0x10
+ 2271 0546 83000000 		.4byte	.LASF38
+ 2272 054a 01       		.byte	0x1
+ 2273 054b 6601     		.2byte	0x166
+ 2274 054d 22010000 		.4byte	0x122
+ 2275 0551 02       		.uleb128 0x2
+ 2276 0552 91       		.byte	0x91
+ 2277 0553 58       		.sleb128 -40
+ 2278 0554 10       		.uleb128 0x10
+ 2279 0555 2B000000 		.4byte	.LASF39
+ 2280 0559 01       		.byte	0x1
+ 2281 055a 6701     		.2byte	0x167
+ 2282 055c DB000000 		.4byte	0xdb
+ 2283 0560 02       		.uleb128 0x2
+ 2284 0561 91       		.byte	0x91
+ 2285 0562 54       		.sleb128 -44
+ 2286 0563 11       		.uleb128 0x11
+ 2287 0564 6900     		.ascii	"i\000"
+ 2288 0566 01       		.byte	0x1
+ 2289 0567 6901     		.2byte	0x169
+ 2290 0569 DB000000 		.4byte	0xdb
+ 2291 056d 02       		.uleb128 0x2
+ 2292 056e 91       		.byte	0x91
+ 2293 056f 64       		.sleb128 -28
+ 2294 0570 00       		.byte	0
+ 2295 0571 12       		.uleb128 0x12
+ 2296 0572 68020000 		.4byte	.LASF55
+ 2297 0576 01       		.byte	0x1
+ 2298 0577 8001     		.2byte	0x180
+ 2299 0579 00000000 		.4byte	.LFB130
+ 2300 057d DC000000 		.4byte	.LFE130-.LFB130
+ 2301 0581 01       		.uleb128 0x1
+ 2302 0582 9C       		.byte	0x9c
+ 2303 0583 C2050000 		.4byte	0x5c2
+ 2304 0587 13       		.uleb128 0x13
+ 2305 0588 70496E00 		.ascii	"pIn\000"
+ 2306 058c 01       		.byte	0x1
+ 2307 058d 8001     		.2byte	0x180
+ 2308 058f C4010000 		.4byte	0x1c4
+ 2309 0593 02       		.uleb128 0x2
+ 2310 0594 91       		.byte	0x91
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 50
+
+
+ 2311 0595 5C       		.sleb128 -36
+ 2312 0596 10       		.uleb128 0x10
+ 2313 0597 83000000 		.4byte	.LASF38
+ 2314 059b 01       		.byte	0x1
+ 2315 059c 8001     		.2byte	0x180
+ 2316 059e 22010000 		.4byte	0x122
+ 2317 05a2 02       		.uleb128 0x2
+ 2318 05a3 91       		.byte	0x91
+ 2319 05a4 58       		.sleb128 -40
+ 2320 05a5 10       		.uleb128 0x10
+ 2321 05a6 2B000000 		.4byte	.LASF39
+ 2322 05aa 01       		.byte	0x1
+ 2323 05ab 8101     		.2byte	0x181
+ 2324 05ad DB000000 		.4byte	0xdb
+ 2325 05b1 02       		.uleb128 0x2
+ 2326 05b2 91       		.byte	0x91
+ 2327 05b3 54       		.sleb128 -44
+ 2328 05b4 11       		.uleb128 0x11
+ 2329 05b5 6900     		.ascii	"i\000"
+ 2330 05b7 01       		.byte	0x1
+ 2331 05b8 8301     		.2byte	0x183
+ 2332 05ba DB000000 		.4byte	0xdb
+ 2333 05be 02       		.uleb128 0x2
+ 2334 05bf 91       		.byte	0x91
+ 2335 05c0 64       		.sleb128 -28
+ 2336 05c1 00       		.byte	0
+ 2337 05c2 12       		.uleb128 0x12
+ 2338 05c3 57020000 		.4byte	.LASF56
+ 2339 05c7 01       		.byte	0x1
+ 2340 05c8 9B01     		.2byte	0x19b
+ 2341 05ca 00000000 		.4byte	.LFB131
+ 2342 05ce DC000000 		.4byte	.LFE131-.LFB131
+ 2343 05d2 01       		.uleb128 0x1
+ 2344 05d3 9C       		.byte	0x9c
+ 2345 05d4 13060000 		.4byte	0x613
+ 2346 05d8 13       		.uleb128 0x13
+ 2347 05d9 70496E00 		.ascii	"pIn\000"
+ 2348 05dd 01       		.byte	0x1
+ 2349 05de 9B01     		.2byte	0x19b
+ 2350 05e0 C4010000 		.4byte	0x1c4
+ 2351 05e4 02       		.uleb128 0x2
+ 2352 05e5 91       		.byte	0x91
+ 2353 05e6 5C       		.sleb128 -36
+ 2354 05e7 10       		.uleb128 0x10
+ 2355 05e8 83000000 		.4byte	.LASF38
+ 2356 05ec 01       		.byte	0x1
+ 2357 05ed 9B01     		.2byte	0x19b
+ 2358 05ef 22010000 		.4byte	0x122
+ 2359 05f3 02       		.uleb128 0x2
+ 2360 05f4 91       		.byte	0x91
+ 2361 05f5 58       		.sleb128 -40
+ 2362 05f6 10       		.uleb128 0x10
+ 2363 05f7 2B000000 		.4byte	.LASF39
+ 2364 05fb 01       		.byte	0x1
+ 2365 05fc 9C01     		.2byte	0x19c
+ 2366 05fe DB000000 		.4byte	0xdb
+ 2367 0602 02       		.uleb128 0x2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 51
+
+
+ 2368 0603 91       		.byte	0x91
+ 2369 0604 54       		.sleb128 -44
+ 2370 0605 11       		.uleb128 0x11
+ 2371 0606 6900     		.ascii	"i\000"
+ 2372 0608 01       		.byte	0x1
+ 2373 0609 9E01     		.2byte	0x19e
+ 2374 060b DB000000 		.4byte	0xdb
+ 2375 060f 02       		.uleb128 0x2
+ 2376 0610 91       		.byte	0x91
+ 2377 0611 64       		.sleb128 -28
+ 2378 0612 00       		.byte	0
+ 2379 0613 12       		.uleb128 0x12
+ 2380 0614 09020000 		.4byte	.LASF57
+ 2381 0618 01       		.byte	0x1
+ 2382 0619 B601     		.2byte	0x1b6
+ 2383 061b 00000000 		.4byte	.LFB132
+ 2384 061f 78000000 		.4byte	.LFE132-.LFB132
+ 2385 0623 01       		.uleb128 0x1
+ 2386 0624 9C       		.byte	0x9c
+ 2387 0625 55060000 		.4byte	0x655
+ 2388 0629 13       		.uleb128 0x13
+ 2389 062a 70496E00 		.ascii	"pIn\000"
+ 2390 062e 01       		.byte	0x1
+ 2391 062f B601     		.2byte	0x1b6
+ 2392 0631 C4010000 		.4byte	0x1c4
+ 2393 0635 02       		.uleb128 0x2
+ 2394 0636 91       		.byte	0x91
+ 2395 0637 6C       		.sleb128 -20
+ 2396 0638 10       		.uleb128 0x10
+ 2397 0639 2B000000 		.4byte	.LASF39
+ 2398 063d 01       		.byte	0x1
+ 2399 063e B601     		.2byte	0x1b6
+ 2400 0640 DB000000 		.4byte	0xdb
+ 2401 0644 02       		.uleb128 0x2
+ 2402 0645 91       		.byte	0x91
+ 2403 0646 68       		.sleb128 -24
+ 2404 0647 11       		.uleb128 0x11
+ 2405 0648 6900     		.ascii	"i\000"
+ 2406 064a 01       		.byte	0x1
+ 2407 064b B801     		.2byte	0x1b8
+ 2408 064d DB000000 		.4byte	0xdb
+ 2409 0651 02       		.uleb128 0x2
+ 2410 0652 91       		.byte	0x91
+ 2411 0653 74       		.sleb128 -12
+ 2412 0654 00       		.byte	0
+ 2413 0655 14       		.uleb128 0x14
+ 2414 0656 A6030000 		.4byte	.LASF61
+ 2415 065a 05       		.byte	0x5
+ 2416 065b 5506     		.2byte	0x655
+ 2417 065d 61060000 		.4byte	0x661
+ 2418 0661 15       		.uleb128 0x15
+ 2419 0662 D0000000 		.4byte	0xd0
+ 2420 0666 00       		.byte	0
+ 2421              		.section	.debug_abbrev,"",%progbits
+ 2422              	.Ldebug_abbrev0:
+ 2423 0000 01       		.uleb128 0x1
+ 2424 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 52
+
+
+ 2425 0002 01       		.byte	0x1
+ 2426 0003 25       		.uleb128 0x25
+ 2427 0004 0E       		.uleb128 0xe
+ 2428 0005 13       		.uleb128 0x13
+ 2429 0006 0B       		.uleb128 0xb
+ 2430 0007 03       		.uleb128 0x3
+ 2431 0008 0E       		.uleb128 0xe
+ 2432 0009 1B       		.uleb128 0x1b
+ 2433 000a 0E       		.uleb128 0xe
+ 2434 000b 55       		.uleb128 0x55
+ 2435 000c 17       		.uleb128 0x17
+ 2436 000d 11       		.uleb128 0x11
+ 2437 000e 01       		.uleb128 0x1
+ 2438 000f 10       		.uleb128 0x10
+ 2439 0010 17       		.uleb128 0x17
+ 2440 0011 00       		.byte	0
+ 2441 0012 00       		.byte	0
+ 2442 0013 02       		.uleb128 0x2
+ 2443 0014 24       		.uleb128 0x24
+ 2444 0015 00       		.byte	0
+ 2445 0016 0B       		.uleb128 0xb
+ 2446 0017 0B       		.uleb128 0xb
+ 2447 0018 3E       		.uleb128 0x3e
+ 2448 0019 0B       		.uleb128 0xb
+ 2449 001a 03       		.uleb128 0x3
+ 2450 001b 08       		.uleb128 0x8
+ 2451 001c 00       		.byte	0
+ 2452 001d 00       		.byte	0
+ 2453 001e 03       		.uleb128 0x3
+ 2454 001f 24       		.uleb128 0x24
+ 2455 0020 00       		.byte	0
+ 2456 0021 0B       		.uleb128 0xb
+ 2457 0022 0B       		.uleb128 0xb
+ 2458 0023 3E       		.uleb128 0x3e
+ 2459 0024 0B       		.uleb128 0xb
+ 2460 0025 03       		.uleb128 0x3
+ 2461 0026 0E       		.uleb128 0xe
+ 2462 0027 00       		.byte	0
+ 2463 0028 00       		.byte	0
+ 2464 0029 04       		.uleb128 0x4
+ 2465 002a 16       		.uleb128 0x16
+ 2466 002b 00       		.byte	0
+ 2467 002c 03       		.uleb128 0x3
+ 2468 002d 0E       		.uleb128 0xe
+ 2469 002e 3A       		.uleb128 0x3a
+ 2470 002f 0B       		.uleb128 0xb
+ 2471 0030 3B       		.uleb128 0x3b
+ 2472 0031 0B       		.uleb128 0xb
+ 2473 0032 49       		.uleb128 0x49
+ 2474 0033 13       		.uleb128 0x13
+ 2475 0034 00       		.byte	0
+ 2476 0035 00       		.byte	0
+ 2477 0036 05       		.uleb128 0x5
+ 2478 0037 16       		.uleb128 0x16
+ 2479 0038 00       		.byte	0
+ 2480 0039 03       		.uleb128 0x3
+ 2481 003a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 53
+
+
+ 2482 003b 3A       		.uleb128 0x3a
+ 2483 003c 0B       		.uleb128 0xb
+ 2484 003d 3B       		.uleb128 0x3b
+ 2485 003e 05       		.uleb128 0x5
+ 2486 003f 49       		.uleb128 0x49
+ 2487 0040 13       		.uleb128 0x13
+ 2488 0041 00       		.byte	0
+ 2489 0042 00       		.byte	0
+ 2490 0043 06       		.uleb128 0x6
+ 2491 0044 0F       		.uleb128 0xf
+ 2492 0045 00       		.byte	0
+ 2493 0046 0B       		.uleb128 0xb
+ 2494 0047 0B       		.uleb128 0xb
+ 2495 0048 49       		.uleb128 0x49
+ 2496 0049 13       		.uleb128 0x13
+ 2497 004a 00       		.byte	0
+ 2498 004b 00       		.byte	0
+ 2499 004c 07       		.uleb128 0x7
+ 2500 004d 2E       		.uleb128 0x2e
+ 2501 004e 01       		.byte	0x1
+ 2502 004f 3F       		.uleb128 0x3f
+ 2503 0050 19       		.uleb128 0x19
+ 2504 0051 03       		.uleb128 0x3
+ 2505 0052 0E       		.uleb128 0xe
+ 2506 0053 3A       		.uleb128 0x3a
+ 2507 0054 0B       		.uleb128 0xb
+ 2508 0055 3B       		.uleb128 0x3b
+ 2509 0056 0B       		.uleb128 0xb
+ 2510 0057 27       		.uleb128 0x27
+ 2511 0058 19       		.uleb128 0x19
+ 2512 0059 49       		.uleb128 0x49
+ 2513 005a 13       		.uleb128 0x13
+ 2514 005b 11       		.uleb128 0x11
+ 2515 005c 01       		.uleb128 0x1
+ 2516 005d 12       		.uleb128 0x12
+ 2517 005e 06       		.uleb128 0x6
+ 2518 005f 40       		.uleb128 0x40
+ 2519 0060 18       		.uleb128 0x18
+ 2520 0061 9642     		.uleb128 0x2116
+ 2521 0063 19       		.uleb128 0x19
+ 2522 0064 01       		.uleb128 0x1
+ 2523 0065 13       		.uleb128 0x13
+ 2524 0066 00       		.byte	0
+ 2525 0067 00       		.byte	0
+ 2526 0068 08       		.uleb128 0x8
+ 2527 0069 05       		.uleb128 0x5
+ 2528 006a 00       		.byte	0
+ 2529 006b 03       		.uleb128 0x3
+ 2530 006c 0E       		.uleb128 0xe
+ 2531 006d 3A       		.uleb128 0x3a
+ 2532 006e 0B       		.uleb128 0xb
+ 2533 006f 3B       		.uleb128 0x3b
+ 2534 0070 0B       		.uleb128 0xb
+ 2535 0071 49       		.uleb128 0x49
+ 2536 0072 13       		.uleb128 0x13
+ 2537 0073 02       		.uleb128 0x2
+ 2538 0074 18       		.uleb128 0x18
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 54
+
+
+ 2539 0075 00       		.byte	0
+ 2540 0076 00       		.byte	0
+ 2541 0077 09       		.uleb128 0x9
+ 2542 0078 34       		.uleb128 0x34
+ 2543 0079 00       		.byte	0
+ 2544 007a 03       		.uleb128 0x3
+ 2545 007b 0E       		.uleb128 0xe
+ 2546 007c 3A       		.uleb128 0x3a
+ 2547 007d 0B       		.uleb128 0xb
+ 2548 007e 3B       		.uleb128 0x3b
+ 2549 007f 0B       		.uleb128 0xb
+ 2550 0080 49       		.uleb128 0x49
+ 2551 0081 13       		.uleb128 0x13
+ 2552 0082 02       		.uleb128 0x2
+ 2553 0083 18       		.uleb128 0x18
+ 2554 0084 00       		.byte	0
+ 2555 0085 00       		.byte	0
+ 2556 0086 0A       		.uleb128 0xa
+ 2557 0087 34       		.uleb128 0x34
+ 2558 0088 00       		.byte	0
+ 2559 0089 03       		.uleb128 0x3
+ 2560 008a 08       		.uleb128 0x8
+ 2561 008b 3A       		.uleb128 0x3a
+ 2562 008c 0B       		.uleb128 0xb
+ 2563 008d 3B       		.uleb128 0x3b
+ 2564 008e 0B       		.uleb128 0xb
+ 2565 008f 49       		.uleb128 0x49
+ 2566 0090 13       		.uleb128 0x13
+ 2567 0091 02       		.uleb128 0x2
+ 2568 0092 18       		.uleb128 0x18
+ 2569 0093 00       		.byte	0
+ 2570 0094 00       		.byte	0
+ 2571 0095 0B       		.uleb128 0xb
+ 2572 0096 2E       		.uleb128 0x2e
+ 2573 0097 01       		.byte	0x1
+ 2574 0098 3F       		.uleb128 0x3f
+ 2575 0099 19       		.uleb128 0x19
+ 2576 009a 03       		.uleb128 0x3
+ 2577 009b 0E       		.uleb128 0xe
+ 2578 009c 3A       		.uleb128 0x3a
+ 2579 009d 0B       		.uleb128 0xb
+ 2580 009e 3B       		.uleb128 0x3b
+ 2581 009f 0B       		.uleb128 0xb
+ 2582 00a0 27       		.uleb128 0x27
+ 2583 00a1 19       		.uleb128 0x19
+ 2584 00a2 11       		.uleb128 0x11
+ 2585 00a3 01       		.uleb128 0x1
+ 2586 00a4 12       		.uleb128 0x12
+ 2587 00a5 06       		.uleb128 0x6
+ 2588 00a6 40       		.uleb128 0x40
+ 2589 00a7 18       		.uleb128 0x18
+ 2590 00a8 9742     		.uleb128 0x2117
+ 2591 00aa 19       		.uleb128 0x19
+ 2592 00ab 01       		.uleb128 0x1
+ 2593 00ac 13       		.uleb128 0x13
+ 2594 00ad 00       		.byte	0
+ 2595 00ae 00       		.byte	0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 55
+
+
+ 2596 00af 0C       		.uleb128 0xc
+ 2597 00b0 2E       		.uleb128 0x2e
+ 2598 00b1 01       		.byte	0x1
+ 2599 00b2 3F       		.uleb128 0x3f
+ 2600 00b3 19       		.uleb128 0x19
+ 2601 00b4 03       		.uleb128 0x3
+ 2602 00b5 0E       		.uleb128 0xe
+ 2603 00b6 3A       		.uleb128 0x3a
+ 2604 00b7 0B       		.uleb128 0xb
+ 2605 00b8 3B       		.uleb128 0x3b
+ 2606 00b9 0B       		.uleb128 0xb
+ 2607 00ba 27       		.uleb128 0x27
+ 2608 00bb 19       		.uleb128 0x19
+ 2609 00bc 11       		.uleb128 0x11
+ 2610 00bd 01       		.uleb128 0x1
+ 2611 00be 12       		.uleb128 0x12
+ 2612 00bf 06       		.uleb128 0x6
+ 2613 00c0 40       		.uleb128 0x40
+ 2614 00c1 18       		.uleb128 0x18
+ 2615 00c2 9642     		.uleb128 0x2116
+ 2616 00c4 19       		.uleb128 0x19
+ 2617 00c5 01       		.uleb128 0x1
+ 2618 00c6 13       		.uleb128 0x13
+ 2619 00c7 00       		.byte	0
+ 2620 00c8 00       		.byte	0
+ 2621 00c9 0D       		.uleb128 0xd
+ 2622 00ca 05       		.uleb128 0x5
+ 2623 00cb 00       		.byte	0
+ 2624 00cc 03       		.uleb128 0x3
+ 2625 00cd 08       		.uleb128 0x8
+ 2626 00ce 3A       		.uleb128 0x3a
+ 2627 00cf 0B       		.uleb128 0xb
+ 2628 00d0 3B       		.uleb128 0x3b
+ 2629 00d1 0B       		.uleb128 0xb
+ 2630 00d2 49       		.uleb128 0x49
+ 2631 00d3 13       		.uleb128 0x13
+ 2632 00d4 02       		.uleb128 0x2
+ 2633 00d5 18       		.uleb128 0x18
+ 2634 00d6 00       		.byte	0
+ 2635 00d7 00       		.byte	0
+ 2636 00d8 0E       		.uleb128 0xe
+ 2637 00d9 2E       		.uleb128 0x2e
+ 2638 00da 01       		.byte	0x1
+ 2639 00db 3F       		.uleb128 0x3f
+ 2640 00dc 19       		.uleb128 0x19
+ 2641 00dd 03       		.uleb128 0x3
+ 2642 00de 0E       		.uleb128 0xe
+ 2643 00df 3A       		.uleb128 0x3a
+ 2644 00e0 0B       		.uleb128 0xb
+ 2645 00e1 3B       		.uleb128 0x3b
+ 2646 00e2 0B       		.uleb128 0xb
+ 2647 00e3 27       		.uleb128 0x27
+ 2648 00e4 19       		.uleb128 0x19
+ 2649 00e5 49       		.uleb128 0x49
+ 2650 00e6 13       		.uleb128 0x13
+ 2651 00e7 11       		.uleb128 0x11
+ 2652 00e8 01       		.uleb128 0x1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 56
+
+
+ 2653 00e9 12       		.uleb128 0x12
+ 2654 00ea 06       		.uleb128 0x6
+ 2655 00eb 40       		.uleb128 0x40
+ 2656 00ec 18       		.uleb128 0x18
+ 2657 00ed 9742     		.uleb128 0x2117
+ 2658 00ef 19       		.uleb128 0x19
+ 2659 00f0 01       		.uleb128 0x1
+ 2660 00f1 13       		.uleb128 0x13
+ 2661 00f2 00       		.byte	0
+ 2662 00f3 00       		.byte	0
+ 2663 00f4 0F       		.uleb128 0xf
+ 2664 00f5 2E       		.uleb128 0x2e
+ 2665 00f6 01       		.byte	0x1
+ 2666 00f7 3F       		.uleb128 0x3f
+ 2667 00f8 19       		.uleb128 0x19
+ 2668 00f9 03       		.uleb128 0x3
+ 2669 00fa 0E       		.uleb128 0xe
+ 2670 00fb 3A       		.uleb128 0x3a
+ 2671 00fc 0B       		.uleb128 0xb
+ 2672 00fd 3B       		.uleb128 0x3b
+ 2673 00fe 05       		.uleb128 0x5
+ 2674 00ff 27       		.uleb128 0x27
+ 2675 0100 19       		.uleb128 0x19
+ 2676 0101 49       		.uleb128 0x49
+ 2677 0102 13       		.uleb128 0x13
+ 2678 0103 11       		.uleb128 0x11
+ 2679 0104 01       		.uleb128 0x1
+ 2680 0105 12       		.uleb128 0x12
+ 2681 0106 06       		.uleb128 0x6
+ 2682 0107 40       		.uleb128 0x40
+ 2683 0108 18       		.uleb128 0x18
+ 2684 0109 9742     		.uleb128 0x2117
+ 2685 010b 19       		.uleb128 0x19
+ 2686 010c 01       		.uleb128 0x1
+ 2687 010d 13       		.uleb128 0x13
+ 2688 010e 00       		.byte	0
+ 2689 010f 00       		.byte	0
+ 2690 0110 10       		.uleb128 0x10
+ 2691 0111 05       		.uleb128 0x5
+ 2692 0112 00       		.byte	0
+ 2693 0113 03       		.uleb128 0x3
+ 2694 0114 0E       		.uleb128 0xe
+ 2695 0115 3A       		.uleb128 0x3a
+ 2696 0116 0B       		.uleb128 0xb
+ 2697 0117 3B       		.uleb128 0x3b
+ 2698 0118 05       		.uleb128 0x5
+ 2699 0119 49       		.uleb128 0x49
+ 2700 011a 13       		.uleb128 0x13
+ 2701 011b 02       		.uleb128 0x2
+ 2702 011c 18       		.uleb128 0x18
+ 2703 011d 00       		.byte	0
+ 2704 011e 00       		.byte	0
+ 2705 011f 11       		.uleb128 0x11
+ 2706 0120 34       		.uleb128 0x34
+ 2707 0121 00       		.byte	0
+ 2708 0122 03       		.uleb128 0x3
+ 2709 0123 08       		.uleb128 0x8
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 57
+
+
+ 2710 0124 3A       		.uleb128 0x3a
+ 2711 0125 0B       		.uleb128 0xb
+ 2712 0126 3B       		.uleb128 0x3b
+ 2713 0127 05       		.uleb128 0x5
+ 2714 0128 49       		.uleb128 0x49
+ 2715 0129 13       		.uleb128 0x13
+ 2716 012a 02       		.uleb128 0x2
+ 2717 012b 18       		.uleb128 0x18
+ 2718 012c 00       		.byte	0
+ 2719 012d 00       		.byte	0
+ 2720 012e 12       		.uleb128 0x12
+ 2721 012f 2E       		.uleb128 0x2e
+ 2722 0130 01       		.byte	0x1
+ 2723 0131 3F       		.uleb128 0x3f
+ 2724 0132 19       		.uleb128 0x19
+ 2725 0133 03       		.uleb128 0x3
+ 2726 0134 0E       		.uleb128 0xe
+ 2727 0135 3A       		.uleb128 0x3a
+ 2728 0136 0B       		.uleb128 0xb
+ 2729 0137 3B       		.uleb128 0x3b
+ 2730 0138 05       		.uleb128 0x5
+ 2731 0139 27       		.uleb128 0x27
+ 2732 013a 19       		.uleb128 0x19
+ 2733 013b 11       		.uleb128 0x11
+ 2734 013c 01       		.uleb128 0x1
+ 2735 013d 12       		.uleb128 0x12
+ 2736 013e 06       		.uleb128 0x6
+ 2737 013f 40       		.uleb128 0x40
+ 2738 0140 18       		.uleb128 0x18
+ 2739 0141 9642     		.uleb128 0x2116
+ 2740 0143 19       		.uleb128 0x19
+ 2741 0144 01       		.uleb128 0x1
+ 2742 0145 13       		.uleb128 0x13
+ 2743 0146 00       		.byte	0
+ 2744 0147 00       		.byte	0
+ 2745 0148 13       		.uleb128 0x13
+ 2746 0149 05       		.uleb128 0x5
+ 2747 014a 00       		.byte	0
+ 2748 014b 03       		.uleb128 0x3
+ 2749 014c 08       		.uleb128 0x8
+ 2750 014d 3A       		.uleb128 0x3a
+ 2751 014e 0B       		.uleb128 0xb
+ 2752 014f 3B       		.uleb128 0x3b
+ 2753 0150 05       		.uleb128 0x5
+ 2754 0151 49       		.uleb128 0x49
+ 2755 0152 13       		.uleb128 0x13
+ 2756 0153 02       		.uleb128 0x2
+ 2757 0154 18       		.uleb128 0x18
+ 2758 0155 00       		.byte	0
+ 2759 0156 00       		.byte	0
+ 2760 0157 14       		.uleb128 0x14
+ 2761 0158 34       		.uleb128 0x34
+ 2762 0159 00       		.byte	0
+ 2763 015a 03       		.uleb128 0x3
+ 2764 015b 0E       		.uleb128 0xe
+ 2765 015c 3A       		.uleb128 0x3a
+ 2766 015d 0B       		.uleb128 0xb
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 58
+
+
+ 2767 015e 3B       		.uleb128 0x3b
+ 2768 015f 05       		.uleb128 0x5
+ 2769 0160 49       		.uleb128 0x49
+ 2770 0161 13       		.uleb128 0x13
+ 2771 0162 3F       		.uleb128 0x3f
+ 2772 0163 19       		.uleb128 0x19
+ 2773 0164 3C       		.uleb128 0x3c
+ 2774 0165 19       		.uleb128 0x19
+ 2775 0166 00       		.byte	0
+ 2776 0167 00       		.byte	0
+ 2777 0168 15       		.uleb128 0x15
+ 2778 0169 35       		.uleb128 0x35
+ 2779 016a 00       		.byte	0
+ 2780 016b 49       		.uleb128 0x49
+ 2781 016c 13       		.uleb128 0x13
+ 2782 016d 00       		.byte	0
+ 2783 016e 00       		.byte	0
+ 2784 016f 00       		.byte	0
+ 2785              		.section	.debug_aranges,"",%progbits
+ 2786 0000 8C000000 		.4byte	0x8c
+ 2787 0004 0200     		.2byte	0x2
+ 2788 0006 00000000 		.4byte	.Ldebug_info0
+ 2789 000a 04       		.byte	0x4
+ 2790 000b 00       		.byte	0
+ 2791 000c 0000     		.2byte	0
+ 2792 000e 0000     		.2byte	0
+ 2793 0010 00000000 		.4byte	.LFB118
+ 2794 0014 58010000 		.4byte	.LFE118-.LFB118
+ 2795 0018 00000000 		.4byte	.LFB119
+ 2796 001c 48000000 		.4byte	.LFE119-.LFB119
+ 2797 0020 00000000 		.4byte	.LFB120
+ 2798 0024 DC000000 		.4byte	.LFE120-.LFB120
+ 2799 0028 00000000 		.4byte	.LFB121
+ 2800 002c 68000000 		.4byte	.LFE121-.LFB121
+ 2801 0030 00000000 		.4byte	.LFB122
+ 2802 0034 64000000 		.4byte	.LFE122-.LFB122
+ 2803 0038 00000000 		.4byte	.LFB123
+ 2804 003c 44000000 		.4byte	.LFE123-.LFB123
+ 2805 0040 00000000 		.4byte	.LFB124
+ 2806 0044 44000000 		.4byte	.LFE124-.LFB124
+ 2807 0048 00000000 		.4byte	.LFB125
+ 2808 004c 3E000000 		.4byte	.LFE125-.LFB125
+ 2809 0050 00000000 		.4byte	.LFB126
+ 2810 0054 54000000 		.4byte	.LFE126-.LFB126
+ 2811 0058 00000000 		.4byte	.LFB127
+ 2812 005c 34000000 		.4byte	.LFE127-.LFB127
+ 2813 0060 00000000 		.4byte	.LFB128
+ 2814 0064 E0000000 		.4byte	.LFE128-.LFB128
+ 2815 0068 00000000 		.4byte	.LFB129
+ 2816 006c DC000000 		.4byte	.LFE129-.LFB129
+ 2817 0070 00000000 		.4byte	.LFB130
+ 2818 0074 DC000000 		.4byte	.LFE130-.LFB130
+ 2819 0078 00000000 		.4byte	.LFB131
+ 2820 007c DC000000 		.4byte	.LFE131-.LFB131
+ 2821 0080 00000000 		.4byte	.LFB132
+ 2822 0084 78000000 		.4byte	.LFE132-.LFB132
+ 2823 0088 00000000 		.4byte	0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 59
+
+
+ 2824 008c 00000000 		.4byte	0
+ 2825              		.section	.debug_ranges,"",%progbits
+ 2826              	.Ldebug_ranges0:
+ 2827 0000 00000000 		.4byte	.LFB118
+ 2828 0004 58010000 		.4byte	.LFE118
+ 2829 0008 00000000 		.4byte	.LFB119
+ 2830 000c 48000000 		.4byte	.LFE119
+ 2831 0010 00000000 		.4byte	.LFB120
+ 2832 0014 DC000000 		.4byte	.LFE120
+ 2833 0018 00000000 		.4byte	.LFB121
+ 2834 001c 68000000 		.4byte	.LFE121
+ 2835 0020 00000000 		.4byte	.LFB122
+ 2836 0024 64000000 		.4byte	.LFE122
+ 2837 0028 00000000 		.4byte	.LFB123
+ 2838 002c 44000000 		.4byte	.LFE123
+ 2839 0030 00000000 		.4byte	.LFB124
+ 2840 0034 44000000 		.4byte	.LFE124
+ 2841 0038 00000000 		.4byte	.LFB125
+ 2842 003c 3E000000 		.4byte	.LFE125
+ 2843 0040 00000000 		.4byte	.LFB126
+ 2844 0044 54000000 		.4byte	.LFE126
+ 2845 0048 00000000 		.4byte	.LFB127
+ 2846 004c 34000000 		.4byte	.LFE127
+ 2847 0050 00000000 		.4byte	.LFB128
+ 2848 0054 E0000000 		.4byte	.LFE128
+ 2849 0058 00000000 		.4byte	.LFB129
+ 2850 005c DC000000 		.4byte	.LFE129
+ 2851 0060 00000000 		.4byte	.LFB130
+ 2852 0064 DC000000 		.4byte	.LFE130
+ 2853 0068 00000000 		.4byte	.LFB131
+ 2854 006c DC000000 		.4byte	.LFE131
+ 2855 0070 00000000 		.4byte	.LFB132
+ 2856 0074 78000000 		.4byte	.LFE132
+ 2857 0078 00000000 		.4byte	0
+ 2858 007c 00000000 		.4byte	0
+ 2859              		.section	.debug_line,"",%progbits
+ 2860              	.Ldebug_line0:
+ 2861 0000 FE030000 		.section	.debug_str,"MS",%progbits,1
+ 2861      02006E01 
+ 2861      00000201 
+ 2861      FB0E0D00 
+ 2861      01010101 
+ 2862              	.LASF24:
+ 2863 0000 7133315F 		.ascii	"q31_t\000"
+ 2863      7400
+ 2864              	.LASF23:
+ 2865 0006 7131355F 		.ascii	"q15_t\000"
+ 2865      7400
+ 2866              	.LASF18:
+ 2867 000c 696E7438 		.ascii	"int8_t\000"
+ 2867      5F7400
+ 2868              	.LASF43:
+ 2869 0013 64696666 		.ascii	"diffCrnt\000"
+ 2869      43726E74 
+ 2869      00
+ 2870              	.LASF31:
+ 2871 001c 74656D70 		.ascii	"temp\000"
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 60
+
+
+ 2871      00
+ 2872              	.LASF5:
+ 2873 0021 73686F72 		.ascii	"short int\000"
+ 2873      7420696E 
+ 2873      7400
+ 2874              	.LASF39:
+ 2875 002b 6E756D53 		.ascii	"numSamples\000"
+ 2875      616D706C 
+ 2875      657300
+ 2876              	.LASF50:
+ 2877 0036 61726D5F 		.ascii	"arm_apply_guard_bits\000"
+ 2877      6170706C 
+ 2877      795F6775 
+ 2877      6172645F 
+ 2877      62697473 
+ 2878              	.LASF52:
+ 2879 004b 6E756D53 		.ascii	"numShifts\000"
+ 2879      68696674 
+ 2879      7300
+ 2880              	.LASF34:
+ 2881 0055 626C6F63 		.ascii	"blockSize\000"
+ 2881      6B53697A 
+ 2881      6500
+ 2882              	.LASF9:
+ 2883 005f 5F5F7569 		.ascii	"__uint32_t\000"
+ 2883      6E743332 
+ 2883      5F7400
+ 2884              	.LASF59:
+ 2885 006a 2E5C6D61 		.ascii	".\\math_helper.c\000"
+ 2885      74685F68 
+ 2885      656C7065 
+ 2885      722E6300 
+ 2886              	.LASF28:
+ 2887 007a 62756666 		.ascii	"buffSize\000"
+ 2887      53697A65 
+ 2887      00
+ 2888              	.LASF38:
+ 2889 0083 704F7574 		.ascii	"pOut\000"
+ 2889      00
+ 2890              	.LASF36:
+ 2891 0088 61726D5F 		.ascii	"arm_provide_guard_bits_q15\000"
+ 2891      70726F76 
+ 2891      6964655F 
+ 2891      67756172 
+ 2891      645F6269 
+ 2892              	.LASF33:
+ 2893 00a3 696E7075 		.ascii	"input_buf\000"
+ 2893      745F6275 
+ 2893      6600
+ 2894              	.LASF35:
+ 2895 00ad 67756172 		.ascii	"guard_bits\000"
+ 2895      645F6269 
+ 2895      747300
+ 2896              	.LASF16:
+ 2897 00b8 666C6F61 		.ascii	"float\000"
+ 2897      7400
+ 2898              	.LASF45:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 61
+
+
+ 2899 00be 61726D5F 		.ascii	"arm_compare_fixed_q31\000"
+ 2899      636F6D70 
+ 2899      6172655F 
+ 2899      66697865 
+ 2899      645F7133 
+ 2900              	.LASF11:
+ 2901 00d4 6C6F6E67 		.ascii	"long long int\000"
+ 2901      206C6F6E 
+ 2901      6720696E 
+ 2901      7400
+ 2902              	.LASF48:
+ 2903 00e2 61726D5F 		.ascii	"arm_calc_guard_bits\000"
+ 2903      63616C63 
+ 2903      5F677561 
+ 2903      72645F62 
+ 2903      69747300 
+ 2904              	.LASF8:
+ 2905 00f6 6C6F6E67 		.ascii	"long int\000"
+ 2905      20696E74 
+ 2905      00
+ 2906              	.LASF53:
+ 2907 00ff 61726D5F 		.ascii	"arm_float_to_q14\000"
+ 2907      666C6F61 
+ 2907      745F746F 
+ 2907      5F713134 
+ 2907      00
+ 2908              	.LASF25:
+ 2909 0110 666C6F61 		.ascii	"float32_t\000"
+ 2909      7433325F 
+ 2909      7400
+ 2910              	.LASF22:
+ 2911 011a 71375F74 		.ascii	"q7_t\000"
+ 2911      00
+ 2912              	.LASF44:
+ 2913 011f 6D617844 		.ascii	"maxDiff\000"
+ 2913      69666600 
+ 2914              	.LASF17:
+ 2915 0127 6C6F6E67 		.ascii	"long double\000"
+ 2915      20646F75 
+ 2915      626C6500 
+ 2916              	.LASF2:
+ 2917 0133 756E7369 		.ascii	"unsigned char\000"
+ 2917      676E6564 
+ 2917      20636861 
+ 2917      7200
+ 2918              	.LASF1:
+ 2919 0141 7369676E 		.ascii	"signed char\000"
+ 2919      65642063 
+ 2919      68617200 
+ 2920              	.LASF20:
+ 2921 014d 696E7433 		.ascii	"int32_t\000"
+ 2921      325F7400 
+ 2922              	.LASF12:
+ 2923 0155 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2923      206C6F6E 
+ 2923      6720756E 
+ 2923      7369676E 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 62
+
+
+ 2923      65642069 
+ 2924              	.LASF21:
+ 2925 016c 75696E74 		.ascii	"uint32_t\000"
+ 2925      33325F74 
+ 2925      00
+ 2926              	.LASF0:
+ 2927 0175 756E7369 		.ascii	"unsigned int\000"
+ 2927      676E6564 
+ 2927      20696E74 
+ 2927      00
+ 2928              	.LASF27:
+ 2929 0182 70546573 		.ascii	"pTest\000"
+ 2929      7400
+ 2930              	.LASF26:
+ 2931 0188 70526566 		.ascii	"pRef\000"
+ 2931      00
+ 2932              	.LASF58:
+ 2933 018d 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 2933      4320342E 
+ 2933      382E3420 
+ 2933      32303134 
+ 2933      30353236 
+ 2934 01c0 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 2934      20726576 
+ 2934      6973696F 
+ 2934      6E203231 
+ 2934      31333538 
+ 2935 01f3 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 2935      66756E63 
+ 2935      74696F6E 
+ 2935      2D736563 
+ 2935      74696F6E 
+ 2936              	.LASF57:
+ 2937 0209 61726D5F 		.ascii	"arm_clip_f32\000"
+ 2937      636C6970 
+ 2937      5F663332 
+ 2937      00
+ 2938              	.LASF37:
+ 2939 0216 61726D5F 		.ascii	"arm_float_to_q12_20\000"
+ 2939      666C6F61 
+ 2939      745F746F 
+ 2939      5F713132 
+ 2939      5F323000 
+ 2940              	.LASF6:
+ 2941 022a 73686F72 		.ascii	"short unsigned int\000"
+ 2941      7420756E 
+ 2941      7369676E 
+ 2941      65642069 
+ 2941      6E7400
+ 2942              	.LASF3:
+ 2943 023d 5F5F696E 		.ascii	"__int8_t\000"
+ 2943      74385F74 
+ 2943      00
+ 2944              	.LASF14:
+ 2945 0246 63686172 		.ascii	"char\000"
+ 2945      00
+ 2946              	.LASF30:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 63
+
+
+ 2947 024b 456E6572 		.ascii	"EnergyError\000"
+ 2947      67794572 
+ 2947      726F7200 
+ 2948              	.LASF56:
+ 2949 0257 61726D5F 		.ascii	"arm_float_to_q28\000"
+ 2949      666C6F61 
+ 2949      745F746F 
+ 2949      5F713238 
+ 2949      00
+ 2950              	.LASF55:
+ 2951 0268 61726D5F 		.ascii	"arm_float_to_q29\000"
+ 2951      666C6F61 
+ 2951      745F746F 
+ 2951      5F713239 
+ 2951      00
+ 2952              	.LASF19:
+ 2953 0279 696E7431 		.ascii	"int16_t\000"
+ 2953      365F7400 
+ 2954              	.LASF47:
+ 2955 0281 61726D5F 		.ascii	"arm_provide_guard_bits_q7\000"
+ 2955      70726F76 
+ 2955      6964655F 
+ 2955      67756172 
+ 2955      645F6269 
+ 2956              	.LASF32:
+ 2957 029b 74657374 		.ascii	"test\000"
+ 2957      00
+ 2958              	.LASF49:
+ 2959 02a0 6E756D5F 		.ascii	"num_adds\000"
+ 2959      61646473 
+ 2959      00
+ 2960              	.LASF10:
+ 2961 02a9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2961      20756E73 
+ 2961      69676E65 
+ 2961      6420696E 
+ 2961      7400
+ 2962              	.LASF46:
+ 2963 02bb 61726D5F 		.ascii	"arm_provide_guard_bits_q31\000"
+ 2963      70726F76 
+ 2963      6964655F 
+ 2963      67756172 
+ 2963      645F6269 
+ 2964              	.LASF29:
+ 2965 02d6 456E6572 		.ascii	"EnergySignal\000"
+ 2965      67795369 
+ 2965      676E616C 
+ 2965      00
+ 2966              	.LASF51:
+ 2967 02e3 61726D5F 		.ascii	"arm_calc_2pow\000"
+ 2967      63616C63 
+ 2967      5F32706F 
+ 2967      7700
+ 2968              	.LASF41:
+ 2969 02f1 61726D5F 		.ascii	"arm_compare_fixed_q15\000"
+ 2969      636F6D70 
+ 2969      6172655F 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 64
+
+
+ 2969      66697865 
+ 2969      645F7131 
+ 2970              	.LASF7:
+ 2971 0307 5F5F696E 		.ascii	"__int32_t\000"
+ 2971      7433325F 
+ 2971      7400
+ 2972              	.LASF60:
+ 2973 0311 5C5C766D 		.ascii	"\\\\vmware-host\\Shared Folders\\scottcarlson On My"
+ 2973      77617265 
+ 2973      2D686F73 
+ 2973      745C5368 
+ 2973      61726564 
+ 2974 0340 204D6163 		.ascii	" Mac\\Code\\PSoC_Creator\\Design01\\Design01.cydsn\000"
+ 2974      5C436F64 
+ 2974      655C5053 
+ 2974      6F435F43 
+ 2974      72656174 
+ 2975              	.LASF4:
+ 2976 036f 5F5F696E 		.ascii	"__int16_t\000"
+ 2976      7431365F 
+ 2976      7400
+ 2977              	.LASF40:
+ 2978 0379 61726D5F 		.ascii	"arm_snr_f32\000"
+ 2978      736E725F 
+ 2978      66333200 
+ 2979              	.LASF13:
+ 2980 0385 73697A65 		.ascii	"sizetype\000"
+ 2980      74797065 
+ 2980      00
+ 2981              	.LASF54:
+ 2982 038e 61726D5F 		.ascii	"arm_float_to_q30\000"
+ 2982      666C6F61 
+ 2982      745F746F 
+ 2982      5F713330 
+ 2982      00
+ 2983              	.LASF15:
+ 2984 039f 646F7562 		.ascii	"double\000"
+ 2984      6C6500
+ 2985              	.LASF61:
+ 2986 03a6 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2986      52784275 
+ 2986      66666572 
+ 2986      00
+ 2987              	.LASF42:
+ 2988 03b3 64696666 		.ascii	"diff\000"
+ 2988      00
+ 2989              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -1,0 +1,123 @@
+
+initialize:
+    acu(setmod,setmod) dmux(sa,sa) alu(set0) mac(clra)
+    acu(clear,clear) dmux(sa,sa) alu(hold) mac(hold) jmp(eob, WaitForNew)
+
+WaitForNew:
+    acu(hold,hold) dmux(sa,sa) alu(hold) mac(hold) jmpl(in1, PROGRAM)
+
+
+ChA_init:
+    acu(loadm, loadm) addr(ChA_MAX) dmux(sa,sa) alu(hold) mac(hold)
+    acu(loadl, loadl) addr(ChA_MIN) dmux(sa,sa) alu(hold) mac(hold) 
+    acu(hold, hold) addr(1) dmux(ba,sa) alu(hold) mac(hold) 
+    acu(read, clear) addr(ChA_START) dmux(sra,sra) alu(setb) mac(clra) write(da) jmp(eob,ChA_fir)
+
+ChA_firFinish:
+    acu(write, clear) addr(ChA_START) dmux(sa, srm) alu(setb) mac(hold)
+    acu(hold, hold) dmux(sa, sa) alu(hold) mac(hold)
+    acu(hold, hold) addr(1) dmux(sa, sa) alu(hold) mac(hold) write(bus) jmp(eob, ChA_EXIT)
+
+ChA_fir:
+    acu(incr,incr) dmux(sra,srm) alu(setb) mac(macc) jmpl(eob,acubeq, ChA_firFinish)
+
+
+area acu
+    ChA_MAX: dw  ChA_LAST,ChA_LAST
+    ChA_MIN: dw  ChA_FIRST, ChA_FIRST
+    ChA_START: dw ChA_FIRST, ChA_FIRST
+
+
+area data_b
+ChA_FIRST:dw 16776870
+dw 16777107
+dw 491
+dw 563
+dw 16776658
+dw 16775726
+dw 0
+dw 2684
+dw 1815
+dw 16773916
+dw 16772091
+dw 1919
+dw 9189
+dw 2920
+dw 16765326
+dw 16765493
+dw 9939
+dw 22875
+dw 0
+dw 16745307
+dw 16757856
+dw 31949
+dw 45477
+dw 16761476
+dw 16707005
+dw 16756291
+dw 80461
+dw 75384
+dw 16716099
+dw 16641848
+dw 0
+dw 178629
+dw 106692
+dw 16602192
+dw 16526638
+dw 88518
+dw 410785
+dw 130753
+dw 16219268
+dw 16160282
+dw 661654
+dw 2573485
+dw 3495250
+dw 2573485
+dw 661654
+dw 16160282
+dw 16219268
+dw 130753
+dw 410785
+dw 88518
+dw 16526638
+dw 16602192
+dw 106692
+dw 178629
+dw 0
+dw 16641848
+dw 16716099
+dw 75384
+dw 80461
+dw 16756291
+dw 16707005
+dw 16761476
+dw 45477
+dw 31949
+dw 16757856
+dw 16745307
+dw 0
+dw 22875
+dw 9939
+dw 16765493
+dw 16765326
+dw 2920
+dw 9189
+dw 1919
+dw 16772091
+dw 16773916
+dw 1815
+dw 2684
+dw 0
+dw 16775726
+dw 16776658
+dw 563
+dw 491
+dw 16777107
+ChA_LAST: dw 16776870
+
+
+
+PROGRAM = ChA_init
+ChA_EXIT = WaitForNew
+
+

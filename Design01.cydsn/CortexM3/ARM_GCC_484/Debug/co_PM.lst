@@ -1,0 +1,877 @@
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"co_PM.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.bss
+  19              		.align	2
+  20              	co_backup:
+  21 0000 00000000 		.space	6
+  21      0000
+  22 0006 0000     		.section	.text.co_SaveConfig,"ax",%progbits
+  23              		.align	2
+  24              		.global	co_SaveConfig
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	co_SaveConfig, %function
+  28              	co_SaveConfig:
+  29              	.LFB0:
+  30              		.file 1 ".\\Generated_Source\\PSoC5\\co_PM.c"
+   1:.\Generated_Source\PSoC5/co_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/co_PM.c **** * File Name: co_PM.c  
+   3:.\Generated_Source\PSoC5/co_PM.c **** * Version 3.0
+   4:.\Generated_Source\PSoC5/co_PM.c **** *
+   5:.\Generated_Source\PSoC5/co_PM.c **** *  Description:
+   6:.\Generated_Source\PSoC5/co_PM.c **** *    This file provides the power management source code to API for the
+   7:.\Generated_Source\PSoC5/co_PM.c **** *    Counter.  
+   8:.\Generated_Source\PSoC5/co_PM.c **** *
+   9:.\Generated_Source\PSoC5/co_PM.c **** *   Note:
+  10:.\Generated_Source\PSoC5/co_PM.c **** *     None
+  11:.\Generated_Source\PSoC5/co_PM.c **** *
+  12:.\Generated_Source\PSoC5/co_PM.c **** ********************************************************************************
+  13:.\Generated_Source\PSoC5/co_PM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  14:.\Generated_Source\PSoC5/co_PM.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  15:.\Generated_Source\PSoC5/co_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  16:.\Generated_Source\PSoC5/co_PM.c **** * the software package with which this file was provided.
+  17:.\Generated_Source\PSoC5/co_PM.c **** *******************************************************************************/
+  18:.\Generated_Source\PSoC5/co_PM.c **** 
+  19:.\Generated_Source\PSoC5/co_PM.c **** #include "co.h"
+  20:.\Generated_Source\PSoC5/co_PM.c **** 
+  21:.\Generated_Source\PSoC5/co_PM.c **** static co_backupStruct co_backup;
+  22:.\Generated_Source\PSoC5/co_PM.c **** 
+  23:.\Generated_Source\PSoC5/co_PM.c **** 
+  24:.\Generated_Source\PSoC5/co_PM.c **** /*******************************************************************************
+  25:.\Generated_Source\PSoC5/co_PM.c **** * Function Name: co_SaveConfig
+  26:.\Generated_Source\PSoC5/co_PM.c **** ********************************************************************************
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 2
+
+
+  27:.\Generated_Source\PSoC5/co_PM.c **** * Summary:
+  28:.\Generated_Source\PSoC5/co_PM.c **** *     Save the current user configuration
+  29:.\Generated_Source\PSoC5/co_PM.c **** *
+  30:.\Generated_Source\PSoC5/co_PM.c **** * Parameters:  
+  31:.\Generated_Source\PSoC5/co_PM.c **** *  void
+  32:.\Generated_Source\PSoC5/co_PM.c **** *
+  33:.\Generated_Source\PSoC5/co_PM.c **** * Return: 
+  34:.\Generated_Source\PSoC5/co_PM.c **** *  void
+  35:.\Generated_Source\PSoC5/co_PM.c **** *
+  36:.\Generated_Source\PSoC5/co_PM.c **** * Global variables:
+  37:.\Generated_Source\PSoC5/co_PM.c **** *  co_backup:  Variables of this global structure are modified to 
+  38:.\Generated_Source\PSoC5/co_PM.c **** *  store the values of non retention configuration registers when Sleep() API is 
+  39:.\Generated_Source\PSoC5/co_PM.c **** *  called.
+  40:.\Generated_Source\PSoC5/co_PM.c **** *
+  41:.\Generated_Source\PSoC5/co_PM.c **** *******************************************************************************/
+  42:.\Generated_Source\PSoC5/co_PM.c **** void co_SaveConfig(void) 
+  43:.\Generated_Source\PSoC5/co_PM.c **** {
+  31              		.loc 1 43 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 1, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36 0000 80B4     		push	{r7}
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 7, -4
+  39 0002 00AF     		add	r7, sp, #0
+  40              		.cfi_def_cfa_register 7
+  44:.\Generated_Source\PSoC5/co_PM.c ****     #if (!co_UsingFixedFunction)
+  45:.\Generated_Source\PSoC5/co_PM.c **** 
+  46:.\Generated_Source\PSoC5/co_PM.c ****         co_backup.CounterUdb = co_ReadCounter();
+  47:.\Generated_Source\PSoC5/co_PM.c **** 
+  48:.\Generated_Source\PSoC5/co_PM.c ****         #if(!co_ControlRegRemoved)
+  49:.\Generated_Source\PSoC5/co_PM.c ****             co_backup.CounterControlRegister = co_ReadControlRegister();
+  50:.\Generated_Source\PSoC5/co_PM.c ****         #endif /* (!co_ControlRegRemoved) */
+  51:.\Generated_Source\PSoC5/co_PM.c **** 
+  52:.\Generated_Source\PSoC5/co_PM.c ****     #endif /* (!co_UsingFixedFunction) */
+  53:.\Generated_Source\PSoC5/co_PM.c **** }
+  41              		.loc 1 53 0
+  42 0004 BD46     		mov	sp, r7
+  43              		@ sp needed
+  44 0006 5DF8047B 		ldr	r7, [sp], #4
+  45 000a 7047     		bx	lr
+  46              		.cfi_endproc
+  47              	.LFE0:
+  48              		.size	co_SaveConfig, .-co_SaveConfig
+  49              		.section	.text.co_RestoreConfig,"ax",%progbits
+  50              		.align	2
+  51              		.global	co_RestoreConfig
+  52              		.thumb
+  53              		.thumb_func
+  54              		.type	co_RestoreConfig, %function
+  55              	co_RestoreConfig:
+  56              	.LFB1:
+  54:.\Generated_Source\PSoC5/co_PM.c **** 
+  55:.\Generated_Source\PSoC5/co_PM.c **** 
+  56:.\Generated_Source\PSoC5/co_PM.c **** /*******************************************************************************
+  57:.\Generated_Source\PSoC5/co_PM.c **** * Function Name: co_RestoreConfig
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 3
+
+
+  58:.\Generated_Source\PSoC5/co_PM.c **** ********************************************************************************
+  59:.\Generated_Source\PSoC5/co_PM.c **** *
+  60:.\Generated_Source\PSoC5/co_PM.c **** * Summary:
+  61:.\Generated_Source\PSoC5/co_PM.c **** *  Restores the current user configuration.
+  62:.\Generated_Source\PSoC5/co_PM.c **** *
+  63:.\Generated_Source\PSoC5/co_PM.c **** * Parameters:  
+  64:.\Generated_Source\PSoC5/co_PM.c **** *  void
+  65:.\Generated_Source\PSoC5/co_PM.c **** *
+  66:.\Generated_Source\PSoC5/co_PM.c **** * Return: 
+  67:.\Generated_Source\PSoC5/co_PM.c **** *  void
+  68:.\Generated_Source\PSoC5/co_PM.c **** *
+  69:.\Generated_Source\PSoC5/co_PM.c **** * Global variables:
+  70:.\Generated_Source\PSoC5/co_PM.c **** *  co_backup:  Variables of this global structure are used to 
+  71:.\Generated_Source\PSoC5/co_PM.c **** *  restore the values of non retention registers on wakeup from sleep mode.
+  72:.\Generated_Source\PSoC5/co_PM.c **** *
+  73:.\Generated_Source\PSoC5/co_PM.c **** *******************************************************************************/
+  74:.\Generated_Source\PSoC5/co_PM.c **** void co_RestoreConfig(void) 
+  75:.\Generated_Source\PSoC5/co_PM.c **** {      
+  57              		.loc 1 75 0
+  58              		.cfi_startproc
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 1, uses_anonymous_args = 0
+  61              		@ link register save eliminated.
+  62 0000 80B4     		push	{r7}
+  63              		.cfi_def_cfa_offset 4
+  64              		.cfi_offset 7, -4
+  65 0002 00AF     		add	r7, sp, #0
+  66              		.cfi_def_cfa_register 7
+  76:.\Generated_Source\PSoC5/co_PM.c ****     #if (!co_UsingFixedFunction)
+  77:.\Generated_Source\PSoC5/co_PM.c **** 
+  78:.\Generated_Source\PSoC5/co_PM.c ****        co_WriteCounter(co_backup.CounterUdb);
+  79:.\Generated_Source\PSoC5/co_PM.c **** 
+  80:.\Generated_Source\PSoC5/co_PM.c ****         #if(!co_ControlRegRemoved)
+  81:.\Generated_Source\PSoC5/co_PM.c ****             co_WriteControlRegister(co_backup.CounterControlRegister);
+  82:.\Generated_Source\PSoC5/co_PM.c ****         #endif /* (!co_ControlRegRemoved) */
+  83:.\Generated_Source\PSoC5/co_PM.c **** 
+  84:.\Generated_Source\PSoC5/co_PM.c ****     #endif /* (!co_UsingFixedFunction) */
+  85:.\Generated_Source\PSoC5/co_PM.c **** }
+  67              		.loc 1 85 0
+  68 0004 BD46     		mov	sp, r7
+  69              		@ sp needed
+  70 0006 5DF8047B 		ldr	r7, [sp], #4
+  71 000a 7047     		bx	lr
+  72              		.cfi_endproc
+  73              	.LFE1:
+  74              		.size	co_RestoreConfig, .-co_RestoreConfig
+  75              		.section	.text.co_Sleep,"ax",%progbits
+  76              		.align	2
+  77              		.global	co_Sleep
+  78              		.thumb
+  79              		.thumb_func
+  80              		.type	co_Sleep, %function
+  81              	co_Sleep:
+  82              	.LFB2:
+  86:.\Generated_Source\PSoC5/co_PM.c **** 
+  87:.\Generated_Source\PSoC5/co_PM.c **** 
+  88:.\Generated_Source\PSoC5/co_PM.c **** /*******************************************************************************
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 4
+
+
+  89:.\Generated_Source\PSoC5/co_PM.c **** * Function Name: co_Sleep
+  90:.\Generated_Source\PSoC5/co_PM.c **** ********************************************************************************
+  91:.\Generated_Source\PSoC5/co_PM.c **** * Summary:
+  92:.\Generated_Source\PSoC5/co_PM.c **** *     Stop and Save the user configuration
+  93:.\Generated_Source\PSoC5/co_PM.c **** *
+  94:.\Generated_Source\PSoC5/co_PM.c **** * Parameters:  
+  95:.\Generated_Source\PSoC5/co_PM.c **** *  void
+  96:.\Generated_Source\PSoC5/co_PM.c **** *
+  97:.\Generated_Source\PSoC5/co_PM.c **** * Return: 
+  98:.\Generated_Source\PSoC5/co_PM.c **** *  void
+  99:.\Generated_Source\PSoC5/co_PM.c **** *
+ 100:.\Generated_Source\PSoC5/co_PM.c **** * Global variables:
+ 101:.\Generated_Source\PSoC5/co_PM.c **** *  co_backup.enableState:  Is modified depending on the enable 
+ 102:.\Generated_Source\PSoC5/co_PM.c **** *  state of the block before entering sleep mode.
+ 103:.\Generated_Source\PSoC5/co_PM.c **** *
+ 104:.\Generated_Source\PSoC5/co_PM.c **** *******************************************************************************/
+ 105:.\Generated_Source\PSoC5/co_PM.c **** void co_Sleep(void) 
+ 106:.\Generated_Source\PSoC5/co_PM.c **** {
+  83              		.loc 1 106 0
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 1, uses_anonymous_args = 0
+  87 0000 80B5     		push	{r7, lr}
+  88              		.cfi_def_cfa_offset 8
+  89              		.cfi_offset 7, -8
+  90              		.cfi_offset 14, -4
+  91 0002 00AF     		add	r7, sp, #0
+  92              		.cfi_def_cfa_register 7
+ 107:.\Generated_Source\PSoC5/co_PM.c ****     #if(!co_ControlRegRemoved)
+ 108:.\Generated_Source\PSoC5/co_PM.c ****         /* Save Counter's enable state */
+ 109:.\Generated_Source\PSoC5/co_PM.c ****         if(co_CTRL_ENABLE == (co_CONTROL & co_CTRL_ENABLE))
+  93              		.loc 1 109 0
+  94 0004 094B     		ldr	r3, .L6
+  95 0006 1B78     		ldrb	r3, [r3]
+  96 0008 DBB2     		uxtb	r3, r3
+  97 000a 03F00103 		and	r3, r3, #1
+  98 000e 002B     		cmp	r3, #0
+  99 0010 03D0     		beq	.L4
+ 110:.\Generated_Source\PSoC5/co_PM.c ****         {
+ 111:.\Generated_Source\PSoC5/co_PM.c ****             /* Counter is enabled */
+ 112:.\Generated_Source\PSoC5/co_PM.c ****             co_backup.CounterEnableState = 1u;
+ 100              		.loc 1 112 0
+ 101 0012 074B     		ldr	r3, .L6+4
+ 102 0014 0122     		movs	r2, #1
+ 103 0016 1A70     		strb	r2, [r3]
+ 104 0018 02E0     		b	.L5
+ 105              	.L4:
+ 113:.\Generated_Source\PSoC5/co_PM.c ****         }
+ 114:.\Generated_Source\PSoC5/co_PM.c ****         else
+ 115:.\Generated_Source\PSoC5/co_PM.c ****         {
+ 116:.\Generated_Source\PSoC5/co_PM.c ****             /* Counter is disabled */
+ 117:.\Generated_Source\PSoC5/co_PM.c ****             co_backup.CounterEnableState = 0u;
+ 106              		.loc 1 117 0
+ 107 001a 054B     		ldr	r3, .L6+4
+ 108 001c 0022     		movs	r2, #0
+ 109 001e 1A70     		strb	r2, [r3]
+ 110              	.L5:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 5
+
+
+ 118:.\Generated_Source\PSoC5/co_PM.c ****         }
+ 119:.\Generated_Source\PSoC5/co_PM.c ****     #else
+ 120:.\Generated_Source\PSoC5/co_PM.c ****         co_backup.CounterEnableState = 1u;
+ 121:.\Generated_Source\PSoC5/co_PM.c ****         if(co_backup.CounterEnableState != 0u)
+ 122:.\Generated_Source\PSoC5/co_PM.c ****         {
+ 123:.\Generated_Source\PSoC5/co_PM.c ****             co_backup.CounterEnableState = 0u;
+ 124:.\Generated_Source\PSoC5/co_PM.c ****         }
+ 125:.\Generated_Source\PSoC5/co_PM.c ****     #endif /* (!co_ControlRegRemoved) */
+ 126:.\Generated_Source\PSoC5/co_PM.c ****     
+ 127:.\Generated_Source\PSoC5/co_PM.c ****     co_Stop();
+ 111              		.loc 1 127 0
+ 112 0020 FFF7FEFF 		bl	co_Stop
+ 128:.\Generated_Source\PSoC5/co_PM.c ****     co_SaveConfig();
+ 113              		.loc 1 128 0
+ 114 0024 FFF7FEFF 		bl	co_SaveConfig
+ 129:.\Generated_Source\PSoC5/co_PM.c **** }
+ 115              		.loc 1 129 0
+ 116 0028 80BD     		pop	{r7, pc}
+ 117              	.L7:
+ 118 002a 00BF     		.align	2
+ 119              	.L6:
+ 120 002c 184F0040 		.word	1073762072
+ 121 0030 00000000 		.word	co_backup
+ 122              		.cfi_endproc
+ 123              	.LFE2:
+ 124              		.size	co_Sleep, .-co_Sleep
+ 125              		.section	.text.co_Wakeup,"ax",%progbits
+ 126              		.align	2
+ 127              		.global	co_Wakeup
+ 128              		.thumb
+ 129              		.thumb_func
+ 130              		.type	co_Wakeup, %function
+ 131              	co_Wakeup:
+ 132              	.LFB3:
+ 130:.\Generated_Source\PSoC5/co_PM.c **** 
+ 131:.\Generated_Source\PSoC5/co_PM.c **** 
+ 132:.\Generated_Source\PSoC5/co_PM.c **** /*******************************************************************************
+ 133:.\Generated_Source\PSoC5/co_PM.c **** * Function Name: co_Wakeup
+ 134:.\Generated_Source\PSoC5/co_PM.c **** ********************************************************************************
+ 135:.\Generated_Source\PSoC5/co_PM.c **** *
+ 136:.\Generated_Source\PSoC5/co_PM.c **** * Summary:
+ 137:.\Generated_Source\PSoC5/co_PM.c **** *  Restores and enables the user configuration
+ 138:.\Generated_Source\PSoC5/co_PM.c **** *  
+ 139:.\Generated_Source\PSoC5/co_PM.c **** * Parameters:  
+ 140:.\Generated_Source\PSoC5/co_PM.c **** *  void
+ 141:.\Generated_Source\PSoC5/co_PM.c **** *
+ 142:.\Generated_Source\PSoC5/co_PM.c **** * Return: 
+ 143:.\Generated_Source\PSoC5/co_PM.c **** *  void
+ 144:.\Generated_Source\PSoC5/co_PM.c **** *
+ 145:.\Generated_Source\PSoC5/co_PM.c **** * Global variables:
+ 146:.\Generated_Source\PSoC5/co_PM.c **** *  co_backup.enableState:  Is used to restore the enable state of 
+ 147:.\Generated_Source\PSoC5/co_PM.c **** *  block on wakeup from sleep mode.
+ 148:.\Generated_Source\PSoC5/co_PM.c **** *
+ 149:.\Generated_Source\PSoC5/co_PM.c **** *******************************************************************************/
+ 150:.\Generated_Source\PSoC5/co_PM.c **** void co_Wakeup(void) 
+ 151:.\Generated_Source\PSoC5/co_PM.c **** {
+ 133              		.loc 1 151 0
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 6
+
+
+ 134              		.cfi_startproc
+ 135              		@ args = 0, pretend = 0, frame = 0
+ 136              		@ frame_needed = 1, uses_anonymous_args = 0
+ 137 0000 80B5     		push	{r7, lr}
+ 138              		.cfi_def_cfa_offset 8
+ 139              		.cfi_offset 7, -8
+ 140              		.cfi_offset 14, -4
+ 141 0002 00AF     		add	r7, sp, #0
+ 142              		.cfi_def_cfa_register 7
+ 152:.\Generated_Source\PSoC5/co_PM.c ****     co_RestoreConfig();
+ 143              		.loc 1 152 0
+ 144 0004 FFF7FEFF 		bl	co_RestoreConfig
+ 153:.\Generated_Source\PSoC5/co_PM.c ****     #if(!co_ControlRegRemoved)
+ 154:.\Generated_Source\PSoC5/co_PM.c ****         if(co_backup.CounterEnableState == 1u)
+ 145              		.loc 1 154 0
+ 146 0008 034B     		ldr	r3, .L10
+ 147 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 148 000c 012B     		cmp	r3, #1
+ 149 000e 01D1     		bne	.L8
+ 155:.\Generated_Source\PSoC5/co_PM.c ****         {
+ 156:.\Generated_Source\PSoC5/co_PM.c ****             /* Enable Counter's operation */
+ 157:.\Generated_Source\PSoC5/co_PM.c ****             co_Enable();
+ 150              		.loc 1 157 0
+ 151 0010 FFF7FEFF 		bl	co_Enable
+ 152              	.L8:
+ 158:.\Generated_Source\PSoC5/co_PM.c ****         } /* Do nothing if Counter was disabled before */    
+ 159:.\Generated_Source\PSoC5/co_PM.c ****     #endif /* (!co_ControlRegRemoved) */
+ 160:.\Generated_Source\PSoC5/co_PM.c ****     
+ 161:.\Generated_Source\PSoC5/co_PM.c **** }
+ 153              		.loc 1 161 0
+ 154 0014 80BD     		pop	{r7, pc}
+ 155              	.L11:
+ 156 0016 00BF     		.align	2
+ 157              	.L10:
+ 158 0018 00000000 		.word	co_backup
+ 159              		.cfi_endproc
+ 160              	.LFE3:
+ 161              		.size	co_Wakeup, .-co_Wakeup
+ 162              		.text
+ 163              	.Letext0:
+ 164              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 165              		.file 3 ".\\Generated_Source\\PSoC5\\co.h"
+ 166              		.section	.debug_info,"",%progbits
+ 167              	.Ldebug_info0:
+ 168 0000 38010000 		.4byte	0x138
+ 169 0004 0400     		.2byte	0x4
+ 170 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 171 000a 04       		.byte	0x4
+ 172 000b 01       		.uleb128 0x1
+ 173 000c 22010000 		.4byte	.LASF24
+ 174 0010 01       		.byte	0x1
+ 175 0011 8C000000 		.4byte	.LASF25
+ 176 0015 C6010000 		.4byte	.LASF26
+ 177 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 178 001d 00000000 		.4byte	0
+ 179 0021 00000000 		.4byte	.Ldebug_line0
+ 180 0025 02       		.uleb128 0x2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 7
+
+
+ 181 0026 01       		.byte	0x1
+ 182 0027 06       		.byte	0x6
+ 183 0028 16010000 		.4byte	.LASF0
+ 184 002c 02       		.uleb128 0x2
+ 185 002d 01       		.byte	0x1
+ 186 002e 08       		.byte	0x8
+ 187 002f B3000000 		.4byte	.LASF1
+ 188 0033 02       		.uleb128 0x2
+ 189 0034 02       		.byte	0x2
+ 190 0035 05       		.byte	0x5
+ 191 0036 B5010000 		.4byte	.LASF2
+ 192 003a 02       		.uleb128 0x2
+ 193 003b 02       		.byte	0x2
+ 194 003c 07       		.byte	0x7
+ 195 003d 03010000 		.4byte	.LASF3
+ 196 0041 02       		.uleb128 0x2
+ 197 0042 04       		.byte	0x4
+ 198 0043 05       		.byte	0x5
+ 199 0044 D6000000 		.4byte	.LASF4
+ 200 0048 02       		.uleb128 0x2
+ 201 0049 04       		.byte	0x4
+ 202 004a 07       		.byte	0x7
+ 203 004b 59000000 		.4byte	.LASF5
+ 204 004f 02       		.uleb128 0x2
+ 205 0050 08       		.byte	0x8
+ 206 0051 05       		.byte	0x5
+ 207 0052 00000000 		.4byte	.LASF6
+ 208 0056 02       		.uleb128 0x2
+ 209 0057 08       		.byte	0x8
+ 210 0058 07       		.byte	0x7
+ 211 0059 75000000 		.4byte	.LASF7
+ 212 005d 03       		.uleb128 0x3
+ 213 005e 04       		.byte	0x4
+ 214 005f 05       		.byte	0x5
+ 215 0060 696E7400 		.ascii	"int\000"
+ 216 0064 02       		.uleb128 0x2
+ 217 0065 04       		.byte	0x4
+ 218 0066 07       		.byte	0x7
+ 219 0067 0E000000 		.4byte	.LASF8
+ 220 006b 04       		.uleb128 0x4
+ 221 006c 53000000 		.4byte	.LASF9
+ 222 0070 02       		.byte	0x2
+ 223 0071 A1       		.byte	0xa1
+ 224 0072 2C000000 		.4byte	0x2c
+ 225 0076 04       		.uleb128 0x4
+ 226 0077 BF010000 		.4byte	.LASF10
+ 227 007b 02       		.byte	0x2
+ 228 007c A2       		.byte	0xa2
+ 229 007d 3A000000 		.4byte	0x3a
+ 230 0081 02       		.uleb128 0x2
+ 231 0082 04       		.byte	0x4
+ 232 0083 04       		.byte	0x4
+ 233 0084 AD000000 		.4byte	.LASF11
+ 234 0088 02       		.uleb128 0x2
+ 235 0089 08       		.byte	0x8
+ 236 008a 04       		.byte	0x4
+ 237 008b F2000000 		.4byte	.LASF12
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 8
+
+
+ 238 008f 02       		.uleb128 0x2
+ 239 0090 01       		.byte	0x1
+ 240 0091 08       		.byte	0x8
+ 241 0092 C1000000 		.4byte	.LASF13
+ 242 0096 05       		.uleb128 0x5
+ 243 0097 4E000000 		.4byte	.LASF14
+ 244 009b 02       		.byte	0x2
+ 245 009c 4B01     		.2byte	0x14b
+ 246 009e A2000000 		.4byte	0xa2
+ 247 00a2 06       		.uleb128 0x6
+ 248 00a3 6B000000 		.4byte	0x6b
+ 249 00a7 02       		.uleb128 0x2
+ 250 00a8 04       		.byte	0x4
+ 251 00a9 07       		.byte	0x7
+ 252 00aa 0A020000 		.4byte	.LASF15
+ 253 00ae 07       		.uleb128 0x7
+ 254 00af 06       		.byte	0x6
+ 255 00b0 03       		.byte	0x3
+ 256 00b1 40       		.byte	0x40
+ 257 00b2 DB000000 		.4byte	0xdb
+ 258 00b6 08       		.uleb128 0x8
+ 259 00b7 DF000000 		.4byte	.LASF16
+ 260 00bb 03       		.byte	0x3
+ 261 00bc 42       		.byte	0x42
+ 262 00bd 6B000000 		.4byte	0x6b
+ 263 00c1 00       		.byte	0
+ 264 00c2 08       		.uleb128 0x8
+ 265 00c3 1B000000 		.4byte	.LASF17
+ 266 00c7 03       		.byte	0x3
+ 267 00c8 43       		.byte	0x43
+ 268 00c9 76000000 		.4byte	0x76
+ 269 00cd 02       		.byte	0x2
+ 270 00ce 08       		.uleb128 0x8
+ 271 00cf 9E010000 		.4byte	.LASF18
+ 272 00d3 03       		.byte	0x3
+ 273 00d4 46       		.byte	0x46
+ 274 00d5 6B000000 		.4byte	0x6b
+ 275 00d9 04       		.byte	0x4
+ 276 00da 00       		.byte	0
+ 277 00db 04       		.uleb128 0x4
+ 278 00dc C6000000 		.4byte	.LASF19
+ 279 00e0 03       		.byte	0x3
+ 280 00e1 49       		.byte	0x49
+ 281 00e2 AE000000 		.4byte	0xae
+ 282 00e6 09       		.uleb128 0x9
+ 283 00e7 26000000 		.4byte	.LASF20
+ 284 00eb 01       		.byte	0x1
+ 285 00ec 2A       		.byte	0x2a
+ 286 00ed 00000000 		.4byte	.LFB0
+ 287 00f1 0C000000 		.4byte	.LFE0-.LFB0
+ 288 00f5 01       		.uleb128 0x1
+ 289 00f6 9C       		.byte	0x9c
+ 290 00f7 09       		.uleb128 0x9
+ 291 00f8 3D000000 		.4byte	.LASF21
+ 292 00fc 01       		.byte	0x1
+ 293 00fd 4A       		.byte	0x4a
+ 294 00fe 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 9
+
+
+ 295 0102 0C000000 		.4byte	.LFE1-.LFB1
+ 296 0106 01       		.uleb128 0x1
+ 297 0107 9C       		.byte	0x9c
+ 298 0108 0A       		.uleb128 0xa
+ 299 0109 34000000 		.4byte	.LASF22
+ 300 010d 01       		.byte	0x1
+ 301 010e 69       		.byte	0x69
+ 302 010f 00000000 		.4byte	.LFB2
+ 303 0113 34000000 		.4byte	.LFE2-.LFB2
+ 304 0117 01       		.uleb128 0x1
+ 305 0118 9C       		.byte	0x9c
+ 306 0119 0A       		.uleb128 0xa
+ 307 011a F9000000 		.4byte	.LASF23
+ 308 011e 01       		.byte	0x1
+ 309 011f 96       		.byte	0x96
+ 310 0120 00000000 		.4byte	.LFB3
+ 311 0124 1C000000 		.4byte	.LFE3-.LFB3
+ 312 0128 01       		.uleb128 0x1
+ 313 0129 9C       		.byte	0x9c
+ 314 012a 0B       		.uleb128 0xb
+ 315 012b 6B000000 		.4byte	.LASF27
+ 316 012f 01       		.byte	0x1
+ 317 0130 15       		.byte	0x15
+ 318 0131 DB000000 		.4byte	0xdb
+ 319 0135 05       		.uleb128 0x5
+ 320 0136 03       		.byte	0x3
+ 321 0137 00000000 		.4byte	co_backup
+ 322 013b 00       		.byte	0
+ 323              		.section	.debug_abbrev,"",%progbits
+ 324              	.Ldebug_abbrev0:
+ 325 0000 01       		.uleb128 0x1
+ 326 0001 11       		.uleb128 0x11
+ 327 0002 01       		.byte	0x1
+ 328 0003 25       		.uleb128 0x25
+ 329 0004 0E       		.uleb128 0xe
+ 330 0005 13       		.uleb128 0x13
+ 331 0006 0B       		.uleb128 0xb
+ 332 0007 03       		.uleb128 0x3
+ 333 0008 0E       		.uleb128 0xe
+ 334 0009 1B       		.uleb128 0x1b
+ 335 000a 0E       		.uleb128 0xe
+ 336 000b 55       		.uleb128 0x55
+ 337 000c 17       		.uleb128 0x17
+ 338 000d 11       		.uleb128 0x11
+ 339 000e 01       		.uleb128 0x1
+ 340 000f 10       		.uleb128 0x10
+ 341 0010 17       		.uleb128 0x17
+ 342 0011 00       		.byte	0
+ 343 0012 00       		.byte	0
+ 344 0013 02       		.uleb128 0x2
+ 345 0014 24       		.uleb128 0x24
+ 346 0015 00       		.byte	0
+ 347 0016 0B       		.uleb128 0xb
+ 348 0017 0B       		.uleb128 0xb
+ 349 0018 3E       		.uleb128 0x3e
+ 350 0019 0B       		.uleb128 0xb
+ 351 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 10
+
+
+ 352 001b 0E       		.uleb128 0xe
+ 353 001c 00       		.byte	0
+ 354 001d 00       		.byte	0
+ 355 001e 03       		.uleb128 0x3
+ 356 001f 24       		.uleb128 0x24
+ 357 0020 00       		.byte	0
+ 358 0021 0B       		.uleb128 0xb
+ 359 0022 0B       		.uleb128 0xb
+ 360 0023 3E       		.uleb128 0x3e
+ 361 0024 0B       		.uleb128 0xb
+ 362 0025 03       		.uleb128 0x3
+ 363 0026 08       		.uleb128 0x8
+ 364 0027 00       		.byte	0
+ 365 0028 00       		.byte	0
+ 366 0029 04       		.uleb128 0x4
+ 367 002a 16       		.uleb128 0x16
+ 368 002b 00       		.byte	0
+ 369 002c 03       		.uleb128 0x3
+ 370 002d 0E       		.uleb128 0xe
+ 371 002e 3A       		.uleb128 0x3a
+ 372 002f 0B       		.uleb128 0xb
+ 373 0030 3B       		.uleb128 0x3b
+ 374 0031 0B       		.uleb128 0xb
+ 375 0032 49       		.uleb128 0x49
+ 376 0033 13       		.uleb128 0x13
+ 377 0034 00       		.byte	0
+ 378 0035 00       		.byte	0
+ 379 0036 05       		.uleb128 0x5
+ 380 0037 16       		.uleb128 0x16
+ 381 0038 00       		.byte	0
+ 382 0039 03       		.uleb128 0x3
+ 383 003a 0E       		.uleb128 0xe
+ 384 003b 3A       		.uleb128 0x3a
+ 385 003c 0B       		.uleb128 0xb
+ 386 003d 3B       		.uleb128 0x3b
+ 387 003e 05       		.uleb128 0x5
+ 388 003f 49       		.uleb128 0x49
+ 389 0040 13       		.uleb128 0x13
+ 390 0041 00       		.byte	0
+ 391 0042 00       		.byte	0
+ 392 0043 06       		.uleb128 0x6
+ 393 0044 35       		.uleb128 0x35
+ 394 0045 00       		.byte	0
+ 395 0046 49       		.uleb128 0x49
+ 396 0047 13       		.uleb128 0x13
+ 397 0048 00       		.byte	0
+ 398 0049 00       		.byte	0
+ 399 004a 07       		.uleb128 0x7
+ 400 004b 13       		.uleb128 0x13
+ 401 004c 01       		.byte	0x1
+ 402 004d 0B       		.uleb128 0xb
+ 403 004e 0B       		.uleb128 0xb
+ 404 004f 3A       		.uleb128 0x3a
+ 405 0050 0B       		.uleb128 0xb
+ 406 0051 3B       		.uleb128 0x3b
+ 407 0052 0B       		.uleb128 0xb
+ 408 0053 01       		.uleb128 0x1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 11
+
+
+ 409 0054 13       		.uleb128 0x13
+ 410 0055 00       		.byte	0
+ 411 0056 00       		.byte	0
+ 412 0057 08       		.uleb128 0x8
+ 413 0058 0D       		.uleb128 0xd
+ 414 0059 00       		.byte	0
+ 415 005a 03       		.uleb128 0x3
+ 416 005b 0E       		.uleb128 0xe
+ 417 005c 3A       		.uleb128 0x3a
+ 418 005d 0B       		.uleb128 0xb
+ 419 005e 3B       		.uleb128 0x3b
+ 420 005f 0B       		.uleb128 0xb
+ 421 0060 49       		.uleb128 0x49
+ 422 0061 13       		.uleb128 0x13
+ 423 0062 38       		.uleb128 0x38
+ 424 0063 0B       		.uleb128 0xb
+ 425 0064 00       		.byte	0
+ 426 0065 00       		.byte	0
+ 427 0066 09       		.uleb128 0x9
+ 428 0067 2E       		.uleb128 0x2e
+ 429 0068 00       		.byte	0
+ 430 0069 3F       		.uleb128 0x3f
+ 431 006a 19       		.uleb128 0x19
+ 432 006b 03       		.uleb128 0x3
+ 433 006c 0E       		.uleb128 0xe
+ 434 006d 3A       		.uleb128 0x3a
+ 435 006e 0B       		.uleb128 0xb
+ 436 006f 3B       		.uleb128 0x3b
+ 437 0070 0B       		.uleb128 0xb
+ 438 0071 27       		.uleb128 0x27
+ 439 0072 19       		.uleb128 0x19
+ 440 0073 11       		.uleb128 0x11
+ 441 0074 01       		.uleb128 0x1
+ 442 0075 12       		.uleb128 0x12
+ 443 0076 06       		.uleb128 0x6
+ 444 0077 40       		.uleb128 0x40
+ 445 0078 18       		.uleb128 0x18
+ 446 0079 9742     		.uleb128 0x2117
+ 447 007b 19       		.uleb128 0x19
+ 448 007c 00       		.byte	0
+ 449 007d 00       		.byte	0
+ 450 007e 0A       		.uleb128 0xa
+ 451 007f 2E       		.uleb128 0x2e
+ 452 0080 00       		.byte	0
+ 453 0081 3F       		.uleb128 0x3f
+ 454 0082 19       		.uleb128 0x19
+ 455 0083 03       		.uleb128 0x3
+ 456 0084 0E       		.uleb128 0xe
+ 457 0085 3A       		.uleb128 0x3a
+ 458 0086 0B       		.uleb128 0xb
+ 459 0087 3B       		.uleb128 0x3b
+ 460 0088 0B       		.uleb128 0xb
+ 461 0089 27       		.uleb128 0x27
+ 462 008a 19       		.uleb128 0x19
+ 463 008b 11       		.uleb128 0x11
+ 464 008c 01       		.uleb128 0x1
+ 465 008d 12       		.uleb128 0x12
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 12
+
+
+ 466 008e 06       		.uleb128 0x6
+ 467 008f 40       		.uleb128 0x40
+ 468 0090 18       		.uleb128 0x18
+ 469 0091 9642     		.uleb128 0x2116
+ 470 0093 19       		.uleb128 0x19
+ 471 0094 00       		.byte	0
+ 472 0095 00       		.byte	0
+ 473 0096 0B       		.uleb128 0xb
+ 474 0097 34       		.uleb128 0x34
+ 475 0098 00       		.byte	0
+ 476 0099 03       		.uleb128 0x3
+ 477 009a 0E       		.uleb128 0xe
+ 478 009b 3A       		.uleb128 0x3a
+ 479 009c 0B       		.uleb128 0xb
+ 480 009d 3B       		.uleb128 0x3b
+ 481 009e 0B       		.uleb128 0xb
+ 482 009f 49       		.uleb128 0x49
+ 483 00a0 13       		.uleb128 0x13
+ 484 00a1 02       		.uleb128 0x2
+ 485 00a2 18       		.uleb128 0x18
+ 486 00a3 00       		.byte	0
+ 487 00a4 00       		.byte	0
+ 488 00a5 00       		.byte	0
+ 489              		.section	.debug_aranges,"",%progbits
+ 490 0000 34000000 		.4byte	0x34
+ 491 0004 0200     		.2byte	0x2
+ 492 0006 00000000 		.4byte	.Ldebug_info0
+ 493 000a 04       		.byte	0x4
+ 494 000b 00       		.byte	0
+ 495 000c 0000     		.2byte	0
+ 496 000e 0000     		.2byte	0
+ 497 0010 00000000 		.4byte	.LFB0
+ 498 0014 0C000000 		.4byte	.LFE0-.LFB0
+ 499 0018 00000000 		.4byte	.LFB1
+ 500 001c 0C000000 		.4byte	.LFE1-.LFB1
+ 501 0020 00000000 		.4byte	.LFB2
+ 502 0024 34000000 		.4byte	.LFE2-.LFB2
+ 503 0028 00000000 		.4byte	.LFB3
+ 504 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 505 0030 00000000 		.4byte	0
+ 506 0034 00000000 		.4byte	0
+ 507              		.section	.debug_ranges,"",%progbits
+ 508              	.Ldebug_ranges0:
+ 509 0000 00000000 		.4byte	.LFB0
+ 510 0004 0C000000 		.4byte	.LFE0
+ 511 0008 00000000 		.4byte	.LFB1
+ 512 000c 0C000000 		.4byte	.LFE1
+ 513 0010 00000000 		.4byte	.LFB2
+ 514 0014 34000000 		.4byte	.LFE2
+ 515 0018 00000000 		.4byte	.LFB3
+ 516 001c 1C000000 		.4byte	.LFE3
+ 517 0020 00000000 		.4byte	0
+ 518 0024 00000000 		.4byte	0
+ 519              		.section	.debug_line,"",%progbits
+ 520              	.Ldebug_line0:
+ 521 0000 A3000000 		.section	.debug_str,"MS",%progbits,1
+ 521      02004C00 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 13
+
+
+ 521      00000201 
+ 521      FB0E0D00 
+ 521      01010101 
+ 522              	.LASF6:
+ 523 0000 6C6F6E67 		.ascii	"long long int\000"
+ 523      206C6F6E 
+ 523      6720696E 
+ 523      7400
+ 524              	.LASF8:
+ 525 000e 756E7369 		.ascii	"unsigned int\000"
+ 525      676E6564 
+ 525      20696E74 
+ 525      00
+ 526              	.LASF17:
+ 527 001b 436F756E 		.ascii	"CounterUdb\000"
+ 527      74657255 
+ 527      646200
+ 528              	.LASF20:
+ 529 0026 636F5F53 		.ascii	"co_SaveConfig\000"
+ 529      61766543 
+ 529      6F6E6669 
+ 529      6700
+ 530              	.LASF22:
+ 531 0034 636F5F53 		.ascii	"co_Sleep\000"
+ 531      6C656570 
+ 531      00
+ 532              	.LASF21:
+ 533 003d 636F5F52 		.ascii	"co_RestoreConfig\000"
+ 533      6573746F 
+ 533      7265436F 
+ 533      6E666967 
+ 533      00
+ 534              	.LASF14:
+ 535 004e 72656738 		.ascii	"reg8\000"
+ 535      00
+ 536              	.LASF9:
+ 537 0053 75696E74 		.ascii	"uint8\000"
+ 537      3800
+ 538              	.LASF5:
+ 539 0059 6C6F6E67 		.ascii	"long unsigned int\000"
+ 539      20756E73 
+ 539      69676E65 
+ 539      6420696E 
+ 539      7400
+ 540              	.LASF27:
+ 541 006b 636F5F62 		.ascii	"co_backup\000"
+ 541      61636B75 
+ 541      7000
+ 542              	.LASF7:
+ 543 0075 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 543      206C6F6E 
+ 543      6720756E 
+ 543      7369676E 
+ 543      65642069 
+ 544              	.LASF25:
+ 545 008c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\co_PM.c\000"
+ 545      6E657261 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 14
+
+
+ 545      7465645F 
+ 545      536F7572 
+ 545      63655C50 
+ 546              	.LASF11:
+ 547 00ad 666C6F61 		.ascii	"float\000"
+ 547      7400
+ 548              	.LASF1:
+ 549 00b3 756E7369 		.ascii	"unsigned char\000"
+ 549      676E6564 
+ 549      20636861 
+ 549      7200
+ 550              	.LASF13:
+ 551 00c1 63686172 		.ascii	"char\000"
+ 551      00
+ 552              	.LASF19:
+ 553 00c6 636F5F62 		.ascii	"co_backupStruct\000"
+ 553      61636B75 
+ 553      70537472 
+ 553      75637400 
+ 554              	.LASF4:
+ 555 00d6 6C6F6E67 		.ascii	"long int\000"
+ 555      20696E74 
+ 555      00
+ 556              	.LASF16:
+ 557 00df 436F756E 		.ascii	"CounterEnableState\000"
+ 557      74657245 
+ 557      6E61626C 
+ 557      65537461 
+ 557      746500
+ 558              	.LASF12:
+ 559 00f2 646F7562 		.ascii	"double\000"
+ 559      6C6500
+ 560              	.LASF23:
+ 561 00f9 636F5F57 		.ascii	"co_Wakeup\000"
+ 561      616B6575 
+ 561      7000
+ 562              	.LASF3:
+ 563 0103 73686F72 		.ascii	"short unsigned int\000"
+ 563      7420756E 
+ 563      7369676E 
+ 563      65642069 
+ 563      6E7400
+ 564              	.LASF0:
+ 565 0116 7369676E 		.ascii	"signed char\000"
+ 565      65642063 
+ 565      68617200 
+ 566              	.LASF24:
+ 567 0122 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 567      4320342E 
+ 567      382E3420 
+ 567      32303134 
+ 567      30353236 
+ 568 0155 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 568      20726576 
+ 568      6973696F 
+ 568      6E203231 
+ 568      31333538 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccVM3fuf.s 			page 15
+
+
+ 569 0188 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 569      66756E63 
+ 569      74696F6E 
+ 569      2D736563 
+ 569      74696F6E 
+ 570              	.LASF18:
+ 571 019e 436F756E 		.ascii	"CounterControlRegister\000"
+ 571      74657243 
+ 571      6F6E7472 
+ 571      6F6C5265 
+ 571      67697374 
+ 572              	.LASF2:
+ 573 01b5 73686F72 		.ascii	"short int\000"
+ 573      7420696E 
+ 573      7400
+ 574              	.LASF10:
+ 575 01bf 75696E74 		.ascii	"uint16\000"
+ 575      313600
+ 576              	.LASF26:
+ 577 01c6 5A3A5C73 		.ascii	"Z:\\scottcarlson On My Mac\\Code\\PSoC_Creator\\Des"
+ 577      636F7474 
+ 577      6361726C 
+ 577      736F6E20 
+ 577      4F6E204D 
+ 578 01f5 69676E30 		.ascii	"ign01\\Design01.cydsn\000"
+ 578      315C4465 
+ 578      7369676E 
+ 578      30312E63 
+ 578      7964736E 
+ 579              	.LASF15:
+ 580 020a 73697A65 		.ascii	"sizetype\000"
+ 580      74797065 
+ 580      00
+ 581              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
