@@ -19,14 +19,14 @@
 Number of clocks: 11
 Clock: ADC_DelSig_1_Ext_CP_Clk               | N/A  | Target: 62.60 MHz   | 
 Clock: ADC_DelSig_1_Ext_CP_Clk(routed)       | N/A  | Target: 62.60 MHz   | 
-Clock: ADC_DelSig_1_theACLK                  | N/A  | Target: 1.53 MHz    | 
-Clock: ADC_DelSig_1_theACLK(fixed-function)  | N/A  | Target: 1.53 MHz    | 
+Clock: ADC_DelSig_1_theACLK                  | N/A  | Target: 0.19 MHz    | 
+Clock: ADC_DelSig_1_theACLK(fixed-function)  | N/A  | Target: 0.19 MHz    | 
 Clock: CyBUS_CLK                             | N/A  | Target: 62.60 MHz   | 
 Clock: CyILO                                 | N/A  | Target: 0.00 MHz    | 
 Clock: CyIMO                                 | N/A  | Target: 62.60 MHz   | 
 Clock: CyMASTER_CLK                          | N/A  | Target: 62.60 MHz   | 
 Clock: CyPLL_OUT                             | N/A  | Target: 48.00 MHz   | 
-Clock: CyXTAL                                | N/A  | Target: 8.00 MHz    | 
+Clock: CyXTAL                                | N/A  | Target: 10.00 MHz   | 
 Clock: \ADC_DelSig_1:DSM\/dec_clock          | N/A  | Target: 100.00 MHz  | 
 
  =====================================================================
@@ -61,13 +61,14 @@ Port Name  Setup to Clk  Clock Name:Phase
 -----------------------3.2::Clock to Out
 ----------------------------------------
 
-Port Name     Clock to Out  Clock Name:Phase  
-------------  ------------  ----------------  
-Pin_1(0)_PAD  28144         CyBUS_CLK:R       
-Pin_3(0)_PAD  28132         CyBUS_CLK:R       
-Pin_4(0)_PAD  27528         CyBUS_CLK:R       
-Pin_6(0)_PAD  27700         CyBUS_CLK:R       
-Pin_7(0)_PAD  28214         CyBUS_CLK:R       
+Port Name     Clock to Out  Clock Name:Phase                
+------------  ------------  ------------------------------  
+Pin_1(0)_PAD  28144         CyBUS_CLK:R                     
+Pin_3(0)_PAD  28132         CyBUS_CLK:R                     
+Pin_4(0)_PAD  27528         CyBUS_CLK:R                     
+Pin_6(0)_PAD  27700         CyBUS_CLK:R                     
+Pin_7(0)_PAD  28214         CyBUS_CLK:R                     
+Pin_8(0)_PAD  25581         \ADC_DelSig_1:DSM\/dec_clock:R  
 
 
                          3.3::Pad to Pad

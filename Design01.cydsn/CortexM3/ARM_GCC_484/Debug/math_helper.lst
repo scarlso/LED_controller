@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
   22:.\math_helper.c **** *     the documentation and/or other materials provided with the 
   23:.\math_helper.c **** *     distribution.
   24:.\math_helper.c **** *   - Neither the name of ARM LIMITED nor the names of its contributors
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 2
 
 
   25:.\math_helper.c **** *     may be used to endorse or promote products derived from this
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
   49 000a 7A60     		str	r2, [r7, #4]
   64:.\math_helper.c ****   float EnergySignal = 0.0, EnergyError = 0.0;
   50              		.loc 1 64 0
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 3
 
 
   51 000c 4FF00003 		mov	r3, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
   86 0046 FB69     		ldr	r3, [r7, #28]
   87 0048 1B68     		ldr	r3, [r3]
   88 004a BB61     		str	r3, [r7, #24]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 4
 
 
   84:.\math_helper.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  136 00a8 FA68     		ldr	r2, [r7, #12]
  137 00aa 1344     		add	r3, r3, r2
  138 00ac 1A68     		ldr	r2, [r3]	@ float
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 5
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 5
 
 
  139 00ae 3B6A     		ldr	r3, [r7, #32]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  182 00fe 4FF00003 		mov	r3, #0
  183 0102 20E0     		b	.L8
  184              	.L7:
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 6
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 6
 
 
  100:.\math_helper.c ****     }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  231              		.global	arm_provide_guard_bits_q15
  232              		.thumb
  233              		.thumb_func
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 7
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 7
 
 
  234              		.type	arm_provide_guard_bits_q15, %function
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  268 0026 7A68     		ldr	r2, [r7, #4]
  269 0028 41FA02F2 		asr	r2, r1, r2
  270 002c 92B2     		uxth	r2, r2
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 8
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 8
 
 
  271 002e 1A80     		strh	r2, [r3]	@ movhi
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  311              		.cfi_offset 4, -20
  312              		.cfi_offset 5, -16
  313              		.cfi_offset 6, -12
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 9
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 9
 
 
  314              		.cfi_offset 7, -8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  360 0056 7B69     		ldr	r3, [r7, #20]
  361 0058 9B00     		lsls	r3, r3, #2
  362 005a FA68     		ldr	r2, [r7, #12]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 10
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 10
 
 
  363 005c 1344     		add	r3, r3, r2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  412 00bc 7B69     		ldr	r3, [r7, #20]
  413 00be 0133     		adds	r3, r3, #1
  414 00c0 7B61     		str	r3, [r7, #20]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 11
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 11
 
 
  415              	.L15:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  454              		.cfi_def_cfa_register 7
  455 0006 F860     		str	r0, [r7, #12]
  456 0008 B960     		str	r1, [r7, #8]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 12
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 12
 
 
  457 000a 7A60     		str	r2, [r7, #4]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  170:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
  499              		.loc 1 170 0
  500 004c FB69     		ldr	r3, [r7, #28]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 13
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 13
 
 
  501 004e 0133     		adds	r3, r3, #1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  538              		.cfi_def_cfa_offset 40
  539 0004 00AF     		add	r7, sp, #0
  540              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 14
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 14
 
 
  541 0006 F860     		str	r0, [r7, #12]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  198:.\math_helper.c ****   for (i = 0; i < numSamples; i++)
  583              		.loc 1 198 0
  584 0048 FB69     		ldr	r3, [r7, #28]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 15
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 15
 
 
  585 004a 0133     		adds	r3, r3, #1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  618 0000 80B4     		push	{r7}
  619              		.cfi_def_cfa_offset 4
  620              		.cfi_offset 7, -4
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 16
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 16
 
 
  621 0002 87B0     		sub	sp, sp, #28
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  666              		.align	2
  667              		.global	arm_provide_guard_bits_q7
  668              		.thumb
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 17
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 17
 
 
  669              		.thumb_func
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  703 0024 41FA02F2 		asr	r2, r1, r2
  704 0028 D2B2     		uxtb	r2, r2
  705 002a 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 18
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 18
 
 
  250:.\math_helper.c ****   for (i = 0; i < blockSize; i++)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  743 0004 00AF     		add	r7, sp, #0
  744              		.cfi_def_cfa_register 7
  745 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 19
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 19
 
 
  268:.\math_helper.c ****   uint32_t i = 1, j = 0;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  784 0038 5DF8047B 		ldr	r7, [sp], #4
  785 003c 7047     		bx	lr
  786              		.cfi_endproc
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 20
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 20
 
 
  787              	.LFE125:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  825 001a 7B69     		ldr	r3, [r7, #20]
  826 001c 9B00     		lsls	r3, r3, #2
  827 001e FA68     		ldr	r2, [r7, #12]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 21
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 21
 
 
  828 0020 1344     		add	r3, r3, r2
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  870              		@ frame_needed = 1, uses_anonymous_args = 0
  871              		@ link register save eliminated.
  872 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 22
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 22
 
 
  873              		.cfi_def_cfa_offset 4
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  915              		.align	2
  916              		.global	arm_float_to_q14
  917              		.thumb
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 23
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 23
 
 
  918              		.thumb_func
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  953 0020 1344     		add	r3, r3, r2
  954 0022 1B68     		ldr	r3, [r3]	@ float
  955 0024 1846     		mov	r0, r3
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 24
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 24
 
 
  956 0026 4FF08D41 		mov	r1, #1182793728
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1008 0096 0346     		mov	r3, r0
  1009 0098 9BB2     		uxth	r3, r3
  1010 009a 3380     		strh	r3, [r6]	@ movhi
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 25
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 25
 
 
  340:.\math_helper.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1054              		.section	.text.arm_float_to_q30,"ax",%progbits
  1055              		.align	2
  1056              		.global	arm_float_to_q30
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 26
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 26
 
 
  1057              		.thumb
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1093 0020 1344     		add	r3, r3, r2
  1094 0022 1B68     		ldr	r3, [r3]	@ float
  1095 0024 1846     		mov	r0, r3
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 27
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 27
 
 
  1096 0026 4FF09D41 		mov	r1, #1317011456
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  369:.\math_helper.c **** 
  370:.\math_helper.c ****       if (pIn[i] == (float) 2.0)
  1148              		.loc 1 370 0 is_stmt 1 discriminator 3
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 28
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 28
 
 
  1149 0096 7B69     		ldr	r3, [r7, #20]
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1196              		.type	arm_float_to_q29, %function
  1197              	arm_float_to_q29:
  1198              	.LFB130:
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 29
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 29
 
 
  376:.\math_helper.c **** 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1236 0030 1846     		mov	r0, r3
  1237 0032 FFF7FEFF 		bl	__aeabi_f2iz
  1238 0036 0346     		mov	r3, r0
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 30
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 30
 
 
  1239 0038 2360     		str	r3, [r4]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1289 009c 1344     		add	r3, r3, r2
  1290 009e 1B68     		ldr	r3, [r3]	@ float
  1291 00a0 1846     		mov	r0, r3
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 31
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 31
 
 
  1292 00a2 4FF08141 		mov	r1, #1082130432
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  405:.\math_helper.c ****  * @brief  Converts float to fixed q28 format
  406:.\math_helper.c ****  * @param  uint32_t 	number of samples in the buffer
  407:.\math_helper.c ****  * @return none
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 32
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 32
 
 
  408:.\math_helper.c ****  * The function converts floating point values to fixed point values 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  421:.\math_helper.c ****       pOut[i] += pIn[i] > 0 ? 0.5 : -0.5;
  1377              		.loc 1 421 0
  1378 003a 7B69     		ldr	r3, [r7, #20]
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 33
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 33
 
 
  1379 003c 9B00     		lsls	r3, r3, #2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1431 00aa 0346     		mov	r3, r0
  1432 00ac 002B     		cmp	r3, #0
  1433 00ae 06D0     		beq	.L99
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 34
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 34
 
 
  424:.\math_helper.c ****         {
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  436:.\math_helper.c ****  */
  437:.\math_helper.c **** 
  438:.\math_helper.c **** void arm_clip_f32 (float *pIn, uint32_t numSamples)
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 35
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 35
 
 
  439:.\math_helper.c **** {
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1518 0040 1344     		add	r3, r3, r2
  1519 0042 1B68     		ldr	r3, [r3]	@ float
  1520 0044 1846     		mov	r0, r3
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 36
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 36
 
 
  1521 0046 0B49     		ldr	r1, .L117
@@ -2148,8 +2148,8 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1557              	.Letext0:
  1558              		.file 2 "c:\\program files\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.4\\arm
  1559              		.file 3 "c:\\program files\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.4\\arm
- 1560              		.file 4 "..\\..\\CMSIS_project\\CMSIS_project.cydsn\\CMSISfile\\CMSIS\\Include/arm_math.h"
- 1561              		.file 5 "..\\..\\CMSIS_project\\CMSIS_project.cydsn\\CMSISfile\\CMSIS\\Include/core_cm3.h"
+ 1560              		.file 4 "Z:\\scottcarlson On My Mac\\Code\\repos\\LED_controller\\CMSISfile\\CMSIS\\Include/arm_ma
+ 1561              		.file 5 "Z:\\scottcarlson On My Mac\\Code\\repos\\LED_controller\\CMSISfile\\CMSIS\\Include/core_c
  1562              		.section	.debug_info,"",%progbits
  1563              	.Ldebug_info0:
  1564 0000 63060000 		.4byte	0x663
@@ -2158,12 +2158,12 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1567 000a 04       		.byte	0x4
  1568 000b 01       		.uleb128 0x1
  1569 000c 8D010000 		.4byte	.LASF58
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 37
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 37
 
 
  1570 0010 01       		.byte	0x1
  1571 0011 6A000000 		.4byte	.LASF59
- 1572 0015 11030000 		.4byte	.LASF60
+ 1572 0015 4B020000 		.4byte	.LASF60
  1573 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1574 001d 00000000 		.4byte	0
  1575 0021 00000000 		.4byte	.Ldebug_line0
@@ -2189,7 +2189,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1595 0047 08       		.byte	0x8
  1596 0048 33010000 		.4byte	.LASF2
  1597 004c 04       		.uleb128 0x4
- 1598 004d 6F030000 		.4byte	.LASF4
+ 1598 004d 6E030000 		.4byte	.LASF4
  1599 0051 02       		.byte	0x2
  1600 0052 25       		.byte	0x25
  1601 0053 57000000 		.4byte	0x57
@@ -2202,7 +2202,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1608 0060 07       		.byte	0x7
  1609 0061 2A020000 		.4byte	.LASF6
  1610 0065 04       		.uleb128 0x4
- 1611 0066 07030000 		.4byte	.LASF7
+ 1611 0066 64030000 		.4byte	.LASF7
  1612 006a 02       		.byte	0x2
  1613 006b 37       		.byte	0x37
  1614 006c 70000000 		.4byte	0x70
@@ -2218,10 +2218,10 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1624 0082 03       		.uleb128 0x3
  1625 0083 04       		.byte	0x4
  1626 0084 07       		.byte	0x7
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 38
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 38
 
 
- 1627 0085 A9020000 		.4byte	.LASF10
+ 1627 0085 06030000 		.4byte	.LASF10
  1628 0089 03       		.uleb128 0x3
  1629 008a 08       		.byte	0x8
  1630 008b 05       		.byte	0x5
@@ -2233,7 +2233,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1636 0097 03       		.uleb128 0x3
  1637 0098 04       		.byte	0x4
  1638 0099 07       		.byte	0x7
- 1639 009a 85030000 		.4byte	.LASF13
+ 1639 009a 84030000 		.4byte	.LASF13
  1640 009e 03       		.uleb128 0x3
  1641 009f 01       		.byte	0x1
  1642 00a0 08       		.byte	0x8
@@ -2241,7 +2241,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1644 00a5 03       		.uleb128 0x3
  1645 00a6 08       		.byte	0x8
  1646 00a7 04       		.byte	0x4
- 1647 00a8 9F030000 		.4byte	.LASF15
+ 1647 00a8 9E030000 		.4byte	.LASF15
  1648 00ac 03       		.uleb128 0x3
  1649 00ad 04       		.byte	0x4
  1650 00ae 04       		.byte	0x4
@@ -2256,7 +2256,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1659 00c0 29       		.byte	0x29
  1660 00c1 33000000 		.4byte	0x33
  1661 00c5 04       		.uleb128 0x4
- 1662 00c6 79020000 		.4byte	.LASF19
+ 1662 00c6 D6020000 		.4byte	.LASF19
  1663 00ca 03       		.byte	0x3
  1664 00cb 35       		.byte	0x35
  1665 00cc 4C000000 		.4byte	0x4c
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1681 00f2 05       		.uleb128 0x5
  1682 00f3 06000000 		.4byte	.LASF23
  1683 00f7 04       		.byte	0x4
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 39
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 39
 
 
  1684 00f8 8101     		.2byte	0x181
@@ -2306,7 +2306,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1706 0129 04       		.byte	0x4
  1707 012a 0A010000 		.4byte	0x10a
  1708 012e 07       		.uleb128 0x7
- 1709 012f 79030000 		.4byte	.LASF40
+ 1709 012f 78030000 		.4byte	.LASF40
  1710 0133 01       		.byte	0x1
  1711 0134 3E       		.byte	0x3e
  1712 0135 AC000000 		.4byte	0xac
@@ -2338,12 +2338,12 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1738 016a DB000000 		.4byte	0xdb
  1739 016e 02       		.uleb128 0x2
  1740 016f 91       		.byte	0x91
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 40
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 40
 
 
  1741 0170 4C       		.sleb128 -52
  1742 0171 09       		.uleb128 0x9
- 1743 0172 D6020000 		.4byte	.LASF29
+ 1743 0172 33030000 		.4byte	.LASF29
  1744 0176 01       		.byte	0x1
  1745 0177 40       		.byte	0x40
  1746 0178 AC000000 		.4byte	0xac
@@ -2351,7 +2351,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1748 017d 91       		.byte	0x91
  1749 017e 6C       		.sleb128 -20
  1750 017f 09       		.uleb128 0x9
- 1751 0180 4B020000 		.4byte	.LASF30
+ 1751 0180 A8020000 		.4byte	.LASF30
  1752 0184 01       		.byte	0x1
  1753 0185 40       		.byte	0x40
  1754 0186 AC000000 		.4byte	0xac
@@ -2383,7 +2383,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1780 01b3 91       		.byte	0x91
  1781 01b4 60       		.sleb128 -32
  1782 01b5 09       		.uleb128 0x9
- 1783 01b6 9B020000 		.4byte	.LASF32
+ 1783 01b6 F8020000 		.4byte	.LASF32
  1784 01ba 01       		.byte	0x1
  1785 01bb 44       		.byte	0x44
  1786 01bc CA010000 		.4byte	0x1ca
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1795 01cb 04       		.byte	0x4
  1796 01cc 25000000 		.4byte	0x25
  1797 01d0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 41
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 41
 
 
  1798 01d1 88000000 		.4byte	.LASF36
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1852 0238 C4010000 		.4byte	0x1c4
  1853 023c 02       		.uleb128 0x2
  1854 023d 91       		.byte	0x91
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 42
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 42
 
 
  1855 023e 5C       		.sleb128 -36
@@ -2488,7 +2488,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1879 0266 64       		.sleb128 -28
  1880 0267 00       		.byte	0
  1881 0268 0E       		.uleb128 0xe
- 1882 0269 F1020000 		.4byte	.LASF41
+ 1882 0269 4E030000 		.4byte	.LASF41
  1883 026d 01       		.byte	0x1
  1884 026e A4       		.byte	0xa4
  1885 026f DB000000 		.4byte	0xdb
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1909 02a2 01       		.byte	0x1
  1910 02a3 A4       		.byte	0xa4
  1911 02a4 DB000000 		.4byte	0xdb
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 43
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 43
 
 
  1912 02a8 02       		.uleb128 0x2
@@ -2533,7 +2533,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1921 02b5 91       		.byte	0x91
  1922 02b6 74       		.sleb128 -12
  1923 02b7 09       		.uleb128 0x9
- 1924 02b8 B3030000 		.4byte	.LASF42
+ 1924 02b8 B2030000 		.4byte	.LASF42
  1925 02bc 01       		.byte	0x1
  1926 02bd A7       		.byte	0xa7
  1927 02be D0000000 		.4byte	0xd0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1966 0309 08       		.uleb128 0x8
  1967 030a 83000000 		.4byte	.LASF38
  1968 030e 01       		.byte	0x1
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 44
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 44
 
 
  1969 030f C0       		.byte	0xc0
@@ -2603,7 +2603,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  1988 032f 91       		.byte	0x91
  1989 0330 74       		.sleb128 -12
  1990 0331 09       		.uleb128 0x9
- 1991 0332 B3030000 		.4byte	.LASF42
+ 1991 0332 B2030000 		.4byte	.LASF42
  1992 0336 01       		.byte	0x1
  1993 0337 C3       		.byte	0xc3
  1994 0338 D0000000 		.4byte	0xd0
@@ -2628,7 +2628,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2013 035a 70       		.sleb128 -16
  2014 035b 00       		.byte	0
  2015 035c 0B       		.uleb128 0xb
- 2016 035d BB020000 		.4byte	.LASF46
+ 2016 035d 18030000 		.4byte	.LASF46
  2017 0361 01       		.byte	0x1
  2018 0362 DE       		.byte	0xde
  2019 0363 00000000 		.4byte	.LFB123
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2023 036d A8030000 		.4byte	0x3a8
  2024 0371 08       		.uleb128 0x8
  2025 0372 A3000000 		.4byte	.LASF33
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 45
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 45
 
 
  2026 0376 01       		.byte	0x1
@@ -2673,7 +2673,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2055 03a6 74       		.sleb128 -12
  2056 03a7 00       		.byte	0
  2057 03a8 0B       		.uleb128 0xb
- 2058 03a9 81020000 		.4byte	.LASF47
+ 2058 03a9 DE020000 		.4byte	.LASF47
  2059 03ad 01       		.byte	0x1
  2060 03ae F4       		.byte	0xf4
  2061 03af 00000000 		.4byte	.LFB124
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2080 03d7 91       		.byte	0x91
  2081 03d8 68       		.sleb128 -24
  2082 03d9 08       		.uleb128 0x8
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 46
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 46
 
 
  2083 03da AD000000 		.4byte	.LASF35
@@ -2728,7 +2728,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2107 0409 9C       		.byte	0x9c
  2108 040a 38040000 		.4byte	0x438
  2109 040e 10       		.uleb128 0x10
- 2110 040f A0020000 		.4byte	.LASF49
+ 2110 040f FD020000 		.4byte	.LASF49
  2111 0413 01       		.byte	0x1
  2112 0414 0A01     		.2byte	0x10a
  2113 0416 DB000000 		.4byte	0xdb
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2137 043e 2201     		.2byte	0x122
  2138 0440 00000000 		.4byte	.LFB126
  2139 0444 54000000 		.4byte	.LFE126-.LFB126
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 47
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 47
 
 
  2140 0448 01       		.uleb128 0x1
@@ -2798,7 +2798,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2174 0487 6C       		.sleb128 -20
  2175 0488 00       		.byte	0
  2176 0489 0F       		.uleb128 0xf
- 2177 048a E3020000 		.4byte	.LASF51
+ 2177 048a 40030000 		.4byte	.LASF51
  2178 048e 01       		.byte	0x1
  2179 048f 3301     		.2byte	0x133
  2180 0491 DB000000 		.4byte	0xdb
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2194 04b2 11       		.uleb128 0x11
  2195 04b3 6900     		.ascii	"i\000"
  2196 04b5 01       		.byte	0x1
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 48
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 48
 
 
  2197 04b6 3601     		.2byte	0x136
@@ -2878,10 +2878,10 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2251 051e 64       		.sleb128 -28
  2252 051f 00       		.byte	0
  2253 0520 12       		.uleb128 0x12
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 49
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 49
 
 
- 2254 0521 8E030000 		.4byte	.LASF54
+ 2254 0521 8D030000 		.4byte	.LASF54
  2255 0525 01       		.byte	0x1
  2256 0526 6601     		.2byte	0x166
  2257 0528 00000000 		.4byte	.LFB129
@@ -2923,7 +2923,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2293 056f 64       		.sleb128 -28
  2294 0570 00       		.byte	0
  2295 0571 12       		.uleb128 0x12
- 2296 0572 68020000 		.4byte	.LASF55
+ 2296 0572 C5020000 		.4byte	.LASF55
  2297 0576 01       		.byte	0x1
  2298 0577 8001     		.2byte	0x180
  2299 0579 00000000 		.4byte	.LFB130
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2308 058f C4010000 		.4byte	0x1c4
  2309 0593 02       		.uleb128 0x2
  2310 0594 91       		.byte	0x91
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 50
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 50
 
 
  2311 0595 5C       		.sleb128 -36
@@ -2968,7 +2968,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2335 05c0 64       		.sleb128 -28
  2336 05c1 00       		.byte	0
  2337 05c2 12       		.uleb128 0x12
- 2338 05c3 57020000 		.4byte	.LASF56
+ 2338 05c3 B4020000 		.4byte	.LASF56
  2339 05c7 01       		.byte	0x1
  2340 05c8 9B01     		.2byte	0x19b
  2341 05ca 00000000 		.4byte	.LFB131
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2365 05fc 9C01     		.2byte	0x19c
  2366 05fe DB000000 		.4byte	0xdb
  2367 0602 02       		.uleb128 0x2
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 51
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 51
 
 
  2368 0603 91       		.byte	0x91
@@ -3047,7 +3047,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2411 0653 74       		.sleb128 -12
  2412 0654 00       		.byte	0
  2413 0655 14       		.uleb128 0x14
- 2414 0656 A6030000 		.4byte	.LASF61
+ 2414 0656 A5030000 		.4byte	.LASF61
  2415 065a 05       		.byte	0x5
  2416 065b 5506     		.2byte	0x655
  2417 065d 61060000 		.4byte	0x661
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2422              	.Ldebug_abbrev0:
  2423 0000 01       		.uleb128 0x1
  2424 0001 11       		.uleb128 0x11
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 52
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 52
 
 
  2425 0002 01       		.byte	0x1
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2479 0038 00       		.byte	0
  2480 0039 03       		.uleb128 0x3
  2481 003a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 53
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 53
 
 
  2482 003b 3A       		.uleb128 0x3a
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2536 0072 13       		.uleb128 0x13
  2537 0073 02       		.uleb128 0x2
  2538 0074 18       		.uleb128 0x18
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 54
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 54
 
 
  2539 0075 00       		.byte	0
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2593 00ac 13       		.uleb128 0x13
  2594 00ad 00       		.byte	0
  2595 00ae 00       		.byte	0
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 55
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 55
 
 
  2596 00af 0C       		.uleb128 0xc
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2650 00e6 13       		.uleb128 0x13
  2651 00e7 11       		.uleb128 0x11
  2652 00e8 01       		.uleb128 0x1
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 56
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 56
 
 
  2653 00e9 12       		.uleb128 0x12
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2707 0121 00       		.byte	0
  2708 0122 03       		.uleb128 0x3
  2709 0123 08       		.uleb128 0x8
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 57
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 57
 
 
  2710 0124 3A       		.uleb128 0x3a
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2764 015b 0E       		.uleb128 0xe
  2765 015c 3A       		.uleb128 0x3a
  2766 015d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 58
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 58
 
 
  2767 015e 3B       		.uleb128 0x3b
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2821 0080 00000000 		.4byte	.LFB132
  2822 0084 78000000 		.4byte	.LFE132-.LFB132
  2823 0088 00000000 		.4byte	0
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 59
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 59
 
 
  2824 008c 00000000 		.4byte	0
@@ -3518,8 +3518,8 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2858 007c 00000000 		.4byte	0
  2859              		.section	.debug_line,"",%progbits
  2860              	.Ldebug_line0:
- 2861 0000 FE030000 		.section	.debug_str,"MS",%progbits,1
- 2861      02006E01 
+ 2861 0000 0A040000 		.section	.debug_str,"MS",%progbits,1
+ 2861      02007A01 
  2861      00000201 
  2861      FB0E0D00 
  2861      01010101 
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2869      00
  2870              	.LASF31:
  2871 001c 74656D70 		.ascii	"temp\000"
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 60
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 60
 
 
  2871      00
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2897 00b8 666C6F61 		.ascii	"float\000"
  2897      7400
  2898              	.LASF45:
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 61
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 61
 
 
  2899 00be 61726D5F 		.ascii	"arm_compare_fixed_q31\000"
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2923      206C6F6E 
  2923      6720756E 
  2923      7369676E 
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 62
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 62
 
 
  2923      65642069 
@@ -3717,114 +3717,114 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 1
  2944              	.LASF14:
  2945 0246 63686172 		.ascii	"char\000"
  2945      00
- 2946              	.LASF30:
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 63
+ 2946              	.LASF60:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 63
 
 
- 2947 024b 456E6572 		.ascii	"EnergyError\000"
- 2947      67794572 
- 2947      726F7200 
- 2948              	.LASF56:
- 2949 0257 61726D5F 		.ascii	"arm_float_to_q28\000"
- 2949      666C6F61 
- 2949      745F746F 
- 2949      5F713238 
- 2949      00
- 2950              	.LASF55:
- 2951 0268 61726D5F 		.ascii	"arm_float_to_q29\000"
- 2951      666C6F61 
- 2951      745F746F 
- 2951      5F713239 
- 2951      00
- 2952              	.LASF19:
- 2953 0279 696E7431 		.ascii	"int16_t\000"
- 2953      365F7400 
- 2954              	.LASF47:
- 2955 0281 61726D5F 		.ascii	"arm_provide_guard_bits_q7\000"
- 2955      70726F76 
- 2955      6964655F 
- 2955      67756172 
- 2955      645F6269 
- 2956              	.LASF32:
- 2957 029b 74657374 		.ascii	"test\000"
- 2957      00
- 2958              	.LASF49:
- 2959 02a0 6E756D5F 		.ascii	"num_adds\000"
- 2959      61646473 
- 2959      00
- 2960              	.LASF10:
- 2961 02a9 6C6F6E67 		.ascii	"long unsigned int\000"
- 2961      20756E73 
- 2961      69676E65 
- 2961      6420696E 
- 2961      7400
- 2962              	.LASF46:
- 2963 02bb 61726D5F 		.ascii	"arm_provide_guard_bits_q31\000"
- 2963      70726F76 
- 2963      6964655F 
- 2963      67756172 
- 2963      645F6269 
- 2964              	.LASF29:
- 2965 02d6 456E6572 		.ascii	"EnergySignal\000"
- 2965      67795369 
- 2965      676E616C 
- 2965      00
- 2966              	.LASF51:
- 2967 02e3 61726D5F 		.ascii	"arm_calc_2pow\000"
- 2967      63616C63 
- 2967      5F32706F 
- 2967      7700
- 2968              	.LASF41:
- 2969 02f1 61726D5F 		.ascii	"arm_compare_fixed_q15\000"
- 2969      636F6D70 
- 2969      6172655F 
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc59Slqk.s 			page 64
+ 2947 024b 5C5C766D 		.ascii	"\\\\vmware-host\\Shared Folders\\scottcarlson On My"
+ 2947      77617265 
+ 2947      2D686F73 
+ 2947      745C5368 
+ 2947      61726564 
+ 2948 027a 204D6163 		.ascii	" Mac\\Code\\repos\\LED_controller\\Design01.cydsn\000"
+ 2948      5C436F64 
+ 2948      655C7265 
+ 2948      706F735C 
+ 2948      4C45445F 
+ 2949              	.LASF30:
+ 2950 02a8 456E6572 		.ascii	"EnergyError\000"
+ 2950      67794572 
+ 2950      726F7200 
+ 2951              	.LASF56:
+ 2952 02b4 61726D5F 		.ascii	"arm_float_to_q28\000"
+ 2952      666C6F61 
+ 2952      745F746F 
+ 2952      5F713238 
+ 2952      00
+ 2953              	.LASF55:
+ 2954 02c5 61726D5F 		.ascii	"arm_float_to_q29\000"
+ 2954      666C6F61 
+ 2954      745F746F 
+ 2954      5F713239 
+ 2954      00
+ 2955              	.LASF19:
+ 2956 02d6 696E7431 		.ascii	"int16_t\000"
+ 2956      365F7400 
+ 2957              	.LASF47:
+ 2958 02de 61726D5F 		.ascii	"arm_provide_guard_bits_q7\000"
+ 2958      70726F76 
+ 2958      6964655F 
+ 2958      67756172 
+ 2958      645F6269 
+ 2959              	.LASF32:
+ 2960 02f8 74657374 		.ascii	"test\000"
+ 2960      00
+ 2961              	.LASF49:
+ 2962 02fd 6E756D5F 		.ascii	"num_adds\000"
+ 2962      61646473 
+ 2962      00
+ 2963              	.LASF10:
+ 2964 0306 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2964      20756E73 
+ 2964      69676E65 
+ 2964      6420696E 
+ 2964      7400
+ 2965              	.LASF46:
+ 2966 0318 61726D5F 		.ascii	"arm_provide_guard_bits_q31\000"
+ 2966      70726F76 
+ 2966      6964655F 
+ 2966      67756172 
+ 2966      645F6269 
+ 2967              	.LASF29:
+ 2968 0333 456E6572 		.ascii	"EnergySignal\000"
+ 2968      67795369 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccxvbY1Y.s 			page 64
 
 
- 2969      66697865 
- 2969      645F7131 
- 2970              	.LASF7:
- 2971 0307 5F5F696E 		.ascii	"__int32_t\000"
- 2971      7433325F 
- 2971      7400
- 2972              	.LASF60:
- 2973 0311 5C5C766D 		.ascii	"\\\\vmware-host\\Shared Folders\\scottcarlson On My"
- 2973      77617265 
- 2973      2D686F73 
- 2973      745C5368 
- 2973      61726564 
- 2974 0340 204D6163 		.ascii	" Mac\\Code\\PSoC_Creator\\Design01\\Design01.cydsn\000"
- 2974      5C436F64 
- 2974      655C5053 
- 2974      6F435F43 
- 2974      72656174 
+ 2968      676E616C 
+ 2968      00
+ 2969              	.LASF51:
+ 2970 0340 61726D5F 		.ascii	"arm_calc_2pow\000"
+ 2970      63616C63 
+ 2970      5F32706F 
+ 2970      7700
+ 2971              	.LASF41:
+ 2972 034e 61726D5F 		.ascii	"arm_compare_fixed_q15\000"
+ 2972      636F6D70 
+ 2972      6172655F 
+ 2972      66697865 
+ 2972      645F7131 
+ 2973              	.LASF7:
+ 2974 0364 5F5F696E 		.ascii	"__int32_t\000"
+ 2974      7433325F 
+ 2974      7400
  2975              	.LASF4:
- 2976 036f 5F5F696E 		.ascii	"__int16_t\000"
+ 2976 036e 5F5F696E 		.ascii	"__int16_t\000"
  2976      7431365F 
  2976      7400
  2977              	.LASF40:
- 2978 0379 61726D5F 		.ascii	"arm_snr_f32\000"
+ 2978 0378 61726D5F 		.ascii	"arm_snr_f32\000"
  2978      736E725F 
  2978      66333200 
  2979              	.LASF13:
- 2980 0385 73697A65 		.ascii	"sizetype\000"
+ 2980 0384 73697A65 		.ascii	"sizetype\000"
  2980      74797065 
  2980      00
  2981              	.LASF54:
- 2982 038e 61726D5F 		.ascii	"arm_float_to_q30\000"
+ 2982 038d 61726D5F 		.ascii	"arm_float_to_q30\000"
  2982      666C6F61 
  2982      745F746F 
  2982      5F713330 
  2982      00
  2983              	.LASF15:
- 2984 039f 646F7562 		.ascii	"double\000"
+ 2984 039e 646F7562 		.ascii	"double\000"
  2984      6C6500
  2985              	.LASF61:
- 2986 03a6 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2986 03a5 49544D5F 		.ascii	"ITM_RxBuffer\000"
  2986      52784275 
  2986      66666572 
  2986      00
  2987              	.LASF42:
- 2988 03b3 64696666 		.ascii	"diff\000"
+ 2988 03b2 64696666 		.ascii	"diff\000"
  2988      00
  2989              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

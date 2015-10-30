@@ -120,7 +120,7 @@ static void CyClockStartupError(uint8 errorCode)
 }
 #endif
 
-#define CY_CFG_BASE_ADDR_COUNT 17u
+#define CY_CFG_BASE_ADDR_COUNT 19u
 CYPACKED typedef struct
 {
 	uint8 offset;
@@ -128,28 +128,28 @@ CYPACKED typedef struct
 } CYPACKED_ATTR cy_cfg_addrvalue_t;
 
 #define cy_cfg_addr_table ((const uint32 CYFAR *)0x48000000u)
-#define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000044u)
+#define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x4800004Cu)
 
 /* IOPINS0_0 Address: CYREG_PRT0_DM0 Size (bytes): 8 */
-#define BS_IOPINS0_0_VAL ((const uint8 CYFAR *)0x480000DCu)
+#define BS_IOPINS0_0_VAL ((const uint8 CYFAR *)0x480000F8u)
 
 /* IOPINS0_2 Address: CYREG_PRT2_DM0 Size (bytes): 8 */
-#define BS_IOPINS0_2_VAL ((const uint8 CYFAR *)0x480000E4u)
+#define BS_IOPINS0_2_VAL ((const uint8 CYFAR *)0x48000100u)
 
 /* CYDEV_CLKDIST_ACFG0_CFG0 Address: CYREG_CLKDIST_ACFG0_CFG0 Size (bytes): 4 */
-#define BS_CYDEV_CLKDIST_ACFG0_CFG0_VAL ((const uint8 CYFAR *)0x480000ECu)
+#define BS_CYDEV_CLKDIST_ACFG0_CFG0_VAL ((const uint8 CYFAR *)0x48000108u)
 
 /* PHUB_CFGMEM10 Address: CYREG_PHUB_CFGMEM10_CFG0 Size (bytes): 4 */
-#define BS_PHUB_CFGMEM10_VAL ((const uint8 CYFAR *)0x480000F0u)
+#define BS_PHUB_CFGMEM10_VAL ((const uint8 CYFAR *)0x4800010Cu)
 
 /* PHUB_CFGMEM1 Address: CYREG_PHUB_CFGMEM1_CFG0 Size (bytes): 4 */
-#define BS_PHUB_CFGMEM1_VAL ((const uint8 CYFAR *)0x480000F4u)
+#define BS_PHUB_CFGMEM1_VAL ((const uint8 CYFAR *)0x48000110u)
 
 /* PHUB_CFGMEM8 Address: CYREG_PHUB_CFGMEM8_CFG0 Size (bytes): 4 */
-#define BS_PHUB_CFGMEM8_VAL ((const uint8 CYFAR *)0x480000F8u)
+#define BS_PHUB_CFGMEM8_VAL ((const uint8 CYFAR *)0x48000114u)
 
 /* PHUB_CFGMEM9 Address: CYREG_PHUB_CFGMEM9_CFG0 Size (bytes): 4 */
-#define BS_PHUB_CFGMEM9_VAL ((const uint8 CYFAR *)0x480000FCu)
+#define BS_PHUB_CFGMEM9_VAL ((const uint8 CYFAR *)0x48000118u)
 
 
 /*******************************************************************************
@@ -238,7 +238,7 @@ static void ClockSetup(void)
 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_CLKDIST_MSTR0), 0x0000u);
 
 	/* Configure PLL based on settings from Clock DWR */
-	CY_SET_XTND_REG16((void CYFAR *)(CYREG_FASTCLK_PLL_P), 0x0212u);
+	CY_SET_XTND_REG16((void CYFAR *)(CYREG_FASTCLK_PLL_P), 0x0418u);
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_CR), 0x09u);
 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_FASTCLK_PLL_CFG0), 0x1251u);
 	/* Wait up to 250us for the PLL to lock */

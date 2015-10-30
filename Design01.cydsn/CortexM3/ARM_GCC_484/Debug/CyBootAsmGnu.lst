@@ -11618,99 +11618,99 @@ ARM GAS  .\Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  307              	.set Pin_7__SHIFT, 6
  308              	.set Pin_7__SLW, CYREG_PRT0_SLW
  309              	
- 310              	/* isr_1 */
- 311              	.set isr_1__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
- 312              	.set isr_1__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
- 313              	.set isr_1__INTC_MASK, 0x01
- 314              	.set isr_1__INTC_NUMBER, 0
- 315              	.set isr_1__INTC_PRIOR_NUM, 6
- 316              	.set isr_1__INTC_PRIOR_REG, CYREG_NVIC_PRI_0
- 317              	.set isr_1__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
- 318              	.set isr_1__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
- 319              	
- 320              	/* isr_2 */
- 321              	.set isr_2__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
- 322              	.set isr_2__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
- 323              	.set isr_2__INTC_MASK, 0x02
- 324              	.set isr_2__INTC_NUMBER, 1
- 325              	.set isr_2__INTC_PRIOR_NUM, 7
- 326              	.set isr_2__INTC_PRIOR_REG, CYREG_NVIC_PRI_1
- 327              	.set isr_2__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
- 328              	.set isr_2__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
- 329              	
+ 310              	/* Pin_8 */
+ 311              	.set Pin_8__0__MASK, 0x80
+ 312              	.set Pin_8__0__PC, CYREG_PRT2_PC7
+ 313              	.set Pin_8__0__PORT, 2
+ 314              	.set Pin_8__0__SHIFT, 7
+ 315              	.set Pin_8__AG, CYREG_PRT2_AG
+ 316              	.set Pin_8__AMUX, CYREG_PRT2_AMUX
+ 317              	.set Pin_8__BIE, CYREG_PRT2_BIE
+ 318              	.set Pin_8__BIT_MASK, CYREG_PRT2_BIT_MASK
+ 319              	.set Pin_8__BYP, CYREG_PRT2_BYP
+ 320              	.set Pin_8__CTL, CYREG_PRT2_CTL
+ 321              	.set Pin_8__DM0, CYREG_PRT2_DM0
+ 322              	.set Pin_8__DM1, CYREG_PRT2_DM1
+ 323              	.set Pin_8__DM2, CYREG_PRT2_DM2
+ 324              	.set Pin_8__DR, CYREG_PRT2_DR
+ 325              	.set Pin_8__INP_DIS, CYREG_PRT2_INP_DIS
+ 326              	.set Pin_8__LCD_COM_SEG, CYREG_PRT2_LCD_COM_SEG
+ 327              	.set Pin_8__LCD_EN, CYREG_PRT2_LCD_EN
+ 328              	.set Pin_8__MASK, 0x80
+ 329              	.set Pin_8__PORT, 2
 ARM GAS  .\Generated_Source\PSoC5\CyBootAsmGnu.s 			page 195
 
 
- 330              	/* Filter_DFB */
- 331              	.set Filter_DFB__ACU_SRAM_DATA, CYREG_DFB0_ACU_SRAM_DATA_MBASE
- 332              	.set Filter_DFB__COHER, CYREG_DFB0_COHER
- 333              	.set Filter_DFB__CR, CYREG_DFB0_CR
- 334              	.set Filter_DFB__CSA_SRAM_DATA, CYREG_DFB0_CSA_SRAM_DATA_MBASE
- 335              	.set Filter_DFB__CSB_SRAM_DATA, CYREG_DFB0_CSB_SRAM_DATA_MBASE
- 336              	.set Filter_DFB__DALIGN, CYREG_DFB0_DALIGN
- 337              	.set Filter_DFB__DMA_CTRL, CYREG_DFB0_DMA_CTRL
- 338              	.set Filter_DFB__DPA_SRAM_DATA, CYREG_DFB0_DPA_SRAM_DATA_MBASE
- 339              	.set Filter_DFB__DPB_SRAM_DATA, CYREG_DFB0_DPB_SRAM_DATA_MBASE
- 340              	.set Filter_DFB__DSI_CTRL, CYREG_DFB0_DSI_CTRL
- 341              	.set Filter_DFB__FSM_SRAM_DATA, CYREG_DFB0_FSM_SRAM_DATA_MBASE
- 342              	.set Filter_DFB__HOLDA, CYREG_DFB0_HOLDA
- 343              	.set Filter_DFB__HOLDAH, CYREG_DFB0_HOLDAH
- 344              	.set Filter_DFB__HOLDAM, CYREG_DFB0_HOLDAM
- 345              	.set Filter_DFB__HOLDAS, CYREG_DFB0_HOLDAS
- 346              	.set Filter_DFB__HOLDB, CYREG_DFB0_HOLDB
- 347              	.set Filter_DFB__HOLDBH, CYREG_DFB0_HOLDBH
- 348              	.set Filter_DFB__HOLDBM, CYREG_DFB0_HOLDBM
- 349              	.set Filter_DFB__HOLDBS, CYREG_DFB0_HOLDBS
- 350              	.set Filter_DFB__INT_CTRL, CYREG_DFB0_INT_CTRL
- 351              	.set Filter_DFB__PM_ACT_CFG, CYREG_PM_ACT_CFG6
- 352              	.set Filter_DFB__PM_ACT_MSK, 0x10
- 353              	.set Filter_DFB__PM_STBY_CFG, CYREG_PM_STBY_CFG6
- 354              	.set Filter_DFB__PM_STBY_MSK, 0x10
- 355              	.set Filter_DFB__RAM_DIR, CYREG_DFB0_RAM_DIR
- 356              	.set Filter_DFB__RAM_EN, CYREG_DFB0_RAM_EN
- 357              	.set Filter_DFB__SEMA, CYREG_DFB0_SEMA
- 358              	.set Filter_DFB__SR, CYREG_DFB0_SR
- 359              	.set Filter_DFB__STAGEA, CYREG_DFB0_STAGEA
- 360              	.set Filter_DFB__STAGEAH, CYREG_DFB0_STAGEAH
- 361              	.set Filter_DFB__STAGEAM, CYREG_DFB0_STAGEAM
- 362              	.set Filter_DFB__STAGEB, CYREG_DFB0_STAGEB
- 363              	.set Filter_DFB__STAGEBH, CYREG_DFB0_STAGEBH
- 364              	.set Filter_DFB__STAGEBM, CYREG_DFB0_STAGEBM
- 365              	
- 366              	/* Red_LED */
- 367              	.set Red_LED__0__MASK, 0x80
- 368              	.set Red_LED__0__PC, CYREG_PRT2_PC7
- 369              	.set Red_LED__0__PORT, 2
- 370              	.set Red_LED__0__SHIFT, 7
- 371              	.set Red_LED__AG, CYREG_PRT2_AG
- 372              	.set Red_LED__AMUX, CYREG_PRT2_AMUX
- 373              	.set Red_LED__BIE, CYREG_PRT2_BIE
- 374              	.set Red_LED__BIT_MASK, CYREG_PRT2_BIT_MASK
- 375              	.set Red_LED__BYP, CYREG_PRT2_BYP
- 376              	.set Red_LED__CTL, CYREG_PRT2_CTL
- 377              	.set Red_LED__DM0, CYREG_PRT2_DM0
- 378              	.set Red_LED__DM1, CYREG_PRT2_DM1
- 379              	.set Red_LED__DM2, CYREG_PRT2_DM2
- 380              	.set Red_LED__DR, CYREG_PRT2_DR
- 381              	.set Red_LED__INP_DIS, CYREG_PRT2_INP_DIS
- 382              	.set Red_LED__LCD_COM_SEG, CYREG_PRT2_LCD_COM_SEG
- 383              	.set Red_LED__LCD_EN, CYREG_PRT2_LCD_EN
- 384              	.set Red_LED__MASK, 0x80
- 385              	.set Red_LED__PORT, 2
- 386              	.set Red_LED__PRT, CYREG_PRT2_PRT
+ 330              	.set Pin_8__PRT, CYREG_PRT2_PRT
+ 331              	.set Pin_8__PRTDSI__CAPS_SEL, CYREG_PRT2_CAPS_SEL
+ 332              	.set Pin_8__PRTDSI__DBL_SYNC_IN, CYREG_PRT2_DBL_SYNC_IN
+ 333              	.set Pin_8__PRTDSI__OE_SEL0, CYREG_PRT2_OE_SEL0
+ 334              	.set Pin_8__PRTDSI__OE_SEL1, CYREG_PRT2_OE_SEL1
+ 335              	.set Pin_8__PRTDSI__OUT_SEL0, CYREG_PRT2_OUT_SEL0
+ 336              	.set Pin_8__PRTDSI__OUT_SEL1, CYREG_PRT2_OUT_SEL1
+ 337              	.set Pin_8__PRTDSI__SYNC_OUT, CYREG_PRT2_SYNC_OUT
+ 338              	.set Pin_8__PS, CYREG_PRT2_PS
+ 339              	.set Pin_8__SHIFT, 7
+ 340              	.set Pin_8__SLW, CYREG_PRT2_SLW
+ 341              	
+ 342              	/* isr_1 */
+ 343              	.set isr_1__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
+ 344              	.set isr_1__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
+ 345              	.set isr_1__INTC_MASK, 0x01
+ 346              	.set isr_1__INTC_NUMBER, 0
+ 347              	.set isr_1__INTC_PRIOR_NUM, 6
+ 348              	.set isr_1__INTC_PRIOR_REG, CYREG_NVIC_PRI_0
+ 349              	.set isr_1__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
+ 350              	.set isr_1__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
+ 351              	
+ 352              	/* isr_2 */
+ 353              	.set isr_2__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
+ 354              	.set isr_2__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
+ 355              	.set isr_2__INTC_MASK, 0x02
+ 356              	.set isr_2__INTC_NUMBER, 1
+ 357              	.set isr_2__INTC_PRIOR_NUM, 7
+ 358              	.set isr_2__INTC_PRIOR_REG, CYREG_NVIC_PRI_1
+ 359              	.set isr_2__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
+ 360              	.set isr_2__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
+ 361              	
+ 362              	/* Filter_DFB */
+ 363              	.set Filter_DFB__ACU_SRAM_DATA, CYREG_DFB0_ACU_SRAM_DATA_MBASE
+ 364              	.set Filter_DFB__COHER, CYREG_DFB0_COHER
+ 365              	.set Filter_DFB__CR, CYREG_DFB0_CR
+ 366              	.set Filter_DFB__CSA_SRAM_DATA, CYREG_DFB0_CSA_SRAM_DATA_MBASE
+ 367              	.set Filter_DFB__CSB_SRAM_DATA, CYREG_DFB0_CSB_SRAM_DATA_MBASE
+ 368              	.set Filter_DFB__DALIGN, CYREG_DFB0_DALIGN
+ 369              	.set Filter_DFB__DMA_CTRL, CYREG_DFB0_DMA_CTRL
+ 370              	.set Filter_DFB__DPA_SRAM_DATA, CYREG_DFB0_DPA_SRAM_DATA_MBASE
+ 371              	.set Filter_DFB__DPB_SRAM_DATA, CYREG_DFB0_DPB_SRAM_DATA_MBASE
+ 372              	.set Filter_DFB__DSI_CTRL, CYREG_DFB0_DSI_CTRL
+ 373              	.set Filter_DFB__FSM_SRAM_DATA, CYREG_DFB0_FSM_SRAM_DATA_MBASE
+ 374              	.set Filter_DFB__HOLDA, CYREG_DFB0_HOLDA
+ 375              	.set Filter_DFB__HOLDAH, CYREG_DFB0_HOLDAH
+ 376              	.set Filter_DFB__HOLDAM, CYREG_DFB0_HOLDAM
+ 377              	.set Filter_DFB__HOLDAS, CYREG_DFB0_HOLDAS
+ 378              	.set Filter_DFB__HOLDB, CYREG_DFB0_HOLDB
+ 379              	.set Filter_DFB__HOLDBH, CYREG_DFB0_HOLDBH
+ 380              	.set Filter_DFB__HOLDBM, CYREG_DFB0_HOLDBM
+ 381              	.set Filter_DFB__HOLDBS, CYREG_DFB0_HOLDBS
+ 382              	.set Filter_DFB__INT_CTRL, CYREG_DFB0_INT_CTRL
+ 383              	.set Filter_DFB__PM_ACT_CFG, CYREG_PM_ACT_CFG6
+ 384              	.set Filter_DFB__PM_ACT_MSK, 0x10
+ 385              	.set Filter_DFB__PM_STBY_CFG, CYREG_PM_STBY_CFG6
+ 386              	.set Filter_DFB__PM_STBY_MSK, 0x10
 ARM GAS  .\Generated_Source\PSoC5\CyBootAsmGnu.s 			page 196
 
 
- 387              	.set Red_LED__PRTDSI__CAPS_SEL, CYREG_PRT2_CAPS_SEL
- 388              	.set Red_LED__PRTDSI__DBL_SYNC_IN, CYREG_PRT2_DBL_SYNC_IN
- 389              	.set Red_LED__PRTDSI__OE_SEL0, CYREG_PRT2_OE_SEL0
- 390              	.set Red_LED__PRTDSI__OE_SEL1, CYREG_PRT2_OE_SEL1
- 391              	.set Red_LED__PRTDSI__OUT_SEL0, CYREG_PRT2_OUT_SEL0
- 392              	.set Red_LED__PRTDSI__OUT_SEL1, CYREG_PRT2_OUT_SEL1
- 393              	.set Red_LED__PRTDSI__SYNC_OUT, CYREG_PRT2_SYNC_OUT
- 394              	.set Red_LED__PS, CYREG_PRT2_PS
- 395              	.set Red_LED__SHIFT, 7
- 396              	.set Red_LED__SLW, CYREG_PRT2_SLW
+ 387              	.set Filter_DFB__RAM_DIR, CYREG_DFB0_RAM_DIR
+ 388              	.set Filter_DFB__RAM_EN, CYREG_DFB0_RAM_EN
+ 389              	.set Filter_DFB__SEMA, CYREG_DFB0_SEMA
+ 390              	.set Filter_DFB__SR, CYREG_DFB0_SR
+ 391              	.set Filter_DFB__STAGEA, CYREG_DFB0_STAGEA
+ 392              	.set Filter_DFB__STAGEAH, CYREG_DFB0_STAGEAH
+ 393              	.set Filter_DFB__STAGEAM, CYREG_DFB0_STAGEAM
+ 394              	.set Filter_DFB__STAGEB, CYREG_DFB0_STAGEB
+ 395              	.set Filter_DFB__STAGEBH, CYREG_DFB0_STAGEBH
+ 396              	.set Filter_DFB__STAGEBM, CYREG_DFB0_STAGEBM
  397              	
  398              	/* LCD_Char_1_LCDPort */
  399              	.set LCD_Char_1_LCDPort__0__MASK, 0x01

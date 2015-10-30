@@ -157,17 +157,17 @@ void Counter_1_Wakeup(void)        ;
  **************************************/
 #define Counter_1_CAPTURE_MODE_CONF       0u
 #define Counter_1_INIT_PERIOD_VALUE       65535u
-#define Counter_1_INIT_COUNTER_VALUE      0u
+#define Counter_1_INIT_COUNTER_VALUE      65535u
 #if (Counter_1_UsingFixedFunction)
 #define Counter_1_INIT_INTERRUPTS_MASK    ((uint8)((uint8)0u << Counter_1_STATUS_ZERO_INT_EN_MASK_SHIFT))
 #else
-#define Counter_1_INIT_COMPARE_VALUE      128u
+#define Counter_1_INIT_COMPARE_VALUE      0u
 #define Counter_1_INIT_INTERRUPTS_MASK ((uint8)((uint8)0u << Counter_1_STATUS_ZERO_INT_EN_MASK_SHIFT) | \
         ((uint8)((uint8)0u << Counter_1_STATUS_CAPTURE_INT_EN_MASK_SHIFT)) | \
         ((uint8)((uint8)0u << Counter_1_STATUS_CMP_INT_EN_MASK_SHIFT)) | \
         ((uint8)((uint8)0u << Counter_1_STATUS_OVERFLOW_INT_EN_MASK_SHIFT)) | \
         ((uint8)((uint8)0u << Counter_1_STATUS_UNDERFLOW_INT_EN_MASK_SHIFT)))
-#define Counter_1_DEFAULT_COMPARE_MODE    1u
+#define Counter_1_DEFAULT_COMPARE_MODE    0u
 
 #if( 0 != Counter_1_CAPTURE_MODE_CONF)
     #define Counter_1_DEFAULT_CAPTURE_MODE    ((uint8)((uint8)0u << Counter_1_CTRL_CAPMODE0_SHIFT))

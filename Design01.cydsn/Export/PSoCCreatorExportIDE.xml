@@ -6,8 +6,8 @@
     <Toolchain Name="ARM GCC Generic" Selected="True">
       <Tool Name="prebuild" Command="" Options="" />
       <Tool Name="assembler" Command="arm-none-eabi-as.exe" Options="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=${OutputDir}/${CompileFile}.lst -g -W" />
-      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -l arm_cortexM3l_math -L ..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Lib\GCC -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -lm" />
+      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -l arm_cortexM3l_math -L &quot;Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Lib\GCC&quot; -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -lm" />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
     <Toolchain Name="ARM MDK Generic" Selected="False">
@@ -25,7 +25,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="Design01" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" Version="4.20" Type="Normal">
+  <Project Name="Design01" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" Version="4.20" Type="Normal">
     <CMSIS_SVD_File>Design01.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -34,15 +34,15 @@
       <LinkerFile Toolchain="ARM IAR Generic">.\Generated_Source\PSoC5\Cm3Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="BUILD" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn">
+      <Folder BuildType="BUILD" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn">
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
           <File BuildType="BUILD" Toolchain="">.\math_helper.c</File>
           <File BuildType="BUILD" Toolchain="">.\math_helper.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\Generated_Source\PSoC5">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn">
+      <Folder BuildType="STRICT" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn\Generated_Source\PSoC5">
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn">
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cymetadata.c</File>
@@ -116,9 +116,6 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\isr_1.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\isr_2.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\isr_2.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Red_LED_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Red_LED.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Red_LED.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Filter.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Filter.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Filter_PM.c</File>
@@ -147,55 +144,58 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Pin_7_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Pin_7.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Pin_7.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Pin_8_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Pin_8.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Pin_8.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="BUILD" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\KEES_MultAcc_v1_0\API">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn">
+      <Folder BuildType="BUILD" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn\KEES_MultAcc_v1_0\API">
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn">
           <File BuildType="BUILD" Toolchain="">.\KEES_MultAcc_v1_0\API\MultAcc.c</File>
           <File BuildType="BUILD" Toolchain="">.\KEES_MultAcc_v1_0\API\MultAcc.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\Export\ARM_GCC_Generic">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn">
+      <Folder BuildType="STRICT" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn\Export\ARM_GCC_Generic">
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">.\Export\ARM_GCC_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\Export\ARM_MDK_Generic">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn">
+      <Folder BuildType="STRICT" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn\Export\ARM_MDK_Generic">
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn">
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">.\Export\ARM_MDK_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\Export\ARM_IAR_Generic">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn">
+      <Folder BuildType="STRICT" Path="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn\Export\ARM_IAR_Generic">
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn">
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">.\Export\ARM_IAR_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" />
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" />
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" />
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" />
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" />
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" />
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" />
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\Generated_Source\PSoC3">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" />
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\Generated_Source\PSoC4">
-        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn" />
+        <Files Root="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn" />
       </Folder>
     </Folders>
   </Project>

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
   29:.\Generated_Source\PSoC5/Filter_PVT.c **** *           interrupts.
   30:.\Generated_Source\PSoC5/Filter_PVT.c **** *            Bit 0 - Output value ready in the holding register on channel A
   31:.\Generated_Source\PSoC5/Filter_PVT.c **** *            Bit 1 - Output value ready in the holding register on channel B
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Filter_PVT.c **** *            Bit 2 - '1' written to Semaphore 0  - See Note
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
   63              		.align	2
   64              		.global	Filter_SetDMAMode
   65              		.thumb
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 3
 
 
   66              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
   83 0008 FB71     		strb	r3, [r7, #7]
   87:.\Generated_Source\PSoC5/Filter_PVT.c ****     events &= Filter_DMA_CTRL_MASK;
   84              		.loc 1 87 0
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 4
 
 
   85 000a FB79     		ldrb	r3, [r7, #7]
@@ -213,10 +213,10 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
  112 0006 00000000 		.4byte	.Ldebug_abbrev0
  113 000a 04       		.byte	0x4
  114 000b 01       		.uleb128 0x1
- 115 000c 01010000 		.4byte	.LASF16
+ 115 000c 0D010000 		.4byte	.LASF16
  116 0010 01       		.byte	0x1
- 117 0011 9F010000 		.4byte	.LASF17
- 118 0015 0E000000 		.4byte	.LASF18
+ 117 0011 AB010000 		.4byte	.LASF17
+ 118 0015 2D000000 		.4byte	.LASF18
  119 0019 00000000 		.4byte	.Ldebug_ranges0+0
  120 001d 00000000 		.4byte	0
  121 0021 00000000 		.4byte	.Ldebug_line0
@@ -227,34 +227,34 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
  126 002c 03       		.uleb128 0x3
  127 002d 04       		.byte	0x4
  128 002e 07       		.byte	0x7
- 129 002f C5010000 		.4byte	.LASF0
+ 129 002f 0E000000 		.4byte	.LASF0
  130 0033 03       		.uleb128 0x3
  131 0034 01       		.byte	0x1
  132 0035 06       		.byte	0x6
- 133 0036 F5000000 		.4byte	.LASF1
+ 133 0036 01010000 		.4byte	.LASF1
  134 003a 03       		.uleb128 0x3
  135 003b 01       		.byte	0x1
  136 003c 08       		.byte	0x8
- 137 003d BF000000 		.4byte	.LASF2
+ 137 003d CB000000 		.4byte	.LASF2
  138 0041 03       		.uleb128 0x3
  139 0042 02       		.byte	0x2
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 5
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 5
 
 
  140 0043 05       		.byte	0x5
- 141 0044 95010000 		.4byte	.LASF3
+ 141 0044 A1010000 		.4byte	.LASF3
  142 0048 03       		.uleb128 0x3
  143 0049 02       		.byte	0x2
  144 004a 07       		.byte	0x7
- 145 004b E2000000 		.4byte	.LASF4
+ 145 004b EE000000 		.4byte	.LASF4
  146 004f 03       		.uleb128 0x3
  147 0050 04       		.byte	0x4
  148 0051 05       		.byte	0x5
- 149 0052 D2000000 		.4byte	.LASF5
+ 149 0052 DE000000 		.4byte	.LASF5
  150 0056 03       		.uleb128 0x3
  151 0057 04       		.byte	0x4
  152 0058 07       		.byte	0x7
- 153 0059 89000000 		.4byte	.LASF6
+ 153 0059 95000000 		.4byte	.LASF6
  154 005d 03       		.uleb128 0x3
  155 005e 08       		.byte	0x8
  156 005f 05       		.byte	0x5
@@ -262,49 +262,49 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
  158 0064 03       		.uleb128 0x3
  159 0065 08       		.byte	0x8
  160 0066 07       		.byte	0x7
- 161 0067 9B000000 		.4byte	.LASF8
+ 161 0067 A7000000 		.4byte	.LASF8
  162 006b 03       		.uleb128 0x3
  163 006c 04       		.byte	0x4
  164 006d 07       		.byte	0x7
- 165 006e D2010000 		.4byte	.LASF9
+ 165 006e D1010000 		.4byte	.LASF9
  166 0072 03       		.uleb128 0x3
  167 0073 01       		.byte	0x1
  168 0074 08       		.byte	0x8
- 169 0075 CD000000 		.4byte	.LASF10
+ 169 0075 D9000000 		.4byte	.LASF10
  170 0079 04       		.uleb128 0x4
- 171 007a 83000000 		.4byte	.LASF13
+ 171 007a 8F000000 		.4byte	.LASF13
  172 007e 02       		.byte	0x2
  173 007f A1       		.byte	0xa1
  174 0080 3A000000 		.4byte	0x3a
  175 0084 03       		.uleb128 0x3
  176 0085 04       		.byte	0x4
  177 0086 04       		.byte	0x4
- 178 0087 B9000000 		.4byte	.LASF11
+ 178 0087 C5000000 		.4byte	.LASF11
  179 008b 03       		.uleb128 0x3
  180 008c 08       		.byte	0x8
  181 008d 04       		.byte	0x4
- 182 008e DB000000 		.4byte	.LASF12
+ 182 008e E7000000 		.4byte	.LASF12
  183 0092 05       		.uleb128 0x5
- 184 0093 7E000000 		.4byte	.LASF14
+ 184 0093 8A000000 		.4byte	.LASF14
  185 0097 02       		.byte	0x2
  186 0098 4B01     		.2byte	0x14b
  187 009a 9E000000 		.4byte	0x9e
  188 009e 06       		.uleb128 0x6
  189 009f 79000000 		.4byte	0x79
  190 00a3 07       		.uleb128 0x7
- 191 00a4 7D010000 		.4byte	.LASF19
+ 191 00a4 89010000 		.4byte	.LASF19
  192 00a8 01       		.byte	0x1
  193 00a9 2D       		.byte	0x2d
  194 00aa 00000000 		.4byte	.LFB0
  195 00ae 28000000 		.4byte	.LFE0-.LFB0
  196 00b2 01       		.uleb128 0x1
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 6
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 6
 
 
  197 00b3 9C       		.byte	0x9c
  198 00b4 C7000000 		.4byte	0xc7
  199 00b8 08       		.uleb128 0x8
- 200 00b9 B2000000 		.4byte	.LASF15
+ 200 00b9 BE000000 		.4byte	.LASF15
  201 00bd 01       		.byte	0x1
  202 00be 2D       		.byte	0x2d
  203 00bf 79000000 		.4byte	0x79
@@ -313,7 +313,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
  206 00c5 77       		.sleb128 -9
  207 00c6 00       		.byte	0
  208 00c7 09       		.uleb128 0x9
- 209 00c8 6C000000 		.4byte	.LASF20
+ 209 00c8 1B000000 		.4byte	.LASF20
  210 00cc 01       		.byte	0x1
  211 00cd 55       		.byte	0x55
  212 00ce 00000000 		.4byte	.LFB1
@@ -321,7 +321,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
  214 00d6 01       		.uleb128 0x1
  215 00d7 9C       		.byte	0x9c
  216 00d8 08       		.uleb128 0x8
- 217 00d9 B2000000 		.4byte	.LASF15
+ 217 00d9 BE000000 		.4byte	.LASF15
  218 00dd 01       		.byte	0x1
  219 00de 55       		.byte	0x55
  220 00df 79000000 		.4byte	0x79
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
  251 0017 0B       		.uleb128 0xb
  252 0018 3E       		.uleb128 0x3e
  253 0019 0B       		.uleb128 0xb
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 7
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 7
 
 
  254 001a 03       		.uleb128 0x3
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
  308 0050 0E       		.uleb128 0xe
  309 0051 3A       		.uleb128 0x3a
  310 0052 0B       		.uleb128 0xb
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 8
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 8
 
 
  311 0053 3B       		.uleb128 0x3b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
  365 008b 00       		.byte	0
  366              		.section	.debug_aranges,"",%progbits
  367 0000 24000000 		.4byte	0x24
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 9
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 9
 
 
  368 0004 0200     		.2byte	0x2
@@ -513,117 +513,117 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 1
  392      206C6F6E 
  392      6720696E 
  392      7400
- 393              	.LASF18:
- 394 000e 5C5C766D 		.ascii	"\\\\vmware-host\\Shared Folders\\scottcarlson On My"
- 394      77617265 
- 394      2D686F73 
- 394      745C5368 
- 394      61726564 
- 395 003d 204D6163 		.ascii	" Mac\\Code\\PSoC_Creator\\Design01\\Design01.cydsn\000"
- 395      5C436F64 
- 395      655C5053 
- 395      6F435F43 
- 395      72656174 
- 396              	.LASF20:
- 397 006c 46696C74 		.ascii	"Filter_SetDMAMode\000"
- 397      65725F53 
- 397      6574444D 
- 397      414D6F64 
- 397      6500
- 398              	.LASF14:
- 399 007e 72656738 		.ascii	"reg8\000"
- 399      00
- 400              	.LASF13:
- 401 0083 75696E74 		.ascii	"uint8\000"
- 401      3800
- 402              	.LASF6:
- 403 0089 6C6F6E67 		.ascii	"long unsigned int\000"
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 10
+ 393              	.LASF0:
+ 394 000e 756E7369 		.ascii	"unsigned int\000"
+ 394      676E6564 
+ 394      20696E74 
+ 394      00
+ 395              	.LASF20:
+ 396 001b 46696C74 		.ascii	"Filter_SetDMAMode\000"
+ 396      65725F53 
+ 396      6574444D 
+ 396      414D6F64 
+ 396      6500
+ 397              	.LASF18:
+ 398 002d 5C5C766D 		.ascii	"\\\\vmware-host\\Shared Folders\\scottcarlson On My"
+ 398      77617265 
+ 398      2D686F73 
+ 398      745C5368 
+ 398      61726564 
+ 399 005c 204D6163 		.ascii	" Mac\\Code\\repos\\LED_controller\\Design01.cydsn\000"
+ 399      5C436F64 
+ 399      655C7265 
+ 399      706F735C 
+ 399      4C45445F 
+ 400              	.LASF14:
+ 401 008a 72656738 		.ascii	"reg8\000"
+ 401      00
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 10
 
 
- 403      20756E73 
- 403      69676E65 
- 403      6420696E 
- 403      7400
- 404              	.LASF8:
- 405 009b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 405      206C6F6E 
- 405      6720756E 
- 405      7369676E 
- 405      65642069 
- 406              	.LASF15:
- 407 00b2 6576656E 		.ascii	"events\000"
- 407      747300
- 408              	.LASF11:
- 409 00b9 666C6F61 		.ascii	"float\000"
- 409      7400
- 410              	.LASF2:
- 411 00bf 756E7369 		.ascii	"unsigned char\000"
- 411      676E6564 
- 411      20636861 
- 411      7200
- 412              	.LASF10:
- 413 00cd 63686172 		.ascii	"char\000"
- 413      00
- 414              	.LASF5:
- 415 00d2 6C6F6E67 		.ascii	"long int\000"
- 415      20696E74 
+ 402              	.LASF13:
+ 403 008f 75696E74 		.ascii	"uint8\000"
+ 403      3800
+ 404              	.LASF6:
+ 405 0095 6C6F6E67 		.ascii	"long unsigned int\000"
+ 405      20756E73 
+ 405      69676E65 
+ 405      6420696E 
+ 405      7400
+ 406              	.LASF8:
+ 407 00a7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 407      206C6F6E 
+ 407      6720756E 
+ 407      7369676E 
+ 407      65642069 
+ 408              	.LASF15:
+ 409 00be 6576656E 		.ascii	"events\000"
+ 409      747300
+ 410              	.LASF11:
+ 411 00c5 666C6F61 		.ascii	"float\000"
+ 411      7400
+ 412              	.LASF2:
+ 413 00cb 756E7369 		.ascii	"unsigned char\000"
+ 413      676E6564 
+ 413      20636861 
+ 413      7200
+ 414              	.LASF10:
+ 415 00d9 63686172 		.ascii	"char\000"
  415      00
- 416              	.LASF12:
- 417 00db 646F7562 		.ascii	"double\000"
- 417      6C6500
- 418              	.LASF4:
- 419 00e2 73686F72 		.ascii	"short unsigned int\000"
- 419      7420756E 
- 419      7369676E 
- 419      65642069 
- 419      6E7400
- 420              	.LASF1:
- 421 00f5 7369676E 		.ascii	"signed char\000"
- 421      65642063 
- 421      68617200 
- 422              	.LASF16:
- 423 0101 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 423      4320342E 
- 423      382E3420 
- 423      32303134 
- 423      30353236 
- 424 0134 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 424      20726576 
- 424      6973696F 
- 424      6E203231 
- 424      31333538 
- 425 0167 30202D66 		.ascii	"0 -ffunction-sections\000"
- 425      66756E63 
- 425      74696F6E 
- 425      2D736563 
- 425      74696F6E 
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccg4b6K9.s 			page 11
+ 416              	.LASF5:
+ 417 00de 6C6F6E67 		.ascii	"long int\000"
+ 417      20696E74 
+ 417      00
+ 418              	.LASF12:
+ 419 00e7 646F7562 		.ascii	"double\000"
+ 419      6C6500
+ 420              	.LASF4:
+ 421 00ee 73686F72 		.ascii	"short unsigned int\000"
+ 421      7420756E 
+ 421      7369676E 
+ 421      65642069 
+ 421      6E7400
+ 422              	.LASF1:
+ 423 0101 7369676E 		.ascii	"signed char\000"
+ 423      65642063 
+ 423      68617200 
+ 424              	.LASF16:
+ 425 010d 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 425      4320342E 
+ 425      382E3420 
+ 425      32303134 
+ 425      30353236 
+ 426 0140 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 426      20726576 
+ 426      6973696F 
+ 426      6E203231 
+ 426      31333538 
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccytv4me.s 			page 11
 
 
- 426              	.LASF19:
- 427 017d 46696C74 		.ascii	"Filter_SetInterruptMode\000"
- 427      65725F53 
- 427      6574496E 
- 427      74657272 
- 427      7570744D 
- 428              	.LASF3:
- 429 0195 73686F72 		.ascii	"short int\000"
- 429      7420696E 
- 429      7400
- 430              	.LASF17:
- 431 019f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Filter_PVT.c\000"
- 431      6E657261 
- 431      7465645F 
- 431      536F7572 
- 431      63655C50 
- 432              	.LASF0:
- 433 01c5 756E7369 		.ascii	"unsigned int\000"
- 433      676E6564 
- 433      20696E74 
- 433      00
+ 427 0173 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 427      66756E63 
+ 427      74696F6E 
+ 427      2D736563 
+ 427      74696F6E 
+ 428              	.LASF19:
+ 429 0189 46696C74 		.ascii	"Filter_SetInterruptMode\000"
+ 429      65725F53 
+ 429      6574496E 
+ 429      74657272 
+ 429      7570744D 
+ 430              	.LASF3:
+ 431 01a1 73686F72 		.ascii	"short int\000"
+ 431      7420696E 
+ 431      7400
+ 432              	.LASF17:
+ 433 01ab 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Filter_PVT.c\000"
+ 433      6E657261 
+ 433      7465645F 
+ 433      536F7572 
+ 433      63655C50 
  434              	.LASF9:
- 435 01d2 73697A65 		.ascii	"sizetype\000"
+ 435 01d1 73697A65 		.ascii	"sizetype\000"
  435      74797065 
  435      00
  436              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

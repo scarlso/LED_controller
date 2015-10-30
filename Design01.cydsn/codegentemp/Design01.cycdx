@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="Pin_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="isr_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Pin_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Pin_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Pin_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Pin_7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Pin_6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="DMA_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_7" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="DMA_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="P0_0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="DMA_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ADC_DelSig_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
@@ -837,6 +837,8 @@
   <block name="LCD_Char_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   </block>
+  <block name="ADC2Filter_DMA" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Filter" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="DFB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -1095,8 +1097,6 @@
       </field>
     </register>
   </block>
-  <block name="ADC2Filter_DMA" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Pin_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Red_LED" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="DMA_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Pin_5" BASE="0x0" SIZE="0x0" desc="" visible="true" />
 </blockRegMap>

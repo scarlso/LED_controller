@@ -6,7 +6,7 @@
 
 #Build Date:         May  8 2015 09:27:37
 
-#File Generated:     Oct 13 2015 20:52:24
+#File Generated:     Oct 30 2015 14:20:12
 
 #Purpose:            
 
@@ -82,14 +82,14 @@ analysis after routing.
 Number of clocks: 11
 Clock: ADC_DelSig_1_Ext_CP_Clk | Frequency: N/A       | Target:  62.6 MHz
 Clock: ADC_DelSig_1_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  62.6 MHz
-Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   1.5 MHz
-Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   1.5 MHz
+Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   0.2 MHz
+Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   0.2 MHz
 Clock: CyBUS_CLK            | Frequency:  62.1 MHz | Target:  62.6 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyXTAL               | Frequency: N/A       | Target:   8.0 MHz
+Clock: CyXTAL               | Frequency: N/A       | Target:  10.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
@@ -105,14 +105,14 @@ Phase 7
 Number of clocks: 11
 Clock: ADC_DelSig_1_Ext_CP_Clk | Frequency: N/A       | Target:  62.6 MHz
 Clock: ADC_DelSig_1_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  62.6 MHz
-Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   1.5 MHz
-Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   1.5 MHz
+Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   0.2 MHz
+Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   0.2 MHz
 Clock: CyBUS_CLK            | Frequency:  62.1 MHz | Target:  62.6 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyXTAL               | Frequency: N/A       | Target:   8.0 MHz
+Clock: CyXTAL               | Frequency: N/A       | Target:  10.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
@@ -151,14 +151,14 @@ analysis after routing.
 Number of clocks: 11
 Clock: ADC_DelSig_1_Ext_CP_Clk | Frequency: N/A       | Target:  62.6 MHz
 Clock: ADC_DelSig_1_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  62.6 MHz
-Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   1.5 MHz
-Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   1.5 MHz
+Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   0.2 MHz
+Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   0.2 MHz
 Clock: CyBUS_CLK            | Frequency:  62.1 MHz | Target:  66.7 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyXTAL               | Frequency: N/A       | Target:   8.0 MHz
+Clock: CyXTAL               | Frequency: N/A       | Target:  10.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
@@ -181,14 +181,14 @@ analysis after routing.
 Number of clocks: 11
 Clock: ADC_DelSig_1_Ext_CP_Clk | Frequency: N/A       | Target:  62.6 MHz
 Clock: ADC_DelSig_1_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  62.6 MHz
-Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   1.5 MHz
-Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   1.5 MHz
+Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   0.2 MHz
+Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   0.2 MHz
 Clock: CyBUS_CLK            | Frequency:  62.1 MHz | Target:  66.7 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyXTAL               | Frequency: N/A       | Target:   8.0 MHz
+Clock: CyXTAL               | Frequency: N/A       | Target:  10.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
@@ -204,14 +204,14 @@ Phase 7
 Number of clocks: 11
 Clock: ADC_DelSig_1_Ext_CP_Clk | Frequency: N/A       | Target:  62.6 MHz
 Clock: ADC_DelSig_1_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  62.6 MHz
-Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   1.5 MHz
-Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   1.5 MHz
+Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   0.2 MHz
+Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   0.2 MHz
 Clock: CyBUS_CLK            | Frequency:  62.1 MHz | Target:  66.7 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyXTAL               | Frequency: N/A       | Target:   8.0 MHz
+Clock: CyXTAL               | Frequency: N/A       | Target:  10.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
@@ -250,14 +250,14 @@ analysis after routing.
 Number of clocks: 11
 Clock: ADC_DelSig_1_Ext_CP_Clk | Frequency: N/A       | Target:  62.6 MHz
 Clock: ADC_DelSig_1_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  62.6 MHz
-Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   1.5 MHz
-Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   1.5 MHz
+Clock: ADC_DelSig_1_theACLK | Frequency: N/A       | Target:   0.2 MHz
+Clock: ADC_DelSig_1_theACLK(fixed-function) | Frequency: N/A       | Target:   0.2 MHz
 Clock: CyBUS_CLK            | Frequency:  62.1 MHz | Target:  66.7 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  62.6 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  48.0 MHz
-Clock: CyXTAL               | Frequency: N/A       | Target:   8.0 MHz
+Clock: CyXTAL               | Frequency: N/A       | Target:  10.0 MHz
 Clock: \ADC_DelSig_1:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================

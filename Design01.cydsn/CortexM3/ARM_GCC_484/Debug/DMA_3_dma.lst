@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
   23:.\Generated_Source\PSoC5/DMA_3_dma.c **** 
   24:.\Generated_Source\PSoC5/DMA_3_dma.c **** 
   25:.\Generated_Source\PSoC5/DMA_3_dma.c **** 
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 2
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 2
 
 
   26:.\Generated_Source\PSoC5/DMA_3_dma.c **** /****************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
   80:.\Generated_Source\PSoC5/DMA_3_dma.c **** *       
   81:.\Generated_Source\PSoC5/DMA_3_dma.c **** *       
   82:.\Generated_Source\PSoC5/DMA_3_dma.c **** *   ReqestPerBurst.
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 3
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 3
 
 
   83:.\Generated_Source\PSoC5/DMA_3_dma.c **** *       
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
   65 002a 0923     		movs	r3, #9
   66 002c FFF7FEFF 		bl	CyDmaChSetConfiguration
  105:.\Generated_Source\PSoC5/DMA_3_dma.c ****                                   BurstCount,
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 4
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 4
 
 
  106:.\Generated_Source\PSoC5/DMA_3_dma.c ****                                   ReqestPerBurst,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  121:.\Generated_Source\PSoC5/DMA_3_dma.c **** * Function Name: void DMA_3_DmaRelease
  122:.\Generated_Source\PSoC5/DMA_3_dma.c **** **********************************************************************
  123:.\Generated_Source\PSoC5/DMA_3_dma.c **** * Summary:
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 5
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 5
 
 
  124:.\Generated_Source\PSoC5/DMA_3_dma.c **** *   Frees the channel associated with DMA_3.
@@ -292,13 +292,13 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  137 0006 00000000 		.4byte	.Ldebug_abbrev0
  138 000a 04       		.byte	0x4
  139 000b 01       		.uleb128 0x1
- 140 000c 14010000 		.4byte	.LASF19
+ 140 000c 3F010000 		.4byte	.LASF19
  141 0010 01       		.byte	0x1
- 142 0011 C1000000 		.4byte	.LASF20
- 143 0015 1E000000 		.4byte	.LASF21
+ 142 0011 CD000000 		.4byte	.LASF20
+ 143 0015 2B000000 		.4byte	.LASF21
  144 0019 00000000 		.4byte	.Ldebug_ranges0+0
  145 001d 00000000 		.4byte	0
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 6
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 6
 
 
  146 0021 00000000 		.4byte	.Ldebug_line0
@@ -309,31 +309,31 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  151 002c 03       		.uleb128 0x3
  152 002d 04       		.byte	0x4
  153 002e 07       		.byte	0x7
- 154 002f AF010000 		.4byte	.LASF0
+ 154 002f 1E000000 		.4byte	.LASF0
  155 0033 03       		.uleb128 0x3
  156 0034 01       		.byte	0x1
  157 0035 06       		.byte	0x6
- 158 0036 A3010000 		.4byte	.LASF1
+ 158 0036 33010000 		.4byte	.LASF1
  159 003a 03       		.uleb128 0x3
  160 003b 01       		.byte	0x1
  161 003c 08       		.byte	0x8
- 162 003d E6000000 		.4byte	.LASF2
+ 162 003d F2000000 		.4byte	.LASF2
  163 0041 03       		.uleb128 0x3
  164 0042 02       		.byte	0x2
  165 0043 05       		.byte	0x5
- 166 0044 E5010000 		.4byte	.LASF3
+ 166 0044 E4010000 		.4byte	.LASF3
  167 0048 03       		.uleb128 0x3
  168 0049 02       		.byte	0x2
  169 004a 07       		.byte	0x7
- 170 004b 90010000 		.4byte	.LASF4
+ 170 004b 20010000 		.4byte	.LASF4
  171 004f 03       		.uleb128 0x3
  172 0050 04       		.byte	0x4
  173 0051 05       		.byte	0x5
- 174 0052 F9000000 		.4byte	.LASF5
+ 174 0052 05010000 		.4byte	.LASF5
  175 0056 03       		.uleb128 0x3
  176 0057 04       		.byte	0x4
  177 0058 07       		.byte	0x7
- 178 0059 92000000 		.4byte	.LASF6
+ 178 0059 9E000000 		.4byte	.LASF6
  179 005d 03       		.uleb128 0x3
  180 005e 08       		.byte	0x8
  181 005f 05       		.byte	0x5
@@ -341,24 +341,24 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  183 0064 03       		.uleb128 0x3
  184 0065 08       		.byte	0x8
  185 0066 07       		.byte	0x7
- 186 0067 A4000000 		.4byte	.LASF8
+ 186 0067 B0000000 		.4byte	.LASF8
  187 006b 03       		.uleb128 0x3
  188 006c 04       		.byte	0x4
  189 006d 07       		.byte	0x7
- 190 006e CB010000 		.4byte	.LASF9
+ 190 006e CA010000 		.4byte	.LASF9
  191 0072 03       		.uleb128 0x3
  192 0073 01       		.byte	0x1
  193 0074 08       		.byte	0x8
- 194 0075 F4000000 		.4byte	.LASF10
+ 194 0075 00010000 		.4byte	.LASF10
  195 0079 04       		.uleb128 0x4
- 196 007a 8C000000 		.4byte	.LASF11
+ 196 007a 98000000 		.4byte	.LASF11
  197 007e 02       		.byte	0x2
  198 007f A1       		.byte	0xa1
  199 0080 3A000000 		.4byte	0x3a
  200 0084 04       		.uleb128 0x4
- 201 0085 EF010000 		.4byte	.LASF12
+ 201 0085 EE010000 		.4byte	.LASF12
  202 0089 02       		.byte	0x2
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 7
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 7
 
 
  203 008a A2       		.byte	0xa2
@@ -366,13 +366,13 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  205 008f 03       		.uleb128 0x3
  206 0090 04       		.byte	0x4
  207 0091 04       		.byte	0x4
- 208 0092 BB000000 		.4byte	.LASF13
+ 208 0092 C7000000 		.4byte	.LASF13
  209 0096 03       		.uleb128 0x3
  210 0097 08       		.byte	0x8
  211 0098 04       		.byte	0x4
- 212 0099 02010000 		.4byte	.LASF14
+ 212 0099 0E010000 		.4byte	.LASF14
  213 009d 05       		.uleb128 0x5
- 214 009e F6010000 		.4byte	.LASF22
+ 214 009e F5010000 		.4byte	.LASF22
  215 00a2 01       		.byte	0x1
  216 00a3 61       		.byte	0x61
  217 00a4 79000000 		.4byte	0x79
@@ -382,7 +382,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  221 00b1 9C       		.byte	0x9c
  222 00b2 EF000000 		.4byte	0xef
  223 00b6 06       		.uleb128 0x6
- 224 00b7 09010000 		.4byte	.LASF15
+ 224 00b7 15010000 		.4byte	.LASF15
  225 00bb 01       		.byte	0x1
  226 00bc 61       		.byte	0x61
  227 00bd 79000000 		.4byte	0x79
@@ -390,7 +390,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  229 00c2 91       		.byte	0x91
  230 00c3 77       		.sleb128 -9
  231 00c4 06       		.uleb128 0x6
- 232 00c5 BC010000 		.4byte	.LASF16
+ 232 00c5 BB010000 		.4byte	.LASF16
  233 00c9 01       		.byte	0x1
  234 00ca 61       		.byte	0x61
  235 00cb 79000000 		.4byte	0x79
@@ -406,7 +406,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  245 00de 91       		.byte	0x91
  246 00df 74       		.sleb128 -12
  247 00e0 06       		.uleb128 0x6
- 248 00e1 D4010000 		.4byte	.LASF18
+ 248 00e1 D3010000 		.4byte	.LASF18
  249 00e5 01       		.byte	0x1
  250 00e6 61       		.byte	0x61
  251 00e7 84000000 		.4byte	0x84
@@ -415,10 +415,10 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  254 00ed 72       		.sleb128 -14
  255 00ee 00       		.byte	0
  256 00ef 07       		.uleb128 0x7
- 257 00f0 0A020000 		.4byte	.LASF23
+ 257 00f0 09020000 		.4byte	.LASF23
  258 00f4 01       		.byte	0x1
  259 00f5 88       		.byte	0x88
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 8
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 8
 
 
  260 00f6 00000000 		.4byte	.LFB1
@@ -426,7 +426,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  262 00fe 01       		.uleb128 0x1
  263 00ff 9C       		.byte	0x9c
  264 0100 08       		.uleb128 0x8
- 265 0101 7C000000 		.4byte	.LASF24
+ 265 0101 88000000 		.4byte	.LASF24
  266 0105 01       		.byte	0x1
  267 0106 45       		.byte	0x45
  268 0107 79000000 		.4byte	0x79
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  314 0027 00       		.byte	0
  315 0028 00       		.byte	0
  316 0029 04       		.uleb128 0x4
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 9
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 9
 
 
  317 002a 16       		.uleb128 0x16
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  371 0061 07       		.uleb128 0x7
  372 0062 2E       		.uleb128 0x2e
  373 0063 00       		.byte	0
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 10
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 10
 
 
  374 0064 3F       		.uleb128 0x3f
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  428 0000 00000000 		.4byte	.LFB0
  429 0004 60000000 		.4byte	.LFE0
  430 0008 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 11
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 11
 
 
  431 000c 14000000 		.4byte	.LFE1
@@ -621,132 +621,132 @@ ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 1
  440      72537263 
  440      41646472 
  440      65737300 
- 441              	.LASF21:
- 442 001e 5C5C766D 		.ascii	"\\\\vmware-host\\Shared Folders\\scottcarlson On My"
- 442      77617265 
- 442      2D686F73 
- 442      745C5368 
- 442      61726564 
- 443 004d 204D6163 		.ascii	" Mac\\Code\\PSoC_Creator\\Design01\\Design01.cydsn\000"
- 443      5C436F64 
- 443      655C5053 
- 443      6F435F43 
- 443      72656174 
- 444              	.LASF24:
- 445 007c 444D415F 		.ascii	"DMA_3_DmaHandle\000"
- 445      335F446D 
- 445      6148616E 
- 445      646C6500 
- 446              	.LASF11:
- 447 008c 75696E74 		.ascii	"uint8\000"
- 447      3800
- 448              	.LASF6:
- 449 0092 6C6F6E67 		.ascii	"long unsigned int\000"
- 449      20756E73 
- 449      69676E65 
- 449      6420696E 
- 449      7400
- 450              	.LASF8:
- 451 00a4 6C6F6E67 		.ascii	"long long unsigned int\000"
- 451      206C6F6E 
- 451      6720756E 
- 451      7369676E 
- 451      65642069 
- 452              	.LASF13:
- 453 00bb 666C6F61 		.ascii	"float\000"
- 453      7400
- 454              	.LASF20:
- 455 00c1 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\DMA_3_dma.c\000"
- 455      6E657261 
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 12
+ 441              	.LASF0:
+ 442 001e 756E7369 		.ascii	"unsigned int\000"
+ 442      676E6564 
+ 442      20696E74 
+ 442      00
+ 443              	.LASF21:
+ 444 002b 5C5C766D 		.ascii	"\\\\vmware-host\\Shared Folders\\scottcarlson On My"
+ 444      77617265 
+ 444      2D686F73 
+ 444      745C5368 
+ 444      61726564 
+ 445 005a 204D6163 		.ascii	" Mac\\Code\\repos\\LED_controller\\Design01.cydsn\000"
+ 445      5C436F64 
+ 445      655C7265 
+ 445      706F735C 
+ 445      4C45445F 
+ 446              	.LASF24:
+ 447 0088 444D415F 		.ascii	"DMA_3_DmaHandle\000"
+ 447      335F446D 
+ 447      6148616E 
+ 447      646C6500 
+ 448              	.LASF11:
+ 449 0098 75696E74 		.ascii	"uint8\000"
+ 449      3800
+ 450              	.LASF6:
+ 451 009e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 451      20756E73 
+ 451      69676E65 
+ 451      6420696E 
+ 451      7400
+ 452              	.LASF8:
+ 453 00b0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 453      206C6F6E 
+ 453      6720756E 
+ 453      7369676E 
+ 453      65642069 
+ 454              	.LASF13:
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 12
 
 
- 455      7465645F 
- 455      536F7572 
- 455      63655C50 
- 456              	.LASF2:
- 457 00e6 756E7369 		.ascii	"unsigned char\000"
- 457      676E6564 
- 457      20636861 
- 457      7200
- 458              	.LASF10:
- 459 00f4 63686172 		.ascii	"char\000"
- 459      00
- 460              	.LASF5:
- 461 00f9 6C6F6E67 		.ascii	"long int\000"
- 461      20696E74 
+ 455 00c7 666C6F61 		.ascii	"float\000"
+ 455      7400
+ 456              	.LASF20:
+ 457 00cd 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\DMA_3_dma.c\000"
+ 457      6E657261 
+ 457      7465645F 
+ 457      536F7572 
+ 457      63655C50 
+ 458              	.LASF2:
+ 459 00f2 756E7369 		.ascii	"unsigned char\000"
+ 459      676E6564 
+ 459      20636861 
+ 459      7200
+ 460              	.LASF10:
+ 461 0100 63686172 		.ascii	"char\000"
  461      00
- 462              	.LASF14:
- 463 0102 646F7562 		.ascii	"double\000"
- 463      6C6500
- 464              	.LASF15:
- 465 0109 42757273 		.ascii	"BurstCount\000"
- 465      74436F75 
- 465      6E7400
- 466              	.LASF19:
- 467 0114 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 467      4320342E 
- 467      382E3420 
- 467      32303134 
- 467      30353236 
- 468 0147 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 468      20726576 
- 468      6973696F 
- 468      6E203231 
- 468      31333538 
- 469 017a 30202D66 		.ascii	"0 -ffunction-sections\000"
- 469      66756E63 
- 469      74696F6E 
- 469      2D736563 
- 469      74696F6E 
- 470              	.LASF4:
- 471 0190 73686F72 		.ascii	"short unsigned int\000"
- 471      7420756E 
- 471      7369676E 
- 471      65642069 
- 471      6E7400
- 472              	.LASF1:
- 473 01a3 7369676E 		.ascii	"signed char\000"
- 473      65642063 
- 473      68617200 
- 474              	.LASF0:
- 475 01af 756E7369 		.ascii	"unsigned int\000"
- 475      676E6564 
- 475      20696E74 
- 475      00
+ 462              	.LASF5:
+ 463 0105 6C6F6E67 		.ascii	"long int\000"
+ 463      20696E74 
+ 463      00
+ 464              	.LASF14:
+ 465 010e 646F7562 		.ascii	"double\000"
+ 465      6C6500
+ 466              	.LASF15:
+ 467 0115 42757273 		.ascii	"BurstCount\000"
+ 467      74436F75 
+ 467      6E7400
+ 468              	.LASF4:
+ 469 0120 73686F72 		.ascii	"short unsigned int\000"
+ 469      7420756E 
+ 469      7369676E 
+ 469      65642069 
+ 469      6E7400
+ 470              	.LASF1:
+ 471 0133 7369676E 		.ascii	"signed char\000"
+ 471      65642063 
+ 471      68617200 
+ 472              	.LASF19:
+ 473 013f 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 473      4320342E 
+ 473      382E3420 
+ 473      32303134 
+ 473      30353236 
+ 474 0172 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 474      20726576 
+ 474      6973696F 
+ 474      6E203231 
+ 474      31333538 
+ 475 01a5 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 475      66756E63 
+ 475      74696F6E 
+ 475      2D736563 
+ 475      74696F6E 
  476              	.LASF16:
- 477 01bc 52657165 		.ascii	"ReqestPerBurst\000"
+ 477 01bb 52657165 		.ascii	"ReqestPerBurst\000"
  477      73745065 
  477      72427572 
-ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\ccMRVfw5.s 			page 13
+ARM GAS  C:\Users\SCOTTC~1\AppData\Local\Temp\cc73XjMD.s 			page 13
 
 
  477      737400
  478              	.LASF9:
- 479 01cb 73697A65 		.ascii	"sizetype\000"
+ 479 01ca 73697A65 		.ascii	"sizetype\000"
  479      74797065 
  479      00
  480              	.LASF18:
- 481 01d4 55707065 		.ascii	"UpperDestAddress\000"
+ 481 01d3 55707065 		.ascii	"UpperDestAddress\000"
  481      72446573 
  481      74416464 
  481      72657373 
  481      00
  482              	.LASF3:
- 483 01e5 73686F72 		.ascii	"short int\000"
+ 483 01e4 73686F72 		.ascii	"short int\000"
  483      7420696E 
  483      7400
  484              	.LASF12:
- 485 01ef 75696E74 		.ascii	"uint16\000"
+ 485 01ee 75696E74 		.ascii	"uint16\000"
  485      313600
  486              	.LASF22:
- 487 01f6 444D415F 		.ascii	"DMA_3_DmaInitialize\000"
+ 487 01f5 444D415F 		.ascii	"DMA_3_DmaInitialize\000"
  487      335F446D 
  487      61496E69 
  487      7469616C 
  487      697A6500 
  488              	.LASF23:
- 489 020a 444D415F 		.ascii	"DMA_3_DmaRelease\000"
+ 489 0209 444D415F 		.ascii	"DMA_3_DmaRelease\000"
  489      335F446D 
  489      6152656C 
  489      65617365 

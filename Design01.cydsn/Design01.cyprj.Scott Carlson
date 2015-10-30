@@ -12,17 +12,6 @@
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
 <file name=".\CortexM3\ARM_GCC_484\Debug\main.o">
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_common_tables.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_const_structs.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_math.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm0.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm0plus.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm3.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm4.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm7.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmFunc.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmInstr.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmSimd.h" />
 <dep name=".\Generated_Source\PSoC5\ADC2Filter_DMA_dma.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
@@ -61,8 +50,8 @@
 <dep name=".\Generated_Source\PSoC5\Pin_6_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\Pin_7.h" />
 <dep name=".\Generated_Source\PSoC5\Pin_7_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Red_LED.h" />
-<dep name=".\Generated_Source\PSoC5\Red_LED_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_8.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_8_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
 <dep name=".\Generated_Source\PSoC5\cyPm.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice.h" />
@@ -75,20 +64,20 @@
 <dep name=".\Generated_Source\PSoC5\isr_1.h" />
 <dep name=".\Generated_Source\PSoC5\isr_2.h" />
 <dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\arm_common_tables.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\arm_const_structs.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\arm_math.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm0.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm0plus.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm3.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm4.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm7.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cmFunc.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cmInstr.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cmSimd.h" />
 <dep name=".\main.c" />
 <dep name=".\math_helper.h" />
 </file>
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_common_tables.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_const_structs.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_math.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm0.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm0plus.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm3.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm4.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm7.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmFunc.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmInstr.h" />
-<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmSimd.h" />
 <file name=".\Generated_Source\PSoC5\ADC2Filter_DMA_dma.h" />
 <file name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
 <file name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
@@ -125,8 +114,8 @@
 <file name=".\Generated_Source\PSoC5\Pin_6_aliases.h" />
 <file name=".\Generated_Source\PSoC5\Pin_7.h" />
 <file name=".\Generated_Source\PSoC5\Pin_7_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Red_LED.h" />
-<file name=".\Generated_Source\PSoC5\Red_LED_aliases.h" />
+<file name=".\Generated_Source\PSoC5\Pin_8.h" />
+<file name=".\Generated_Source\PSoC5\Pin_8_aliases.h" />
 <file name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
 <file name=".\Generated_Source\PSoC5\cyPm.h" />
 <file name=".\Generated_Source\PSoC5\cydevice.h" />
@@ -138,18 +127,20 @@
 <file name=".\Generated_Source\PSoC5\isr_1.h" />
 <file name=".\Generated_Source\PSoC5\isr_2.h" />
 <file name=".\Generated_Source\PSoC5\project.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\arm_common_tables.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\arm_const_structs.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\arm_math.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm0.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm0plus.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm3.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm4.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm7.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cmFunc.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cmInstr.h" />
+<file name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cmSimd.h" />
 <file name=".\main.c" />
 <file name=".\math_helper.h" />
 <file name=".\CortexM3\ARM_GCC_484\Debug\math_helper.o">
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_math.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm0.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm0plus.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm3.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm4.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm7.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmFunc.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmInstr.h" />
-<dep name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmSimd.h" />
 <dep name=".\Generated_Source\PSoC5\ADC2Filter_DMA_dma.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
@@ -188,8 +179,8 @@
 <dep name=".\Generated_Source\PSoC5\Pin_6_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\Pin_7.h" />
 <dep name=".\Generated_Source\PSoC5\Pin_7_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Red_LED.h" />
-<dep name=".\Generated_Source\PSoC5\Red_LED_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_8.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_8_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
 <dep name=".\Generated_Source\PSoC5\cyPm.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice.h" />
@@ -202,6 +193,15 @@
 <dep name=".\Generated_Source\PSoC5\isr_1.h" />
 <dep name=".\Generated_Source\PSoC5\isr_2.h" />
 <dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\arm_math.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm0.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm0plus.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm3.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm4.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cm7.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cmFunc.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cmInstr.h" />
+<dep name="Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include\core_cmSimd.h" />
 <dep name=".\math_helper.c" />
 <dep name=".\math_helper.h" />
 </file>
@@ -626,17 +626,17 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Pin_7.c" />
-<file name=".\CortexM3\ARM_GCC_484\Debug\Red_LED.o">
-<dep name=".\Generated_Source\PSoC5\Red_LED.c" />
-<dep name=".\Generated_Source\PSoC5\Red_LED.h" />
-<dep name=".\Generated_Source\PSoC5\Red_LED_aliases.h" />
+<file name=".\CortexM3\ARM_GCC_484\Debug\Pin_8.o">
+<dep name=".\Generated_Source\PSoC5\Pin_8.c" />
+<dep name=".\Generated_Source\PSoC5\Pin_8.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_8_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
 <dep name=".\Generated_Source\PSoC5\cyfitter.h" />
 <dep name=".\Generated_Source\PSoC5\cypins.h" />
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
-<file name=".\Generated_Source\PSoC5\Red_LED.c" />
+<file name=".\Generated_Source\PSoC5\Pin_8.c" />
 <file name=".\CortexM3\ARM_GCC_484\Debug\cyPm.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -714,19 +714,20 @@
 <file name=".\Generated_Source\PSoC5\cydevicegnu.inc" />
 <file name=".\Generated_Source\PSoC5\cydevicegnu_trm.inc" />
 <file name=".\Generated_Source\PSoC5\cyfittergnu.inc" />
-<file name=".\Generated_Source\PSoC5\Clock_1.h" />
+<file name=".\Generated_Source\PSoC5\Clock_2.h" />
 <file name=".\Generated_Source\PSoC5\Counter_1.h" />
-<file name=".\Generated_Source\PSoC5\Counter_2.h" />
-<file name=".\Generated_Source\PSoC5\Counter_3.h" />
-<file name=".\CortexM3\ARM_GCC_484\Debug\Clock_1.o">
-<dep name=".\Generated_Source\PSoC5\Clock_1.c" />
-<dep name=".\Generated_Source\PSoC5\Clock_1.h" />
+<file name=".\Generated_Source\PSoC5\Red_LED.h" />
+<file name=".\Generated_Source\PSoC5\Red_LED_aliases.h" />
+<file name=".\Generated_Source\PSoC5\isr_3.h" />
+<file name=".\CortexM3\ARM_GCC_484\Debug\Clock_2.o">
+<dep name=".\Generated_Source\PSoC5\Clock_2.c" />
+<dep name=".\Generated_Source\PSoC5\Clock_2.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
 <dep name=".\Generated_Source\PSoC5\cyfitter.h" />
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
-<file name=".\Generated_Source\PSoC5\Clock_1.c" />
+<file name=".\Generated_Source\PSoC5\Clock_2.c" />
 <file name=".\CortexM3\ARM_GCC_484\Debug\Counter_1.o">
 <dep name=".\Generated_Source\PSoC5\Counter_1.c" />
 <dep name=".\Generated_Source\PSoC5\Counter_1.h" />
@@ -753,6 +754,53 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Counter_1_PM.c" />
+<file name=".\CortexM3\ARM_GCC_484\Debug\Red_LED.o">
+<dep name=".\Generated_Source\PSoC5\Red_LED.c" />
+<dep name=".\Generated_Source\PSoC5\Red_LED.h" />
+<dep name=".\Generated_Source\PSoC5\Red_LED_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\Red_LED.c" />
+<file name=".\CortexM3\ARM_GCC_484\Debug\isr_3.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\isr_3.c" />
+<dep name=".\Generated_Source\PSoC5\isr_3.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\isr_3.c" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_common_tables.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_const_structs.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\arm_math.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm0.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm0plus.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm3.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm4.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cm7.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmFunc.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmInstr.h" />
+<file name="..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include\core_cmSimd.h" />
+<file name=".\Generated_Source\PSoC5\Clock_1.h" />
+<file name=".\Generated_Source\PSoC5\Counter_2.h" />
+<file name=".\Generated_Source\PSoC5\Counter_3.h" />
+<file name=".\CortexM3\ARM_GCC_484\Debug\Clock_1.o">
+<dep name=".\Generated_Source\PSoC5\Clock_1.c" />
+<dep name=".\Generated_Source\PSoC5\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\Clock_1.c" />
 <file name=".\CortexM3\ARM_GCC_484\Debug\Counter_2.o">
 <dep name=".\Generated_Source\PSoC5\Counter_2.c" />
 <dep name=".\Generated_Source\PSoC5\Counter_2.h" />
@@ -1136,16 +1184,6 @@
 <dep name=".\Generated_Source\PSoC5\DMA_2_done.c" />
 </file>
 <file name=".\Generated_Source\PSoC5\DMA_2_done.c" />
-<file name=".\Generated_Source\PSoC5\Clock_2.h" />
-<file name=".\CortexM3\ARM_GCC_484\Debug\Clock_2.o">
-<dep name=".\Generated_Source\PSoC5\Clock_2.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\Generated_Source\PSoC5\Clock_2.c" />
-</file>
-<file name=".\Generated_Source\PSoC5\Clock_2.c" />
 <file name=".\Generated_Source\PSoC5\Start.h" />
 <file name=".\Generated_Source\PSoC5\Start_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_484\Debug\Start.o">
@@ -1445,7 +1483,6 @@
 <dep name=".\CortexM3\ARM_GCC_484\Debug\Pin_2.o" />
 <dep name=".\CortexM3\ARM_GCC_484\Debug\isr_1.o" />
 <dep name=".\CortexM3\ARM_GCC_484\Debug\isr_2.o" />
-<dep name=".\CortexM3\ARM_GCC_484\Debug\Red_LED.o" />
 <dep name=".\CortexM3\ARM_GCC_484\Debug\Filter.o" />
 <dep name=".\CortexM3\ARM_GCC_484\Debug\Filter_PM.o" />
 <dep name=".\CortexM3\ARM_GCC_484\Debug\Filter_PVT.o" />
@@ -1459,6 +1496,7 @@
 <dep name=".\CortexM3\ARM_GCC_484\Debug\DMA_3_dma.o" />
 <dep name=".\CortexM3\ARM_GCC_484\Debug\Pin_6.o" />
 <dep name=".\CortexM3\ARM_GCC_484\Debug\Pin_7.o" />
+<dep name=".\CortexM3\ARM_GCC_484\Debug\Pin_8.o" />
 <dep name=".\CortexM3\ARM_GCC_484\Debug\Design01.a" />
 <dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_484\Debug\CyComponentLibrary.a" />
 </file>
@@ -1473,35 +1511,35 @@
 <genericCmdLineData>
 <name v="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3">
 <name_val_pair name=".\arm_fir_data.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\main.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\math_helper.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\cyfitter_cfg.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\cymetadata.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Counter_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Counter_1_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\main.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\math_helper.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\cyfitter_cfg.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\cymetadata.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Counter_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Counter_1_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\Clock_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Clock_2.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Cm3Start.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Clock_2.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Cm3Start.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\CyBootAsmGnu.s" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=${OutputDir}/${CompileFile}.lst -g -W" />
-<name_val_pair name=".\Generated_Source\PSoC5\CyDmac.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\CyFlash.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\CyLib.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\cyPm.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\CySpc.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\cyutils.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\CyDmac.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\CyFlash.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\CyLib.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\cyPm.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\CySpc.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\cyutils.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name="Z:\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\CortexM3\ARM_GCC_484\Debug\Design01.hex" v="-mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -l arm_cortexM3l_math -L ..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Lib\GCC -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -lm" />
 <name_val_pair name=".\Generated_Source\PSoC5\LCD.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\LCD_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\LCD_LCDPort.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\LCD_Char_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\LCD_Char_1_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\LCD_Char_1_LCDPort.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\LCD_Char_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\LCD_Char_1_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\LCD_Char_1_LCDPort.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\WaveDAC8_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\WaveDAC8_1_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\ADC.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_INT.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\P0_0.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\P0_0.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\WaveDAC8_1_DacClk.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\WaveDAC8_1_Wave1_DMA_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\WaveDAC8_1_Wave2_DMA_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
@@ -1510,29 +1548,29 @@
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_IRQ.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_theACLK.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\ADC_Bypass.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_INT.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\DMA_1_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_INT.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\DMA_1_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\DMA_done.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\VDAC8_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\VDAC8_1_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Pin_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Pin_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\DMA_1_done.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\DMA_2_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\DMA_2_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\DMA_2_done.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\Start.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\P0_7.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Pin_2.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\isr_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Pin_2.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\isr_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name="..\..\CMSIS_project\CMSIS_project.cydsn\SpectralFlux_q15.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\isr_2.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\isr_2.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\InterruptRoutines.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Red_LED.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Red_LED.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\MultAcc_1.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\MultAcc_1_MACC.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\MultAcc_1_MACC_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
@@ -1541,14 +1579,14 @@
 <name_val_pair name=".\Generated_Source\PSoC5\MultAcc_1_DMA_IN_B_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\MultAcc_1_Status.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\MultAcc_1_Control.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Filter.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Filter_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Filter_PVT.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Filter_RAM_Data.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Filter_Coefficients.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\ADC2Filter_DMA_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Pin_3.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Pin_4.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Filter.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Filter_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Filter_PVT.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Filter_RAM_Data.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Filter_Coefficients.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\ADC2Filter_DMA_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Pin_3.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Pin_4.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\Counter_2.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\Counter_2_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\Counter_4.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
@@ -1558,14 +1596,17 @@
 <name_val_pair name=".\Generated_Source\PSoC5\Counter_3.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC5\Counter_3_PM.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
 <name_val_pair name="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\CortexM3\ARM_GCC_484\Debug\Design01.hex" v="-mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -l arm_cortexM3l_math -L ..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Lib\GCC -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -lm" />
-<name_val_pair name=".\Generated_Source\PSoC5\Pin_5.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\DMA_4_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\DMA_3_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Pin_6.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
-<name_val_pair name=".\Generated_Source\PSoC5\Pin_7.c" v="-mcpu=cortex-m3 -mthumb -Wno-main -I..\..\CMSIS_project\CMSIS_project.cydsn\CMSISfile\CMSIS\Include -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Pin_5.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\DMA_4_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\DMA_3_dma.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Pin_6.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Pin_7.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\isr_3.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\Generated_Source\PSoC5\Pin_8.c" v="-mcpu=cortex-m3 -mthumb -Wno-main &quot;-IZ:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Include&quot; -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D ARM_MATH_CM3 -Wall -ffunction-sections -O0" />
+<name_val_pair name="\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn\CortexM3\ARM_GCC_484\Debug\Design01.hex" v="-mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -l arm_cortexM3l_math -L &quot;Z:\scottcarlson On My Mac\Code\repos\LED_controller\CMSISfile\CMSIS\Lib\GCC&quot; -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -lm" />
 </name>
 </genericCmdLineData>
-<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\Scott Carlson\AppData\Local\Cypress Semiconductor\PSoC Creator\3.2&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p &quot;\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\Design01.cyprj&quot; -d CY8C5868AXI-LP035 -s &quot;\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\PSoC_Creator\Design01\Design01.cydsn\Generated_Source\PSoC5&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
+<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\Scott Carlson\AppData\Local\Cypress Semiconductor\PSoC Creator\3.2&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p &quot;\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn\Design01.cyprj&quot; -d CY8C5868AXI-LP035 -s &quot;\\vmware-host\Shared Folders\scottcarlson On My Mac\Code\repos\LED_controller\Design01.cydsn\Generated_Source\PSoC5&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
 </CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
 </dataGuid>
 <dataGuid v="597c5b74-0c46-4204-8b7f-96f3570671dc">
@@ -1887,45 +1928,6 @@
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_70\Custom\cydmacontrol.cs</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_70\Custom\cydmacontrol.designer.cs</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_70\Custom\cydmacontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\cy_pins_v2_10.cysym</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\cy_pins_v2_10.cystate</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\cy_pins_v2_10.cyprimitive</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyenums.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinsdata.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinpicture.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinutils.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cygeneralcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cygeneralcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyinputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyinputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cymappingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cymappingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyoutputcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyoutputcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinaliasdialog.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinaliasdialog.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinscontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinscontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyporcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyporcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\Resource1.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyclockingcontrol.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyclockingcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cygeneralcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyinputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cymappingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyoutputcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinaliasdialog.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinscontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyporcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\Resource1.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyclockingcontrol.resx</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\PSoC5\API\aliases.h</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\PSoC5\API\pins.c</v>
-<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\PSoC5\API\pins.h</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.cyprimitive</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.cysym</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.pdf</v>
@@ -2269,6 +2271,45 @@
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\PSoC5\API\aliases.h</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\PSoC5\API\pins.c</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\cy_pins_v2_10.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\cy_pins_v2_10.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\cy_pins_v2_10.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinpicture.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\PSoC5\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\PSoC5\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_10\PSoC5\API\pins.h</v>
 <v>.\Design01.cydwr</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_20\PSoC5\API\cm3gcc.ld</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_20\PSoC5\API\Cm3RealView.scat</v>
@@ -2486,6 +2527,11 @@
 <v>.\Generated_Source\PSoC5\Pin_7_aliases.h</v>
 <v>.\Generated_Source\PSoC5\Pin_7.c</v>
 <v>.\Generated_Source\PSoC5\Pin_7.h</v>
+<v>.\Generated_Source\PSoC5\isr_3.c</v>
+<v>.\Generated_Source\PSoC5\isr_3.h</v>
+<v>.\Generated_Source\PSoC5\Pin_8_aliases.h</v>
+<v>.\Generated_Source\PSoC5\Pin_8.c</v>
+<v>.\Generated_Source\PSoC5\Pin_8.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -2500,14 +2546,14 @@
 <v>C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v</v>
 <v>C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="130892577548953949" />
+<deps_time v="130907030404894533" />
 <top_block v="TopDesign" />
-<last_generation v="7" />
+<last_generation v="8" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130892577775251924" />
+<deps_time v="130907030669130105" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="237c8ed1-e161-4c9d-af97-582eda6d6952">
@@ -2529,7 +2575,6 @@
 <CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469 type_name="CyDesigner.Common.Debugger.CyBreakpointList" version="1">
 <debugger_breakpoint_list>
 <CyGuid_da1648eb-f713-4789-813b-89e33e3769c0 type_name="CyDesigner.Common.Debugger.CyWatchpoint" version="1" hitcount="0" condition="" enabled="False" hardware="True" temparary="False" variable="onset" access="WRITE" />
-<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\main.c" linenumber="114" />
 </debugger_breakpoint_list>
 </CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469>
 </dataGuid>
@@ -2537,11 +2582,7 @@
 <CyGuid_bf610382-39c6-441f-80b8-b04622ea7845 type_name="CyDesigner.Common.Debugger.CyWatchedVariableList" version="1">
 <debugger_watch_list>
 <CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="Buffer_samples" radix="Default" />
-<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="ADC_samples" radix="Default" />
-<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="end1" radix="Default" />
-<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="end2" radix="Default" />
 <CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="LPF_buffer" radix="Default" />
-<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="LPF_samples" radix="Default" />
 </debugger_watch_list>
 </CyGuid_bf610382-39c6-441f-80b8-b04622ea7845>
 </dataGuid>
